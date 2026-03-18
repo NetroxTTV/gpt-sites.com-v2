@@ -32,9 +32,10 @@ export const guides = [
       {
         title: "Building Your Friends Network",
         content: [
-          { type: "image", src: "https://media.base44.com/imgs/guides/animal/facebookimg.png", alt: "Friends Mechanic" },
+          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/3ec011b0e_facebookimg.png", alt: "Friends Mechanic" },
           { type: "callout", text: "Friends are the MOST important mechanic in Animal and Coins. The quality and quantity of your friends directly impacts your earnings." },
           { type: "subtitle", text: "How to Add Friends" },
+          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/4ef147be5_friendevent.png", alt: "Friend Event" },
           { type: "list", items: ["Join Facebook group: facebook.com/groups/578556969927582", "Look for links starting with: coinraid.sng.link", "Fully close the game, click the friend link (auto opens the game)", "Click \"Accept the invite\""] },
           { type: "subtitle", text: "Friend Strategy" },
           { type: "list", items: ["Add 25-35 friends minimum", "Prefer high-star and active players", "30k stars give minimum ~1B for x50 multiplier", "More friends = more coins, faster islands"] },
@@ -55,7 +56,7 @@ export const guides = [
         content: [
           { type: "callout", text: "Never overspend energy. Optimal formula: Current Energy ÷ 200 = Spin Cost" },
           { type: "list", items: ["10,000 energy → spin at 50", "50,000 energy → spin at 250"] },
-          { type: "image", src: "https://media.base44.com/imgs/guides/animal/energymanagementanimal.png", alt: "Spin Cost Example" },
+          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/4425e4898_energymanagementanimal.png", alt: "Spin Cost Example" },
         ]
       },
       {
@@ -149,8 +150,8 @@ export const guides = [
       {
         title: "Important Resources",
         content: [
-          { type: "link", text: "📊 Eatventure Comprehensive Guide Spreadsheet", url: "https://docs.google.com/spreadsheets/d/1xcVOTizpCp8oQFAalfHUrB91F_Mr-mFZmP1HoHU8xQo/edit?usp=sharing" },
-          { type: "link", text: "💬 Unofficial Eatventure Discord", url: "https://discord.gg/eatventure" },
+          { type: "link", text: "Eatventure Comprehensive Guide Spreadsheet", url: "https://docs.google.com/spreadsheets/d/1xcVOTizpCp8oQFAalfHUrB91F_Mr-mFZmP1HoHU8xQo/edit?usp=sharing" },
+          { type: "link", text: "Unofficial Eatventure Discord", url: "https://discord.gg/eatventure" },
           { type: "text", text: "Special Thanks to Spectre (Discord: fallen_spectre | Reddit: u/Fallen_Spectre87) for the spreadsheet!" },
         ]
       },
@@ -249,6 +250,7 @@ export const guides = [
           { type: "list", items: ["Monthly Purchases first (highest value, repeatable)", "Weekly Purchases (good resources, repeatable)", "Daily Purchases (least cost-effective but still profitable)"] },
           { type: "subtitle", text: "Artisan Power ($9.99)" },
           { type: "list", items: ["Unlocks third build queue — saves 1/3 of overall build time", "Battle Passes also at this tier — continuously give rewards"] },
+          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/282f1b93d_glems.png", alt: "Sea of Conquest Market" },
           { type: "subtitle", text: "Gold Blessings ($20) — Most Important Single Purchase!" },
           { type: "list", items: ["Unlocks offline auto trades — earn gold while not playing", "Additional 5% construction boost", "You'll need 400M+ total gold to reach flagship level 30"] },
         ]
@@ -273,8 +275,15 @@ export const guides = [
         content: [
           { type: "callout", text: "Every upgrade requires 10-30 million gold. On iOS the level 30 will take 12-20 days without any tryhard needed." },
           { type: "subtitle", text: "Daily Routine" },
+          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/8e55269dc_soc_daily.png", alt: "Sea of Conquest Daily Missions" },
           { type: "steps", items: ["Log in daily", "Complete daily missions", "Purchase $4.99 and $9.99 packs (iOS only)", "Upgrade all needed buildings", "Manage trading and routes"] },
           { type: "tip", text: "With Jade Blessing and offline trading, just 15-30 minute daily sessions are enough after the initial levels." },
+        ]
+      },
+      {
+        title: "Gameplay Preview",
+        content: [
+          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/315d39f87_soc_game.png", alt: "Sea of Conquest Gameplay" },
         ]
       },
       {
@@ -295,7 +304,7 @@ export const guides = [
   {
     slug: "sunshine-island",
     title: "Sunshine Island",
-    banner: "https://media.base44.com/files/public/imgs/guides/sunshine/banner.jpeg",
+    banner: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/d14340a79_banner.jpeg",
     category: "Game",
     platform: "iOS / Android",
     genre: "Farming / Simulation",

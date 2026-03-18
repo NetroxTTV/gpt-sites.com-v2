@@ -16,7 +16,7 @@ export default function HeroSection() {
         backgroundSize: '60px 60px'
       }} />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center pt-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,8 +37,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-4 leading-relaxed">
-            Discover the best GPT sites, tips, and offers to maximize your earnings. 
-            Complete surveys, watch videos, and do tasks to earn real cash and gift cards.
+            Discover the best GPT Sites, Tips and Guides to maximize your earnings. Complete surveys, watch videos, and do tasks to earn real cash, crypto and gift cards.
           </p>
 
           <p className="text-sm text-muted-foreground/70 mb-10">

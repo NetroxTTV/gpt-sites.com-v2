@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { guides } from "@/lib/guidesData";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ExternalLink, AlertTriangle, Lightbulb, CheckCircle } from "lucide-react";
+import { ArrowLeft, ExternalLink, AlertTriangle, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
@@ -18,7 +18,7 @@ function RenderContent({ item }) {
         <ul className="space-y-1.5 my-2">
           {item.items.map((it, i) => (
             <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-              <CheckCircle className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+              <span className="text-primary flex-shrink-0">•</span>
               {it}
             </li>
           ))}
@@ -52,7 +52,7 @@ function RenderContent({ item }) {
     case "tip":
       return (
         <div className="flex gap-3 p-3 rounded-xl bg-accent/10 border border-accent/20 my-3">
-          <span className="text-accent text-sm font-semibold flex-shrink-0">💡 Pro Tip:</span>
+          <span className="text-accent text-sm font-semibold flex-shrink-0">Pro Tip:</span>
           <p className="text-sm text-muted-foreground">{item.text}</p>
         </div>
       );
@@ -75,6 +75,7 @@ function RenderContent({ item }) {
 }
 
 export default function GuideDetail() {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
   const { slug } = useParams();
   const guide = guides.find(g => g.slug === slug);
 
@@ -178,7 +179,7 @@ export default function GuideDetail() {
               </a>
             ))}
           </div>
-          <p className="text-xs text-muted-foreground/70 mt-4">💡 Check multiple sites to compare reward amounts — higher rate sites typically offer better payouts!</p>
+          <p className="text-xs text-muted-foreground/70 mt-4">Check multiple sites to compare reward amounts — higher rate sites typically offer better payouts!</p>
         </motion.div>
       </div>
       <Footer />
