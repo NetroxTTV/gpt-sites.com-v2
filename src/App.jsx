@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Offerwalls from './pages/Offerwalls';
 import Guides from './pages/Guides';
 import Tips from './pages/Tips';
+import Sites from './pages/Sites';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -42,6 +43,7 @@ const AuthenticatedApp = () => {
       <Route path="/Offerwalls" element={<Offerwalls />} />
       <Route path="/Guides" element={<Guides />} />
       <Route path="/Tips" element={<Tips />} />
+      <Route path="/Sites" element={<Sites />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
