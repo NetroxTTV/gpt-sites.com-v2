@@ -32,7 +32,7 @@ export const guides = [
       {
         title: "Building Your Friends Network",
         content: [
-          { type: "image", src: "https://media.base44.com/imgs/guides/animal/facebookimg.png", alt: "Friends Mechanic" },
+          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/3ec011b0e_facebookimg.png", alt: "Friends Mechanic" },
           { type: "callout", text: "Friends are the MOST important mechanic in Animal and Coins. The quality and quantity of your friends directly impacts your earnings." },
           { type: "subtitle", text: "How to Add Friends" },
           { type: "list", items: ["Join Facebook group: facebook.com/groups/578556969927582", "Look for links starting with: coinraid.sng.link", "Fully close the game, click the friend link (auto opens the game)", "Click \"Accept the invite\""] },
@@ -55,7 +55,7 @@ export const guides = [
         content: [
           { type: "callout", text: "Never overspend energy. Optimal formula: Current Energy ÷ 200 = Spin Cost" },
           { type: "list", items: ["10,000 energy → spin at 50", "50,000 energy → spin at 250"] },
-          { type: "image", src: "https://media.base44.com/imgs/guides/animal/energymanagementanimal.png", alt: "Spin Cost Example" },
+          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/4425e4898_energymanagementanimal.png", alt: "Spin Cost Example" },
         ]
       },
       {
@@ -295,7 +295,7 @@ export const guides = [
   {
     slug: "sunshine-island",
     title: "Sunshine Island",
-    banner: "https://media.base44.com/files/public/imgs/guides/sunshine/banner.jpeg",
+    banner: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/d14340a79_banner.jpeg",
     category: "Game",
     platform: "iOS / Android",
     genre: "Farming / Simulation",
