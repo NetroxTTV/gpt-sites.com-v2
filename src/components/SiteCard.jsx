@@ -9,7 +9,7 @@ const badgeConfig = {
   mobile_app: { label: "Mobile App", icon: Smartphone, className: "bg-purple-500/15 text-purple-400 border-purple-500/20" },
 };
 
-export default function SiteCard({ site, index }) {
+export default function SiteCard({ site, index, showRate = false }) {
   const badge = site.badge && site.badge !== "none" ? badgeConfig[site.badge] : null;
   const BadgeIcon = badge?.icon;
 
@@ -65,14 +65,18 @@ export default function SiteCard({ site, index }) {
 
           {/* Rating + Visit */}
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-0.5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                  key={i}
-                  className={`w-3 h-3 ${i < (site.rating || 5) ? "text-yellow-400 fill-yellow-400" : "text-muted-foreground/30"}`}
-                />
-              ))}
-            </div>
+            {showRate && site.rates ? (
+              <span className="text-sm font-bold text-green-400">{site.rates}%</span>
+            ) : (
+              <div className="flex items-center gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`w-3 h-3 ${i < (site.rating || 5) ? "text-yellow-400 fill-yellow-400" : "text-muted-foreground/30"}`}
+                  />
+                ))}
+              </div>
+            )}
             <span className="inline-flex items-center gap-1 text-xs font-semibold text-primary group-hover:gap-2 transition-all">
               Visit
               <ExternalLink className="w-3 h-3" />
