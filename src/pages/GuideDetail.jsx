@@ -75,6 +75,7 @@ function RenderContent({ item }) {
 }
 
 export default function GuideDetail() {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
   const { slug } = useParams();
   const guide = guides.find(g => g.slug === slug);
 
