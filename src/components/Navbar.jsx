@@ -82,7 +82,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               className="block px-3 py-3 text-sm font-medium text-muted-foreground hover:text-foreground border-b border-border/30"
-              onClick={() => setMobileOpen(false)}
+              onClick={(e) => { handleFaqClick(e, link); setMobileOpen(false); }}
             >
               {link.label}
             </a>
