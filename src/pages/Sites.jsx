@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useEffect as useScrollEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SiteCard from "@/components/SiteCard";
