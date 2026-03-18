@@ -7,7 +7,6 @@ import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import { Navigate } from 'react-router-dom';
 import Home from './pages/Home';
-import Offerwalls from './pages/Offerwalls';
 import Guides from './pages/Guides';
 import Tips from './pages/Tips';
 import Sites from './pages/Sites';
@@ -40,7 +39,6 @@ const AuthenticatedApp = () => {
     <Routes>
       <Route path="/" element={<Navigate to="/Home" replace />} />
       <Route path="/Home" element={<Home />} />
-      <Route path="/Offerwalls" element={<Offerwalls />} />
       <Route path="/Guides" element={<Guides />} />
       <Route path="/Tips" element={<Tips />} />
       <Route path="/Sites" element={<Sites />} />
