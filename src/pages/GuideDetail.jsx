@@ -179,7 +179,7 @@ export default function GuideDetail() {
               </a>
             ))}
           </div>
-          <p className="text-xs text-muted-foreground/70 mt-4">💡 Check multiple sites to compare reward amounts — higher rate sites typically offer better payouts!</p>
+          <p className="text-xs text-muted-foreground/70 mt-4">Check multiple sites to compare reward amounts — higher rate sites typically offer better payouts!</p>
         </motion.div>
       </div>
       <Footer />
