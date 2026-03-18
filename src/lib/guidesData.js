@@ -149,8 +149,8 @@ export const guides = [
       {
         title: "Important Resources",
         content: [
-          { type: "link", text: "📊 Eatventure Comprehensive Guide Spreadsheet", url: "https://docs.google.com/spreadsheets/d/1xcVOTizpCp8oQFAalfHUrB91F_Mr-mFZmP1HoHU8xQo/edit?usp=sharing" },
-          { type: "link", text: "💬 Unofficial Eatventure Discord", url: "https://discord.gg/eatventure" },
+          { type: "link", text: "Eatventure Comprehensive Guide Spreadsheet", url: "https://docs.google.com/spreadsheets/d/1xcVOTizpCp8oQFAalfHUrB91F_Mr-mFZmP1HoHU8xQo/edit?usp=sharing" },
+          { type: "link", text: "Unofficial Eatventure Discord", url: "https://discord.gg/eatventure" },
           { type: "text", text: "Special Thanks to Spectre (Discord: fallen_spectre | Reddit: u/Fallen_Spectre87) for the spreadsheet!" },
         ]
       },
