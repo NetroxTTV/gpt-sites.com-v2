@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { guides } from "@/lib/guidesData";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ExternalLink, AlertTriangle, Lightbulb, CheckCircle } from "lucide-react";
+import { ArrowLeft, ExternalLink, AlertTriangle, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
