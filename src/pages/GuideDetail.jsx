@@ -52,7 +52,7 @@ function RenderContent({ item }) {
     case "tip":
       return (
         <div className="flex gap-3 p-3 rounded-xl bg-accent/10 border border-accent/20 my-3">
-          <span className="text-accent text-sm font-semibold flex-shrink-0">💡 Pro Tip:</span>
+          <span className="text-accent text-sm font-semibold flex-shrink-0">Pro Tip:</span>
           <p className="text-sm text-muted-foreground">{item.text}</p>
         </div>
       );
