@@ -16,12 +16,12 @@ export default function Navbar() {
   const handleFaqClick = (e, link) => {
     if (link.label === "FAQ") {
       e.preventDefault();
-      if (window.location.pathname !== "/") {
-        window.location.href = "/#faq";
-        return;
-      }
       const el = document.getElementById("faq");
-      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        window.location.href = "/#faq";
+      }
     }
   };
 
