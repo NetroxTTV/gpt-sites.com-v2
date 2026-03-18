@@ -3,9 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "engines": {
-    "node": ">=18"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -54,7 +51,7 @@
     "cmdk": "^1.0.0",
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.5.2",
-    "express": "^4.21.2",
+    "express": "^5.2.1",
     "framer-motion": "^11.16.4",
     "html2canvas": "^1.4.1",
     "input-otp": "^1.4.2",

@@ -24,23 +24,10 @@ app.use(
   })
 );
 
-app.get("*", (_req, res) => {
+app.get("/{*splat}", (_req, res) => {
   res.sendFile(indexPath);
 });
 
-const server = app.listen(port, host, () => {
+app.listen(port, host, () => {
   console.log(`Server listening on ${host}:${port}`);
-});
-
-server.on("error", (error) => {
-  console.error("Server failed to start:", error);
-  process.exit(1);
-});
-
-process.on("uncaughtException", (error) => {
-  console.error("Uncaught exception:", error);
-});
-
-process.on("unhandledRejection", (reason) => {
-  console.error("Unhandled rejection:", reason);
 });
