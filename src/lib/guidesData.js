@@ -87,7 +87,7 @@ export const guides = [
   {
     slug: "eatventure",
     title: "Eatventure",
-    banner: "https://media.base44.com/files/public/imgs/guides/eatventure_banner.jpg",
+    banner: "https://i.ytimg.com/vi/aooUbr8ELsk/maxresdefault.jpg",
     category: "Idle / Tycoon",
     platform: "Android / iOS",
     genre: "Restaurant Idle",

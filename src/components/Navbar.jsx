@@ -20,7 +20,11 @@ export default function Navbar() {
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
-        window.location.href = "/#faq";
+        window.location.href = "/Home#faq";
+        setTimeout(() => {
+          const faqEl = document.getElementById("faq");
+          if (faqEl) faqEl.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 500);
       }
     }
   };
