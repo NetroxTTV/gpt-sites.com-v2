@@ -7,11 +7,23 @@ const navLinks = [
   { label: "Sites", href: "/Sites" },
   { label: "Guides", href: "/Guides" },
   { label: "Tips", href: "/Tips" },
-  { label: "FAQ", href: "/#faq", scroll: true },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleFaqClick = (e, link) => {
+    if (link.label === "FAQ") {
+      e.preventDefault();
+      if (window.location.pathname !== "/") {
+        window.location.href = "/#faq";
+        return;
+      }
+      const el = document.getElementById("faq");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
