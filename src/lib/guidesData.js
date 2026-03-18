@@ -281,6 +281,12 @@ export const guides = [
         ]
       },
       {
+        title: "Gameplay Preview",
+        content: [
+          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/315d39f87_soc_game.png", alt: "Sea of Conquest Gameplay" },
+        ]
+      },
+      {
         title: "Profitability Summary",
         content: [
           { type: "list", items: ["Total Investment: ~$50-70 in purchases", "Offer Reward: $400-$800", "Net Profit: $330-$750", "Additional Cashback (iOS): $120 from daily purchases"] },
