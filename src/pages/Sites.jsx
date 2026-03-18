@@ -22,6 +22,7 @@ const badgeFilters = ["All", "New", "Popular", "Mobile App"];
 const badgeMap = { "All": null, "New": "new", "Popular": "popular", "Mobile App": "mobile_app" };
 
 export default function Sites() {
+  useEffect(() => { window.scrollTo(0, 0); }, []);
   const [search, setSearch] = useState("");
   const [activeBadge, setActiveBadge] = useState("All");
   const [selectedOfferwalls, setSelectedOfferwalls] = useState([]);
