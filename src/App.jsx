@@ -8,7 +8,7 @@ import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import { Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Guides from './pages/Guides';
-import Tips from './pages/Tips';
+import Tips from './pages/Tips.jsx';
 import GuideDetail from './pages/GuideDetail';
 import Sites from './pages/Sites';
 
