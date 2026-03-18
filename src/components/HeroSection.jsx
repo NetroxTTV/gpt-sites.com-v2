@@ -47,7 +47,7 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a href="#sites">
+            <a href="#sites" onClick={(e) => { e.preventDefault(); document.getElementById('sites')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base font-semibold rounded-xl gap-2 shadow-lg shadow-primary/25">
                 Browse Sites
                 <ArrowDown className="w-4 h-4" />
