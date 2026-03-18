@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Sites", href: "/Sites" },
   { label: "Guides", href: "/Guides" },
   { label: "Tips", href: "/Tips" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "FAQ", href: "/#faq", scroll: true },
 ];
 
 export default function Navbar() {
