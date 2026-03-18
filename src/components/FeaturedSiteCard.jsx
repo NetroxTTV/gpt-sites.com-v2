@@ -2,6 +2,7 @@ import React from "react";
 import { ExternalLink, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { getCasinoBonusTagClassName } from "@/lib/bonusTagStyles";
 
 const rankColors = {
   1: "from-yellow-400 to-amber-500",
@@ -19,6 +20,7 @@ const rankBgGlow = {
 
 export default function FeaturedSiteCard({ site, index }) {
   const rank = site.rank || index + 1;
+  const casinoBonusTagClassName = getCasinoBonusTagClassName(site.bonus_tag);
 
   return (
     <motion.div
@@ -61,7 +63,7 @@ export default function FeaturedSiteCard({ site, index }) {
             </p>
 
             {site.bonus_tag && (
-              <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-accent/15 text-accent border border-accent/20 mb-3">
+              <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border mb-3 ${casinoBonusTagClassName || "bg-accent/15 text-accent border-accent/20"}`}>
                 {site.bonus_tag}
               </span>
             )}

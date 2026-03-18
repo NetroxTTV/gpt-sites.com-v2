@@ -102,3 +102,69 @@
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(222 47% 22%);
 }
+
+@keyframes casino-tag-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1px);
+  }
+}
+
+@keyframes casino-tag-sheen {
+  0%,
+  25% {
+    transform: translateX(-130%);
+  }
+  60%,
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+@layer utilities {
+  .casino-tag {
+    @apply relative overflow-hidden text-white;
+    animation: casino-tag-float 2.7s ease-in-out infinite;
+  }
+
+  .casino-tag::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(
+      120deg,
+      transparent 0%,
+      transparent 40%,
+      rgba(255, 255, 255, 0.35) 50%,
+      transparent 60%,
+      transparent 100%
+    );
+    transform: translateX(-130%);
+    animation: casino-tag-sheen 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .casino-tag-gamdom {
+    background: linear-gradient(135deg, rgba(9, 58, 42, 0.62), rgba(17, 94, 71, 0.42));
+    border-color: rgba(52, 211, 153, 0.5);
+    color: #dcfce7;
+    box-shadow: 0 0 0 1px rgba(52, 211, 153, 0.18), 0 0 16px rgba(6, 95, 70, 0.28);
+  }
+
+  .casino-tag-roobet {
+    background: linear-gradient(135deg, rgba(91, 33, 182, 0.45), rgba(124, 58, 237, 0.3));
+    border-color: rgba(167, 139, 250, 0.58);
+    color: #ede9fe;
+    box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.2), 0 0 16px rgba(124, 58, 237, 0.25);
+  }
+
+  .casino-tag-stake {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.28), rgba(52, 211, 153, 0.2));
+    border-color: rgba(74, 222, 128, 0.55);
+    color: #ddffe9;
+    box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.2), 0 0 16px rgba(16, 185, 129, 0.2);
+  }
+}

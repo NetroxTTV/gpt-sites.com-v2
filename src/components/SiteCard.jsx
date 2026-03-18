@@ -1,7 +1,9 @@
 import React from "react";
-import { ExternalLink, Star, Smartphone, Flame, Zap } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { ExternalLink, Star, Smartphone, Flame, Zap, Crown } from "lucide-react";
 import { motion } from "framer-motion";
+import { getCasinoBonusTagClassName } from "@/lib/bonusTagStyles";
+
+const topBadgeClassName = "bg-gradient-to-r from-amber-400/20 via-yellow-300/20 to-orange-400/20 text-yellow-200 border-yellow-300/40 shadow-[0_0_14px_rgba(250,204,21,0.25)] animate-pulse";
 
 const badgeConfig = {
   new: { label: "New", icon: Zap, className: "bg-green-500/15 text-green-400 border-green-500/20" },
@@ -10,7 +12,13 @@ const badgeConfig = {
 };
 
 export default function SiteCard({ site, index, showRate = false }) {
-  const badge = site.badge && site.badge !== "none" ? badgeConfig[site.badge] : null;
+  const topRankMatch = /^top(\d+)$/i.exec(site.badge || "");
+  const casinoBonusTagClassName = getCasinoBonusTagClassName(site.bonus_tag);
+  const badge = topRankMatch
+    ? { label: `Top ${topRankMatch[1]}`, icon: Crown, className: topBadgeClassName }
+    : site.badge && site.badge !== "none"
+      ? badgeConfig[site.badge]
+      : null;
   const BadgeIcon = badge?.icon;
 
   return (
@@ -36,7 +44,7 @@ export default function SiteCard({ site, index, showRate = false }) {
               </span>
             )}
             {site.bonus_tag && (
-              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-accent/15 text-accent border border-accent/20">
+              <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold border ${casinoBonusTagClassName || "bg-accent/15 text-accent border-accent/20"}`}>
                 {site.bonus_tag}
               </span>
             )}

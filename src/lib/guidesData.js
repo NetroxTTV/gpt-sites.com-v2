@@ -2,7 +2,7 @@ export const guides = [
   {
     slug: "animal-and-coins",
     title: "Animal and Coins",
-    banner: "https://help.swagbucks.com/hc/article_attachments/31358155950484",
+    banner: new URL("../imgs/guides/animal/banner.png", import.meta.url).href,
     category: "Game",
     platform: "iOS / Android",
     genre: "Idle / Casino",
@@ -32,10 +32,9 @@ export const guides = [
       {
         title: "Building Your Friends Network",
         content: [
-          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/3ec011b0e_facebookimg.png", alt: "Friends Mechanic" },
+          { type: "image", src: new URL("../imgs/guides/animal/facebookimg.png", import.meta.url).href, alt: "Friends Mechanic" },
           { type: "callout", text: "Friends are the MOST important mechanic in Animal and Coins. The quality and quantity of your friends directly impacts your earnings." },
           { type: "subtitle", text: "How to Add Friends" },
-          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/4ef147be5_friendevent.png", alt: "Friend Event" },
           { type: "list", items: ["Join Facebook group: facebook.com/groups/578556969927582", "Look for links starting with: coinraid.sng.link", "Fully close the game, click the friend link (auto opens the game)", "Click \"Accept the invite\""] },
           { type: "subtitle", text: "Friend Strategy" },
           { type: "list", items: ["Add 25-35 friends minimum", "Prefer high-star and active players", "30k stars give minimum ~1B for x50 multiplier", "More friends = more coins, faster islands"] },
@@ -56,7 +55,7 @@ export const guides = [
         content: [
           { type: "callout", text: "Never overspend energy. Optimal formula: Current Energy ÷ 200 = Spin Cost" },
           { type: "list", items: ["10,000 energy → spin at 50", "50,000 energy → spin at 250"] },
-          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/4425e4898_energymanagementanimal.png", alt: "Spin Cost Example" },
+          { type: "image", src: new URL("../imgs/guides/animal/energymanagementanimal.png", import.meta.url).href, alt: "Spin Cost Example" },
         ]
       },
       {
@@ -85,9 +84,277 @@ export const guides = [
     ],
   },
   {
+    slug: "chime",
+    title: "Chime",
+    banner: new URL("../imgs/guides/chime.png", import.meta.url).href,
+    category: "Finance / Banking",
+    platform: "Android / iOS / PC",
+    genre: "Online Bank Account",
+    offerwall: "RevU",
+    difficulty: "Medium",
+    timeInvestment: "About 10 minutes setup + waiting for deposit",
+    totalReward: "$270-$300",
+    moneyRequirement: "$200 direct deposit",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "callout", text: "A high-paying banking offer that requires opening an account and receiving a qualifying direct deposit." },
+          { type: "list", items: ["Category: Finance / Banking", "Offer: Chime", "Offerwall: RevU", "Platform: Android / iOS / PC", "Genre: Online Bank Account", "Difficulty: Medium", "Time Investment: About 10 minutes setup + waiting for deposit", "Money Requirement: $200 direct deposit", "Total Reward: $270-$300"] },
+        ]
+      },
+      {
+        title: "How the Offer Works",
+        content: [
+          { type: "steps", items: ["Register for a new Chime account", "Complete identity verification during signup", "Receive at least $200 in direct deposits within 30 days of opening the account"] },
+        ]
+      },
+      {
+        title: "Important Direct Deposit Rules",
+        content: [
+          { type: "warning", text: "The deposit must come from an employer payroll or qualifying benefits provider." },
+          { type: "list", items: ["Make sure the total qualifying direct deposit amount is at least $200"] },
+        ]
+      },
+      {
+        title: "Crediting Time",
+        content: [
+          { type: "list", items: ["Credits after the qualifying direct deposit is detected", "This can take a few days after the deposit hits your Chime account"] },
+        ]
+      },
+      {
+        title: "Important Notes",
+        content: [
+          { type: "list", items: ["New Chime users only", "Use real and accurate personal information", "Do not close your account before the offer credits", "Keep proof of your direct deposit in case support is needed"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
+    slug: "sea-of-conquest",
+    title: "Sea of Conquest",
+    banner: new URL("../imgs/guides/sea_of_conquest/soc_banner.jpg", import.meta.url).href,
+    category: "Base-builder",
+    platform: "iOS / Android / PC",
+    genre: "Strategy",
+    offerwall: "Torox",
+    difficulty: "Medium",
+    timeInvestment: "50-100 hours (20-30 days)",
+    totalReward: "$400 - $800",
+    sections: [
+      {
+        title: "Important — First Time Players",
+        content: [
+          { type: "warning", text: "If this is your first playthrough, it is HIGHLY recommended to play on iOS. Players on PC for the first time typically cannot reach level 28 or 30 due to platform limitations." },
+          { type: "callout", text: "iOS: Daily cashbacks available (repeatable purchases, highly profitable). PC: One-time cashbacks only." },
+        ]
+      },
+      {
+        title: "Key Purchases",
+        content: [
+          { type: "subtitle", text: "Jade Blessing ($4.99) — First Mandatory Purchase" },
+          { type: "list", items: ["Activates auto combat (crucial for casual play)", "Reduces construction time by 20 minutes", "Provides an extra drop while slaying monsters"] },
+          { type: "subtitle", text: "$4.99 Purchase Priority (iOS)" },
+          { type: "list", items: ["Monthly Purchases first (highest value, repeatable)", "Weekly Purchases (good resources, repeatable)", "Daily Purchases (least cost-effective but still profitable)"] },
+          { type: "subtitle", text: "Artisan Power ($9.99)" },
+          { type: "list", items: ["Unlocks third build queue — saves 1/3 of overall build time", "Battle Passes also at this tier — continuously give rewards"] },
+          { type: "image", src: new URL("../imgs/guides/sea_of_conquest/glems.png", import.meta.url).href, alt: "Sea of Conquest Market" },
+          { type: "subtitle", text: "Gold Blessings ($20) — Most Important Single Purchase!" },
+          { type: "list", items: ["Unlocks offline auto trades — earn gold while not playing", "Additional 5% construction boost", "You'll need 400M+ total gold to reach flagship level 30"] },
+        ]
+      },
+      {
+        title: "Levels 1-11 (Day 1)",
+        content: [
+          { type: "list", items: ["Build all buildings and upgrade flagship to unlock more buildings", "Collect quest rewards for building XP", "Make as many Storage Buildings as possible", "Max out Builders until level 15"] },
+          { type: "tip", text: "Join a powerful guild from the start — guilds can capture ports giving everyone bonuses." },
+        ]
+      },
+      {
+        title: "Levels 11-21 (Days 2-10)",
+        content: [
+          { type: "subtitle", text: "Gold Strategy — Black Market Routes" },
+          { type: "list", items: ["Go to a black market port (level 3+ preferred)", "Purchase all black market supplies", "Sell instantly for ~150k profit", "Do this a few times a day"] },
+          { type: "list", items: ["Explore as much of the map as possible to unlock trade routes", "Use all energy daily with auto combats from Jade Blessing", "Use daily $4.99 purchases on Gems (iOS only)"] },
+        ]
+      },
+      {
+        title: "Levels 22-30 (~20 days)",
+        content: [
+          { type: "callout", text: "Every upgrade requires 10-30 million gold. On iOS the level 30 will take 12-20 days without any tryhard needed." },
+          { type: "subtitle", text: "Daily Routine" },
+          { type: "image", src: new URL("../imgs/guides/sea_of_conquest/soc_daily.png", import.meta.url).href, alt: "Sea of Conquest Daily Missions" },
+          { type: "steps", items: ["Log in daily", "Complete daily missions", "Purchase $4.99 and $9.99 packs (iOS only)", "Upgrade all needed buildings", "Manage trading and routes"] },
+          { type: "tip", text: "With Jade Blessing and offline trading, just 15-30 minute daily sessions are enough after the initial levels." },
+        ]
+      },
+      {
+        title: "Gameplay Preview",
+        content: [
+          { type: "image", src: new URL("../imgs/guides/sea_of_conquest/soc_game.png", import.meta.url).href, alt: "Sea of Conquest Gameplay" },
+        ]
+      },
+      {
+        title: "Profitability Summary",
+        content: [
+          { type: "list", items: ["Total Investment: ~$50-70 in purchases", "Offer Reward: $400-$800", "Net Profit: $330-$750", "Additional Cashback (iOS): $120 from daily purchases"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashout" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "GameHag", url: "https://gamehag.com/r/netrox", desc: "80% Rates" },
+    ],
+  },
+  {
+    slug: "sunshine-island",
+    title: "Sunshine Island",
+    banner: new URL("../imgs/guides/sunshine/banner.jpeg", import.meta.url).href,
+    category: "Game",
+    platform: "iOS / Android",
+    genre: "Farming / Simulation",
+    offerwall: "Prime Earn",
+    difficulty: "Medium",
+    timeInvestment: "High activity required",
+    totalReward: "$1531+",
+    sections: [
+      {
+        title: "Important Before Starting",
+        content: [
+          { type: "warning", text: "This offer requires active gameplay throughout the day. You need to check the game at least every 30 minutes for optimal progress." },
+          { type: "list", items: ["You need to be active throughout the day", "Check the game at least every 30 minutes", "Some spending may help if you don't have a lot of free time", "The early game is critical"] },
+        ]
+      },
+      {
+        title: "Step 1: Rush Town Hall Level 3",
+        content: [
+          { type: "warning", text: "Time Limit: You only have 3 days to complete Tropical Island Town Hall level 3." },
+          { type: "callout", text: "Do NOT upgrade anything that is not required in the quest book early on. Save all resources for Town Hall level 3." },
+          { type: "subtitle", text: "Books and Pens Priority" },
+          { type: "list", items: ["XP boost for plane deliveries", "XP boost for market deliveries", "First row coin boosts", "First row production boosts"] },
+        ]
+      },
+      {
+        title: "Best XP Strategy Early Game",
+        content: [
+          { type: "list", items: ["Spam produce wheat — most time-efficient crop for XP and gold", "Before going to bed: Start long-duration crops and builds", "Make sure you have at least 1 of every production building"] },
+        ]
+      },
+      {
+        title: "Fast XP Method (VERY IMPORTANT)",
+        content: [
+          { type: "callout", text: "To reach level 23 quickly (needed for Town Hall level 3): Destroy and rebuild a house on Tropical Island." },
+          { type: "list", items: ["Each rebuild gives 100 XP", "Takes 100 seconds — extremely efficient", "Use gems to speed this up if available"] },
+          { type: "subtitle", text: "Best Gem Value" },
+          { type: "list", items: ["Piggy bank offer", "Limited-time deals on the side menu"] },
+        ]
+      },
+      {
+        title: "Tropical Island — When Unlocked",
+        content: [
+          { type: "list", items: ["Immediately start farming Feathers and Coffee beans", "Coffee beans are the wheat equivalent on Tropical Island", "Still produce a variety of items for tasks"] },
+        ]
+      },
+      {
+        title: "Fishing & Guilds",
+        content: [
+          { type: "list", items: ["Once unlocked, always fish — gives XP and points to buy materials/crops", "Tap slightly in front of the fish's direction to instantly grab its attention"] },
+          { type: "tip", text: "Join a high-level active guild — use coupons to help their deliveries and gain more XP than helping yourself." },
+        ]
+      },
+      {
+        title: "Late Game Strategy",
+        content: [
+          { type: "list", items: ["After Town Hall level 3: Stop destroy/rebuild temporarily", "Save gold for expensive future upgrades (can exceed 1M gold total)", "Focus on farm expansions and upgrades", "Use Hot Deals/Daily Deals shop sections to buy hard-to-produce items"] },
+          { type: "tip", text: "At level 25-26 you can restart the destroy/rebuild XP farming strategy if you have enough gold." },
+        ]
+      },
+      {
+        title: "Free Resources",
+        content: [
+          { type: "list", items: ["Tap the dog to watch ads for free resources", "Claim free gift from their website", "Use the offerwall tab in-game shop — 'Lotsa Slots' offer recommended for free gems"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+    ],
+  },
+  {
+    slug: "gemini-exchange",
+    title: "Gemini Exchange",
+    banner: new URL("../imgs/guides/gemini_banner.jpeg", import.meta.url).href,
+    category: "Finance / Crypto",
+    platform: "PC / Phone",
+    genre: "Crypto Exchange",
+    offerwall: "AdscendMedia / AyetStudios / Torox / Monlix",
+    difficulty: "Easy",
+    timeInvestment: "~10 minutes",
+    totalReward: "$15 - $45+",
+    sections: [
+      {
+        title: "How the Offer Works",
+        content: [
+          { type: "steps", items: ["Sign up on Gemini with a valid email and phone number", "Verify your email and phone", "Complete KYC verification (upload ID + selfie)", "Deposit funds via card or bank transfer", "Buy $5-$15 worth of crypto", "Wait for credit (typically 30-60 minutes)"] },
+        ]
+      },
+      {
+        title: "Important Notes",
+        content: [
+          { type: "warning", text: "KYC is Mandatory — KYC verification is required to receive your offerwall earnings. Usually completes within minutes." },
+          { type: "list", items: ["Use real information to avoid account locks", "Keep screenshots of each step as proof", "Don't rush withdrawals — let transactions fully settle"] },
+        ]
+      },
+      {
+        title: "Recommended Cryptocurrencies",
+        content: [
+          { type: "list", items: ["LTC (Litecoin): Fast transactions, low fees", "SOL (Solana): Quick settlement, widely supported"] },
+          { type: "tip", text: "Avoid fast trading or withdrawals immediately after purchase. Let the transaction fully settle." },
+        ]
+      },
+      {
+        title: "After Crediting – Profit Strategy",
+        content: [
+          { type: "steps", items: ["Sell your crypto back to your currency", "Withdraw funds to bank, card, or crypto wallet", "Keep the offerwall reward as pure profit!"] },
+          { type: "callout", text: "Example: Invest $10, earn $30 reward → Sell crypto, withdraw $10 → Net profit: $20!" },
+        ]
+      },
+      {
+        title: "Common Mistakes to Avoid",
+        content: [
+          { type: "list", items: ["Using fake information (always use real, verifiable details)", "Skipping KYC — it's required", "Purchasing less than the required amount", "Opening support tickets too early (wait 24 hours first)", "Immediate withdrawals — wait for transactions to settle"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
     slug: "eatventure",
     title: "Eatventure",
-    banner: "https://i.ytimg.com/vi/aooUbr8ELsk/maxresdefault.jpg",
+    banner: new URL("../imgs/guides/eatventure_logo.jpeg", import.meta.url).href,
     category: "Idle / Tycoon",
     platform: "Android / iOS",
     genre: "Restaurant Idle",
@@ -165,217 +432,5 @@ export const guides = [
       { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
       { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
-  },
-  {
-    slug: "gemini-exchange",
-    title: "Gemini Exchange",
-    banner: "https://www.coinchoose.com/wp-content/uploads/2017/05/Gemini_Banner.jpg",
-    category: "Finance / Crypto",
-    platform: "PC / Phone",
-    genre: "Crypto Exchange",
-    offerwall: "AdscendMedia / AyetStudios / Torox / Monlix",
-    difficulty: "Easy",
-    timeInvestment: "~10 minutes",
-    totalReward: "$15 - $45+",
-    sections: [
-      {
-        title: "How the Offer Works",
-        content: [
-          { type: "steps", items: ["Sign up on Gemini with a valid email and phone number", "Verify your email and phone", "Complete KYC verification (upload ID + selfie)", "Deposit funds via card or bank transfer", "Buy $5-$15 worth of crypto", "Wait for credit (typically 30-60 minutes)"] },
-        ]
-      },
-      {
-        title: "Important Notes",
-        content: [
-          { type: "warning", text: "KYC is Mandatory — KYC verification is required to receive your offerwall earnings. Usually completes within minutes." },
-          { type: "list", items: ["Use real information to avoid account locks", "Keep screenshots of each step as proof", "Don't rush withdrawals — let transactions fully settle"] },
-        ]
-      },
-      {
-        title: "Recommended Cryptocurrencies",
-        content: [
-          { type: "list", items: ["LTC (Litecoin): Fast transactions, low fees", "SOL (Solana): Quick settlement, widely supported"] },
-          { type: "tip", text: "Avoid fast trading or withdrawals immediately after purchase. Let the transaction fully settle." },
-        ]
-      },
-      {
-        title: "After Crediting – Profit Strategy",
-        content: [
-          { type: "steps", items: ["Sell your crypto back to your currency", "Withdraw funds to bank, card, or crypto wallet", "Keep the offerwall reward as pure profit!"] },
-          { type: "callout", text: "Example: Invest $10, earn $30 reward → Sell crypto, withdraw $10 → Net profit: $20!" },
-        ]
-      },
-      {
-        title: "Common Mistakes to Avoid",
-        content: [
-          { type: "list", items: ["Using fake information (always use real, verifiable details)", "Skipping KYC — it's required", "Purchasing less than the required amount", "Opening support tickets too early (wait 24 hours first)", "Immediate withdrawals — wait for transactions to settle"] },
-        ]
-      },
-    ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
-    ],
-  },
-  {
-    slug: "sea-of-conquest",
-    title: "Sea of Conquest",
-    banner: "https://assetsio.gnwcdn.com/sea-of-conquest-kraken.png?width=2048&height=2048&fit=bounds&quality=85&format=jpg&auto=webp",
-    category: "Base-builder",
-    platform: "iOS / Android / PC",
-    genre: "Strategy",
-    offerwall: "Torox",
-    difficulty: "Medium",
-    timeInvestment: "50-100 hours (20-30 days)",
-    totalReward: "$400 - $800",
-    sections: [
-      {
-        title: "Important — First Time Players",
-        content: [
-          { type: "warning", text: "If this is your first playthrough, it is HIGHLY recommended to play on iOS. Players on PC for the first time typically cannot reach level 28 or 30 due to platform limitations." },
-          { type: "callout", text: "iOS: Daily cashbacks available (repeatable purchases, highly profitable). PC: One-time cashbacks only." },
-        ]
-      },
-      {
-        title: "Key Purchases",
-        content: [
-          { type: "subtitle", text: "Jade Blessing ($4.99) — First Mandatory Purchase" },
-          { type: "list", items: ["Activates auto combat (crucial for casual play)", "Reduces construction time by 20 minutes", "Provides an extra drop while slaying monsters"] },
-          { type: "subtitle", text: "$4.99 Purchase Priority (iOS)" },
-          { type: "list", items: ["Monthly Purchases first (highest value, repeatable)", "Weekly Purchases (good resources, repeatable)", "Daily Purchases (least cost-effective but still profitable)"] },
-          { type: "subtitle", text: "Artisan Power ($9.99)" },
-          { type: "list", items: ["Unlocks third build queue — saves 1/3 of overall build time", "Battle Passes also at this tier — continuously give rewards"] },
-          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/282f1b93d_glems.png", alt: "Sea of Conquest Market" },
-          { type: "subtitle", text: "Gold Blessings ($20) — Most Important Single Purchase!" },
-          { type: "list", items: ["Unlocks offline auto trades — earn gold while not playing", "Additional 5% construction boost", "You'll need 400M+ total gold to reach flagship level 30"] },
-        ]
-      },
-      {
-        title: "Levels 1-11 (Day 1)",
-        content: [
-          { type: "list", items: ["Build all buildings and upgrade flagship to unlock more buildings", "Collect quest rewards for building XP", "Make as many Storage Buildings as possible", "Max out Builders until level 15"] },
-          { type: "tip", text: "Join a powerful guild from the start — guilds can capture ports giving everyone bonuses." },
-        ]
-      },
-      {
-        title: "Levels 11-21 (Days 2-10)",
-        content: [
-          { type: "subtitle", text: "Gold Strategy — Black Market Routes" },
-          { type: "list", items: ["Go to a black market port (level 3+ preferred)", "Purchase all black market supplies", "Sell instantly for ~150k profit", "Do this a few times a day"] },
-          { type: "list", items: ["Explore as much of the map as possible to unlock trade routes", "Use all energy daily with auto combats from Jade Blessing", "Use daily $4.99 purchases on Gems (iOS only)"] },
-        ]
-      },
-      {
-        title: "Levels 22-30 (~20 days)",
-        content: [
-          { type: "callout", text: "Every upgrade requires 10-30 million gold. On iOS the level 30 will take 12-20 days without any tryhard needed." },
-          { type: "subtitle", text: "Daily Routine" },
-          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/8e55269dc_soc_daily.png", alt: "Sea of Conquest Daily Missions" },
-          { type: "steps", items: ["Log in daily", "Complete daily missions", "Purchase $4.99 and $9.99 packs (iOS only)", "Upgrade all needed buildings", "Manage trading and routes"] },
-          { type: "tip", text: "With Jade Blessing and offline trading, just 15-30 minute daily sessions are enough after the initial levels." },
-        ]
-      },
-      {
-        title: "Gameplay Preview",
-        content: [
-          { type: "image", src: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/315d39f87_soc_game.png", alt: "Sea of Conquest Gameplay" },
-        ]
-      },
-      {
-        title: "Profitability Summary",
-        content: [
-          { type: "list", items: ["Total Investment: ~$50-70 in purchases", "Offer Reward: $400-$800", "Net Profit: $330-$750", "Additional Cashback (iOS): $120 from daily purchases"] },
-        ]
-      },
-    ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashout" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "GameHag", url: "https://gamehag.com/r/netrox", desc: "80% Rates" },
-    ],
-  },
-  {
-    slug: "sunshine-island",
-    title: "Sunshine Island",
-    banner: "https://media.base44.com/images/public/69ba5b0ccf2b3f8e1a13fcac/d14340a79_banner.jpeg",
-    category: "Game",
-    platform: "iOS / Android",
-    genre: "Farming / Simulation",
-    offerwall: "Prime Earn",
-    difficulty: "Medium",
-    timeInvestment: "High activity required",
-    totalReward: "$1531+",
-    sections: [
-      {
-        title: "Important Before Starting",
-        content: [
-          { type: "warning", text: "This offer requires active gameplay throughout the day. You need to check the game at least every 30 minutes for optimal progress." },
-          { type: "list", items: ["You need to be active throughout the day", "Check the game at least every 30 minutes", "Some spending may help if you don't have a lot of free time", "The early game is critical"] },
-        ]
-      },
-      {
-        title: "Step 1: Rush Town Hall Level 3",
-        content: [
-          { type: "warning", text: "Time Limit: You only have 3 days to complete Tropical Island Town Hall level 3." },
-          { type: "callout", text: "Do NOT upgrade anything that is not required in the quest book early on. Save all resources for Town Hall level 3." },
-          { type: "subtitle", text: "Books and Pens Priority" },
-          { type: "list", items: ["XP boost for plane deliveries", "XP boost for market deliveries", "First row coin boosts", "First row production boosts"] },
-        ]
-      },
-      {
-        title: "Best XP Strategy Early Game",
-        content: [
-          { type: "list", items: ["Spam produce wheat — most time-efficient crop for XP and gold", "Before going to bed: Start long-duration crops and builds", "Make sure you have at least 1 of every production building"] },
-        ]
-      },
-      {
-        title: "Fast XP Method (VERY IMPORTANT)",
-        content: [
-          { type: "callout", text: "To reach level 23 quickly (needed for Town Hall level 3): Destroy and rebuild a house on Tropical Island." },
-          { type: "list", items: ["Each rebuild gives 100 XP", "Takes 100 seconds — extremely efficient", "Use gems to speed this up if available"] },
-          { type: "subtitle", text: "Best Gem Value" },
-          { type: "list", items: ["Piggy bank offer", "Limited-time deals on the side menu"] },
-        ]
-      },
-      {
-        title: "Tropical Island — When Unlocked",
-        content: [
-          { type: "list", items: ["Immediately start farming Feathers and Coffee beans", "Coffee beans are the wheat equivalent on Tropical Island", "Still produce a variety of items for tasks"] },
-        ]
-      },
-      {
-        title: "Fishing & Guilds",
-        content: [
-          { type: "list", items: ["Once unlocked, always fish — gives XP and points to buy materials/crops", "Tap slightly in front of the fish's direction to instantly grab its attention"] },
-          { type: "tip", text: "Join a high-level active guild — use coupons to help their deliveries and gain more XP than helping yourself." },
-        ]
-      },
-      {
-        title: "Late Game Strategy",
-        content: [
-          { type: "list", items: ["After Town Hall level 3: Stop destroy/rebuild temporarily", "Save gold for expensive future upgrades (can exceed 1M gold total)", "Focus on farm expansions and upgrades", "Use Hot Deals/Daily Deals shop sections to buy hard-to-produce items"] },
-          { type: "tip", text: "At level 25-26 you can restart the destroy/rebuild XP farming strategy if you have enough gold." },
-        ]
-      },
-      {
-        title: "Free Resources",
-        content: [
-          { type: "list", items: ["Tap the dog to watch ads for free resources", "Claim free gift from their website", "Use the offerwall tab in-game shop — 'Lotsa Slots' offer recommended for free gems"] },
-        ]
-      },
-    ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-    ],
-  },
+  }
 ];
