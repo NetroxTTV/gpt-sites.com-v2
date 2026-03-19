@@ -87,7 +87,7 @@ export const guides = [
     slug: "chime",
     title: "Chime",
     banner: new URL("../imgs/guides/chime.png", import.meta.url).href,
-    category: "Finance / Banking",
+    category: "Finance / Crypto",
     platform: "Android / iOS / PC",
     genre: "Online Bank Account",
     offerwall: "RevU",
@@ -100,7 +100,7 @@ export const guides = [
         title: "Offer Overview",
         content: [
           { type: "callout", text: "A high-paying banking offer that requires opening an account and receiving a qualifying direct deposit." },
-          { type: "list", items: ["Category: Finance / Banking", "Offer: Chime", "Offerwall: RevU", "Platform: Android / iOS / PC", "Genre: Online Bank Account", "Difficulty: Medium", "Time Investment: About 10 minutes setup + waiting for deposit", "Money Requirement: $200 direct deposit", "Total Reward: $270-$300"] },
+          { type: "list", items: ["Category: Finance / Crypto", "Offer: Chime", "Offerwall: RevU", "Platform: Android / iOS / PC", "Genre: Online Bank Account", "Difficulty: Medium", "Time Investment: About 10 minutes setup + waiting for deposit", "Money Requirement: $200 direct deposit", "Total Reward: $270-$300"] },
         ]
       },
       {
@@ -143,7 +143,7 @@ export const guides = [
     slug: "sea-of-conquest",
     title: "Sea of Conquest",
     banner: new URL("../imgs/guides/sea_of_conquest/soc_banner.jpg", import.meta.url).href,
-    category: "Base-builder",
+    category: "Game",
     platform: "iOS / Android / PC",
     genre: "Strategy",
     offerwall: "Torox",
@@ -355,7 +355,7 @@ export const guides = [
     slug: "eatventure",
     title: "Eatventure",
     banner: new URL("../imgs/guides/eatventure_logo.jpeg", import.meta.url).href,
-    category: "Idle / Tycoon",
+    category: "Game",
     platform: "Android / iOS",
     genre: "Restaurant Idle",
     offerwall: "PrimeEarn",
