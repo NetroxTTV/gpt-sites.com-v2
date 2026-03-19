@@ -603,7 +603,7 @@ export default function Guides() {
             </div>
           </motion.div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 max-w-5xl mx-auto">
             {visibleGuides.length === 0 && (
               <div className="rounded-2xl border border-border/60 bg-card/70 p-10 text-center">
                 <h2 className="text-xl font-bold text-foreground mb-2">No guides found</h2>
