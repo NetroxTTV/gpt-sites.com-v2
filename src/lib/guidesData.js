@@ -577,5 +577,138 @@ export const guides = [
       { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
       { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
+  },
+  {
+    slug: "doordash-dasher",
+    title: "DoorDash: Legit Dasher Offer Guide",
+    banner: new URL("../imgs/guides/Doordash/doordash_banner.png", import.meta.url).href,
+    category: "Gig / Delivery",
+    platform: "Android / iOS",
+    genre: "Delivery Gig",
+    offerwall: "RevU / WaxRewards / Lootably",
+    difficulty: "Easy",
+    timeInvestment: "1-3 hours",
+    totalReward: "$35 - $80",
+    moneyInvestment: "$0",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "callout", text: "DoorDash is a delivery gig offer where you get rewarded for signing up and completing your first delivery." },
+          {
+            type: "list",
+            items: [
+              "Category: Gig / Delivery",
+              "Offer: DoorDash (Dasher)",
+              "Platform: Android / iOS",
+              "Offerwall: RevU / WaxRewards / Lootably",
+              "Total Reward: $35 - $80 (varies by region)",
+              "Difficulty: Easy",
+              "Time Investment: 1-3 hours",
+              "Money Investment: $0"
+            ]
+          },
+        ]
+      },
+      {
+        title: "How to Qualify",
+        content: [
+          {
+            type: "steps",
+            items: [
+              "Register as a new Dasher account.",
+              "Complete identity verification.",
+              "Pass background check if required.",
+              "Choose a delivery method available in your area."
+            ]
+          },
+          { type: "subtitle", text: "Delivery Method Options" },
+          {
+            type: "list",
+            items: [
+              "Car",
+              "Bike (available in certain cities; may not require a driver's license, but ID verification is still required)."
+            ]
+          },
+        ]
+      },
+      {
+        title: "Complete the Requirements",
+        content: [
+          { type: "list", items: ["Complete at least 1 delivery."] },
+          { type: "subtitle", text: "To Complete Safely and Quickly" },
+          {
+            type: "list",
+            items: [
+              "Accept short-distance deliveries.",
+              "Deliver the order normally.",
+              "Mark as delivered only after completing the delivery properly."
+            ]
+          },
+        ]
+      },
+      {
+        title: "Fast Completion Tips",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Work during lunch or dinner rush.",
+              "Stay near busy restaurant areas.",
+              "Keep app tracking enabled.",
+              "Avoid declining too many orders."
+            ]
+          },
+        ]
+      },
+      {
+        title: "Crediting Time",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Usually credits after required deliveries are completed.",
+              "Can take a few hours up to a few days depending on the offerwall."
+            ]
+          },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Cost: $0",
+              "Reward: $35 - $80",
+              "Extra: You also keep delivery earnings + tips",
+              "Net Profit: Full reward + delivery pay"
+            ]
+          },
+        ]
+      },
+      {
+        title: "Important",
+        content: [
+          { type: "warning", text: "Do not attempt fake or manipulated deliveries." },
+          {
+            type: "list",
+            items: [
+              "Must be a new user.",
+              "Follow all DoorDash policies to avoid bans or chargebacks."
+            ]
+          },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
   }
 ];
