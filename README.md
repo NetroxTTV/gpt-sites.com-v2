@@ -1,6 +1,8 @@
 # GPT Sites
 
-Application React + Vite autonome, exécutable en local sans dépendance externe d'API.
+Site web fait en React + Vite, exécutable en local sans dépendance externe d'API.
+
+But du site : 
 
 ## Lancer en local
 
