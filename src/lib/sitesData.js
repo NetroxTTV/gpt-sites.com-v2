@@ -61,7 +61,7 @@ export const featuredSites = [
 
 export const allOfferwalls = [
   "adgate", "adgem", "adscend", "adtowall", "ayet", "ayetstudios",
-  "gemiwall", "hangmyads", "lootably", "mmwall", "monlix", "myChips",
+  "bitlabs", "gemiwall", "hangmyads", "lootably", "mmwall", "monlix", "myChips",
   "notik", "primeearn", "revu", "timewall", "torox", "waxrewards",
 ];
 
@@ -75,6 +75,8 @@ export const allSites = [
   { name: "MoonMiles", description: "80% Rates | Fast Cashouts", logo_url: new URL("../imgs/Sites/moonmiles.png", import.meta.url).href, visit_url: "https://moonmiles.io/r/netrox", badge: "new", rating: 5, rates: 80, offerwalls: ["torox", "revu", "ayet", "adtowall", "lootably", "adscend"] },
   { name: "RewardFlow", description: "New GPT Site | Multiple Offerwalls", logo_url: new URL("../imgs/Sites/rewardflow.png", import.meta.url).href, visit_url: "https://rewardflow.me/?ref=NETROX", badge: "new", rating: 5, rates: 65, offerwalls: ["torox", "adscend", "notik", "timewall", "adtowall", "lootably", "mmwall", "gemiwall"] },
   { name: "CashTask", description: "85% Rates on Offerwalls | Instant Cashouts", logo_url: new URL("../imgs/Sites/cashtask.webp", import.meta.url).href, visit_url: "https://cashtask.net/r/47CWX93", badge: "popular", rating: 5, rates: 85, offerwalls: ["gemiwall", "waxrewards", "lootably", "adtowall", "monlix", "notik", "mmwall"] },
+  { name: "Pawns", description: "85% Rates | Strong Offerwall Coverage", logo_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfUS8t48RNND8suutXMQHX6s01TuLHkgUlMw&s", visit_url: "https://pawns.app/?r=19345226", badge: "new", rating: 5, rates: 85, offerwalls: ["primeearn", "bitlabs"] },
+  { name: "Cash Center", description: "75% Rates | Timewall + Notik Offers", logo_url: "https://www.google.com/s2/favicons?domain=cash-center.fun&sz=128", visit_url: "https://cash-center.fun/ref/45d492d1", badge: "new", rating: 5, rates: 75, offerwalls: ["timewall", "notik"] },
   { name: "Chequity", description: "80% Rates | Simple Website", logo_url: new URL("../imgs/Sites/cheq.png", import.meta.url).href, visit_url: "https://chequity.io/r/128BDC40", badge: "popular", rating: 5, rates: 80, offerwalls: ["torox", "ayetstudios", "revu", "adscend", "adgate", "adgem", "adtowall", "mmwall", "hangmyads", "lootably", "waxrewards"] },
   { name: "CashEarn", description: "80% Rates on Offerwalls", logo_url: new URL("../imgs/Sites/cashearn.webp", import.meta.url).href, visit_url: "https://cashearn.gg/r/8L3D1M7", badge: "popular", rating: 5, rates: 80, offerwalls: ["gemiwall", "waxrewards", "myChips", "adtowall", "ayet", "lootably", "notik"] },
   { name: "RBXFast", description: "80% Rates", logo_url: new URL("../imgs/Sites/rbxfast.webp", import.meta.url).href, visit_url: "https://rbxfast.com/r/netrox", badge: "popular", rating: 5, rates: 80, offerwalls: ["gemiwall", "adtowall", "waxrewards", "adscend", "lootably", "monlix", "myChips"] },

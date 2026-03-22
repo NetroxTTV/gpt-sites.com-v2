@@ -710,5 +710,186 @@ export const guides = [
       { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
       { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
+  },
+  {
+    slug: "helium-lyca-mobile-plans",
+    title: "Helium Mobile / Lyca Mobile : Quick Mobile Plan Offer Guide",
+    banner: "https://blog.heliummobile.com/content/images/size/w2000/2025/02/blogheader11-47ac2cbca8736072-4edc74faa0c21b9e.png",
+    category: "Mobile / Telecom",
+    platform: "Android / iOS / PC",
+    genre: "Mobile Carrier",
+    offerwall: "Offerwalls vary by region",
+    difficulty: "Easy",
+    timeInvestment: "10-15 minutes",
+    totalReward: "$30 total ($10 Helium + $20 Lyca)",
+    moneyInvestment: "$0-$5",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "callout", text: "Two simple mobile carrier offers that require signup and plan activation. Both are fast to complete and easy to qualify for." },
+          { type: "list", items: ["Category: Mobile / Telecom", "Offer: Helium Mobile / Lyca Mobile", "Platform: Android / iOS / PC", "Genre: Mobile Carrier", "Difficulty: Easy", "Time Investment: 10-15 minutes", "Money Investment: $0-$5", "Helium Reward: $10", "Lyca Reward: $20"] },
+        ]
+      },
+      {
+        title: "Helium Mobile",
+        content: [
+          { type: "image", src: "https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1400", alt: "Helium Mobile offer steps" },
+          { type: "text", text: "Helium Mobile is a carrier offering a free plan that rewards users. You install the app, share location data, and subscribe to a plan." },
+          { type: "subtitle", text: "How It Works" },
+          { type: "steps", items: ["Sign up for a new Helium Mobile account", "Install the app", "Enable location sharing", "Subscribe to one of their plans (free plan available, local taxes and fees may apply)"] },
+          { type: "subtitle", text: "Important Notes" },
+          { type: "list", items: ["Must be a new user", "Location sharing is required", "Some local taxes/fees may apply even on the free plan", "Do not cancel immediately before credit", "Reward: $10"] },
+        ]
+      },
+      {
+        title: "Lyca Mobile",
+        content: [
+          { type: "image", src: "https://images.pexels.com/photos/4526407/pexels-photo-4526407.jpeg?auto=compress&cs=tinysrgb&w=1400", alt: "Lyca Mobile plan activation" },
+          { type: "text", text: "Get 5GB data plus unlimited talk and text for $5/month for 3 months, with free SIM card and free shipping. Unlimited calls to 110 countries with no credit check required." },
+          { type: "subtitle", text: "How It Works" },
+          { type: "steps", items: ["Sign up for a new Lyca Mobile account", "Order the SIM card", "Activate the $5/month plan", "Complete payment for the first month"] },
+          { type: "subtitle", text: "Important Notes" },
+          { type: "list", items: ["Must activate the SIM card", "New customers only", "Keep the line active until the offer credits", "Cancel later if you do not want to continue the plan", "Reward: $20"] },
+        ]
+      },
+      {
+        title: "Crediting Time",
+        content: [
+          { type: "list", items: ["Usually credits after plan activation", "May take a few hours to a few days depending on the offerwall"] },
+        ]
+      },
+      {
+        title: "Quick Recap",
+        content: [
+          { type: "subtitle", text: "Helium" },
+          { type: "steps", items: ["Sign up", "Install app", "Enable location", "Subscribe to plan", "Get $10"] },
+          { type: "subtitle", text: "Lyca" },
+          { type: "steps", items: ["Sign up", "Order SIM", "Activate $5 plan", "Get $20"] },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          { type: "subtitle", text: "Helium" },
+          { type: "list", items: ["Cost: Free or small tax", "Reward: $10", "Net Profit: ~$8-10"] },
+          { type: "subtitle", text: "Lyca" },
+          { type: "list", items: ["Cost: $5", "Reward: $20", "Net Profit: ~$15"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "Pawns", url: "https://pawns.app/?r=19345226", desc: "85% Rates | PrimeEarn + BitLabs" },
+      { name: "Cash Center", url: "https://cash-center.fun/ref/45d492d1", desc: "75% Rates | Timewall + Notik" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
+    slug: "lords-mobile-fast-castle-25",
+    title: "Lords Mobile : Fast Castle 25 Guide",
+    banner: new URL("../imgs/guides/lords/lords.png", import.meta.url).href,
+    category: "Game",
+    platform: "Android",
+    genre: "Strategy / Builder",
+    offerwall: "PixyLabs",
+    difficulty: "Easy (with spending)",
+    timeInvestment: "~4 hours",
+    totalReward: "~$150",
+    moneyInvestment: "~$20",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "callout", text: "This is one of the fastest high-paying strategy game offers thanks to overpowered purchase packs. With the right method, Castle 25 can be reached in a few hours." },
+          { type: "list", items: ["Category: Game", "Offer: Lords Mobile", "Platform: Android", "Offerwall: PixyLabs", "Genre: Strategy / Builder", "Total Reward: ~$150", "Difficulty: Easy (with spending)", "Time Investment: ~4 hours", "Money Investment: ~$20"] },
+        ]
+      },
+      {
+        title: "How the Offer Works",
+        content: [
+          { type: "text", text: "You need to upgrade your Castle to Level 25." },
+          { type: "tip", text: "With the right packs and speedups, this can be done extremely quickly." },
+        ]
+      },
+      {
+        title: "Required Purchases",
+        content: [
+          { type: "subtitle", text: "Gift Packs" },
+          { type: "list", items: ["$0.99", "$1.99", "$2.99", "$3.99"] },
+          { type: "subtitle", text: "Builder Challenge Pack" },
+          { type: "list", items: ["$0.99"] },
+          { type: "callout", text: "These packs provide massive resources, speedups, and boost items. They usually appear naturally when resources start running out around Castle 23." },
+        ]
+      },
+      {
+        title: "Important Boosts",
+        content: [
+          { type: "steps", items: ["Buy the 2nd Builder Queue using gems (cheap and lasts 2 days)", "Always activate a 20% Construction Speed Boost before each major upgrade"] },
+        ]
+      },
+      {
+        title: "Upgrade Method (Core Strategy)",
+        content: [
+          { type: "steps", items: ["Start the Castle upgrade", "Use all speedups", "When speedups run out, use gems to finish instantly", "Repeat all the way to Castle 25"] },
+        ]
+      },
+      {
+        title: "Hero Talents (Very Important)",
+        content: [
+          { type: "list", items: ["Put ALL talent points into the Construction tree", "Unlock both construction sections", "Maximize build speed reduction"] },
+          { type: "tip", text: "This talent setup massively reduces upgrade times." },
+        ]
+      },
+      {
+        title: "Resource Management",
+        content: [
+          { type: "list", items: ["Only upgrade buildings required for Castle progression", "Do not waste resources on unnecessary upgrades", "Open resource chests only when needed"] },
+        ]
+      },
+      {
+        title: "Timing",
+        content: [
+          { type: "list", items: ["Early levels go very fast", "Around Castle 23 you usually need extra resources -> buy packs here", "Castle 23 to 25 is the main push"] },
+        ]
+      },
+      {
+        title: "Offer Steps (Screenshot Milestones)",
+        content: [
+          { type: "subtitle", text: "Hero Milestones" },
+          { type: "list", items: ["Engage 5 heros", "Engage 6 heros", "Engage 15 heros", "Engage 20 heros", "Engage 25 heros", "Engage 30 heros"] },
+          { type: "subtitle", text: "Level Milestones" },
+          { type: "list", items: ["Atteindre le niveau 5", "Atteindre le niveau 8", "Atteindre le niveau 10", "Atteindre le niveau 15", "Atteindre le niveau 22", "Atteindre le niveau 25", "Atteindre le niveau 30"] },
+        ]
+      },
+      {
+        title: "Crediting",
+        content: [
+          { type: "list", items: ["Credits after reaching Castle 25", "Usually tracks quickly but can take extra time depending on the offerwall"] },
+        ]
+      },
+      {
+        title: "Quick Recap",
+        content: [
+          { type: "steps", items: ["Start the game and rush Castle upgrades", "Buy gift packs ($0.99 -> $3.99) and builder pack", "Unlock 2nd builder with gems", "Use 20% construction boost every time", "Use speedups then finish with gems", "Invest hero talents into construction", "Reach Castle 25 in about 4 hours"] },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          { type: "list", items: ["Spend: ~$20", "Reward: ~$150", "Net Profit: ~$130", "One of the best ROI offers if done correctly"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Pawns", url: "https://pawns.app/?r=19345226", desc: "85% Rates | PrimeEarn + BitLabs" },
+      { name: "Cash Center", url: "https://cash-center.fun/ref/45d492d1", desc: "75% Rates | Timewall + Notik" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
   }
 ];
