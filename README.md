@@ -1,6 +1,3 @@
-GPT Sites
-Discover the best Get Paid To sites, tips, and guides to maximize your online earnings.
-
 # GPT Sites
 
 ![GPT Sites](src/imgs/gptsites_readme.png)
