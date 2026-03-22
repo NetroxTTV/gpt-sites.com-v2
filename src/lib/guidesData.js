@@ -87,7 +87,7 @@ export const guides = [
     slug: "chime",
     title: "Chime",
     banner: new URL("../imgs/guides/chime.png", import.meta.url).href,
-    category: "Finance / Banking",
+    category: "Finance / Crypto",
     platform: "Android / iOS / PC",
     genre: "Online Bank Account",
     offerwall: "RevU",
@@ -100,7 +100,7 @@ export const guides = [
         title: "Offer Overview",
         content: [
           { type: "callout", text: "A high-paying banking offer that requires opening an account and receiving a qualifying direct deposit." },
-          { type: "list", items: ["Category: Finance / Banking", "Offer: Chime", "Offerwall: RevU", "Platform: Android / iOS / PC", "Genre: Online Bank Account", "Difficulty: Medium", "Time Investment: About 10 minutes setup + waiting for deposit", "Money Requirement: $200 direct deposit", "Total Reward: $270-$300"] },
+          { type: "list", items: ["Category: Finance / Crypto", "Offer: Chime", "Offerwall: RevU", "Platform: Android / iOS / PC", "Genre: Online Bank Account", "Difficulty: Medium", "Time Investment: About 10 minutes setup + waiting for deposit", "Money Requirement: $200 direct deposit", "Total Reward: $270-$300"] },
         ]
       },
       {
@@ -143,7 +143,7 @@ export const guides = [
     slug: "sea-of-conquest",
     title: "Sea of Conquest",
     banner: new URL("../imgs/guides/sea_of_conquest/soc_banner.jpg", import.meta.url).href,
-    category: "Base-builder",
+    category: "Game",
     platform: "iOS / Android / PC",
     genre: "Strategy",
     offerwall: "Torox",
@@ -352,10 +352,155 @@ export const guides = [
     ],
   },
   {
+    slug: "pokerist-games",
+    title: "Pokerist Games: High Payout Casino Guide (Up to $450)",
+    banner: new URL("../imgs/guides/pokerist.jpg", import.meta.url).href,
+    category: "Game",
+    platform: "Android / iOS",
+    genre: "Casino",
+    offerwall: "TYR / Torox",
+    difficulty: "Medium",
+    timeInvestment: "1-4 hours (Level 70 target)",
+    totalReward: "$100 - $450",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "callout", text: "Pokerist Games are one of the highest paying casino-style game offers." },
+          { type: "list", items: ["Available on many offerwalls", "Strongly recommended to complete on TYR or Torox due to lower chargeback risk", "Primary target for this guide: Level 70"] },
+        ]
+      },
+      {
+        title: "Tasks",
+        content: [
+          { type: "list", items: ["Complete Level 15", "Complete Level 30", "Complete Level 50", "Complete Level 70", "Complete Level 90"] },
+          { type: "warning", text: "Level 90 is considered nearly impossible without heavy spending. This guide focuses on reaching Level 70." },
+        ]
+      },
+      {
+        title: "Step 1: Use a Friend Code",
+        content: [
+          { type: "steps", items: ["Install the game", "Add a friend code immediately after starting", "Claim the bonus coins and keep them for XP methods"] },
+          { type: "callout", text: "Using a friend code gives 5M+ total coins. This starting boost is very important." },
+        ]
+      },
+      {
+        title: "Step 2: Roulette XP Method (Fast to Level 50)",
+        content: [
+          { type: "list", items: ["Spam Roulette early", "Bet on RED and BLACK at the same time", "This minimizes losses while still generating XP", "Continue this method until around Level 50"] },
+          { type: "tip", text: "Tracking tip: when you reach a task level, pause for a few minutes. Tracking can take up to 48 hours, so do not instantly close the game." },
+        ]
+      },
+      {
+        title: "Step 3: Level 70 Setup (Needs 2nd Phone or Friend)",
+        content: [
+          { type: "warning", text: "To reach Level 70 quickly, you will need either a second phone or a friend at a similar level." },
+          { type: "list", items: ["Without this setup, progression becomes very slow", "Prepare partner setup before pushing from Level 50 to 70"] },
+        ]
+      },
+      {
+        title: "Optional Boost (Recommended)",
+        content: [
+          { type: "list", items: ["If cashback is available, get a 70% discount coupon from the in-game pass", "Use it to buy 30M coins for around $3", "This massively speeds up the Level 70 push"] },
+        ]
+      },
+      {
+        title: "Step 4: Omaha XP Method (Fast Level 70)",
+        content: [
+          { type: "steps", items: ["Go to Omaha mode with your friend", "Player A goes ALL-IN, Player B folds", "Next hand, switch roles", "Repeat this cycle to farm XP quickly"] },
+          { type: "callout", text: "Example: You all-in 30M, friend folds. Next hand switch roles. With this method, Level 70 can be achieved in about 1 hour." },
+        ]
+      },
+      {
+        title: "Important Warning",
+        content: [
+          { type: "warning", text: "Do NOT go too fast. The game may ban accounts for suspicious behavior." },
+          { type: "list", items: ["If banned, you may lose progress", "Offerwall may charge back your reward", "Play naturally", "Take small pauses", "Avoid extreme rapid farming patterns"] },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          { type: "list", items: ["Recommended Goal: Level 70", "Estimated Spend: $0 - $3", "Potential Reward: $100 - $450", "Risk Level: Medium (tracking + chargeback risk)", "Very profitable offer if done carefully and on the right offerwall"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
+    slug: "genshin-impact",
+    title: "Genshin Impact: Easy $9 PC Offer Guide",
+    banner: new URL("../imgs/guides/genshin.jpeg", import.meta.url).href,
+    category: "Game",
+    platform: "PC",
+    genre: "RPG / Open World",
+    offerwall: "Ayet",
+    difficulty: "Very Easy",
+    timeInvestment: "20-30 minutes",
+    totalReward: "$9",
+    moneyInvestment: "$0",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "callout", text: "This is a very easy PC offer. You only need to complete the early tutorial and reach Adventure Level 6. Takes around 20-30 minutes total." },
+          { type: "list", items: ["Category: Game", "Offer: Genshin Impact", "Offerwall: Ayet", "Platform: PC", "Genre: RPG / Open World", "Total Reward: $9", "Difficulty: Very Easy", "Time Investment: 20-30 minutes", "Money Investment: $0"] },
+        ]
+      },
+      {
+        title: "Reward Breakdown",
+        content: [
+          { type: "list", items: ["Get the game on PC and create an account: $1.13", "Complete Character Level 5: $1.70", "Reach Adventure Level 2: $2.27", "Reach Adventure Level 6: $3.97", "Total: ~$9"] },
+        ]
+      },
+      {
+        title: "Step-by-Step Guide",
+        content: [
+          { type: "steps", items: ["Download Genshin Impact on PC", "Create a new account (new users only)", "Start the game and follow the tutorial"] },
+          { type: "callout", text: "To reach Adventure Rank 6, continue the main story until you unlock Lisa. This usually takes about 20 minutes." },
+        ]
+      },
+      {
+        title: "Fast XP Tips",
+        content: [
+          { type: "list", items: ["Unlock and activate Waypoints (teleport points) for easy Adventure EXP", "Open chests while exploring", "Complete early quest objectives instead of randomly fighting mobs"] },
+          { type: "tip", text: "You do not need to grind, spend money, or summon characters for this offer." },
+        ]
+      },
+      {
+        title: "Important Notes",
+        content: [
+          { type: "list", items: ["Must be a new PC account", "Do not use an old account", "Complete all steps in one session if possible"] },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          { type: "list", items: ["Time: ~20-30 minutes", "Cost: Free", "Reward: ~$9", "Difficulty: Very Easy", "Great quick PC offer with guaranteed completion"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Ayet availability may vary by region" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "Gain.gg", url: "https://gain.gg/r/netrox", desc: "70-80% Rates | Instant Cashouts" },
+      { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
     slug: "eatventure",
     title: "Eatventure",
     banner: new URL("../imgs/guides/eatventure_logo.jpeg", import.meta.url).href,
-    category: "Idle / Tycoon",
+    category: "Game",
     platform: "Android / iOS",
     genre: "Restaurant Idle",
     offerwall: "PrimeEarn",
@@ -430,6 +575,139 @@ export const guides = [
       { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
       { name: "Gain.gg", url: "https://gain.gg/r/netrox", desc: "70-80% Rates | Instant Cashouts" },
       { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
+    slug: "doordash-dasher",
+    title: "DoorDash: Legit Dasher Offer Guide",
+    banner: new URL("../imgs/guides/Doordash/doordash_banner.png", import.meta.url).href,
+    category: "Gig / Delivery",
+    platform: "Android / iOS",
+    genre: "Delivery Gig",
+    offerwall: "RevU / WaxRewards / Lootably",
+    difficulty: "Easy",
+    timeInvestment: "1-3 hours",
+    totalReward: "$35 - $80",
+    moneyInvestment: "$0",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "callout", text: "DoorDash is a delivery gig offer where you get rewarded for signing up and completing your first delivery." },
+          {
+            type: "list",
+            items: [
+              "Category: Gig / Delivery",
+              "Offer: DoorDash (Dasher)",
+              "Platform: Android / iOS",
+              "Offerwall: RevU / WaxRewards / Lootably",
+              "Total Reward: $35 - $80 (varies by region)",
+              "Difficulty: Easy",
+              "Time Investment: 1-3 hours",
+              "Money Investment: $0"
+            ]
+          },
+        ]
+      },
+      {
+        title: "How to Qualify",
+        content: [
+          {
+            type: "steps",
+            items: [
+              "Register as a new Dasher account.",
+              "Complete identity verification.",
+              "Pass background check if required.",
+              "Choose a delivery method available in your area."
+            ]
+          },
+          { type: "subtitle", text: "Delivery Method Options" },
+          {
+            type: "list",
+            items: [
+              "Car",
+              "Bike (available in certain cities; may not require a driver's license, but ID verification is still required)."
+            ]
+          },
+        ]
+      },
+      {
+        title: "Complete the Requirements",
+        content: [
+          { type: "list", items: ["Complete at least 1 delivery."] },
+          { type: "subtitle", text: "To Complete Safely and Quickly" },
+          {
+            type: "list",
+            items: [
+              "Accept short-distance deliveries.",
+              "Deliver the order normally.",
+              "Mark as delivered only after completing the delivery properly."
+            ]
+          },
+        ]
+      },
+      {
+        title: "Fast Completion Tips",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Work during lunch or dinner rush.",
+              "Stay near busy restaurant areas.",
+              "Keep app tracking enabled.",
+              "Avoid declining too many orders."
+            ]
+          },
+        ]
+      },
+      {
+        title: "Crediting Time",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Usually credits after required deliveries are completed.",
+              "Can take a few hours up to a few days depending on the offerwall."
+            ]
+          },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          {
+            type: "list",
+            items: [
+              "Cost: $0",
+              "Reward: $35 - $80",
+              "Extra: You also keep delivery earnings + tips",
+              "Net Profit: Full reward + delivery pay"
+            ]
+          },
+        ]
+      },
+      {
+        title: "Important",
+        content: [
+          { type: "warning", text: "Do not attempt fake or manipulated deliveries." },
+          {
+            type: "list",
+            items: [
+              "Must be a new user.",
+              "Follow all DoorDash policies to avoid bans or chargebacks."
+            ]
+          },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
       { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
   }

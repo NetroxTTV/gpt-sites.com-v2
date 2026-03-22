@@ -5,10 +5,19 @@ import { defineConfig } from 'vite'
 // https://vite.dev/config/
 export default defineConfig({
   logLevel: 'error', // Suppress warnings, only show errors
+  server: {
+    host: '0.0.0.0',
+    port: 10000,
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
+  },
+  preview: {
+    host: '0.0.0.0',
+    port: 10000,
+    allowedHosts: ['gpt-sites.com'],
   },
   plugins: [
     react(),

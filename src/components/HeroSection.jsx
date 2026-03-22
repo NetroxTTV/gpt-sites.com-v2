@@ -73,7 +73,7 @@ export default function HeroSection() {
           <a href="https://rewardflow.me/?ref=NETROX" target="_blank" rel="noopener noreferrer" className="block">
             <div className="relative rounded-2xl overflow-hidden border border-border/30 hover:border-primary/30 transition-all duration-300 max-w-xl mx-auto group">
               <img
-                src={new URL("../imgs/rewardflow_banner.png", import.meta.url).href}
+                src={new URL("../imgs/Sites/rewardflow_banner.png", import.meta.url).href}
                 alt="RewardFlow - Get Paid To Play Games"
                 className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
               />
