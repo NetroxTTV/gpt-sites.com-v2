@@ -61,7 +61,7 @@ export default function Sites() {
   return (
     <div className="min-h-screen bg-background font-inter">
       <Navbar />
-      <div className="pt-24 pb-20 px-4 sm:px-6">
+      <div className="pt-16 pb-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <Link to="/">
             <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground hover:text-foreground mb-8">
@@ -81,7 +81,7 @@ export default function Sites() {
           </motion.div>
 
           {/* Filters row */}
-          <div className="flex flex-col sm:flex-row gap-3 mb-4 flex-wrap items-start rounded-2xl border border-border/55 bg-card/65 backdrop-blur-sm p-3 sm:p-4 shadow-[0_12px_28px_rgba(232,108,155,0.12)]">
+          <div className="relative z-40 flex flex-col sm:flex-row gap-3 mb-4 flex-wrap items-start rounded-2xl border border-border/55 bg-card/65 backdrop-blur-sm p-3 sm:p-4 shadow-[0_12px_28px_rgba(232,108,155,0.12)]">
             {/* Search */}
             <div className="relative min-w-[200px] max-w-sm w-full sm:w-auto">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -108,7 +108,7 @@ export default function Sites() {
               </button>
 
               {dropdownOpen && (
-                <div className="absolute top-full mt-2 left-0 z-50 bg-card border border-border/55 rounded-xl shadow-[0_14px_30px_rgba(232,108,155,0.2)] py-2 min-w-[200px] max-h-72 overflow-y-auto">
+                <div className="absolute top-full mt-2 left-0 z-[70] bg-card border border-border/55 rounded-xl shadow-[0_14px_30px_rgba(232,108,155,0.2)] py-2 min-w-[200px] max-h-72 overflow-y-auto">
                   <button
                     className="w-full text-left px-4 py-2 text-sm text-muted-foreground hover:bg-secondary/50 hover:text-foreground transition-colors"
                     onClick={() => { setSelectedOfferwalls([]); }}

@@ -52,7 +52,7 @@ export default function Tips() {
   return (
     <div className="min-h-screen bg-background font-inter">
       <Navbar />
-      <div className="pt-24 pb-20 px-4 sm:px-6 max-w-4xl mx-auto">
+      <div className="pt-16 pb-20 px-4 sm:px-6 max-w-4xl mx-auto">
         <a href="/">
           <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground hover:text-foreground mb-8">
             <ArrowLeft className="w-4 h-4" />
