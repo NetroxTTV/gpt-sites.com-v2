@@ -4,32 +4,58 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
+  const petals = [
+    { left: "8%", size: "11px", duration: "10s", delay: "0s" },
+    { left: "18%", size: "14px", duration: "13s", delay: "-3s" },
+    { left: "28%", size: "10px", duration: "11s", delay: "-6s" },
+    { left: "42%", size: "13px", duration: "12s", delay: "-1.5s" },
+    { left: "55%", size: "12px", duration: "14s", delay: "-5s" },
+    { left: "67%", size: "10px", duration: "10.5s", delay: "-2s" },
+    { left: "79%", size: "13px", duration: "13.5s", delay: "-7s" },
+    { left: "90%", size: "11px", duration: "12s", delay: "-4s" },
+  ];
+
   return (
-    <section id="home" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-16">
+    <section id="home" className="relative min-h-[74vh] md:min-h-[82vh] flex items-start md:items-center justify-center overflow-hidden pt-16 md:pt-12">
       {/* Gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/16 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[15%] right-[10%] w-[340px] h-[340px] bg-rose-200/40 rounded-full blur-[90px] pointer-events-none" />
+
+      {petals.map((petal, index) => (
+        <span
+          key={index}
+          aria-hidden="true"
+          className="sakura-petal"
+          style={{
+            "--petal-left": petal.left,
+            "--petal-size": petal.size,
+            "--petal-duration": petal.duration,
+            "--petal-delay": petal.delay,
+          }}
+        />
+      ))}
       
       {/* Grid pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)',
-        backgroundSize: '60px 60px'
+      <div className="absolute inset-0 opacity-[0.06]" style={{
+        backgroundImage: 'linear-gradient(hsl(var(--primary) / 0.15) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.15) 1px, transparent 1px)',
+        backgroundSize: '56px 56px'
       }} />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center pt-10">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 text-center pt-3 md:pt-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-8 shadow-sm shadow-primary/10">
             <Sparkles className="w-4 h-4 text-primary" />
             <span className="text-sm font-medium text-primary">Your #1 GPT Resource</span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-tight mb-6">
             <span className="text-foreground">Best </span>
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-rose-500 to-accent bg-clip-text text-transparent">
               Get Paid To
             </span>
             <br />
@@ -47,7 +73,7 @@ export default function HeroSection() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#sites" onClick={(e) => { e.preventDefault(); document.getElementById('sites')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base font-semibold rounded-xl gap-2 shadow-lg shadow-primary/25">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base font-semibold rounded-xl gap-2 shadow-lg shadow-primary/20">
                 Browse Sites
                 <ArrowDown className="w-4 h-4" />
               </Button>
@@ -71,7 +97,7 @@ export default function HeroSection() {
           className="mt-16"
         >
           <a href="https://rewardflow.me/?ref=NETROX" target="_blank" rel="noopener noreferrer" className="block">
-            <div className="relative rounded-2xl overflow-hidden border border-border/30 hover:border-primary/30 transition-all duration-300 max-w-xl mx-auto group">
+            <div className="relative rounded-2xl overflow-hidden border border-border/40 hover:border-primary/35 transition-all duration-300 max-w-xl mx-auto group shadow-[0_8px_28px_rgba(236,72,153,0.1)]">
               <img
                 src={new URL("../imgs/Sites/rewardflow_banner.png", import.meta.url).href}
                 alt="RewardFlow - Get Paid To Play Games"

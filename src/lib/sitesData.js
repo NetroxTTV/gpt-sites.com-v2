@@ -9,8 +9,8 @@ export const featuredSites = [
     rank: 1,
     rating: 5,
     features: ["Instant payments", "Sign up bonus", "Referral program", "Worldwide"],
-    details: { pay_time: "A few minutes", min_withdraw: "$0.50", min_age: "18" },
-    rewards: ["PayPal", "Bitcoin", "Litecoin", "Gift Cards"],
+    details: { pay_time: "A few minutes", min_withdraw: "$0.50", min_age: "16" },
+    rewards: ["PayPal", "Bitcoin", "Litecoin", "Gift Cards", "Gamdom"],
   },
   {
     name: "CashInStyle",
@@ -20,8 +20,8 @@ export const featuredSites = [
     rank: 2,
     rating: 5,
     features: ["Instant payments", "Sign up bonus", "Referral program", "Worldwide"],
-    details: { pay_time: "24 hours", min_withdraw: "$2.00", min_age: "13" },
-    rewards: ["PayPal", "Bitcoin", "Litecoin"],
+    details: { pay_time: "24 hours", min_withdraw: "$2.00", min_age: "16" },
+    rewards: ["PayPal", "Bitcoin", "Litecoin", "Gift Cards"],
   },
   {
     name: "GemsLoot",
@@ -33,7 +33,7 @@ export const featuredSites = [
     rating: 5,
     features: ["Instant payments", "Sign up bonus", "Referral program", "Worldwide"],
     details: { pay_time: "Within 12 hours", min_withdraw: "$0.50", min_age: "16" },
-    rewards: ["PayPal", "Bitcoin", "Litecoin", "Amazon"],
+    rewards: ["PayPal", "Bitcoin", "Litecoin", "Amazon", "Roobet"],
   },
   {
     name: "Earnopolis",
@@ -54,7 +54,7 @@ export const featuredSites = [
     rank: 5,
     rating: 5,
     features: ["High site bonuses", "Many offerwalls", "Fast payments", "Worldwide"],
-    details: { pay_time: "Within 24 hours", min_withdraw: "$0.50", min_age: "18" },
+    details: { pay_time: "Within 24 hours", min_withdraw: "$0.50", min_age: "16" },
     rewards: ["PayPal", "Bitcoin", "Litecoin", "Gift Cards"],
   },
 ];
@@ -62,14 +62,14 @@ export const featuredSites = [
 export const allOfferwalls = [
   "adgate", "adgem", "adscend", "adtowall", "ayet", "ayetstudios",
   "bitlabs", "gemiwall", "hangmyads", "lootably", "mmwall", "monlix", "myChips",
-  "notik", "primeearn", "revu", "timewall", "torox", "waxrewards",
+  "notik", "primeearn", "pixylabs", "revu", "timewall", "torox", "waxrewards",
 ];
 
 // ALL sites (featured + others) for the /Sites page
 export const allSites = [
   { name: "Earnlab", description: "80-90% Rates | Highest Paying Website", logo_url: new URL("../imgs/Sites/earnlab.png", import.meta.url).href, visit_url: "https://earnlab.com/r/netrox", badge: "top1", bonus_tag: "Gamdom +25%", rating: 5, rates: 90, offerwalls: ["primeearn", "torox", "ayetstudios", "revu", "adscend", "adgate", "adgem", "adtowall", "mmwall", "hangmyads", "lootably"] },
   { name: "CashinStyle", description: "90% Rates | Highest Paying Offerwalls", logo_url: new URL("../imgs/Sites/cis.svg", import.meta.url).href, visit_url: "https://cashinstyle.com/?ref=NETROX", badge: "top2", rating: 5, rates: 90, offerwalls: ["primeearn", "torox", "ayetstudios", "revu", "adscend", "adgate", "adgem", "adtowall", "mmwall", "hangmyads", "lootably"] },
-  { name: "GemsLoot", description: "65-95% Rates | Instant Cashouts & Exclusive Offers", logo_url: new URL("../imgs/Sites/gemsloot.jpg", import.meta.url).href, visit_url: "https://gemsloot.com/?aff=netrox", badge: "top3", bonus_tag: "Roobet +20%", rating: 5, rates: 75, offerwalls: ["primeearn", "torox", "ayetstudios", "revu", "adscend", "adgate", "adgem", "adtowall", "mmwall", "hangmyads", "lootably", "waxrewards"] },
+  { name: "GemsLoot", description: "65-95% Rates | Instant Cashouts & Exclusive Offers", logo_url: new URL("../imgs/Sites/gemsloot.jpg", import.meta.url).href, visit_url: "https://gemsloot.com/?aff=netrox", badge: "top3", bonus_tag: "Roobet +20%", rating: 5, rates: 75, offerwalls: ["primeearn", "torox", "ayetstudios", "revu", "adscend", "adgate", "adgem", "adtowall", "mmwall", "hangmyads", "lootably", "waxrewards", "pixylabs"] },
   { name: "Earnopolis", description: "95% Rates | Fast Cashouts & Exclusive Offers", logo_url: new URL("../imgs/Sites/earnopolis.webp", import.meta.url).href, visit_url: "https://earnopolis.com/r/?r=netrox", badge: "top4", rating: 5, rates: 95, offerwalls: ["primeearn", "torox", "myChips", "ayet", "adscend", "timewall"] },
   { name: "CoinPayU", description: "80-85% Rates | High Site Bonuses", logo_url: new URL("../imgs/Sites/coinpayu.gif", import.meta.url).href, visit_url: "https://www.coinpayu.com/?r=Netrox", badge: "top5", rating: 5, rates: 75, offerwalls: ["primeearn", "adgate", "torox", "ayetstudios", "mmwall", "hangmyads", "lootably"] },
   { name: "MoonMiles", description: "80% Rates | Fast Cashouts", logo_url: new URL("../imgs/Sites/moonmiles.png", import.meta.url).href, visit_url: "https://moonmiles.io/r/netrox", badge: "new", rating: 5, rates: 80, offerwalls: ["torox", "revu", "ayet", "adtowall", "lootably", "adscend"] },

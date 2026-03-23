@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,75 +6,75 @@
 
 @layer base {
   :root {
-    --font-inter: 'Inter', sans-serif;
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 47% 6%;
-    --secondary: 222 47% 14%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 222 47% 14%;
-    --muted-foreground: 215 20% 55%;
-    --accent: 250 80% 65%;
-    --accent-foreground: 210 40% 98%;
+    --font-inter: 'M PLUS Rounded 1c', sans-serif;
+    --background: 345 58% 97%;
+    --foreground: 345 24% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 345 24% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 345 24% 18%;
+    --primary: 340 73% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 342 48% 93%;
+    --secondary-foreground: 345 24% 25%;
+    --muted: 342 45% 94%;
+    --muted-foreground: 344 18% 43%;
+    --accent: 18 72% 63%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 222 47% 16%;
-    --input: 222 47% 16%;
-    --ring: 217 91% 60%;
-    --chart-1: 217 91% 60%;
-    --chart-2: 250 80% 65%;
-    --chart-3: 160 60% 45%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --border: 345 34% 86%;
+    --input: 345 34% 86%;
+    --ring: 340 73% 54%;
+    --chart-1: 340 73% 54%;
+    --chart-2: 18 72% 63%;
+    --chart-3: 196 58% 48%;
+    --chart-4: 45 82% 57%;
+    --chart-5: 320 44% 52%;
     --radius: 0.75rem;
-    --sidebar-background: 222 47% 6%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 217 91% 60%;
+    --sidebar-background: 345 58% 97%;
+    --sidebar-foreground: 345 24% 18%;
+    --sidebar-primary: 340 73% 54%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 47% 14%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 222 47% 16%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-accent: 342 48% 93%;
+    --sidebar-accent-foreground: 345 24% 25%;
+    --sidebar-border: 345 34% 86%;
+    --sidebar-ring: 340 73% 54%;
   }
 
   .dark {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 222 47% 6%;
-    --secondary: 222 47% 14%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 222 47% 14%;
-    --muted-foreground: 215 20% 55%;
-    --accent: 250 80% 65%;
-    --accent-foreground: 210 40% 98%;
+    --background: 345 58% 97%;
+    --foreground: 345 24% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 345 24% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 345 24% 18%;
+    --primary: 340 73% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 342 48% 93%;
+    --secondary-foreground: 345 24% 25%;
+    --muted: 342 45% 94%;
+    --muted-foreground: 344 18% 43%;
+    --accent: 18 72% 63%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 222 47% 16%;
-    --input: 222 47% 16%;
-    --ring: 217 91% 60%;
-    --chart-1: 217 91% 60%;
-    --chart-2: 250 80% 65%;
-    --chart-3: 160 60% 45%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --sidebar-background: 222 47% 6%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 217 91% 60%;
+    --border: 345 34% 86%;
+    --input: 345 34% 86%;
+    --ring: 340 73% 54%;
+    --chart-1: 340 73% 54%;
+    --chart-2: 18 72% 63%;
+    --chart-3: 196 58% 48%;
+    --chart-4: 45 82% 57%;
+    --chart-5: 320 44% 52%;
+    --sidebar-background: 345 58% 97%;
+    --sidebar-foreground: 345 24% 18%;
+    --sidebar-primary: 340 73% 54%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 47% 14%;
-    --sidebar-accent-foreground: 210 40% 98%;
-    --sidebar-border: 222 47% 16%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-accent: 342 48% 93%;
+    --sidebar-accent-foreground: 345 24% 25%;
+    --sidebar-border: 345 34% 86%;
+    --sidebar-ring: 340 73% 54%;
   }
 }
 
@@ -85,6 +85,12 @@
 
   body {
     @apply bg-background text-foreground font-inter;
+    background-image:
+      radial-gradient(circle at 8% 14%, rgba(255, 153, 191, 0.2) 0, transparent 28%),
+      radial-gradient(circle at 88% 22%, rgba(255, 196, 174, 0.18) 0, transparent 30%),
+      radial-gradient(circle at 22% 84%, rgba(255, 153, 191, 0.14) 0, transparent 34%),
+      linear-gradient(180deg, #fff7fb 0%, #fffaf6 50%, #fff6fb 100%);
+    background-attachment: fixed;
   }
 }
 
@@ -93,14 +99,44 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(222 47% 6%);
+  background: #fde8f1;
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(222 47% 16%);
+  background: #f6a8c4;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(222 47% 22%);
+  background: #ea7ea8;
+}
+
+@keyframes sakura-drift {
+  0% {
+    transform: translate3d(0, -8vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(16vw, 78vh, 0) rotate(340deg);
+    opacity: 0;
+  }
+}
+
+@keyframes sakura-sheen {
+  0%,
+  18% {
+    transform: translateX(-130%);
+    opacity: 0;
+  }
+  32% {
+    opacity: 0.45;
+  }
+  52%,
+  100% {
+    transform: translateX(130%);
+    opacity: 0;
+  }
 }
 
 @keyframes casino-tag-float {
@@ -155,16 +191,65 @@
   }
 
   .casino-tag-roobet {
-    background: linear-gradient(135deg, rgba(91, 33, 182, 0.45), rgba(124, 58, 237, 0.3));
-    border-color: rgba(167, 139, 250, 0.58);
-    color: #ede9fe;
-    box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.2), 0 0 16px rgba(124, 58, 237, 0.25);
+    background: linear-gradient(135deg, rgba(219, 39, 119, 0.3), rgba(236, 72, 153, 0.18));
+    border-color: rgba(236, 72, 153, 0.45);
+    color: #831843;
+    box-shadow: 0 0 0 1px rgba(236, 72, 153, 0.18), 0 0 16px rgba(236, 72, 153, 0.16);
   }
 
   .casino-tag-stake {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.28), rgba(52, 211, 153, 0.2));
-    border-color: rgba(74, 222, 128, 0.55);
-    color: #ddffe9;
-    box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.2), 0 0 16px rgba(16, 185, 129, 0.2);
+    background: linear-gradient(135deg, rgba(251, 146, 60, 0.3), rgba(253, 186, 116, 0.18));
+    border-color: rgba(251, 146, 60, 0.45);
+    color: #7c2d12;
+    box-shadow: 0 0 0 1px rgba(251, 146, 60, 0.2), 0 0 16px rgba(251, 146, 60, 0.15);
+  }
+
+  .sakura-petal {
+    position: absolute;
+    top: -3rem;
+    width: var(--petal-size, 12px);
+    height: calc(var(--petal-size, 12px) * 0.78);
+    border-radius: 70% 70% 70% 70% / 95% 95% 55% 55%;
+    background: radial-gradient(circle at 26% 24%, rgba(255, 255, 255, 0.8) 0 18%, rgba(255, 193, 214, 0.85) 30%, rgba(245, 127, 167, 0.95) 100%);
+    filter: drop-shadow(0 6px 10px rgba(232, 108, 155, 0.22));
+    transform-origin: center;
+    animation: sakura-drift var(--petal-duration, 12s) linear infinite;
+    animation-delay: var(--petal-delay, 0s);
+    left: var(--petal-left, 10%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .sakura-glass {
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.72), rgba(255, 241, 247, 0.72));
+    border-color: rgba(234, 172, 197, 0.45);
+    box-shadow: 0 10px 32px rgba(232, 108, 155, 0.08);
+  }
+
+  .sakura-border-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sakura-border-sheen::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(236, 72, 153, 0.65) 52%, transparent 100%);
+    transform: translateX(-130%);
+    animation: sakura-sheen 7s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .sakura-link {
+    color: hsl(var(--muted-foreground));
+    transition: color 220ms ease;
+  }
+
+  .sakura-link:hover {
+    color: hsl(var(--primary));
   }
 }
