@@ -12,6 +12,9 @@ import { cn } from "@/lib/utils";
 const UiButton = /** @type {any} */ (Button);
 const UiInput = /** @type {any} */ (Input);
 
+const FILTER_ACTIVE_CLASS = "bg-primary/12 text-primary border-primary/35 shadow-sm shadow-primary/15";
+const FILTER_IDLE_CLASS = "bg-background/85 border-border/45 text-muted-foreground hover:text-foreground hover:border-primary/30";
+
 const GUIDE_BATCH_SIZE = 9;
 const SORT_OPTIONS = [
   { value: "best-match", label: "Best Match" },
@@ -312,8 +315,8 @@ export default function Guides() {
     cn(
       "w-full flex items-center justify-between gap-2 px-4 py-2 rounded-lg border text-sm font-medium transition-all",
       isActive
-        ? "bg-primary/10 text-primary border-primary/30"
-        : "bg-card border-border/40 text-muted-foreground hover:text-foreground hover:border-primary/30"
+        ? FILTER_ACTIVE_CLASS
+        : FILTER_IDLE_CLASS
     );
 
   return (
@@ -322,27 +325,29 @@ export default function Guides() {
       <div className="pt-24 pb-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-4">
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/25 mb-4">
               Offer Guide Finder
             </span>
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
               <div>
-                <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-3">Find The Right Guide Fast</h1>
+                <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-3">
+                  <span className="bg-gradient-to-r from-primary via-rose-500 to-accent bg-clip-text text-transparent">Find The Right Guide Fast</span>
+                </h1>
                 <p className="text-muted-foreground max-w-2xl">
                   Search by game, filter by difficulty and offerwall, then sort by what matters most. This layout scales cleanly even when your guide library grows to 30+ entries.
                 </p>
               </div>
 
               <div className="grid grid-cols-3 gap-2 sm:gap-3 w-full lg:w-auto">
-                <div className="rounded-xl border border-border/50 bg-card/70 px-3 py-2 min-w-[96px]">
+                <div className="rounded-xl border border-border/50 bg-card/80 px-3 py-2 min-w-[96px] shadow-sm shadow-primary/10">
                   <p className="text-[11px] uppercase tracking-wide text-muted-foreground">Guides</p>
                   <p className="text-lg font-bold text-foreground">{guides.length}</p>
                 </div>
-                <div className="rounded-xl border border-border/50 bg-card/70 px-3 py-2 min-w-[96px]">
+                <div className="rounded-xl border border-border/50 bg-card/80 px-3 py-2 min-w-[96px] shadow-sm shadow-primary/10">
                   <p className="text-[11px] uppercase tracking-wide text-muted-foreground">Categories</p>
                   <p className="text-lg font-bold text-foreground">{categories.length - 1}</p>
                 </div>
-                <div className="rounded-xl border border-border/50 bg-card/70 px-3 py-2 min-w-[96px]">
+                <div className="rounded-xl border border-border/50 bg-card/80 px-3 py-2 min-w-[96px] shadow-sm shadow-primary/10">
                   <p className="text-[11px] uppercase tracking-wide text-muted-foreground">Offerwalls</p>
                   <p className="text-lg font-bold text-foreground">{offerwalls.length}</p>
                 </div>
@@ -354,7 +359,7 @@ export default function Guides() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05 }}
-            className="mb-8 rounded-2xl border border-border/50 bg-background/95 backdrop-blur p-4 sm:p-5 shadow-lg shadow-black/10 sticky top-20 z-20"
+            className="mb-8 rounded-2xl border border-border/55 bg-card/65 backdrop-blur p-4 sm:p-5 shadow-[0_14px_34px_rgba(232,108,155,0.14)] sticky top-8 z-10"
           >
             <div className="relative mb-4">
               <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
@@ -365,7 +370,7 @@ export default function Guides() {
                   setVisibleCount(GUIDE_BATCH_SIZE);
                 }}
                 placeholder="Search guides by title, platform, category, offerwall..."
-                className="pl-9 pr-10 bg-card/70 border-border/60"
+                className="pl-9 pr-10 bg-background/80 border-border/60"
               />
               {query && (
                 <button
@@ -394,7 +399,7 @@ export default function Guides() {
                   <ChevronDown className={cn("w-3.5 h-3.5 transition-transform", openDropdown === "category" && "rotate-180")} />
                 </button>
                 {openDropdown === "category" && (
-                  <div className="absolute top-full mt-2 left-0 right-0 z-50 bg-card border border-border/50 rounded-xl shadow-xl py-2 max-h-72 overflow-y-auto">
+                  <div className="absolute top-full mt-2 left-0 right-0 z-50 bg-card border border-border/55 rounded-xl shadow-[0_14px_30px_rgba(232,108,155,0.2)] py-2 max-h-72 overflow-y-auto">
                     {categories.map((category) => (
                       <button
                         key={category}
@@ -403,7 +408,7 @@ export default function Guides() {
                         className={cn(
                           "w-full text-left px-4 py-2 text-sm transition-colors",
                           selectedCategory === category
-                            ? "bg-primary/10 text-primary font-medium"
+                            ? "bg-primary/12 text-primary font-medium"
                             : "text-foreground hover:bg-secondary/50"
                         )}
                       >
@@ -425,7 +430,7 @@ export default function Guides() {
                   <ChevronDown className={cn("w-3.5 h-3.5 transition-transform", openDropdown === "difficulty" && "rotate-180")} />
                 </button>
                 {openDropdown === "difficulty" && (
-                  <div className="absolute top-full mt-2 left-0 right-0 z-50 bg-card border border-border/50 rounded-xl shadow-xl py-2 max-h-72 overflow-y-auto">
+                  <div className="absolute top-full mt-2 left-0 right-0 z-50 bg-card border border-border/55 rounded-xl shadow-[0_14px_30px_rgba(232,108,155,0.2)] py-2 max-h-72 overflow-y-auto">
                     {difficulties.map((difficulty) => (
                       <button
                         key={difficulty}
@@ -434,7 +439,7 @@ export default function Guides() {
                         className={cn(
                           "w-full text-left px-4 py-2 text-sm transition-colors",
                           selectedDifficulty === difficulty
-                            ? "bg-primary/10 text-primary font-medium"
+                            ? "bg-primary/12 text-primary font-medium"
                             : "text-foreground hover:bg-secondary/50"
                         )}
                       >
@@ -460,7 +465,7 @@ export default function Guides() {
                   <ChevronDown className={cn("w-3.5 h-3.5 transition-transform", openDropdown === "offerwall" && "rotate-180")} />
                 </button>
                 {openDropdown === "offerwall" && (
-                  <div className="absolute top-full mt-2 left-0 right-0 z-50 bg-card border border-border/50 rounded-xl shadow-xl py-2 max-h-72 overflow-y-auto">
+                  <div className="absolute top-full mt-2 left-0 right-0 z-50 bg-card border border-border/55 rounded-xl shadow-[0_14px_30px_rgba(232,108,155,0.2)] py-2 max-h-72 overflow-y-auto">
                     <button
                       type="button"
                       className="w-full text-left px-4 py-2 text-sm text-muted-foreground hover:bg-secondary/50 hover:text-foreground transition-colors"
@@ -483,7 +488,7 @@ export default function Guides() {
                           className={cn(
                             "w-full text-left px-4 py-2 text-sm transition-colors flex items-center gap-2",
                             isSelected
-                              ? "bg-primary/10 text-primary font-medium"
+                                ? "bg-primary/12 text-primary font-medium"
                               : "text-foreground hover:bg-secondary/50"
                           )}
                         >
@@ -514,7 +519,7 @@ export default function Guides() {
                   <ChevronDown className={cn("w-3.5 h-3.5 transition-transform", openDropdown === "sort" && "rotate-180")} />
                 </button>
                 {openDropdown === "sort" && (
-                  <div className="absolute top-full mt-2 left-0 right-0 z-50 bg-card border border-border/50 rounded-xl shadow-xl py-2 max-h-72 overflow-y-auto">
+                  <div className="absolute top-full mt-2 left-0 right-0 z-50 bg-card border border-border/55 rounded-xl shadow-[0_14px_30px_rgba(232,108,155,0.2)] py-2 max-h-72 overflow-y-auto">
                     {SORT_OPTIONS.map((option) => (
                       <button
                         key={option.value}
@@ -523,7 +528,7 @@ export default function Guides() {
                         className={cn(
                           "w-full text-left px-4 py-2 text-sm transition-colors",
                           sortBy === option.value
-                            ? "bg-primary/10 text-primary font-medium"
+                            ? "bg-primary/12 text-primary font-medium"
                             : "text-foreground hover:bg-secondary/50"
                         )}
                       >

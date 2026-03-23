@@ -60,11 +60,13 @@ export default function Tips() {
           </Button>
         </a>
 
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
-          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-4">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10 rounded-2xl border border-border/50 bg-card/65 backdrop-blur-sm p-5 sm:p-6 shadow-[0_14px_34px_rgba(232,108,155,0.12)]">
+          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/25 mb-4">
             Pro Tips
           </span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-3">Tips & Tricks</h1>
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-3">
+            <span className="bg-gradient-to-r from-primary via-rose-500 to-accent bg-clip-text text-transparent">Tips & Tricks</span>
+          </h1>
           <p className="text-muted-foreground max-w-xl">
             Proven strategies to maximize your GPT earnings and avoid common mistakes.
           </p>
@@ -77,10 +79,10 @@ export default function Tips() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.07 }}
-              className="bg-card border border-border/40 rounded-2xl p-5 hover:border-primary/30 transition-all duration-300"
+              className="bg-card/85 border border-border/45 rounded-2xl p-5 hover:border-primary/35 hover:shadow-[0_10px_26px_rgba(232,108,155,0.14)] transition-all duration-300"
             >
               <div className="flex items-start gap-4">
-                <span className="w-8 h-8 rounded-full bg-primary/20 text-primary text-sm font-bold flex items-center justify-center flex-shrink-0">
+                <span className="w-8 h-8 rounded-full bg-gradient-to-br from-primary/25 to-accent/25 text-primary text-sm font-bold flex items-center justify-center flex-shrink-0 border border-primary/25">
                   {tip.number}
                 </span>
                 <div>
@@ -96,7 +98,7 @@ export default function Tips() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="mt-10 p-5 rounded-2xl bg-primary/10 border border-primary/20 text-center"
+          className="mt-10 p-5 rounded-2xl bg-gradient-to-r from-primary/15 via-rose-400/10 to-accent/15 border border-primary/25 text-center shadow-[0_12px_30px_rgba(232,108,155,0.16)]"
         >
           <p className="text-sm text-foreground font-medium mb-2">Want more tips and exclusive strategies?</p>
           <a href="https://discord.gg/MTAWAsKDQu" target="_blank" rel="noopener noreferrer">

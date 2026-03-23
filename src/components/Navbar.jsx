@@ -30,11 +30,11 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/60 backdrop-blur-xl sakura-glass sakura-border-sheen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <a href="/Home" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-foreground">
+            <span className="text-xl font-bold text-foreground tracking-tight">
               GPT<span className="text-primary">Sites</span>
             </span>
           </a>
@@ -46,7 +46,7 @@ export default function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={(e) => handleFaqClick(e, link)}
-                className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-secondary/50"
+                className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-lg hover:bg-primary/10"
               >
                 {link.label}
               </a>
@@ -70,7 +70,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden p-2 text-muted-foreground hover:text-foreground"
+            className="md:hidden p-2 text-muted-foreground hover:text-primary"
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -80,12 +80,12 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 px-4 pb-4">
+        <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 px-4 pb-4 sakura-border-sheen">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="block px-3 py-3 text-sm font-medium text-muted-foreground hover:text-foreground border-b border-border/30"
+              className="block px-3 py-3 text-sm font-medium text-muted-foreground hover:text-primary border-b border-border/30"
               onClick={(e) => { handleFaqClick(e, link); setMobileOpen(false); }}
             >
               {link.label}

@@ -71,12 +71,17 @@ export default function Sites() {
           </Link>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-2">All GPT Sites</h1>
-            <p className="text-muted-foreground">{allSites.length} sites — find the best one for you</p>
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/25 mb-4">
+              Sakura Picks
+            </span>
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-2">
+              <span className="bg-gradient-to-r from-primary via-rose-500 to-accent bg-clip-text text-transparent">All GPT Sites</span>
+            </h1>
+            <p className="text-muted-foreground">{allSites.length} sites — find the best one for you this spring</p>
           </motion.div>
 
           {/* Filters row */}
-          <div className="flex flex-col sm:flex-row gap-3 mb-4 flex-wrap items-start">
+          <div className="flex flex-col sm:flex-row gap-3 mb-4 flex-wrap items-start rounded-2xl border border-border/55 bg-card/65 backdrop-blur-sm p-3 sm:p-4 shadow-[0_12px_28px_rgba(232,108,155,0.12)]">
             {/* Search */}
             <div className="relative min-w-[200px] max-w-sm w-full sm:w-auto">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -84,7 +89,7 @@ export default function Sites() {
                 placeholder="Search sites..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-10 bg-card border-border/50 focus:border-primary/50"
+                className="pl-10 bg-background/80 border-border/60 focus:border-primary/50"
               />
             </div>
 
@@ -94,8 +99,8 @@ export default function Sites() {
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-medium transition-all whitespace-nowrap ${
                   selectedOfferwalls.length > 0
-                    ? "bg-primary/10 text-primary border-primary/30"
-                    : "bg-card border-border/40 text-muted-foreground hover:text-foreground hover:border-primary/30"
+                    ? "bg-primary/12 text-primary border-primary/35 shadow-sm shadow-primary/15"
+                    : "bg-background/80 border-border/45 text-muted-foreground hover:text-foreground hover:border-primary/30"
                 }`}
               >
                 {selectedOfferwalls.length > 0 ? `${selectedOfferwalls.length} Offerwall${selectedOfferwalls.length > 1 ? "s" : ""} selected` : "Filter by Offerwall"}
@@ -103,7 +108,7 @@ export default function Sites() {
               </button>
 
               {dropdownOpen && (
-                <div className="absolute top-full mt-2 left-0 z-50 bg-card border border-border/50 rounded-xl shadow-xl py-2 min-w-[200px] max-h-72 overflow-y-auto">
+                <div className="absolute top-full mt-2 left-0 z-50 bg-card border border-border/55 rounded-xl shadow-[0_14px_30px_rgba(232,108,155,0.2)] py-2 min-w-[200px] max-h-72 overflow-y-auto">
                   <button
                     className="w-full text-left px-4 py-2 text-sm text-muted-foreground hover:bg-secondary/50 hover:text-foreground transition-colors"
                     onClick={() => { setSelectedOfferwalls([]); }}
@@ -116,7 +121,7 @@ export default function Sites() {
                       key={ow}
                       className={`w-full text-left px-4 py-2 text-sm transition-colors flex items-center gap-2 ${
                         selectedOfferwalls.includes(ow)
-                          ? "bg-primary/10 text-primary font-medium"
+                          ? "bg-primary/12 text-primary font-medium"
                           : "text-foreground hover:bg-secondary/50"
                       }`}
                       onClick={() => toggleOfferwall(ow)}
@@ -139,8 +144,8 @@ export default function Sites() {
                   onClick={() => setActiveBadge(f)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                     activeBadge === f
-                      ? "bg-primary text-primary-foreground shadow-sm shadow-primary/25"
-                      : "bg-card border border-border/40 text-muted-foreground hover:text-foreground hover:border-primary/30"
+                      ? "bg-gradient-to-r from-primary via-rose-500 to-accent text-primary-foreground shadow-[0_8px_18px_rgba(232,108,155,0.28)]"
+                      : "bg-background/80 border border-border/45 text-muted-foreground hover:text-foreground hover:border-primary/30"
                   }`}
                 >
                   {f}

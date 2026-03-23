@@ -3,12 +3,12 @@ import { ExternalLink, Star, Smartphone, Flame, Zap, Crown } from "lucide-react"
 import { motion } from "framer-motion";
 import { getCasinoBonusTagClassName } from "@/lib/bonusTagStyles";
 
-const topBadgeClassName = "bg-gradient-to-r from-amber-400/20 via-yellow-300/20 to-orange-400/20 text-yellow-200 border-yellow-300/40 shadow-[0_0_14px_rgba(250,204,21,0.25)] animate-pulse";
+const topBadgeClassName = "bg-gradient-to-r from-rose-400/25 via-pink-300/25 to-orange-300/25 text-rose-700 border-rose-300/60 shadow-[0_0_14px_rgba(244,114,182,0.22)] animate-pulse";
 
 const badgeConfig = {
-  new: { label: "New", icon: Zap, className: "bg-green-500/15 text-green-400 border-green-500/20" },
-  popular: { label: "Popular", icon: Flame, className: "bg-orange-500/15 text-orange-400 border-orange-500/20" },
-  mobile_app: { label: "Mobile App", icon: Smartphone, className: "bg-purple-500/15 text-purple-400 border-purple-500/20" },
+  new: { label: "New", icon: Zap, className: "bg-rose-500/15 text-rose-600 border-rose-400/30" },
+  popular: { label: "Popular", icon: Flame, className: "bg-orange-400/15 text-orange-600 border-orange-400/30" },
+  mobile_app: { label: "Mobile App", icon: Smartphone, className: "bg-fuchsia-500/15 text-fuchsia-600 border-fuchsia-400/30" },
 };
 
 export default function SiteCard({ site, index, showRate = false }) {
@@ -44,7 +44,7 @@ export default function SiteCard({ site, index, showRate = false }) {
               </span>
             )}
             {site.bonus_tag && (
-              <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold border ${casinoBonusTagClassName || "bg-accent/15 text-accent border-accent/20"}`}>
+              <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold border ${casinoBonusTagClassName || "bg-accent/20 text-orange-700 border-accent/35"}`}>
                 {site.bonus_tag}
               </span>
             )}
@@ -74,7 +74,7 @@ export default function SiteCard({ site, index, showRate = false }) {
           {/* Rating + Visit */}
           <div className="flex items-center justify-between">
             {showRate && site.rates ? (
-              <span className="text-sm font-bold text-green-400">{site.rates}%</span>
+              <span className="text-sm font-bold text-primary">{site.rates}%</span>
             ) : (
               <div className="flex items-center gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
