@@ -354,7 +354,7 @@ export default function Guides() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05 }}
-            className="mb-8 rounded-2xl border border-border/50 bg-background/95 backdrop-blur p-4 sm:p-5 shadow-lg shadow-black/10 md:sticky md:top-[74px] z-20"
+            className="mb-8 rounded-2xl border border-border/50 bg-background/95 backdrop-blur p-4 sm:p-5 shadow-lg shadow-black/10 sticky top-20 z-20"
           >
             <div className="relative mb-4">
               <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
