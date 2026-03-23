@@ -7,7 +7,7 @@ export default defineConfig({
   logLevel: 'error', // Suppress warnings, only show errors
   server: {
     host: '0.0.0.0',
-    port: 10000,
+    port: 5173,
   },
   resolve: {
     alias: {
@@ -16,7 +16,7 @@ export default defineConfig({
   },
   preview: {
     host: '0.0.0.0',
-    port: 10000,
+    port: 5173,
     allowedHosts: ['gpt-sites.com'],
   },
   plugins: [
