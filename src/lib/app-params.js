@@ -1,6 +1,18 @@
 const isNode = typeof window === 'undefined';
-const windowObj = isNode ? { localStorage: new Map() } : window;
-const storage = windowObj.localStorage;
+
+// Safe storage wrapper that handles unavailable localStorage (e.g. private browsing on mobile)
+const createSafeStorage = () => {
+  if (isNode) return new Map();
+  try {
+    window.localStorage.setItem('__test__', '1');
+    window.localStorage.removeItem('__test__');
+    return window.localStorage;
+  } catch {
+    const mem = new Map();
+    return { getItem: k => mem.get(k) ?? null, setItem: (k, v) => mem.set(k, v), removeItem: k => mem.delete(k) };
+  }
+};
+const storage = createSafeStorage();
 
 const toSnakeCase = (str) => {
 	return str.replace(/([A-Z])/g, '_$1').toLowerCase();
