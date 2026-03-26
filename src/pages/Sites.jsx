@@ -5,7 +5,7 @@ import SiteCard from "@/components/SiteCard";
 import { allSites, allOfferwalls } from "@/lib/sitesData";
 import { Search, ArrowLeft, ChevronDown, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
@@ -22,12 +22,50 @@ const badgeFilters = ["All", "New", "Popular", "Mobile App"];
 const badgeMap = { "All": null, "New": "new", "Popular": "popular", "Mobile App": "mobile_app" };
 
 export default function Sites() {
+  const [searchParams, setSearchParams] = useSearchParams();
   useEffect(() => { window.scrollTo(0, 0); }, []);
   const [search, setSearch] = useState("");
-  const [activeBadge, setActiveBadge] = useState("All");
-  const [selectedOfferwalls, setSelectedOfferwalls] = useState([]);
+  const [activeBadge, setActiveBadge] = useState(() => {
+    const badgeFromUrl = searchParams.get("tag");
+    if (!badgeFromUrl) return "All";
+    const badgeLabel = badgeFilters.find((label) => badgeMap[label] === badgeFromUrl);
+    return badgeLabel || "All";
+  });
+  const [selectedOfferwalls, setSelectedOfferwalls] = useState(() => {
+    const fromUrl = searchParams
+      .get("offerwalls")
+      ?.split(",")
+      .map((value) => value.trim().toLowerCase())
+      .filter(Boolean) || [];
+
+    const unique = [...new Set(fromUrl)];
+    return unique.filter((offerwall) => allOfferwalls.includes(offerwall));
+  });
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const nextParams = new URLSearchParams(searchParams);
+    const badgeValue = badgeMap[activeBadge];
+
+    if (badgeValue) {
+      nextParams.set("tag", badgeValue);
+    } else {
+      nextParams.delete("tag");
+    }
+
+    if (selectedOfferwalls.length > 0) {
+      nextParams.set("offerwalls", selectedOfferwalls.join(","));
+    } else {
+      nextParams.delete("offerwalls");
+    }
+
+    const currentQuery = searchParams.toString();
+    const nextQuery = nextParams.toString();
+    if (nextQuery !== currentQuery) {
+      setSearchParams(nextParams, { replace: true });
+    }
+  }, [activeBadge, selectedOfferwalls, searchParams, setSearchParams]);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -71,9 +109,6 @@ export default function Sites() {
           </Link>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/25 mb-4">
-              Sakura Picks
-            </span>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-2">
               <span className="bg-gradient-to-r from-primary via-rose-500 to-accent bg-clip-text text-transparent">All GPT Sites</span>
             </h1>
