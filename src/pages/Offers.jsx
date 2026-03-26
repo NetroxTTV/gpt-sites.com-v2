@@ -37,10 +37,16 @@ export default function Offers() {
   const loadOffers = async () => {
     setLoading(true);
     setError(null);
-    const res = await base44.functions.invoke("getAdtowallOffers", { page, page_size: PAGE_SIZE });
-    setOffers(prev => page === 1 ? res.data.offers : [...prev, ...res.data.offers]);
-    setTotalCount(res.data.paging?.total_count || 0);
-    setLoading(false);
+    try {
+      const res = await base44.functions.invoke("getAdtowallOffers", { page, page_size: PAGE_SIZE });
+      const incoming = res?.data?.offers || [];
+      setOffers(prev => page === 1 ? incoming : [...prev, ...incoming]);
+      setTotalCount(res?.data?.paging?.total_count || 0);
+    } catch (err) {
+      setError(err?.message || "Failed to load offers");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const allCountries = useMemo(() => {
