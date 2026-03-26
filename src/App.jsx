@@ -9,6 +9,7 @@ import Guides from './pages/Guides';
 import Tips from './pages/Tips.jsx';
 import GuideDetail from './pages/GuideDetail';
 import Sites from './pages/Sites';
+import Offers from './pages/Offers';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/Tips" element={<Tips />} />
           <Route path="/Guides/:slug" element={<GuideDetail />} />
           <Route path="/Sites" element={<Sites />} />
+          <Route path="/Offers" element={<Offers />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>
