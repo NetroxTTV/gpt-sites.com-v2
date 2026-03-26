@@ -10,6 +10,7 @@ import Tips from './pages/Tips.jsx';
 import GuideDetail from './pages/GuideDetail';
 import Sites from './pages/Sites';
 import Offers from './pages/Offers';
+import OfferDetail from './pages/OfferDetail';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/Guides/:slug" element={<GuideDetail />} />
           <Route path="/Sites" element={<Sites />} />
           <Route path="/Offers" element={<Offers />} />
+          <Route path="/Offers/:offerSlug" element={<OfferDetail />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>

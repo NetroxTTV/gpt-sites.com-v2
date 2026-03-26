@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { base44 } from "@/api/base44Client";
-import { Search, X, ChevronDown, ExternalLink, Monitor, Smartphone, Tablet, ArrowUpDown } from "lucide-react";
+import { Search, X, ChevronDown, ArrowUpDown } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { motion, AnimatePresence } from "framer-motion";
-import OfferDetailModal from "@/components/offers/OfferDetailModal";
+import { motion } from "framer-motion";
+import { allOfferwalls, allSites } from "@/lib/sitesData";
 
 const SORT_OPTIONS = [
   { label: "Highest Payout", value: "payout_desc" },
@@ -14,74 +13,42 @@ const SORT_OPTIONS = [
   { label: "A-Z", value: "alpha" },
 ];
 
-const PAGE_SIZE = 50;
+const COUNTRY_OPTIONS = [
+  ["US", "United States"],
+  ["CA", "Canada"],
+  ["UK", "United Kingdom"],
+  ["DE", "Germany"],
+  ["FR", "France"],
+  ["AU", "Australia"],
+  ["NZ", "New Zealand"],
+  ["ES", "Spain"],
+  ["IT", "Italy"],
+  ["NL", "Netherlands"],
+];
+
+const CATEGORY_OPTIONS = ["All", "Games", "Casino", "Finance", "Survey", "Other"];
 
 export default function Offers() {
-  const [offers, setOffers] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedCountry, setSelectedCountry] = useState("All");
   const [sort, setSort] = useState("payout_desc");
-  const [page, setPage] = useState(1);
-  const [totalCount, setTotalCount] = useState(0);
-  const [selectedOffer, setSelectedOffer] = useState(null);
   const [countryDropdown, setCountryDropdown] = useState(false);
   const [sortDropdown, setSortDropdown] = useState(false);
+  const [offerwallDropdown, setOfferwallDropdown] = useState(false);
+  const [selectedWalls, setSelectedWalls] = useState([]);
 
-  useEffect(() => {
-    loadOffers();
-  }, [page]);
+  const allWalls = useMemo(() => {
+    const fromSites = allSites.flatMap((site) => Array.isArray(site.offerwalls) ? site.offerwalls : []);
+    const set = new Set([...allOfferwalls, ...fromSites].map((wall) => String(wall || "").toLowerCase()).filter(Boolean));
+    return Array.from(set).sort();
+  }, []);
 
-  const loadOffers = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const res = await base44.functions.invoke("getAdtowallOffers", { page, page_size: PAGE_SIZE });
-      const incoming = res?.data?.offers || [];
-      setOffers(prev => page === 1 ? incoming : [...prev, ...incoming]);
-      setTotalCount(res?.data?.paging?.total_count || 0);
-    } catch (err) {
-      setError(err?.message || "Failed to load offers");
-    } finally {
-      setLoading(false);
-    }
+  const toggleWall = (wall) => {
+    setSelectedWalls((prev) =>
+      prev.includes(wall) ? prev.filter((w) => w !== wall) : [...prev, wall]
+    );
   };
-
-  const allCountries = useMemo(() => {
-    const countryMap = {};
-    offers.forEach(o => {
-      (o.countries || []).forEach(c => {
-        if (c.targeting_type === "include") countryMap[c.country_code] = c.label;
-      });
-    });
-    return Object.entries(countryMap).sort((a, b) => a[1].localeCompare(b[1]));
-  }, [offers]);
-
-  const allCategories = useMemo(() => {
-    const cats = new Set(offers.map(o => o.category).filter(Boolean));
-    return ["All", ...Array.from(cats).sort()];
-  }, [offers]);
-
-  const filtered = useMemo(() => {
-    let result = offers.filter(o => {
-      const matchSearch = !search || o.name.toLowerCase().includes(search.toLowerCase()) || o.category.toLowerCase().includes(search.toLowerCase());
-      const matchCat = selectedCategory === "All" || o.category === selectedCategory;
-      const matchCountry = selectedCountry === "All" || (o.countries || []).some(c => c.country_code === selectedCountry && c.targeting_type === "include");
-      return matchSearch && matchCat && matchCountry;
-    });
-
-    return [...result].sort((a, b) => {
-      if (sort === "payout_desc") return b.payout - a.payout;
-      if (sort === "payout_asc") return a.payout - b.payout;
-      if (sort === "newest") return b.time_created - a.time_created;
-      if (sort === "alpha") return a.name.localeCompare(b.name);
-      return 0;
-    });
-  }, [offers, search, selectedCategory, selectedCountry, sort]);
-
-  const hasMore = offers.length < totalCount;
 
   return (
     <div className="min-h-screen bg-background font-inter">
@@ -91,11 +58,8 @@ export default function Offers() {
 
           {/* Header */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-4">
-              AdToWall
-            </span>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-2">Offers</h1>
-            <p className="text-muted-foreground">Browse all available offers — filter by country, category, and payout.</p>
+            <p className="text-muted-foreground">Use search and filters to prepare your offer lookup.</p>
           </motion.div>
 
           {/* Filters */}
@@ -129,7 +93,7 @@ export default function Offers() {
                 <div className="absolute top-full mt-1 left-0 z-50 bg-card border border-border/50 rounded-xl shadow-xl py-2 w-52 max-h-64 overflow-y-auto">
                   <button className="w-full text-left px-4 py-2 text-sm hover:bg-secondary/50 text-foreground" onClick={() => { setSelectedCountry("All"); setCountryDropdown(false); }}>All Countries</button>
                   <div className="border-t border-border/30 my-1" />
-                  {allCountries.map(([code, label]) => (
+                  {COUNTRY_OPTIONS.map(([code, label]) => (
                     <button key={code} className={`w-full text-left px-4 py-2 text-sm transition-colors ${selectedCountry === code ? "bg-primary/10 text-primary font-medium" : "text-foreground hover:bg-secondary/50"}`}
                       onClick={() => { setSelectedCountry(code); setCountryDropdown(false); }}>
                       {label} ({code})
@@ -141,12 +105,46 @@ export default function Offers() {
 
             {/* Category */}
             <div className="flex items-center gap-2 flex-wrap">
-              {allCategories.slice(0, 6).map(cat => (
+              {CATEGORY_OPTIONS.map(cat => (
                 <button key={cat} onClick={() => setSelectedCategory(cat)}
                   className={`px-3 py-2 rounded-lg text-xs font-medium transition-all whitespace-nowrap ${selectedCategory === cat ? "bg-primary text-primary-foreground shadow-sm" : "bg-card border border-border/40 text-muted-foreground hover:text-foreground hover:border-primary/30"}`}>
                   {cat}
                 </button>
               ))}
+            </div>
+
+            {/* Offerwall multi-select */}
+            <div className="relative">
+              <button
+                onClick={() => { setOfferwallDropdown(!offerwallDropdown); setSortDropdown(false); setCountryDropdown(false); }}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-medium transition-all whitespace-nowrap ${selectedWalls.length > 0 ? "bg-primary/10 text-primary border-primary/30" : "bg-card border-border/40 text-muted-foreground hover:text-foreground"}`}
+              >
+                {selectedWalls.length > 0 ? `${selectedWalls.length} wall${selectedWalls.length > 1 ? "s" : ""}` : "All Offerwalls"}
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${offerwallDropdown ? "rotate-180" : ""}`} />
+              </button>
+              {offerwallDropdown && (
+                <div className="absolute top-full mt-1 left-0 z-50 bg-card border border-border/50 rounded-xl shadow-xl py-2 w-56 max-h-64 overflow-y-auto">
+                  <button
+                    className="w-full text-left px-4 py-2 text-sm hover:bg-secondary/50 text-foreground"
+                    onClick={() => setSelectedWalls([])}
+                  >
+                    Clear all
+                  </button>
+                  <div className="border-t border-border/30 my-1" />
+                  {allWalls.map((wall) => (
+                    <button
+                      key={wall}
+                      className={`w-full text-left px-4 py-2 text-sm transition-colors flex items-center gap-2 ${selectedWalls.includes(wall) ? "bg-primary/10 text-primary font-medium" : "text-foreground hover:bg-secondary/50"}`}
+                      onClick={() => toggleWall(wall)}
+                    >
+                      <span className={`w-4 h-4 rounded border flex items-center justify-center text-[10px] ${selectedWalls.includes(wall) ? "bg-primary border-primary text-white" : "border-border/50"}`}>
+                        {selectedWalls.includes(wall) ? "✓" : ""}
+                      </span>
+                      {wall.toUpperCase()}
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Sort */}
@@ -172,91 +170,18 @@ export default function Offers() {
             </div>
           </div>
 
-          <p className="text-xs text-muted-foreground mb-4">{filtered.length} offers{totalCount > offers.length ? ` (loaded ${offers.length} of ${totalCount})` : ""}</p>
+          <p className="text-xs text-muted-foreground mb-4">
+            0 offers
+          </p>
 
-          {/* Table */}
-          {loading && offers.length === 0 ? (
-            <div className="space-y-2">
-              {Array.from({ length: 10 }).map((_, i) => (
-                <div key={i} className="h-16 rounded-xl bg-card border border-border/30 animate-pulse" />
-              ))}
-            </div>
-          ) : error ? (
-            <div className="text-center py-20 text-destructive">{error}</div>
-          ) : (
-            <>
-              <div className="rounded-xl border border-border/40 overflow-hidden">
-                {/* Table header */}
-                <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] bg-secondary/50 px-4 py-3 text-xs font-semibold text-muted-foreground uppercase tracking-wide border-b border-border/40 hidden sm:grid">
-                  <span>Offer Name</span>
-                  <span>Category</span>
-                  <span>Countries</span>
-                  <span>Payout</span>
-                  <span>Status</span>
-                </div>
-
-                <div className="divide-y divide-border/30">
-                  {filtered.map((offer, i) => (
-                    <motion.button
-                      key={offer.id}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: Math.min(i * 0.02, 0.4) }}
-                      onClick={() => setSelectedOffer(offer)}
-                      className="w-full grid grid-cols-1 sm:grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center gap-2 px-4 py-3 hover:bg-secondary/30 transition-colors text-left"
-                    >
-                      {/* Name + icon */}
-                      <div className="flex items-center gap-3">
-                        {offer.thumbnail_url ? (
-                          <img src={offer.thumbnail_url} alt={offer.name} className="w-9 h-9 rounded-lg object-cover flex-shrink-0 bg-secondary" onError={e => e.target.style.display = 'none'} />
-                        ) : (
-                          <div className="w-9 h-9 rounded-lg bg-secondary/80 flex items-center justify-center flex-shrink-0 text-xs font-bold text-primary">{offer.name[0]}</div>
-                        )}
-                        <span className="text-sm font-semibold text-foreground truncate max-w-[200px]">{offer.name}</span>
-                      </div>
-
-                      {/* Category */}
-                      <span className="text-xs text-muted-foreground sm:text-foreground">{offer.category}</span>
-
-                      {/* Countries */}
-                      <div className="flex flex-wrap gap-1">
-                        {(offer.countries || []).filter(c => c.targeting_type === "include").slice(0, 3).map(c => (
-                          <span key={c.country_code} className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-secondary/60 text-muted-foreground">{c.country_code}</span>
-                        ))}
-                        {(offer.countries || []).filter(c => c.targeting_type === "include").length > 3 && (
-                          <span className="px-1.5 py-0.5 rounded text-[10px] font-medium bg-secondary/60 text-muted-foreground">+{offer.countries.filter(c => c.targeting_type === "include").length - 3}</span>
-                        )}
-                      </div>
-
-                      {/* Payout */}
-                      <span className="text-sm font-bold text-green-400">${offer.payout.toFixed(2)}</span>
-
-                      {/* Status */}
-                      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold w-fit ${offer.status === "active" ? "bg-green-500/15 text-green-400 border border-green-500/20" : "bg-muted text-muted-foreground border border-border/40"}`}>
-                        {offer.status?.toUpperCase()}
-                      </span>
-                    </motion.button>
-                  ))}
-                </div>
-              </div>
-
-              {hasMore && (
-                <div className="mt-6 text-center">
-                  <button
-                    onClick={() => setPage(p => p + 1)}
-                    disabled={loading}
-                    className="px-6 py-2.5 rounded-xl bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors disabled:opacity-50"
-                  >
-                    {loading ? "Loading..." : `Load More (${totalCount - offers.length} remaining)`}
-                  </button>
-                </div>
-              )}
-            </>
-          )}
+          <div className="rounded-xl border border-border/40 bg-card/40 px-6 py-16 text-center">
+            <p className="text-lg font-semibold text-foreground mb-2">No offers displayed</p>
+            <p className="text-sm text-muted-foreground">
+              The offers list is intentionally disabled. Search and filter controls are still available.
+            </p>
+          </div>
         </div>
       </div>
-
-      <OfferDetailModal offer={selectedOffer} onClose={() => setSelectedOffer(null)} />
 
       <Footer />
     </div>
