@@ -10,8 +10,8 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 const offerwallLabels = {
-  adgate: "AdGate", adgem: "AdGem", adscend: "AdScend", adtowall: "AdToWall",
-  ayet: "AyeT", ayetstudios: "AyeT Studios", bitlabs: "BitLabs", gemiwall: "GemiWall",
+  adgate: "AdGate", gemiad: "GemiAd", adscend: "AdScend", adtowall: "AdToWall",
+  ayet: "AyeT", ayetstudios: "AyeT Studios", bitlabs: "BitLabs",
   hangmyads: "HangMyAds", lootably: "Lootably", mmwall: "MMWall",
   monlix: "Monlix", myChips: "myChips", notik: "Notik",
   pixylabs: "PixyLabs", primeearn: "PrimeEarn", revu: "Revu", timewall: "TimeWall",
