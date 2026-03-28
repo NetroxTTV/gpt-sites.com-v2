@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { base44 } from "@/api/base44Client";
 import { Search, X, ChevronDown, ExternalLink, Monitor, Smartphone, Tablet, ArrowUpDown, Apple } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
@@ -71,10 +70,14 @@ export default function Offers() {
     setLoading(true);
     setError(null);
     try {
-      const res = await base44.functions.invoke("getAdtowallOffers", { page, page_size: PAGE_SIZE });
-      const incoming = res?.data?.offers || [];
+      const response = await fetch(`/api/offers/adtowall?page=${page}&page_size=${PAGE_SIZE}`);
+      const payload = await response.json();
+      if (!response.ok) {
+        throw new Error(payload?.error || "Failed to load offers");
+      }
+      const incoming = payload?.data?.offers || [];
       setOffers(prev => page === 1 ? incoming : [...prev, ...incoming]);
-      setTotalCount(res?.data?.paging?.total_count || 0);
+      setTotalCount(payload?.data?.paging?.total_count || 0);
     } catch (err) {
       setError(err?.message || "Failed to load offers");
     } finally {
