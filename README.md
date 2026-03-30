@@ -54,3 +54,7 @@ Use a Node Web Service (not Static Site) so `/api` is served by Express.
 4. Leave `VITE_API_BASE_URL` unset for same-origin `/api`
 
 This repository includes [render.yaml](render.yaml) with these settings.
+
+### AdToWall Offer Availability
+
+The backend now pulls AdToWall offers from the `offersrunnable` feed, so `/api/offers/adtowall` returns only offers that are runnable on your wall (instead of all catalog offers).

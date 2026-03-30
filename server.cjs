@@ -13,8 +13,6 @@ const WALL_CONFIG = {
     apiKey: process.env.ADTOWALL_API_KEY || "ZGCBWVMR7aVzBv2E58UJw",
     candidateUrls: [
       process.env.ADTOWALL_RUNNABLE_OFFERS_URL,
-      "https://api.eflow.team/v1/affiliates/alloffers",
-      "https://api-eu.eflow.team/v1/affiliates/alloffers",
       "https://api.eflow.team/v1/affiliates/offersrunnable",
       "https://api-eu.eflow.team/v1/affiliates/offersrunnable",
     ].filter(Boolean),
