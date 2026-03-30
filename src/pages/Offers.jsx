@@ -4,8 +4,9 @@ import Footer from "@/components/Footer";
 import { Search, X, ChevronDown, ExternalLink, Monitor, Smartphone, Tablet, ArrowUpDown, Apple } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
-import OfferDetailModal from "@/components/offers/OfferDetailModal";
+import { useNavigate } from "react-router-dom";
 import { apiUrl } from "@/lib/api";
+import { slugifyOfferName } from "@/lib/offerSlug";
 
 const SORT_OPTIONS = [
   { label: "Highest Payout", value: "payout_desc" },
@@ -52,6 +53,7 @@ function timeAgo(timestamp) {
 }
 
 export default function Offers() {
+  const navigate = useNavigate();
   const [offers, setOffers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -61,7 +63,6 @@ export default function Offers() {
   const [sort, setSort] = useState("payout_desc");
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
-  const [selectedOffer, setSelectedOffer] = useState(null);
   const [countryDropdown, setCountryDropdown] = useState(false);
   const [sortDropdown, setSortDropdown] = useState(false);
 
@@ -240,13 +241,14 @@ export default function Offers() {
                 {filtered.map((offer, i) => {
                   const devices = getDeviceIcons(offer.platforms, offer.device_types);
                   const includedCountries = (offer.countries || []).filter(c => c.targeting_type === "include");
+                  const offerSlug = slugifyOfferName(offer.name) || String(offer.id || "offer");
                   return (
                     <motion.button
                       key={offer.id}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: Math.min(i * 0.015, 0.3) }}
-                      onClick={() => setSelectedOffer(offer)}
+                      onClick={() => navigate(`/Offers/${offerSlug}`, { state: { offer, wall: "adtowall" } })}
                       className="w-full grid grid-cols-1 sm:grid-cols-[2.5fr_1fr_1fr_1fr_1fr_auto] items-center gap-y-1 gap-x-3 px-5 py-3.5 hover:bg-primary/5 transition-colors text-left group"
                     >
                       {/* Name */}
@@ -325,7 +327,6 @@ export default function Offers() {
         </div>
       </div>
 
-      <OfferDetailModal offer={selectedOffer} onClose={() => setSelectedOffer(null)} />
       <Footer />
     </div>
   );

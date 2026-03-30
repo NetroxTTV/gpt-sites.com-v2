@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ExternalLink, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { allSites } from "@/lib/sitesData";
 import { apiUrl } from "@/lib/api";
+import { slugifyOfferName } from "@/lib/offerSlug";
 
 const normalizeWall = (value) => String(value || "").toLowerCase().replace(/[^a-z0-9]/g, "");
 
@@ -34,16 +35,15 @@ async function fetchOffersPage(wall, page, pageSize) {
 }
 
 export default function OfferDetail() {
+  const { offerSlug } = useParams();
   const location = useLocation();
-  const [searchParams] = useSearchParams();
   const initialOffer = location.state?.offer || null;
 
   const [offer, setOffer] = useState(initialOffer);
   const [loading, setLoading] = useState(!initialOffer);
   const [error, setError] = useState(null);
 
-  const offerId = searchParams.get("offerId");
-  const wall = (searchParams.get("wall") || "adtowall").toLowerCase();
+  const wall = (location.state?.wall || "adtowall").toLowerCase();
   const normalizedWall = normalizeWall(wall);
 
   const matchingSites = allSites
@@ -53,11 +53,11 @@ export default function OfferDetail() {
     .sort((a, b) => (Number(b.rates) || 0) - (Number(a.rates) || 0));
 
   useEffect(() => {
-    if (initialOffer || !offerId) return;
+    if (initialOffer || !offerSlug) return;
 
     let isMounted = true;
 
-    async function loadOfferById() {
+    async function loadOfferBySlug() {
       setLoading(true);
       setError(null);
       try {
@@ -72,7 +72,7 @@ export default function OfferDetail() {
           const paging = payload?.data?.paging || {};
           total = Number(paging.total_count || list.length);
 
-          found = list.find((item) => String(item.id) === String(offerId));
+          found = list.find((item) => slugifyOfferName(item?.name) === offerSlug);
           if (found) break;
 
           page += 1;
@@ -91,11 +91,11 @@ export default function OfferDetail() {
       }
     }
 
-    loadOfferById();
+    loadOfferBySlug();
     return () => {
       isMounted = false;
     };
-  }, [initialOffer, offerId, wall]);
+  }, [initialOffer, offerSlug, wall]);
 
   return (
     <div className="min-h-screen bg-background font-inter">
