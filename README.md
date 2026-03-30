@@ -15,7 +15,8 @@ GPT Sites is a React + Vite web application that helps users find and compare th
 Create a `.env` file in the project root:
 
 ```bash
-VITE_API_BASE_URL=https://gpt-sites.onrender.com
+# Leave VITE_API_BASE_URL unset to use same-origin /api (recommended)
+# VITE_API_BASE_URL=https://gpt-sites.onrender.com
 ```
 
 1. **Install dependencies**
