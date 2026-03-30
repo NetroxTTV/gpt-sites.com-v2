@@ -5,6 +5,7 @@ import { Search, X, ChevronDown, ExternalLink, Monitor, Smartphone, Tablet, Arro
 import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 import OfferDetailModal from "@/components/offers/OfferDetailModal";
+import { apiUrl } from "@/lib/api";
 
 const SORT_OPTIONS = [
   { label: "Highest Payout", value: "payout_desc" },
@@ -70,7 +71,7 @@ export default function Offers() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`/api/offers/adtowall?page=${page}&page_size=${PAGE_SIZE}`);
+      const response = await fetch(apiUrl(`/api/offers/adtowall?page=${page}&page_size=${PAGE_SIZE}`));
       const payload = await response.json();
       if (!response.ok) {
         throw new Error(payload?.error || "Failed to load offers");

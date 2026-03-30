@@ -43,37 +43,37 @@
   }
 
   .dark {
-    --background: 345 58% 97%;
-    --foreground: 345 24% 18%;
-    --card: 0 0% 100%;
-    --card-foreground: 345 24% 18%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 345 24% 18%;
-    --primary: 340 73% 54%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 342 48% 93%;
-    --secondary-foreground: 345 24% 25%;
-    --muted: 342 45% 94%;
-    --muted-foreground: 344 18% 43%;
+    --background: 336 28% 9%;
+    --foreground: 340 34% 94%;
+    --card: 334 26% 12%;
+    --card-foreground: 340 34% 94%;
+    --popover: 334 26% 12%;
+    --popover-foreground: 340 34% 94%;
+    --primary: 340 78% 62%;
+    --primary-foreground: 335 34% 10%;
+    --secondary: 334 22% 18%;
+    --secondary-foreground: 340 28% 90%;
+    --muted: 334 20% 16%;
+    --muted-foreground: 338 15% 68%;
     --accent: 18 72% 63%;
-    --accent-foreground: 0 0% 100%;
+    --accent-foreground: 336 28% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 345 34% 86%;
-    --input: 345 34% 86%;
+    --border: 334 18% 24%;
+    --input: 334 18% 24%;
     --ring: 340 73% 54%;
     --chart-1: 340 73% 54%;
     --chart-2: 18 72% 63%;
     --chart-3: 196 58% 48%;
     --chart-4: 45 82% 57%;
     --chart-5: 320 44% 52%;
-    --sidebar-background: 345 58% 97%;
-    --sidebar-foreground: 345 24% 18%;
+    --sidebar-background: 336 28% 9%;
+    --sidebar-foreground: 340 34% 94%;
     --sidebar-primary: 340 73% 54%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 342 48% 93%;
-    --sidebar-accent-foreground: 345 24% 25%;
-    --sidebar-border: 345 34% 86%;
+    --sidebar-primary-foreground: 335 34% 10%;
+    --sidebar-accent: 334 22% 18%;
+    --sidebar-accent-foreground: 340 28% 90%;
+    --sidebar-border: 334 18% 24%;
     --sidebar-ring: 340 73% 54%;
   }
 }
@@ -92,6 +92,14 @@
       linear-gradient(180deg, #fff7fb 0%, #fffaf6 50%, #fff6fb 100%);
     background-attachment: fixed;
   }
+
+  .dark body {
+    background-image:
+      radial-gradient(circle at 10% 12%, rgba(236, 72, 153, 0.2) 0, transparent 28%),
+      radial-gradient(circle at 86% 20%, rgba(251, 146, 60, 0.16) 0, transparent 30%),
+      radial-gradient(circle at 22% 82%, rgba(236, 72, 153, 0.14) 0, transparent 34%),
+      linear-gradient(180deg, #1c1018 0%, #140f14 55%, #120d13 100%);
+  }
 }
 
 /* Custom scrollbar */
@@ -107,6 +115,18 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #ea7ea8;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #2a1a24;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #a84e76;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #cc5e8f;
 }
 
 @keyframes sakura-drift {
@@ -224,6 +244,12 @@
     background: linear-gradient(120deg, rgba(255, 255, 255, 0.72), rgba(255, 241, 247, 0.72));
     border-color: rgba(234, 172, 197, 0.45);
     box-shadow: 0 10px 32px rgba(232, 108, 155, 0.08);
+  }
+
+  .dark .sakura-glass {
+    background: linear-gradient(120deg, rgba(43, 25, 37, 0.82), rgba(28, 20, 31, 0.84));
+    border-color: rgba(236, 72, 153, 0.35);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.35);
   }
 
   .sakura-border-sheen {

@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -13,6 +13,26 @@ const navLinks = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    const resolvedTheme = storedTheme === "dark" || storedTheme === "light"
+      ? storedTheme
+      : "dark";
+
+    document.documentElement.classList.toggle("dark", resolvedTheme === "dark");
+    document.documentElement.style.colorScheme = resolvedTheme;
+    setTheme(resolvedTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    localStorage.setItem("theme", nextTheme);
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+    document.documentElement.style.colorScheme = nextTheme;
+  };
 
   const handleFaqClick = (e, link) => {
     if (link.label === "FAQ") {
@@ -67,6 +87,16 @@ export default function Navbar() {
                 Discord
               </Button>
             </a>
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={toggleTheme}
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              className="border-primary/30 text-primary hover:bg-primary/10 hover:text-primary"
+            >
+              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </Button>
           </div>
 
           {/* Mobile toggle */}
@@ -102,6 +132,15 @@ export default function Navbar() {
               Discord
             </Button>
           </a>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={toggleTheme}
+            className="w-full mt-2 gap-2 border-primary/30 text-primary"
+          >
+            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            {theme === "dark" ? "Light Mode" : "Dark Mode"}
+          </Button>
         </div>
       )}
     </nav>

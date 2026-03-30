@@ -5,8 +5,7 @@ import Footer from "@/components/Footer";
 import { ExternalLink, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { allSites } from "@/lib/sitesData";
-
-const LOCAL_BACKEND_BASE = "http://127.0.0.1:4000";
+import { apiUrl } from "@/lib/api";
 
 const normalizeWall = (value) => String(value || "").toLowerCase().replace(/[^a-z0-9]/g, "");
 
@@ -29,15 +28,9 @@ async function parseJsonResponse(response) {
 }
 
 async function fetchOffersPage(wall, page, pageSize) {
-  const endpoint = `/api/offers/${wall}?page=${page}&page_size=${pageSize}`;
-
-  try {
-    const response = await fetch(endpoint);
-    return await parseJsonResponse(response);
-  } catch {
-    const fallbackResponse = await fetch(`${LOCAL_BACKEND_BASE}${endpoint}`);
-    return await parseJsonResponse(fallbackResponse);
-  }
+  const endpoint = apiUrl(`/api/offers/${wall}?page=${page}&page_size=${pageSize}`);
+  const response = await fetch(endpoint);
+  return await parseJsonResponse(response);
 }
 
 export default function OfferDetail() {
