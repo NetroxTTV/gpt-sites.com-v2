@@ -43,3 +43,14 @@ VITE_API_BASE_URL=https://gpt-sites.onrender.com
 npm run build
 npm run preview
 ```
+
+## Render Deployment
+
+Use a Node Web Service (not Static Site) so `/api` is served by Express.
+
+1. Build Command: `npm ci && npm run build`
+2. Start Command: `npm start`
+3. Health Check Path: `/healthz`
+4. Leave `VITE_API_BASE_URL` unset for same-origin `/api`
+
+This repository includes [render.yaml](render.yaml) with these settings.

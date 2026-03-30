@@ -1,0 +1,20 @@
+{
+  "name": "GPT Sites",
+  "short_name": "GPT Sites",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#120d13",
+  "theme_color": "#e84f93",
+  "icons": [
+    {
+      "src": "/src/cherry.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/cherry.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
