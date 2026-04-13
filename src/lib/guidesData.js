@@ -140,73 +140,197 @@ export const guides = [
     ],
   },
   {
-    slug: "sea-of-conquest",
-    title: "Sea of Conquest",
+    slug: "sea-of-conquest-ios",
+    title: "Sea of Conquest (iOS)",
     banner: new URL("../imgs/guides/sea_of_conquest/soc_banner.jpg", import.meta.url).href,
     category: "Game",
-    platform: "iOS / Android / PC",
+    platform: "iOS",
     genre: "Strategy",
     offerwall: "Torox",
     difficulty: "Medium",
-    timeInvestment: "50-100 hours (20-30 days)",
-    totalReward: "$400 - $800",
+    timeInvestment: "20-30 days",
+    totalReward: "$350 - $600",
     sections: [
       {
-        title: "Important — First Time Players",
+        title: "Offer Overview",
         content: [
-          { type: "warning", text: "If this is your first playthrough, it is HIGHLY recommended to play on iOS. Players on PC for the first time typically cannot reach level 28 or 30 due to platform limitations." },
-          { type: "callout", text: "iOS: Daily cashbacks available (repeatable purchases, highly profitable). PC: One-time cashbacks only." },
+          { type: "callout", text: "This is the easier and more beginner-friendly version of Sea of Conquest because iOS usually has repeatable daily cashback options." },
+          { type: "list", items: ["Expected payout range: $350-$600", "Best for first-time players", "Core objective: push flagship level 30 before deadline"] },
         ]
       },
       {
-        title: "Key Purchases",
+        title: "Start of the Game: Gang, Exploration, and Setup",
         content: [
-          { type: "subtitle", text: "Jade Blessing ($4.99) — First Mandatory Purchase" },
-          { type: "list", items: ["Activates auto combat (crucial for casual play)", "Reduces construction time by 20 minutes", "Provides an extra drop while slaying monsters"] },
-          { type: "subtitle", text: "$4.99 Purchase Priority (iOS)" },
-          { type: "list", items: ["Monthly Purchases first (highest value, repeatable)", "Weekly Purchases (good resources, repeatable)", "Daily Purchases (least cost-effective but still profitable)"] },
-          { type: "subtitle", text: "Artisan Power ($9.99)" },
-          { type: "list", items: ["Unlocks third build queue — saves 1/3 of overall build time", "Battle Passes also at this tier — continuously give rewards"] },
-          { type: "image", src: new URL("../imgs/guides/sea_of_conquest/glems.png", import.meta.url).href, alt: "Sea of Conquest Market" },
-          { type: "subtitle", text: "Gold Blessings ($20) — Most Important Single Purchase!" },
-          { type: "list", items: ["Unlocks offline auto trades — earn gold while not playing", "Additional 5% construction boost", "You'll need 400M+ total gold to reach flagship level 30"] },
+          { type: "subtitle", text: "First 24-48 hours" },
+          { type: "steps", items: ["Build every required structure and keep upgrading Flagship to unlock more building slots", "Always claim quest rewards after construction to recover resources", "Prioritize storage buildings early so offline/auto trading can stack more value", "Add Oarmaster upgrades early for faster travel between routes"] },
+          { type: "subtitle", text: "Join a strong Gang early" },
+          { type: "list", items: ["Join an active top gang as soon as the game allows it", "Top gangs control ports and provide account-wide bonuses", "Gang support helps with route safety, event clears, and faster progression"] },
+          { type: "subtitle", text: "Exploration and energy routine" },
+          { type: "list", items: ["Explore the map aggressively and unlock as many ports as possible", "More unlocked ports means better trading routes and more daily gold", "Use all daily energy with auto-combat to farm XP, gold, and drops", "In Ship Traits and Astronomy, focus on power first to clear higher targets faster"] },
         ]
       },
       {
-        title: "Levels 1-11 (Day 1)",
+        title: "iOS Reward Steps",
         content: [
-          { type: "list", items: ["Build all buildings and upgrade flagship to unlock more buildings", "Collect quest rewards for building XP", "Make as many Storage Buildings as possible", "Max out Builders until level 15"] },
-          { type: "tip", text: "Join a powerful guild from the start — guilds can capture ports giving everyone bonuses." },
+          { type: "subtitle", text: "Ship level tasks" },
+          { type: "list", items: ["Open and play the game", "Reach Flagship level 6", "Reach Flagship level 11", "Reach Flagship level 15", "Reach Flagship level 18", "Reach Flagship level 21", "Reach Flagship level 26", "Reach Flagship level 30"] },
+          { type: "subtitle", text: "Spending tasks" },
+          { type: "list", items: ["Purchase the $4.99 pack (repeatable daily, up to 180 days)", "Purchase the $9.99 pack (repeatable daily, up to 180 days)", "Purchase $19.99 package", "Purchase $49.99 pack"] },
         ]
       },
       {
-        title: "Levels 11-21 (Days 2-10)",
+        title: "Spending Plan and Cashback Loop",
         content: [
-          { type: "subtitle", text: "Gold Strategy — Black Market Routes" },
-          { type: "list", items: ["Go to a black market port (level 3+ preferred)", "Purchase all black market supplies", "Sell instantly for ~150k profit", "Do this a few times a day"] },
-          { type: "list", items: ["Explore as much of the map as possible to unlock trade routes", "Use all energy daily with auto combats from Jade Blessing", "Use daily $4.99 purchases on Gems (iOS only)"] },
+          { type: "subtitle", text: "Day 1 only: cashback purchase order" },
+          { type: "list", items: ["$5: Buy Speedup in the Monthly Shop", "$10: Buy Artisan Power", "$20: Buy Auto Trading Subscription", "$50: Save it until you unlock Glemstones"] },
+          { type: "warning", text: "For cashback/offer step crediting, do not complete the $5/$10/$20/$50 cashback purchases on the web shop." },
+          { type: "tip", text: "You can unlock the full in-game Glemstones shop for just $1 by buying $1 of glemstones on https://soc-store.funplus.com/." },
+          { type: "subtitle", text: "After Day 1" },
+          { type: "list", items: ["Every day, buy glemstones and convert them into speedups, gold, and resources to keep flagship progress on pace."] },
+          { type: "image", src: new URL("../imgs/guides/sea_of_conquest/glems.png", import.meta.url).href, alt: "Sea of Conquest shop packs" },
         ]
       },
       {
-        title: "Levels 22-30 (~20 days)",
+        title: "Ship Level Rhythm to Hit 30 on Time",
         content: [
-          { type: "callout", text: "Every upgrade requires 10-30 million gold. On iOS the level 30 will take 12-20 days without any tryhard needed." },
-          { type: "subtitle", text: "Daily Routine" },
-          { type: "image", src: new URL("../imgs/guides/sea_of_conquest/soc_daily.png", import.meta.url).href, alt: "Sea of Conquest Daily Missions" },
-          { type: "steps", items: ["Log in daily", "Complete daily missions", "Purchase $4.99 and $9.99 packs (iOS only)", "Upgrade all needed buildings", "Manage trading and routes"] },
-          { type: "tip", text: "With Jade Blessing and offline trading, just 15-30 minute daily sessions are enough after the initial levels." },
+          { type: "steps", items: ["Day 1: Ship level 15-18", "Day 5: Ship level 18-21", "Day 10: Ship level 21-24", "Day 20: Ship level 24-28", "Day 25-28: Ship level 28-30"] },
+          { type: "tip", text: "If you are below this rhythm, shift all spending and event rewards into construction speedups and gold immediately." },
         ]
       },
       {
-        title: "Gameplay Preview",
+        title: "Events and Activity Priorities",
         content: [
-          { type: "image", src: new URL("../imgs/guides/sea_of_conquest/soc_game.png", import.meta.url).href, alt: "Sea of Conquest Gameplay" },
+          { type: "list", items: ["After day 15, event volume increases and becomes your main source of speedups/resources", "Around day 23-25, do your daily purchases during event windows for huge bonus rewards (for example 100M gold)", "Do every clan event and keep pushing power so your account can secure higher event tiers"] },
+          { type: "image", src: "https://i.ytimg.com/vi/-Snu5uYXFmQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBUyMRJ3btTYwpqRNVloMyLeNVA9g", alt: "Sea of Conquest events preview" },
         ]
       },
       {
-        title: "Profitability Summary",
+        title: "Daily Gameplay Routine",
         content: [
-          { type: "list", items: ["Total Investment: ~$50-70 in purchases", "Offer Reward: $400-$800", "Net Profit: $330-$750", "Additional Cashback (iOS): $120 from daily purchases"] },
+          { type: "steps", items: ["Explore unfinished areas and keep progressing the world map", "100% complete port explorations whenever a port is available", "Do all daily iOS purchases and convert them into speedups, gold, and resources", "Complete every available event and clan activity before reset", "Use all daily energy and keep trade routes active so progression never stalls"] },
+          { type: "image", src: new URL("../imgs/guides/sea_of_conquest/soc_game.png", import.meta.url).href, alt: "Sea of Conquest daily gameplay" },
+        ]
+      },
+      {
+        title: "Optimization Tips",
+        content: [
+          { type: "subtitle", text: "Construction speed" },
+          { type: "list", items: ["Rush VIP level 3 for 8% construction speed (you will get it in 2-3 days with the cashbacks)", "Get all 3 ship builders to level 16+ and assign permits", "Complete Conch Stargaze for extra 2% speed", "Max Sea Soul Mirror for 5% boost", "Max Hourglass and use it at least twice daily (Gives 24h of speedup total every day)"] },
+          { type: "subtitle", text: "Speedups, gold, and resources" },
+          { type: "list", items: ["Farm event rewards and island exploration construction boosts", "Run auto trading and black market routes for gold", "Buy iron from the Baron whenever possible"] },
+          { type: "warning", text: "After level 21, Captain's Quarters and Astrology chains can stall progression. Pre-build Liaison, Enlistment, Drill Hall, and Sick Bay requirements early since they're the only required buildings to upgrade." },
+        ]
+      },
+      {
+        title: "Common Mistakes ",
+        content: [
+          { type: "warning", text: "Missing timed milestones or doing non-tracked purchases can kill your profitability." },
+          { type: "list", items: ["Do not do cashback-step purchases on web shop if they do not credit", "Do not skip daily purchases/events during key windows", "Do not leave ports and exploration unfinished for multiple days", "Always screenshot milestones and purchases in case support is needed"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashout" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "GameHag", url: "https://gamehag.com/r/netrox", desc: "80% Rates" },
+    ],
+  },
+  {
+    slug: "sea-of-conquest-pc",
+    title: "Sea of Conquest (PC)",
+    banner: new URL("../imgs/guides/sea_of_conquest/soc_banner.jpg", import.meta.url).href,
+    category: "Game",
+    platform: "PC",
+    genre: "Strategy",
+    offerwall: "Torox",
+    difficulty: "Hard",
+    timeInvestment: "Very high daily activity (25-30 days)",
+    totalReward: "$800 - $1,000",
+    sections: [
+      {
+        title: "Important Before You Start",
+        content: [
+          { type: "warning", text: "PC is much harder now with only 3 cashback tiers (10/20/50). If this is your first run, iOS is strongly recommended first because completion odds are much higher." },
+          { type: "callout", text: "To finish level 28 and 30 on PC, most players need around $150-$200 net spend after cashback, plus strong daily activity." },
+        ]
+      },
+      {
+        title: "Reward Steps",
+        content: [
+          { type: "subtitle", text: "Ship level tasks" },
+          { type: "list", items: ["Open and play the game", "Reach Flagship level 6 in 12 hours", "Reach Flagship level 9 in 1 day", "Reach Flagship level 11 in 2 days", "Reach Flagship level 13 in 4 days", "Reach Flagship level 15 in 10 days", "Reach Flagship level 21 in 20 days", "Reach Flagship level 28 in 25 days", "Reach Flagship level 30 in 28 days"] },
+          { type: "subtitle", text: "Spending tasks" },
+          { type: "list", items: ["Purchase any $9.99 package in 1 day", "Purchase any $19.99 package in 3 days", "Purchase any $49.99 package in 3 days"] },
+        ]
+      },
+      {
+        title: "Start of the Game: Gang, Exploration, and Setup",
+        content: [
+          { type: "subtitle", text: "First 24-48 hours" },
+          { type: "steps", items: ["Rush core building unlocks and keep Flagship upgrades moving at all times", "Claim quest rewards every time you complete constructions for resource refunds", "Build extra storage early so your trading cycles hold more supplies", "Upgrade movement-related buildings early so route rotations are faster"] },
+          { type: "subtitle", text: "Gang is mandatory on PC" },
+          { type: "list", items: ["Join a powerful and active gang immediately", "Port control bonuses from top gangs are a major advantage on PC", "Use gang coordination for map control, route safety, and event damage pushes"] },
+          { type: "subtitle", text: "Exploration and progression routine" },
+          { type: "list", items: ["Unlock as many ports as possible to widen profitable trade routes", "Spend all energy daily on auto-combat and event targets", "Prioritize Ship Traits and Astronomy upgrades that increase combat power", "Start black market route loops early so gold scaling is ready before level 21+"] },
+        ]
+      },
+      {
+        title: "Essential Packs for PC Completion",
+        content: [
+          { type: "list", items: ["Artisan Power $9.99 (essential)", "Auto Trading Subscription $19.99 (essential)", "Server Launch packs $4.99 and $9.99 for speedups/gold", "Princess Boat (for Ghost Ship farming)", "Adventure Fund $19.99", "Astro Fund $19.99", "Growth Fund $19.99"] },
+          { type: "image", src: "https://cdn.earnlab.com/guides/reign-of-pirates/Artisan-Power.webp", alt: "Artisan Power pack" },
+          { type: "image", src: new URL("../imgs/guides/sea_of_conquest/glems.png", import.meta.url).href, alt: "Sea of Conquest glemstones shop" },
+        ]
+      },
+      {
+        title: "High-Value Event: Undead Revenge",
+        content: [
+          { type: "callout", text: "Ghost ships spawn about every 4 hours. Attack them every cycle to stack cumulative damage and claim event rewards." },
+          { type: "list", items: ["Return to the event page after combat phases to claim damage-tier rewards", "Top damage and last-hit bonuses can be huge for speedups", "Upgrade small ships and gun bays (around level 3-4+) to improve damage output"] },
+          { type: "image", src: "https://fatwalletrefugee.com/wp-content/uploads/2024/03/sea-of-conquest-45.webp?w=768", alt: "Undead Revenge ghost ships" },
+        ]
+      },
+      {
+        title: "Events and Activity Priorities",
+        content: [
+          { type: "list", items: ["After day 15, event volume increases and becomes your main source of speedups/resources", "Around day 23-25, do your daily purchases during event windows for huge bonus rewards (for example 100M gold)", "Do every clan event and keep pushing power so your account can secure higher event tiers"] },
+          { type: "image", src: "https://i.ytimg.com/vi/-Snu5uYXFmQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBUyMRJ3btTYwpqRNVloMyLeNVA9g", alt: "Sea of Conquest events preview" },
+        ]
+      },
+      {
+        title: "Daily Gameplay Routine",
+        content: [
+          { type: "steps", items: ["Explore unfinished zones every day and keep opening map routes", "Push each unlocked port to 100% exploration completion", "Complete every event cycle and all gang/clan activities", "Spend all daily energy on high-value targets and event objectives", "Keep auto trading and black market loops running for nonstop gold income"] },
+          { type: "image", src: new URL("../imgs/guides/sea_of_conquest/soc_game.png", import.meta.url).href, alt: "Sea of Conquest daily gameplay" },
+        ]
+      },
+      {
+        title: "Construction Speed, Speedups, and Gold",
+        content: [
+          { type: "subtitle", text: "Construction speed setup" },
+          { type: "list", items: ["Rush VIP level 3 for 8% construction speed", "Get all three ship builders to level 16+ and use assignment permits", "Complete Conch Stargaze for 2% extra speed", "Max Sea Soul Mirror for 5% construction speed", "Max Hourglass and use twice daily"] },
+          { type: "subtitle", text: "How to get speedups" },
+          { type: "list", items: ["Ghost Ship event rewards", "Island exploration rewards (choose construction speedups)", "Rogue Coin", "Squad Raid", "Trials", "Events after day 15 (a lot of rewards)"] },
+          { type: "subtitle", text: "How to get extra gold" },
+          { type: "list", items: ["Auto Trading", "Plundering merchant ships", "Plundering wanted players", "Cooking and selling food", "Black Market routes", "Treasure hunting", "High Sea Maneuverer"] },
+          { type: "subtitle", text: "Resource priority" },
+          { type: "list", items: ["Always buy iron from the Baron, even with gold/emeralds", "Farm iron mines first", "Timber can be covered later using gold"] },
+        ]
+      },
+      {
+        title: "Important Notes for Level 21+",
+        content: [
+          { type: "warning", text: "After level 21, Captain's Quarters and Astrology chains become major blockers. You need Liaison, Enlistment, Drill Hall, and Sick Bay prerequisites ready." },
+          { type: "list", items: ["Without daily cashback, many players need an additional $150-$200 after cashback to finish level 30", "Final cost heavily depends on event participation consistency, especially Ghost Ship cycles"] },
+        ]
+      },
+      {
+        title: "Common Mistakes",
+        content: [
+          { type: "warning", text: "Most PC failures happen from low daily activity and missing timed objectives." },
+          { type: "list", items: ["Do not skip Ghost Ship and gang event cycles", "Do not delay exploration and port completion", "Do not spend gold/resources on optional upgrades before required chains", "Always keep milestone and purchase screenshots for support tickets"] },
         ]
       },
     ],

@@ -26,13 +26,27 @@ function RenderContent({ item }) {
       );
     case "steps":
       return (
-        <ol className="space-y-2 my-2">
-          {item.items.map((it, i) => (
-            <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
-              <span className="w-5 h-5 rounded-full bg-primary/20 text-primary text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">{i + 1}</span>
-              {it}
-            </li>
-          ))}
+        <ol className="my-3 space-y-3">
+          {item.items.map((it, i) => {
+            const isLast = i === item.items.length - 1;
+            return (
+              <li key={i} className="relative pl-12">
+                {!isLast && (
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-[0.9rem] top-8 bottom-[-0.9rem] w-px bg-gradient-to-b from-primary/50 to-border/60"
+                  />
+                )}
+                <span className="absolute left-0 top-1 w-8 h-8 rounded-full border border-primary/30 bg-primary/15 text-primary text-xs font-bold flex items-center justify-center shadow-sm">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary/10 via-card to-card px-4 py-3 shadow-sm">
+                  <p className="text-[11px] uppercase tracking-wide text-primary/80 font-semibold mb-1">Step {i + 1}</p>
+                  <p className="text-sm leading-relaxed text-foreground">{it}</p>
+                </div>
+              </li>
+            );
+          })}
         </ol>
       );
     case "callout":
@@ -97,7 +111,7 @@ export default function GuideDetail() {
       <Navbar />
 
       {/* Banner */}
-      <div className="relative h-48 sm:h-64 overflow-hidden mt-16">
+      <div className="relative h-48 sm:h-64 overflow-hidden">
         <img src={guide.banner} alt={guide.title} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       </div>
