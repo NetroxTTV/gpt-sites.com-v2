@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SiteCard from "@/components/SiteCard";
@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 const offerwallLabels = {
   adgate: "AdGate", gemiad: "GemiAd", adscend: "AdScend", adtowall: "AdToWall",
-  ayet: "AyeT", ayetstudios: "AyeT Studios", bitlabs: "BitLabs",
+  ayetstudios: "AyeT Studios", bitlabs: "BitLabs",
   hangmyads: "HangMyAds", lootably: "Lootably", mmwall: "MMWall",
   monlix: "Monlix", myChips: "myChips", notik: "Notik",
   pixylabs: "PixyLabs", primeearn: "PrimeEarn", revu: "Revu", timewall: "TimeWall",
@@ -35,7 +35,10 @@ export default function Sites() {
     const fromUrl = searchParams
       .get("offerwalls")
       ?.split(",")
-      .map((value) => value.trim().toLowerCase())
+      .map((value) => {
+        const normalized = value.trim().toLowerCase();
+        return normalized === "ayet" ? "ayetstudios" : normalized;
+      })
       .filter(Boolean) || [];
 
     const unique = [...new Set(fromUrl)];
@@ -43,6 +46,10 @@ export default function Sites() {
   });
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const sortedOfferwalls = useMemo(
+    () => [...new Set(allOfferwalls)].sort((a, b) => (offerwallLabels[a] || a).localeCompare(offerwallLabels[b] || b)),
+    []
+  );
 
   useEffect(() => {
     const nextParams = new URLSearchParams(searchParams);
@@ -151,7 +158,7 @@ export default function Sites() {
                     Clear all
                   </button>
                   <div className="border-t border-border/30 my-1" />
-                  {allOfferwalls.map(ow => (
+                  {sortedOfferwalls.map(ow => (
                     <button
                       key={ow}
                       className={`w-full text-left px-4 py-2 text-sm transition-colors flex items-center gap-2 ${

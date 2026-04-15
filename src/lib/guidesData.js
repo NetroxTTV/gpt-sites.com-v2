@@ -183,8 +183,8 @@ export const guides = [
         content: [
           { type: "subtitle", text: "Day 1 only: cashback purchase order" },
           { type: "list", items: ["$5: Buy Speedup in the Monthly Shop", "$10: Buy Artisan Power", "$20: Buy Auto Trading Subscription", "$50: Save it until you unlock Glemstones"] },
-          { type: "warning", text: "For cashback/offer step crediting, do not complete the $5/$10/$20/$50 cashback purchases on the web shop." },
           { type: "tip", text: "You can unlock the full in-game Glemstones shop for just $1 by buying $1 of glemstones on https://soc-store.funplus.com/." },
+          { type: "warning", text: "For cashback/offer step crediting, do not complete the $5/$10/$20/$50 cashback purchases on the web shop." },
           { type: "subtitle", text: "After Day 1" },
           { type: "list", items: ["Every day, buy glemstones and convert them into speedups, gold, and resources to keep flagship progress on pace."] },
           { type: "image", src: new URL("../imgs/guides/sea_of_conquest/glems.png", import.meta.url).href, alt: "Sea of Conquest shop packs" },
@@ -281,6 +281,7 @@ export const guides = [
         content: [
           { type: "list", items: ["Artisan Power $9.99 (essential)", "Auto Trading Subscription $19.99 (essential)", "Server Launch packs $4.99 and $9.99 for speedups/gold", "Princess Boat (for Ghost Ship farming)", "Adventure Fund $19.99", "Astro Fund $19.99", "Growth Fund $19.99"] },
           { type: "image", src: "https://cdn.earnlab.com/guides/reign-of-pirates/Artisan-Power.webp", alt: "Artisan Power pack" },
+          {type: "list", items: ["In order to use the cashback correctly and not spend it on a 50$ random pack", "Buy 50$ woth of Glemstones on the web shop (https://soc-store.funplus.com/) and convert them into speedups, gold, and resources in-game", "Doing purchases in the web shop will credit the cashbacks without any problems, no need to worry."] },
           { type: "image", src: new URL("../imgs/guides/sea_of_conquest/glems.png", import.meta.url).href, alt: "Sea of Conquest glemstones shop" },
         ]
       },
@@ -307,9 +308,9 @@ export const guides = [
         ]
       },
       {
-        title: "Construction Speed, Speedups, and Gold",
+        title: "Extra Construction Speed, Speedups, and Gold",
         content: [
-          { type: "subtitle", text: "Construction speed setup" },
+          { type: "subtitle", text: "How to get construction speed setup" },
           { type: "list", items: ["Rush VIP level 3 for 8% construction speed", "Get all three ship builders to level 16+ and use assignment permits", "Complete Conch Stargaze for 2% extra speed", "Max Sea Soul Mirror for 5% construction speed", "Max Hourglass and use twice daily"] },
           { type: "subtitle", text: "How to get speedups" },
           { type: "list", items: ["Ghost Ship event rewards", "Island exploration rewards (choose construction speedups)", "Rogue Coin", "Squad Raid", "Trials", "Events after day 15 (a lot of rewards)"] },
@@ -566,7 +567,7 @@ export const guides = [
     category: "Game",
     platform: "PC",
     genre: "RPG / Open World",
-    offerwall: "Ayet",
+    offerwall: "AyetStudios",
     difficulty: "Very Easy",
     timeInvestment: "20-30 minutes",
     totalReward: "$9",
@@ -576,7 +577,7 @@ export const guides = [
         title: "Offer Overview",
         content: [
           { type: "callout", text: "This is a very easy PC offer. You only need to complete the early tutorial and reach Adventure Level 6. Takes around 20-30 minutes total." },
-          { type: "list", items: ["Category: Game", "Offer: Genshin Impact", "Offerwall: Ayet", "Platform: PC", "Genre: RPG / Open World", "Total Reward: $9", "Difficulty: Very Easy", "Time Investment: 20-30 minutes", "Money Investment: $0"] },
+          { type: "list", items: ["Category: Game", "Offer: Genshin Impact", "Offerwall: AyetStudios", "Platform: PC", "Genre: RPG / Open World", "Total Reward: $9", "Difficulty: Very Easy", "Time Investment: 20-30 minutes", "Money Investment: $0"] },
         ]
       },
       {
@@ -613,7 +614,7 @@ export const guides = [
       },
     ],
     sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Ayet availability may vary by region" },
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | AyetStudios availability may vary by region" },
       { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
       { name: "Gain.gg", url: "https://gain.gg/r/netrox", desc: "70-80% Rates | Instant Cashouts" },
       { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
@@ -1013,6 +1014,167 @@ export const guides = [
       { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
       { name: "Pawns", url: "https://pawns.app/?r=19345226", desc: "85% Rates | PrimeEarn + BitLabs" },
       { name: "Cash Center", url: "https://cash-center.fun/ref/45d492d1", desc: "75% Rates | Timewall + Notik" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
+    slug: "playid-funid-offer-guide",
+    title: "PlayID / FunID - Easy $20-$70 Offer Guide",
+    logo: new URL("../imgs/guides/playid/logo.webp", import.meta.url).href,
+    banner: new URL("../imgs/guides/playid/banner.jpg", import.meta.url).href,
+    category: "Casino",
+    platform: "PC",
+    genre: "Casino",
+    offerwall: "Torox / AdToWall / AyetStudios / RevU",
+    difficulty: "Easy",
+    timeInvestment: "About 10 minutes active",
+    totalReward: "$20-$70",
+    moneyInvestment: "$15-$45",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "list", items: ["Category: Casino", "Offer: PlayID / FunID", "Platform: PC", "Genre: Casino", "Initial Investment: $15 to $45 (depends on the offerwall)", "Total Reward: $20 to $70", "Difficulty: Easy", "Time Investment: About 10 minutes active", "Offerwalls: Torox, AdToWall, AyetStudios, RevU"] },
+        ]
+      },
+      {
+        title: "Why You Should Do It",
+        content: [
+          { type: "list", items: ["Very fast signup", "Low wagering requirement (only 1x to 2x)", "Large payout compared to the required deposit", "Bonus offers drastically improve profitability"] },
+        ]
+      },
+      {
+        title: "How the Offer Works",
+        content: [
+          { type: "steps", items: ["Register on PlayID or FunID using a valid phone number.", "Deposit the amount required by the offerwall (most offers require between EUR 15 and EUR 45).", "If you deposit over EUR 25, you receive an additional EUR 10 bonus.", "Once funded, transfer your PlayID/FunID balance to one of their partner casinos.", "Wager the deposited balance (required wagering is 1x to 2x depending on the offer)."] },
+        ]
+      },
+      {
+        title: "Important Notes",
+        content: [
+          { type: "list", items: ["Always use a valid phone number during registration.", "Read the specific offer instructions carefully to confirm wagering requirements.", "Do not cash out before wagering is completed or the offer may not credit.", "Keep screenshots of deposit confirmation and wagering activity as proof."] },
+        ]
+      },
+      {
+        title: "Wagering Strategy",
+        content: [
+          { type: "text", text: "Since wagering is only 1x to 2x, risk is relatively low." },
+          { type: "list", items: ["Recommended games: low volatility options (for example Dice / Roulette with split red-black coverage / Aviator).", "Avoid high volatility slots or bonus features with extreme variance to minimize risk."] },
+        ]
+      },
+      {
+        title: "Crediting Times",
+        content: [
+          { type: "list", items: ["Can credit within 24 hours.", "Some offers may take up to 30 days.", "Remain patient before submitting a support ticket.", "Collect screenshots for safety."] },
+        ]
+      },
+      {
+        title: "Profit Strategy",
+        content: [
+          { type: "list", items: ["Deposit between EUR 25-30 to receive the extra EUR 10 bonus.", "Focus on minimum wagering games to reduce variance.", "Avoid chasing wins or losses.", "Immediately withdraw remaining balance after meeting wagering requirements."] },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          { type: "subtitle", text: "Example scenario" },
+          { type: "list", items: ["Deposit: EUR 25", "Bonus received: EUR 10", "Total wagering funds: EUR 35", "Wager requirement: 1x", "Expected average return after wagering: EUR 30-32 depending on luck and RTP", "Offer reward: $40-$60", "Estimated total profit: $30-$60+", "Lower deposits reduce profits but also minimize risk."] },
+        ]
+      },
+      {
+        title: "Common Mistakes to Avoid",
+        content: [
+          { type: "list", items: ["Using an invalid phone number", "Failing to wager the full requirement", "Withdrawing too early", "Playing high variance games", "Not capturing proof screenshots"] },
+        ]
+      },
+      {
+        title: "Quick Recap",
+        content: [
+          { type: "steps", items: ["Register with a valid phone number.", "Deposit the amount required by your offerwall.", "Deposit over EUR 25 to receive a EUR 10 bonus.", "Transfer balance to a partner casino.", "Wager the funds 1x to 2x."] },
+        ]
+      },
+      {
+        title: "Final Thoughts",
+        content: [
+          { type: "callout", text: "This PlayID / FunID offer is one of the most lucrative casino offers available." },
+          { type: "list", items: ["High reward compared to deposit", "Minimal wagering requirements", "Bonus boosts profitability", "Very quick setup", "One of the best casino offers for safer profit grinding"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
+    slug: "fanduel-sportsbook",
+    title: "FanDuel Sportsbook : Quick Betting Offer Guide (US Only)",
+    logo: new URL("../imgs/guides/fanduel/logo.jpg", import.meta.url).href,
+    banner: new URL("../imgs/guides/fanduel/banner.png", import.meta.url).href,
+    category: "Betting / Casino",
+    platform: "Android / iOS / PC",
+    genre: "Sports Betting / Casino",
+    offerwall: "Torox / AdGem / Adscend / AdGateMedia",
+    difficulty: "Easy",
+    timeInvestment: "About 5-10 minutes",
+    totalReward: "$40-$90",
+    moneyInvestment: "$10+",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "callout", text: "A fast sportsbook and casino offer that requires signing up, depositing, and wagering your funds." },
+          { type: "list", items: ["Category: Betting / Casino", "Offer: FanDuel Sportsbook", "Offerwall: Torox / AdGem / Adscend / AdGateMedia", "Platform: Android / iOS / PC", "Genre: Sports Betting / Casino", "Difficulty: Easy", "Time Investment: About 5-10 minutes", "Total Reward: $40-$90", "Money Investment: $10+"] },
+        ]
+      },
+      {
+        title: "How the Offer Works",
+        content: [
+          { type: "steps", items: ["Register a new FanDuel account.", "Verify your identity if prompted.", "Deposit at least $10.", "Wager your deposit (and any bonus funds) on sports bets or casino games."] },
+          { type: "warning", text: "You must wager your funds to trigger the reward." },
+        ]
+      },
+      {
+        title: "Betting Tips",
+        content: [
+          { type: "list", items: ["Place simple bets with low risk (for example, close odds games).", "You can also use casino games if allowed.", "The goal is to complete wagering, not to make a profit."] },
+        ]
+      },
+      {
+        title: "Crediting Time",
+        content: [
+          { type: "list", items: ["Credits after your deposit and wagering are tracked.", "Usually within a few hours, but may take longer depending on the offerwall."] },
+        ]
+      },
+      {
+        title: "Important Notes",
+        content: [
+          { type: "list", items: ["US users only and must be in a legal betting state.", "New users only.", "Use real personal information.", "Do not withdraw before completing wagering.", "Keep screenshots of your deposit and bets."] },
+        ]
+      },
+      {
+        title: "Quick Recap",
+        content: [
+          { type: "steps", items: ["Sign up.", "Deposit $10 or more.", "Place bets with your balance.", "Complete wagering.", "Get credited."] },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          { type: "list", items: ["Deposit: $10+", "Offer reward: Depends on offerwall", "Net profit: Offer reward minus betting loss"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
       { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
   }

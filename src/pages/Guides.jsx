@@ -355,6 +355,22 @@ export default function Guides() {
             </div>
           </motion.div>
 
+          <div className="rounded-2xl border border-primary/25 bg-primary/5 px-5 py-4 mb-6">
+            <p className="text-sm text-foreground font-semibold mb-1">Want to submit a guide?</p>
+            <p className="text-sm text-muted-foreground">
+              You can submit guides on the site and include your referral links at the bottom of the guide (4 links max).
+              Please contact Netrox on Discord: {" "}
+              <a
+                href="https://discord.gg/gptfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary underline underline-offset-2 hover:text-primary/80"
+              >
+                discord.gg/gptfr
+              </a>
+            </p>
+          </div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -630,7 +646,7 @@ export default function Guides() {
                   <article className="grid grid-cols-1 sm:grid-cols-[220px_1fr] gap-0 rounded-2xl bg-card border border-border/40 overflow-hidden hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
                     <div className="h-36 sm:h-auto overflow-hidden bg-secondary/40">
                       <img
-                        src={guide.banner}
+                        src={guide.logo || guide.banner}
                         alt={guide.title}
                         className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500"
                       />
@@ -687,6 +703,18 @@ export default function Guides() {
                 </UiButton>
               </div>
             )}
+
+            <div className="rounded-2xl border border-border/50 bg-card/60 px-5 py-4">
+              <ul className="text-sm text-muted-foreground space-y-2 list-disc pl-5">
+                <li>
+                  By submitting a guide, you agree that ownership rights are transferred to the website owner once the guide is approved.
+                </li>
+                <li>
+                  You may still use and share your guide on your own channels, but you may not sell it, monetize it, or present it as exclusive content.
+                </li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </div>

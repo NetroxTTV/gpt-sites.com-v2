@@ -37,6 +37,9 @@ export default function Footer() {
           <p className="text-xs text-muted-foreground/50">
             © {new Date().getFullYear()} GPT Sites. All rights reserved. Some listings may be highlighted due to partnerships or promotions.
           </p>
+          <p className="text-xs text-muted-foreground/70 mt-2">
+            Some links are affiliate links. If you register via these links, you will be supporting the project - at no extra cost to you.
+          </p>
         </div>
       </div>
     </footer>

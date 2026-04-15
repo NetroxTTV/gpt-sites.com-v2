@@ -7,10 +7,41 @@ import { ArrowLeft, ExternalLink, AlertTriangle, Lightbulb } from "lucide-react"
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
+function renderTextWithLinks(text) {
+  if (typeof text !== "string" || !text) return text;
+
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const exactUrlRegex = /^https?:\/\/[^\s]+$/;
+  const parts = text.split(urlRegex);
+
+  return parts.map((part, index) => {
+    if (!exactUrlRegex.test(part)) {
+      return <React.Fragment key={`text-${index}`}>{part}</React.Fragment>;
+    }
+
+    const cleanedUrl = part.replace(/[),.!?]+$/, "");
+    const trailing = part.slice(cleanedUrl.length);
+
+    return (
+      <React.Fragment key={`link-${index}`}>
+        <a
+          href={cleanedUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary underline underline-offset-2 hover:text-primary/80"
+        >
+          {cleanedUrl}
+        </a>
+        {trailing}
+      </React.Fragment>
+    );
+  });
+}
+
 function RenderContent({ item }) {
   switch (item.type) {
     case "text":
-      return <p className="text-muted-foreground leading-relaxed">{item.text}</p>;
+      return <p className="text-muted-foreground leading-relaxed">{renderTextWithLinks(item.text)}</p>;
     case "subtitle":
       return <h4 className="text-sm font-bold text-foreground mt-4 mb-2">{item.text}</h4>;
     case "list":
@@ -19,7 +50,7 @@ function RenderContent({ item }) {
           {item.items.map((it, i) => (
             <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
               <span className="text-primary flex-shrink-0">•</span>
-              {it}
+              <span>{renderTextWithLinks(it)}</span>
             </li>
           ))}
         </ul>
@@ -42,7 +73,7 @@ function RenderContent({ item }) {
                 </span>
                 <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary/10 via-card to-card px-4 py-3 shadow-sm">
                   <p className="text-[11px] uppercase tracking-wide text-primary/80 font-semibold mb-1">Step {i + 1}</p>
-                  <p className="text-sm leading-relaxed text-foreground">{it}</p>
+                  <p className="text-sm leading-relaxed text-foreground">{renderTextWithLinks(it)}</p>
                 </div>
               </li>
             );
@@ -53,21 +84,21 @@ function RenderContent({ item }) {
       return (
         <div className="flex gap-3 p-4 rounded-xl bg-primary/10 border border-primary/20 my-3">
           <Lightbulb className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-          <p className="text-sm text-foreground">{item.text}</p>
+          <p className="text-sm text-foreground">{renderTextWithLinks(item.text)}</p>
         </div>
       );
     case "warning":
       return (
         <div className="flex gap-3 p-4 rounded-xl bg-destructive/10 border border-destructive/20 my-3">
           <AlertTriangle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-          <p className="text-sm text-foreground">{item.text}</p>
+          <p className="text-sm text-foreground">{renderTextWithLinks(item.text)}</p>
         </div>
       );
     case "tip":
       return (
         <div className="flex gap-3 p-3 rounded-xl bg-accent/10 border border-accent/20 my-3">
           <span className="text-accent text-sm font-semibold flex-shrink-0">Pro Tip:</span>
-          <p className="text-sm text-muted-foreground">{item.text}</p>
+          <p className="text-sm text-muted-foreground">{renderTextWithLinks(item.text)}</p>
         </div>
       );
     case "image":
