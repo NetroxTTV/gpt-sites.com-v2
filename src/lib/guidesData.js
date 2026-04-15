@@ -323,8 +323,8 @@ export const guides = [
       {
         title: "Important Notes for Level 21+",
         content: [
-          { type: "warning", text: "After level 21, Captain's Quarters and Astrology chains become major blockers. You need Liaison, Enlistment, Drill Hall, and Sick Bay prerequisites ready." },
-          { type: "list", items: ["Without daily cashback, many players need an additional $150-$200 after cashback to finish level 30", "Final cost heavily depends on event participation consistency, especially Ghost Ship cycles"] },
+          { type: "warning", text: "After level 21, Captain's Quarters and Astrology chains can stall progression. Pre-build Liaison, Enlistment, Drill Hall, and Sick Bay requirements early since they're the only required buildings to upgrade." },
+          { type: "list", items: ["Without daily cashbacks, many players need an additional $150-$200 after cashback to finish level 30", "Final cost heavily depends on event participation consistency, especially Ghost Ship cycles"] },
         ]
       },
       {
