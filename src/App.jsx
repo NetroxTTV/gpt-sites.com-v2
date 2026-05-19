@@ -12,6 +12,7 @@ import GuideDetail from './pages/GuideDetail';
 import Sites from './pages/Sites';
 import Offers from './pages/Offers';
 import OfferDetail from './pages/OfferDetail';
+import RedirectPage from './pages/Redirect';
 
 const routeMeta = {
   "/Home": {
@@ -105,6 +106,8 @@ function App() {
           <Route path="/Sites" element={<Sites />} />
           <Route path="/Offers" element={<Offers />} />
           <Route path="/Offers/:offerSlug" element={<OfferDetail />} />
+          <Route path="/redirect=:slug" element={<RedirectPage />} />
+          <Route path="/redirect" element={<RedirectPage />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Router>
