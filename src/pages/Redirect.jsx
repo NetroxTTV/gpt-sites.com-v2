@@ -36,8 +36,11 @@ const RedirectPage = () => {
   const redirectMap = useMemo(buildRedirectMap, []);
   const searchParams = new URLSearchParams(location.search);
   const querySlug = searchParams.get("redirect") || searchParams.get("site") || searchParams.get("s");
+  const pathnameSlug = location.pathname.startsWith("/redirect=")
+    ? location.pathname.slice("/redirect=".length)
+    : "";
 
-  const rawSlug = slug || querySlug || "";
+  const rawSlug = slug || querySlug || pathnameSlug || "";
   const normalizedSlug = slugify(rawSlug);
   const normalizedCompact = compact(rawSlug);
 

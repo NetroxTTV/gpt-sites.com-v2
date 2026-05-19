@@ -91,6 +91,16 @@ function RouteMeta() {
   return null;
 }
 
+function RedirectOrNotFound() {
+  const { pathname } = useLocation();
+
+  if (pathname === "/redirect" || pathname.startsWith("/redirect=")) {
+    return <RedirectPage />;
+  }
+
+  return <PageNotFound />;
+}
+
 function App() {
 
   return (
@@ -108,7 +118,7 @@ function App() {
           <Route path="/Offers/:offerSlug" element={<OfferDetail />} />
           <Route path="/redirect=:slug" element={<RedirectPage />} />
           <Route path="/redirect" element={<RedirectPage />} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route path="*" element={<RedirectOrNotFound />} />
         </Routes>
       </Router>
       <Toaster />
