@@ -1177,5 +1177,160 @@ export const guides = [
       { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
       { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
+  },
+  {
+    slug: "raid-shadow-legends",
+    title: "RAID Shadow Legends : Complete High Profit Guide ($300-600+)",
+    banner: new URL("../imgs/guides/raid/banner.jpeg", import.meta.url).href,
+    category: "Game",
+    platform: "Android / iOS / PC",
+    genre: "RPG / Gacha",
+    offerwall: "Prime Opinion / Torox / Ayet / MyChips",
+    difficulty: "Medium",
+    timeInvestment: "10-30 days depending on goals",
+    totalReward: "$300-600+",
+    moneyInvestment: "Optional but recommended",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "callout", text: "RAID is one of the best long-term mobile/PC game offers. Payouts can range from $300 to $600+ depending on the offerwall and region." },
+          { type: "list", items: ["Category: Game", "Offer: RAID Shadow Legends", "Platform: Android / iOS / PC", "Genre: RPG / Gacha", "Offerwall options: Prime Opinion, Torox, Ayet, MyChips", "Total Reward: $300-600+", "Difficulty: Medium", "Time Investment: 10-30 days", "Money Investment: Optional but recommended"] },
+          { type: "subtitle", text: "Most offers include" },
+          { type: "list", items: ["Level milestones", "Hero upgrade tasks", "Sacred shard openings", "Purchase cashback tasks"] },
+        ]
+      },
+      {
+        title: "Best Start (Very Important)",
+        content: [
+          { type: "callout", text: "Choose Kael as your starter champion." },
+          { type: "steps", items: ["Pick Kael", "Redeem promo code: RAID7"] },
+          { type: "tip", text: "The RAID7 code gives strong early rewards and speeds up progression." },
+        ]
+      },
+      {
+        title: "Early Game Priorities",
+        content: [
+          { type: "warning", text: "Before doing any important upgrade or task, check your mission list. Some missions require heavy farming and you do not want to lock yourself out or waste resources." },
+          { type: "steps", items: ["Complete all missions", "Progress campaign quickly", "Focus only on Kael early", "Push Campaign Normal -> Hard -> Brutal"] },
+          { type: "callout", text: "Your first major objective: unlock Brutal 12-3 farming." },
+        ]
+      },
+      {
+        title: "Best XP Farming Method",
+        content: [
+          { type: "subtitle", text: "Farm: 12-3 Brutal" },
+          { type: "list", items: ["Best XP efficiency", "Best silver efficiency", "Fastest leveling method"] },
+          { type: "tip", text: "You will spend most of your time here later." },
+        ]
+      },
+      {
+        title: "Important Cashback Purchases",
+        content: [
+          { type: "subtitle", text: "Highly recommended" },
+          { type: "list", items: ["Day 1: Sacred Daily Pack (~$30)", "Day 2: Daily Gem Pack (~$10)", "Day 3: Silver 500k Pack (~$10)"] },
+          { type: "image", src: new URL("../imgs/guides/raid/Sacred Daily Pack.png", import.meta.url).href, alt: "Sacred Daily Pack" },
+          { type: "image", src: new URL("../imgs/guides/raid/Daily Gem Pack.png", import.meta.url).href, alt: "Daily Gem Pack" },
+          { type: "image", src: new URL("../imgs/guides/raid/500k silver Pack.png", import.meta.url).href, alt: "Silver 500k Pack" },
+          { type: "callout", text: "These purchases are often profitable because offerwall rewards are higher and they massively speed progression." },
+        ]
+      },
+      {
+        title: "Sacred Shard Tasks",
+        content: [
+          { type: "text", text: "Many RAID offers require opening Sacred Shards." },
+          { type: "subtitle", text: "Main Sacred sources" },
+          { type: "list", items: ["Sacred pack purchase", "Completing Hard Campaign", "Completing Brutal Campaign", "Level 37 pack offers (~$26)", "Special $50 pack after Day 7", "Mission rewards"] },
+        ]
+      },
+      {
+        title: "Important Heroes to Keep",
+        content: [
+          { type: "warning", text: "Do NOT feed these champions." },
+          { type: "list", items: ["Warmaiden", "Diabolist", "Spirithost", "Heiress"] },
+        ]
+      },
+      {
+        title: "Gems Strategy",
+        content: [
+          { type: "subtitle", text: "Use gems only for" },
+          { type: "list", items: ["Energy refills"] },
+          { type: "subtitle", text: "Do NOT waste gems on" },
+          { type: "list", items: ["Summons", "Random shop purchases"] },
+          { type: "callout", text: "Energy = progression." },
+        ]
+      },
+      {
+        title: "Automation Tool (Highly Recommended)",
+        content: [
+          { type: "text", text: "Install RSLHelper to farm efficiently." },
+          { type: "link", text: "Official website", url: "https://rslhelper.com/" },
+          { type: "list", items: ["Auto farm XP", "Auto replay stages", "Continue farming after auto-battles run out"] },
+          { type: "tip", text: "Extremely useful for long farming sessions." },
+        ]
+      },
+      {
+        title: "Campaign Strategy",
+        content: [
+          { type: "steps", items: ["Finish Normal", "Finish Hard", "Finish Brutal", "Farm Brutal 12-3 repeatedly"] },
+          { type: "list", items: ["Sacred shards", "XP", "Silver", "Food champions"] },
+        ]
+      },
+      {
+        title: "Leveling Strategy",
+        content: [
+          { type: "list", items: ["Level Kael to 60", "Build food champions", "Push campaign efficiently", "Complete daily missions/events"] },
+          { type: "warning", text: "Do not spread resources across many heroes early." },
+        ]
+      },
+      {
+        title: "Spending Strategy",
+        content: [
+          { type: "callout", text: "RAID becomes much easier with small spending." },
+          { type: "list", items: ["Sacred Daily Pack", "Gem Pack", "Silver packs", "Level milestone packs"] },
+          { type: "warning", text: "Avoid random expensive offers." },
+        ]
+      },
+      {
+        title: "Tracking Tips",
+        content: [
+          { type: "list", items: ["Pause briefly after completing milestones", "Some offerwalls can take hours to update", "Take screenshots of purchases, level milestones, and Sacred shard openings"] },
+        ]
+      },
+      {
+        title: "Common Tasks on Most Offerwalls",
+        content: [
+          { type: "list", items: ["Reach Level 15 / 30 / 50 / 60 / 70", "Upgrade heroes to 5-star or 6-star", "Open Sacred Shards", "Purchase specific packs", "Complete campaign difficulties"] },
+        ]
+      },
+      {
+        title: "Important Warning",
+        content: [
+          { type: "warning", text: "Level 60-70 tasks become very grindy without spending or automation." },
+          { type: "callout", text: "Best ROI is usually Sacred shard tasks, cashback purchases, and mid-level progression tasks." },
+        ]
+      },
+      {
+        title: "Final Strategy Summary",
+        content: [
+          { type: "steps", items: ["Start with Kael", "Use RAID7 code", "Rush campaign progression", "Farm 12-3 Brutal", "Buy recommended cashback packs", "Use gems only for energy", "Install RSLHelper", "Save key champions", "Focus on shard tasks + progression milestones"] },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          { type: "list", items: ["Possible Reward: $300-600+", "Recommended Spending: $50-120", "Estimated Net Profit: $200-500+", "One of the highest ROI long-term game offers available"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
   }
 ];
