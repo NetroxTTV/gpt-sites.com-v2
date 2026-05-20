@@ -1181,7 +1181,7 @@ export const guides = [
   {
     slug: "raid-shadow-legends",
     title: "RAID Shadow Legends : Complete High Profit Guide ($300-600+)",
-    banner: new URL("../imgs/guides/raid/banner.jpeg", import.meta.url).href,
+    banner: new URL("../imgs/guides/raid/banner.jpg", import.meta.url).href,
     category: "Game",
     platform: "Android / iOS / PC",
     genre: "RPG / Gacha",
@@ -1195,7 +1195,7 @@ export const guides = [
         title: "Offer Overview",
         content: [
           { type: "callout", text: "RAID is one of the best long-term mobile/PC game offers. Payouts can range from $300 to $600+ depending on the offerwall and region." },
-          { type: "list", items: ["Category: Game", "Offer: RAID Shadow Legends", "Platform: Android / iOS / PC", "Genre: RPG / Gacha", "Offerwall options: Prime Opinion, Torox, Ayet, MyChips", "Total Reward: $300-600+", "Difficulty: Medium", "Time Investment: 10-30 days", "Money Investment: Optional but recommended"] },
+          { type: "list", items: ["Category: Game", "Platform: Android / iOS / PC", "Genre: RPG / Gacha"] },
           { type: "subtitle", text: "Most offers include" },
           { type: "list", items: ["Level milestones", "Hero upgrade tasks", "Sacred shard openings", "Purchase cashback tasks"] },
         ]
@@ -1205,7 +1205,13 @@ export const guides = [
         content: [
           { type: "callout", text: "Choose Kael as your starter champion." },
           { type: "steps", items: ["Pick Kael", "Redeem promo code: RAID7"] },
-          { type: "tip", text: "The RAID7 code gives strong early rewards and speeds up progression." },
+          { type: "tip", text: "The RAID7 code gives Pelops the Victor (very OP) and speeds up progression." },
+          {
+            type: "imageRow",
+            items: [
+            { src: new URL("../imgs/guides/raid/start_charac.png", import.meta.url).href, alt: "start_charac" },
+            ],
+          }   
         ]
       },
       {
@@ -1222,16 +1228,26 @@ export const guides = [
           { type: "subtitle", text: "Farm: 12-3 Brutal" },
           { type: "list", items: ["Best XP efficiency", "Best silver efficiency", "Fastest leveling method"] },
           { type: "tip", text: "You will spend most of your time here later." },
+          {
+            type: "imageRow",
+            items: [
+            { src: new URL("../imgs/guides/raid/brutal.png", import.meta.url).href, alt: "brutal screenshot" },
+            ],
+          }   
         ]
       },
       {
         title: "Important Cashback Purchases",
         content: [
           { type: "subtitle", text: "Highly recommended" },
-          { type: "list", items: ["Day 1: Sacred Daily Pack (~$30)", "Day 2: Daily Gem Pack (~$10)", "Day 3: Silver 500k Pack (~$10)"] },
-          { type: "image", src: new URL("../imgs/guides/raid/Sacred Daily Pack.png", import.meta.url).href, alt: "Sacred Daily Pack" },
-          { type: "image", src: new URL("../imgs/guides/raid/Daily Gem Pack.png", import.meta.url).href, alt: "Daily Gem Pack" },
-          { type: "image", src: new URL("../imgs/guides/raid/500k silver Pack.png", import.meta.url).href, alt: "Silver 500k Pack" },
+          { type: "list", items: ["Day 1: Sacred Daily Pack ($30)", "Day 2: Daily Gem Pack ($10)", "Day 3: 500K Silver Pack ($10)"] },
+          {
+            type: "imageRow",
+            items: [
+              { src: new URL("../imgs/guides/raid/Sacred Daily Pack.png", import.meta.url).href, alt: "Sacred Daily Pack" },
+              { src: new URL("../imgs/guides/raid/Daily Gem Pack.png", import.meta.url).href, alt: "Daily Gem Pack" },
+            ],
+          },
           { type: "callout", text: "These purchases are often profitable because offerwall rewards are higher and they massively speed progression." },
         ]
       },
@@ -1289,18 +1305,6 @@ export const guides = [
           { type: "callout", text: "RAID becomes much easier with small spending." },
           { type: "list", items: ["Sacred Daily Pack", "Gem Pack", "Silver packs", "Level milestone packs"] },
           { type: "warning", text: "Avoid random expensive offers." },
-        ]
-      },
-      {
-        title: "Tracking Tips",
-        content: [
-          { type: "list", items: ["Pause briefly after completing milestones", "Some offerwalls can take hours to update", "Take screenshots of purchases, level milestones, and Sacred shard openings"] },
-        ]
-      },
-      {
-        title: "Common Tasks on Most Offerwalls",
-        content: [
-          { type: "list", items: ["Reach Level 15 / 30 / 50 / 60 / 70", "Upgrade heroes to 5-star or 6-star", "Open Sacred Shards", "Purchase specific packs", "Complete campaign difficulties"] },
         ]
       },
       {

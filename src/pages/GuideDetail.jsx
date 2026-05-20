@@ -107,6 +107,21 @@ function RenderContent({ item }) {
           <img src={item.src} alt={item.alt} className="w-full h-auto max-h-72 object-contain bg-secondary/20" />
         </div>
       );
+    case "imageRow": {
+      const isSingle = item.items.length === 1;
+      return (
+        <div className={`my-4 grid grid-cols-1 gap-4 ${isSingle ? "place-items-center" : "sm:grid-cols-2"}`}>
+          {item.items.map((image, index) => (
+            <div
+              key={index}
+              className={`rounded-xl overflow-hidden border border-border/30 bg-secondary/10 ${isSingle ? "w-full max-w-2xl" : ""}`}
+            >
+              <img src={image.src} alt={image.alt} className="w-full h-auto max-h-72 object-contain bg-secondary/20" />
+            </div>
+          ))}
+        </div>
+      );
+    }
     case "link":
       return (
         <a href={item.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-3 rounded-xl bg-card border border-border/40 hover:border-primary/30 text-sm text-primary font-medium transition-colors my-2">
