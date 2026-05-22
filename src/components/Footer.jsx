@@ -17,6 +17,7 @@ export default function Footer() {
             <a href="/Guides" className="sakura-link">Guides</a>
             <a href="/Tips" className="sakura-link">Tips</a>
             <a href="#faq" className="sakura-link">FAQ</a>
+            <a href="mailto:admin@gpt-sites.com" className="sakura-link">Contact</a>
           </div>
 
           <div className="flex items-center gap-3">

@@ -355,6 +355,7 @@ export default function Guides() {
             </div>
           </motion.div>
 
+
           <div className="rounded-2xl border border-primary/25 bg-primary/5 px-5 py-4 mb-6">
             <p className="text-sm text-foreground font-semibold mb-1">Want to submit a guide?</p>
             <p className="text-sm text-muted-foreground">

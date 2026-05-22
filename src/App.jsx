@@ -34,6 +34,10 @@ const routeMeta = {
     title: "GPT Sites | Events",
     description: "Track offerwall boosts, tournaments, and seasonal promos across top GPT sites so you can earn at peak rates.",
   },
+  "/Offers": {
+    title: "GPT Sites | Offers",
+    description: "Explore current offer opportunities and redirect to the latest events and boosts across top GPT sites.",
+  },
 };
 
 function RouteMeta() {
@@ -69,19 +73,16 @@ function RouteMeta() {
     document.title = title;
 
     const pageUrl = `${window.location.origin}${pathname}`;
-    const previewImage = `${window.location.origin}/src/icon.png`;
 
     upsertMetaTag('meta[name="description"]', { name: "description" }, description);
     upsertMetaTag('meta[property="og:title"]', { property: "og:title" }, title);
     upsertMetaTag('meta[property="og:description"]', { property: "og:description" }, description);
     upsertMetaTag('meta[property="og:type"]', { property: "og:type" }, "website");
     upsertMetaTag('meta[property="og:url"]', { property: "og:url" }, pageUrl);
-    upsertMetaTag('meta[property="og:image"]', { property: "og:image" }, previewImage);
 
-    upsertMetaTag('meta[name="twitter:card"]', { name: "twitter:card" }, "summary_large_image");
+    upsertMetaTag('meta[name="twitter:card"]', { name: "twitter:card" }, "summary");
     upsertMetaTag('meta[name="twitter:title"]', { name: "twitter:title" }, title);
     upsertMetaTag('meta[name="twitter:description"]', { name: "twitter:description" }, description);
-    upsertMetaTag('meta[name="twitter:image"]', { name: "twitter:image" }, previewImage);
   }, [pathname]);
 
   return null;

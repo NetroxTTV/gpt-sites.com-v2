@@ -11,7 +11,7 @@ const badgeConfig = {
   mobile_app: { label: "Mobile App", icon: Smartphone, className: "bg-indigo-500/15 text-indigo-600 border-indigo-400/30" },
 };
 
-export default function SiteCard({ site, index, showRate = false }) {
+export default function SiteCard({ site, index, showRate = false, showBadges = true }) {
   const topRankMatch = /^top(\d+)$/i.exec(site.badge || "");
   const casinoBonusTagClassName = getCasinoBonusTagClassName(site.bonus_tag);
   const badge = topRankMatch
@@ -36,19 +36,21 @@ export default function SiteCard({ site, index, showRate = false }) {
       >
         <div className="relative h-full rounded-xl bg-card border border-border/40 p-5 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5">
           {/* Badges row */}
-          <div className="flex items-center gap-2 mb-3 min-h-[24px]">
-            {badge && (
-              <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold border ${badge.className}`}>
-                <BadgeIcon className="w-3 h-3" />
-                {badge.label}
-              </span>
-            )}
-            {site.bonus_tag && (
-              <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold border ${casinoBonusTagClassName || "bg-accent/20 text-orange-700 border-accent/35"}`}>
-                {site.bonus_tag}
-              </span>
-            )}
-          </div>
+          {showBadges && (
+            <div className="flex items-center gap-2 mb-3 min-h-[24px]">
+              {badge && (
+                <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold border ${badge.className}`}>
+                  <BadgeIcon className="w-3 h-3" />
+                  {badge.label}
+                </span>
+              )}
+              {site.bonus_tag && (
+                <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold border ${casinoBonusTagClassName || "bg-accent/20 text-orange-700 border-accent/35"}`}>
+                  {site.bonus_tag}
+                </span>
+              )}
+            </div>
+          )}
 
           {/* Logo + Name */}
           <div className="flex items-center gap-3 mb-3">

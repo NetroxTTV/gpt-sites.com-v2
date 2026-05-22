@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
@@ -93,6 +94,28 @@ export default function Tips() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45 }}
+          className="mt-10 rounded-2xl border border-border/55 bg-card/70 backdrop-blur-sm p-5 shadow-[0_12px_28px_rgba(59,130,246,0.12)]"
+        >
+          <h2 className="text-lg font-bold text-foreground mb-2">Ready to apply these tips?</h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            Pick a top site and follow a guide so you complete your first high-paying offer faster.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <Link to="/Sites">
+              <Button size="sm" className="rounded-lg">Browse sites</Button>
+            </Link>
+            <Link to="/Guides">
+              <Button size="sm" variant="outline" className="rounded-lg border-primary/30 text-primary hover:bg-primary/10">
+                Open guides
+              </Button>
+            </Link>
+          </div>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

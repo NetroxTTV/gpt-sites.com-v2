@@ -47,6 +47,12 @@ export default function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="#quick-picks" onClick={(e) => { e.preventDefault(); document.getElementById('quick-picks')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base font-semibold rounded-xl gap-2 shadow-lg shadow-primary/20">
+                Quick Picks
+                <ArrowDown className="w-4 h-4" />
+              </Button>
+            </a>
             <a href="#sites" onClick={(e) => { e.preventDefault(); document.getElementById('sites')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}>
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-base font-semibold rounded-xl gap-2 shadow-lg shadow-primary/20">
                 Browse Sites

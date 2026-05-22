@@ -1,7 +1,9 @@
 import React, { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 const events = [
   {
@@ -163,6 +165,27 @@ export default function Events() {
               Current offerwall boosts, tournaments, and seasonal promos across GPT sites.
             </p>
           </motion.div>
+
+          <div className="mb-8 rounded-2xl border border-border/55 bg-card/70 backdrop-blur-sm p-5 shadow-[0_12px_28px_rgba(59,130,246,0.14)]">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <h2 className="text-lg font-bold text-foreground">Plan your week around boosts</h2>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Events are limited-time. Pair them with the best rate sites to maximize payouts.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <Link to="/Sites">
+                  <Button size="sm" className="rounded-lg">Find best rates</Button>
+                </Link>
+                <Link to="/Guides">
+                  <Button size="sm" variant="outline" className="rounded-lg border-primary/30 text-primary hover:bg-primary/10">
+                    Find a guide
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
 
           <div className="mb-8">
             <label className="block text-sm font-semibold text-foreground mb-2" htmlFor="events-search">

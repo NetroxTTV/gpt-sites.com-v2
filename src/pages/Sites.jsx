@@ -50,6 +50,12 @@ export default function Sites() {
     () => [...new Set(allOfferwalls)].sort((a, b) => (offerwallLabels[a] || a).localeCompare(offerwallLabels[b] || b)),
     []
   );
+  const topPicks = useMemo(() => {
+    const ranked = allSites
+      .filter((site) => /^top\d+$/i.test(site.badge || ""))
+      .sort((a, b) => (a.badge || "").localeCompare(b.badge || ""));
+    return ranked.slice(0, 3);
+  }, []);
 
   useEffect(() => {
     const nextParams = new URLSearchParams(searchParams);
@@ -121,6 +127,23 @@ export default function Sites() {
             </h1>
             <p className="text-muted-foreground">{allSites.length} sites — find the best one for you this spring</p>
           </motion.div>
+
+          <div className="mb-8 rounded-2xl border border-border/55 bg-card/70 backdrop-blur-sm p-4 sm:p-5 shadow-[0_12px_28px_rgba(59,130,246,0.14)]">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
+              <div>
+                <p className="text-xs uppercase tracking-wide text-muted-foreground">Top Picks By The Community</p>
+                <h2 className="text-lg sm:text-xl font-bold text-foreground">Fastest payouts and best overall rates</h2>
+              </div>
+              <div className="text-sm text-muted-foreground">
+                Start here if you want the highest odds of quick credits.
+              </div>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {topPicks.map((site, index) => (
+                <SiteCard key={site.name} site={site} index={index} showRate showBadges={false} />
+              ))}
+            </div>
+          </div>
 
           {/* Filters row */}
           <div className="relative z-40 flex flex-col sm:flex-row gap-3 mb-4 flex-wrap items-start rounded-2xl border border-border/55 bg-card/65 backdrop-blur-sm p-3 sm:p-4 shadow-[0_12px_28px_rgba(59,130,246,0.12)]">

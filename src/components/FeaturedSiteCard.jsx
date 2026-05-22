@@ -33,9 +33,9 @@ export default function FeaturedSiteCard({ site, index }) {
         href={site.visit_url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group block"
+        className="group block h-full"
       >
-        <div className={`relative rounded-2xl bg-card border border-border/50 p-6 hover:border-primary/40 transition-all duration-500 hover:shadow-xl ${rankBgGlow[rank]} overflow-hidden`}>
+        <div className={`relative h-full rounded-2xl bg-card border border-border/50 p-6 hover:border-primary/40 transition-all duration-500 hover:shadow-xl ${rankBgGlow[rank]} overflow-hidden`}>
           {/* Subtle glow */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl pointer-events-none group-hover:bg-primary/10 transition-all" />
           
@@ -44,7 +44,7 @@ export default function FeaturedSiteCard({ site, index }) {
             <span className="text-sm font-bold text-white">#{rank}</span>
           </div>
 
-          <div className="flex flex-col items-center text-center pt-6">
+          <div className="flex h-full flex-col items-center text-center pt-6">
             {/* Logo */}
             <div className="w-16 h-16 rounded-xl bg-secondary/50 flex items-center justify-center mb-4 overflow-hidden border border-border/30">
               {site.logo_url ? (
@@ -58,8 +58,8 @@ export default function FeaturedSiteCard({ site, index }) {
               {site.name}
             </h3>
             
-            <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
-              {site.description}
+            <p className="text-sm text-muted-foreground mb-3 line-clamp-2 flex-1">
+              {site.description || site.tagline}
             </p>
 
             {site.bonus_tag && (
