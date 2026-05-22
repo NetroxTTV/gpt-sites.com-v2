@@ -331,7 +331,7 @@ export default function Guides() {
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
               <div>
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-3">
-                  <span className="bg-gradient-to-r from-primary via-rose-500 to-accent bg-clip-text text-transparent">Find The Right Guide Fast</span>
+                  <span className="bg-gradient-to-r from-primary via-sky-500 to-accent bg-clip-text text-transparent">Find The Right Guide Fast</span>
                 </h1>
                 <p className="text-muted-foreground max-w-2xl">
                   Search by game, filter by difficulty and offerwall, then sort by what matters most. This layout scales cleanly even when your guide library grows to 30+ entries.
@@ -375,7 +375,7 @@ export default function Guides() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05 }}
-            className="mb-8 rounded-2xl border border-border/55 bg-card/65 backdrop-blur p-4 sm:p-5 shadow-[0_14px_34px_rgba(232,108,155,0.14)] sm:sticky sm:top-8 sm:z-10"
+            className="mb-8 rounded-2xl border border-border/55 bg-card/65 backdrop-blur p-4 sm:p-5 shadow-[0_14px_34px_rgba(59,130,246,0.14)] sm:sticky sm:top-8 sm:z-10"
           >
             <div className="relative mb-4">
               <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />

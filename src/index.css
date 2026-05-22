@@ -7,74 +7,74 @@
 @layer base {
   :root {
     --font-inter: 'M PLUS Rounded 1c', sans-serif;
-    --background: 345 58% 97%;
-    --foreground: 345 24% 18%;
+    --background: 210 40% 98%;
+    --foreground: 214 28% 15%;
     --card: 0 0% 100%;
-    --card-foreground: 345 24% 18%;
+    --card-foreground: 214 28% 15%;
     --popover: 0 0% 100%;
-    --popover-foreground: 345 24% 18%;
-    --primary: 340 73% 54%;
+    --popover-foreground: 214 28% 15%;
+    --primary: 210 82% 48%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 342 48% 93%;
-    --secondary-foreground: 345 24% 25%;
-    --muted: 342 45% 94%;
-    --muted-foreground: 344 18% 43%;
-    --accent: 18 72% 63%;
+    --secondary: 210 40% 94%;
+    --secondary-foreground: 214 22% 25%;
+    --muted: 210 30% 95%;
+    --muted-foreground: 215 16% 42%;
+    --accent: 192 72% 46%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 345 34% 86%;
-    --input: 345 34% 86%;
-    --ring: 340 73% 54%;
-    --chart-1: 340 73% 54%;
-    --chart-2: 18 72% 63%;
-    --chart-3: 196 58% 48%;
-    --chart-4: 45 82% 57%;
-    --chart-5: 320 44% 52%;
+    --border: 210 24% 86%;
+    --input: 210 24% 86%;
+    --ring: 210 82% 48%;
+    --chart-1: 210 82% 48%;
+    --chart-2: 192 72% 46%;
+    --chart-3: 200 68% 44%;
+    --chart-4: 220 70% 58%;
+    --chart-5: 180 60% 40%;
     --radius: 0.75rem;
-    --sidebar-background: 345 58% 97%;
-    --sidebar-foreground: 345 24% 18%;
-    --sidebar-primary: 340 73% 54%;
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 214 28% 15%;
+    --sidebar-primary: 210 82% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 342 48% 93%;
-    --sidebar-accent-foreground: 345 24% 25%;
-    --sidebar-border: 345 34% 86%;
-    --sidebar-ring: 340 73% 54%;
+    --sidebar-accent: 210 40% 94%;
+    --sidebar-accent-foreground: 214 22% 25%;
+    --sidebar-border: 210 24% 86%;
+    --sidebar-ring: 210 82% 48%;
   }
 
   .dark {
-    --background: 336 28% 9%;
-    --foreground: 340 34% 94%;
-    --card: 334 26% 12%;
-    --card-foreground: 340 34% 94%;
-    --popover: 334 26% 12%;
-    --popover-foreground: 340 34% 94%;
-    --primary: 340 78% 62%;
-    --primary-foreground: 335 34% 10%;
-    --secondary: 334 22% 18%;
-    --secondary-foreground: 340 28% 90%;
-    --muted: 334 20% 16%;
-    --muted-foreground: 338 15% 68%;
-    --accent: 18 72% 63%;
-    --accent-foreground: 336 28% 10%;
+    --background: 214 32% 10%;
+    --foreground: 210 34% 94%;
+    --card: 214 28% 12%;
+    --card-foreground: 210 34% 94%;
+    --popover: 214 28% 12%;
+    --popover-foreground: 210 34% 94%;
+    --primary: 210 86% 62%;
+    --primary-foreground: 214 32% 10%;
+    --secondary: 214 24% 18%;
+    --secondary-foreground: 210 28% 90%;
+    --muted: 214 20% 16%;
+    --muted-foreground: 212 16% 68%;
+    --accent: 192 72% 46%;
+    --accent-foreground: 214 32% 10%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 334 18% 24%;
-    --input: 334 18% 24%;
-    --ring: 340 73% 54%;
-    --chart-1: 340 73% 54%;
-    --chart-2: 18 72% 63%;
-    --chart-3: 196 58% 48%;
-    --chart-4: 45 82% 57%;
-    --chart-5: 320 44% 52%;
-    --sidebar-background: 336 28% 9%;
-    --sidebar-foreground: 340 34% 94%;
-    --sidebar-primary: 340 73% 54%;
-    --sidebar-primary-foreground: 335 34% 10%;
-    --sidebar-accent: 334 22% 18%;
-    --sidebar-accent-foreground: 340 28% 90%;
-    --sidebar-border: 334 18% 24%;
-    --sidebar-ring: 340 73% 54%;
+    --border: 214 18% 24%;
+    --input: 214 18% 24%;
+    --ring: 210 86% 62%;
+    --chart-1: 210 86% 62%;
+    --chart-2: 192 72% 46%;
+    --chart-3: 200 68% 44%;
+    --chart-4: 220 70% 58%;
+    --chart-5: 180 60% 40%;
+    --sidebar-background: 214 32% 10%;
+    --sidebar-foreground: 210 34% 94%;
+    --sidebar-primary: 210 86% 62%;
+    --sidebar-primary-foreground: 214 32% 10%;
+    --sidebar-accent: 214 24% 18%;
+    --sidebar-accent-foreground: 210 28% 90%;
+    --sidebar-border: 214 18% 24%;
+    --sidebar-ring: 210 86% 62%;
   }
 }
 
@@ -86,19 +86,19 @@
   body {
     @apply bg-background text-foreground font-inter;
     background-image:
-      radial-gradient(circle at 8% 14%, rgba(255, 153, 191, 0.2) 0, transparent 28%),
-      radial-gradient(circle at 88% 22%, rgba(255, 196, 174, 0.18) 0, transparent 30%),
-      radial-gradient(circle at 22% 84%, rgba(255, 153, 191, 0.14) 0, transparent 34%),
-      linear-gradient(180deg, #fff7fb 0%, #fffaf6 50%, #fff6fb 100%);
+      radial-gradient(circle at 8% 14%, rgba(56, 189, 248, 0.18) 0, transparent 28%),
+      radial-gradient(circle at 88% 22%, rgba(125, 211, 252, 0.16) 0, transparent 30%),
+      radial-gradient(circle at 22% 84%, rgba(59, 130, 246, 0.14) 0, transparent 34%),
+      linear-gradient(180deg, #f5faff 0%, #f8fbff 50%, #f2f7ff 100%);
     background-attachment: fixed;
   }
 
   .dark body {
     background-image:
-      radial-gradient(circle at 10% 12%, rgba(236, 72, 153, 0.2) 0, transparent 28%),
-      radial-gradient(circle at 86% 20%, rgba(251, 146, 60, 0.16) 0, transparent 30%),
-      radial-gradient(circle at 22% 82%, rgba(236, 72, 153, 0.14) 0, transparent 34%),
-      linear-gradient(180deg, #1c1018 0%, #140f14 55%, #120d13 100%);
+      radial-gradient(circle at 10% 12%, rgba(59, 130, 246, 0.24) 0, transparent 28%),
+      radial-gradient(circle at 86% 20%, rgba(56, 189, 248, 0.18) 0, transparent 30%),
+      radial-gradient(circle at 22% 82%, rgba(99, 102, 241, 0.16) 0, transparent 34%),
+      linear-gradient(180deg, #0a1626 0%, #0b1220 55%, #0a0f1a 100%);
   }
 }
 
@@ -107,26 +107,26 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #fde8f1;
+  background: #e6f3ff;
 }
 ::-webkit-scrollbar-thumb {
-  background: #f6a8c4;
+  background: #86bff2;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #ea7ea8;
+  background: #5aa2e6;
 }
 
 .dark ::-webkit-scrollbar-track {
-  background: #2a1a24;
+  background: #0f1a2b;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #a84e76;
+  background: #2f5f9b;
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #cc5e8f;
+  background: #3b75bf;
 }
 
 @keyframes sakura-drift {
@@ -230,8 +230,8 @@
     width: var(--petal-size, 12px);
     height: calc(var(--petal-size, 12px) * 0.78);
     border-radius: 70% 70% 70% 70% / 95% 95% 55% 55%;
-    background: radial-gradient(circle at 26% 24%, rgba(255, 255, 255, 0.8) 0 18%, rgba(255, 193, 214, 0.85) 30%, rgba(245, 127, 167, 0.95) 100%);
-    filter: drop-shadow(0 6px 10px rgba(232, 108, 155, 0.22));
+    background: radial-gradient(circle at 26% 24%, rgba(255, 255, 255, 0.8) 0 18%, rgba(186, 230, 253, 0.85) 30%, rgba(59, 130, 246, 0.9) 100%);
+    filter: drop-shadow(0 6px 10px rgba(59, 130, 246, 0.2));
     transform-origin: center;
     animation: sakura-drift var(--petal-duration, 12s) linear infinite;
     animation-delay: var(--petal-delay, 0s);
@@ -241,14 +241,14 @@
   }
 
   .sakura-glass {
-    background: linear-gradient(120deg, rgba(255, 255, 255, 0.72), rgba(255, 241, 247, 0.72));
-    border-color: rgba(234, 172, 197, 0.45);
-    box-shadow: 0 10px 32px rgba(232, 108, 155, 0.08);
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.78), rgba(234, 246, 255, 0.7));
+    border-color: rgba(125, 211, 252, 0.4);
+    box-shadow: 0 10px 32px rgba(56, 189, 248, 0.12);
   }
 
   .dark .sakura-glass {
-    background: linear-gradient(120deg, rgba(43, 25, 37, 0.82), rgba(28, 20, 31, 0.84));
-    border-color: rgba(236, 72, 153, 0.35);
+    background: linear-gradient(120deg, rgba(16, 25, 38, 0.86), rgba(12, 19, 30, 0.88));
+    border-color: rgba(56, 189, 248, 0.28);
     box-shadow: 0 10px 32px rgba(0, 0, 0, 0.35);
   }
 
@@ -264,7 +264,7 @@
     left: 0;
     width: 32%;
     height: 1px;
-    background: linear-gradient(90deg, transparent 0%, rgba(236, 72, 153, 0.65) 52%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.65) 52%, transparent 100%);
     transform: translateX(-130%);
     animation: sakura-sheen 7s ease-in-out infinite;
     pointer-events: none;

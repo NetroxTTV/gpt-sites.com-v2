@@ -117,13 +117,13 @@ export default function Sites() {
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
             <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-2">
-              <span className="bg-gradient-to-r from-primary via-rose-500 to-accent bg-clip-text text-transparent">All GPT Sites</span>
+              <span className="bg-gradient-to-r from-primary via-sky-500 to-accent bg-clip-text text-transparent">All GPT Sites</span>
             </h1>
             <p className="text-muted-foreground">{allSites.length} sites — find the best one for you this spring</p>
           </motion.div>
 
           {/* Filters row */}
-          <div className="relative z-40 flex flex-col sm:flex-row gap-3 mb-4 flex-wrap items-start rounded-2xl border border-border/55 bg-card/65 backdrop-blur-sm p-3 sm:p-4 shadow-[0_12px_28px_rgba(232,108,155,0.12)]">
+          <div className="relative z-40 flex flex-col sm:flex-row gap-3 mb-4 flex-wrap items-start rounded-2xl border border-border/55 bg-card/65 backdrop-blur-sm p-3 sm:p-4 shadow-[0_12px_28px_rgba(59,130,246,0.12)]">
             {/* Search */}
             <div className="relative min-w-[200px] max-w-sm w-full sm:w-auto">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -150,7 +150,7 @@ export default function Sites() {
               </button>
 
               {dropdownOpen && (
-                <div className="absolute top-full mt-2 left-0 z-[70] bg-card border border-border/55 rounded-xl shadow-[0_14px_30px_rgba(232,108,155,0.2)] py-2 min-w-[200px] max-h-72 overflow-y-auto">
+                <div className="absolute top-full mt-2 left-0 z-[70] bg-card border border-border/55 rounded-xl shadow-[0_14px_30px_rgba(59,130,246,0.18)] py-2 min-w-[200px] max-h-72 overflow-y-auto">
                   <button
                     className="w-full text-left px-4 py-2 text-sm text-muted-foreground hover:bg-secondary/50 hover:text-foreground transition-colors"
                     onClick={() => { setSelectedOfferwalls([]); }}
@@ -186,7 +186,7 @@ export default function Sites() {
                   onClick={() => setActiveBadge(f)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                     activeBadge === f
-                      ? "bg-gradient-to-r from-primary via-rose-500 to-accent text-primary-foreground shadow-[0_8px_18px_rgba(232,108,155,0.28)]"
+                      ? "bg-gradient-to-r from-primary via-sky-500 to-accent text-primary-foreground shadow-[0_8px_18px_rgba(59,130,246,0.24)]"
                       : "bg-background/80 border border-border/45 text-muted-foreground hover:text-foreground hover:border-primary/30"
                   }`}
                 >

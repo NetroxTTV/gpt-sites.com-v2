@@ -3,12 +3,12 @@ import { ExternalLink, Star, Smartphone, Flame, Zap, Crown } from "lucide-react"
 import { motion } from "framer-motion";
 import { getCasinoBonusTagClassName } from "@/lib/bonusTagStyles";
 
-const topBadgeClassName = "bg-gradient-to-r from-rose-400/25 via-pink-300/25 to-orange-300/25 text-rose-700 border-rose-300/60 shadow-[0_0_14px_rgba(244,114,182,0.22)] animate-pulse";
+const topBadgeClassName = "bg-gradient-to-r from-sky-400/25 via-cyan-300/25 to-blue-300/25 text-sky-700 border-sky-300/60 shadow-[0_0_14px_rgba(56,189,248,0.24)] animate-pulse";
 
 const badgeConfig = {
-  new: { label: "New", icon: Zap, className: "bg-rose-500/15 text-rose-600 border-rose-400/30" },
-  popular: { label: "Popular", icon: Flame, className: "bg-orange-400/15 text-orange-600 border-orange-400/30" },
-  mobile_app: { label: "Mobile App", icon: Smartphone, className: "bg-fuchsia-500/15 text-fuchsia-600 border-fuchsia-400/30" },
+  new: { label: "New", icon: Zap, className: "bg-sky-500/15 text-sky-600 border-sky-400/30" },
+  popular: { label: "Popular", icon: Flame, className: "bg-amber-400/15 text-amber-600 border-amber-400/30" },
+  mobile_app: { label: "Mobile App", icon: Smartphone, className: "bg-indigo-500/15 text-indigo-600 border-indigo-400/30" },
 };
 
 export default function SiteCard({ site, index, showRate = false }) {

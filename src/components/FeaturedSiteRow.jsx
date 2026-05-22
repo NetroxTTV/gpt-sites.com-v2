@@ -5,19 +5,19 @@ import { motion } from "framer-motion";
 import { getCasinoBonusTagClassName } from "@/lib/bonusTagStyles";
 
 const rankColors = {
-  1: "from-rose-500 to-pink-500",
-  2: "from-fuchsia-400 to-rose-400",
-  3: "from-orange-400 to-amber-400",
+  1: "from-sky-500 to-cyan-500",
+  2: "from-blue-500 to-sky-400",
+  3: "from-indigo-400 to-blue-400",
   4: "from-primary to-accent",
   5: "from-sky-400 to-cyan-400",
 };
 
 const rewardIcons = {
-  PayPal: { label: "P", bg: "bg-rose-500" },
+  PayPal: { label: "P", bg: "bg-sky-500" },
   Bitcoin: { label: "B", bg: "bg-orange-500" },
   Litecoin: { label: "L", bg: "bg-slate-500" },
   Amazon: { label: "A", bg: "bg-amber-500" },
-  "Gift Cards": { label: "G", bg: "bg-pink-500" },
+  "Gift Cards": { label: "G", bg: "bg-blue-500" },
 };
 
 export default function FeaturedSiteRow({ site, index }) {

@@ -10,8 +10,7 @@ import Guides from './pages/Guides';
 import Tips from './pages/Tips.jsx';
 import GuideDetail from './pages/GuideDetail';
 import Sites from './pages/Sites';
-import Offers from './pages/Offers';
-import OfferDetail from './pages/OfferDetail';
+import Events from './pages/Events';
 import RedirectPage from './pages/Redirect';
 
 const routeMeta = {
@@ -31,9 +30,9 @@ const routeMeta = {
     title: "GPT Sites | Sites",
     description: "Browse and filter GPT websites by offerwalls, popularity, and payout rates to find the best site for your goals.",
   },
-  "/Offers": {
-    title: "GPT Sites | Offers",
-    description: "Explore available offers and use filters for country, category, and offerwall to quickly find relevant opportunities.",
+  "/Events": {
+    title: "GPT Sites | Events",
+    description: "Track offerwall boosts, tournaments, and seasonal promos across top GPT sites so you can earn at peak rates.",
   },
 };
 
@@ -54,20 +53,17 @@ function RouteMeta() {
 
   useEffect(() => {
     let title = "GPT Sites";
-    let description = "Find top GPT sites, guides, and offers to earn smarter.";
+    let description = "Find top GPT sites, guides, and events to earn smarter.";
 
     if (matchPath("/Guides/:slug", pathname)) {
       title = "GPT Sites | Guide";
       description = "Detailed guide page with setup steps, offerwall notes, and execution tips to complete offers more efficiently.";
-    } else if (matchPath("/Offers/:offerSlug", pathname)) {
-      title = "GPT Sites | Offer Details";
-      description = "Offer details including payout, requirements, and where to complete it across supported GPT sites and offerwalls.";
     } else if (routeMeta[pathname]) {
       title = routeMeta[pathname].title;
       description = routeMeta[pathname].description;
     } else {
       title = "GPT Sites | Page Not Found";
-      description = "The page you requested could not be found. Return to GPT Sites to continue browsing guides, sites, and offers.";
+      description = "The page you requested could not be found. Return to GPT Sites to continue browsing guides, sites, and events.";
     }
 
     document.title = title;
@@ -114,8 +110,8 @@ function App() {
           <Route path="/Tips" element={<Tips />} />
           <Route path="/Guides/:slug" element={<GuideDetail />} />
           <Route path="/Sites" element={<Sites />} />
-          <Route path="/Offers" element={<Offers />} />
-          <Route path="/Offers/:offerSlug" element={<OfferDetail />} />
+          <Route path="/Events" element={<Events />} />
+          <Route path="/Offers" element={<Navigate to="/Events" replace />} />
           <Route path="/redirect=:slug" element={<RedirectPage />} />
           <Route path="/redirect" element={<RedirectPage />} />
           <Route path="*" element={<RedirectOrNotFound />} />
