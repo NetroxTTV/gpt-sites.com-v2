@@ -69,7 +69,7 @@ function RouteMeta() {
     document.title = title;
 
     const pageUrl = `${window.location.origin}${pathname}`;
-    const previewImage = `${window.location.origin}/src/cherry.png`;
+    const previewImage = `${window.location.origin}/src/icon.png`;
 
     upsertMetaTag('meta[name="description"]', { name: "description" }, description);
     upsertMetaTag('meta[property="og:title"]', { property: "og:title" }, title);
