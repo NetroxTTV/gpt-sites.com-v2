@@ -1280,7 +1280,7 @@ export const guides = [
         title: "Automation Tool (Highly Recommended)",
         content: [
           { type: "text", text: "Install RSLHelper to farm efficiently." },
-          { type: "link", text: "Official website", url: "https://rslhelper.com/" },
+          { type: "link", text: "Official website", url: "https://rsl-helper.de/?lang=en" },
           { type: "list", items: ["Auto farm XP", "Auto replay stages", "Continue farming after auto-battles run out"] },
           { type: "tip", text: "Extremely useful for long farming sessions." },
         ]
