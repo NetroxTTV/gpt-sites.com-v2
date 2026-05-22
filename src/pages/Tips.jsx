@@ -29,23 +29,42 @@ const tips = [
   },
   {
     number: 5,
+    title: "Use Guides First",
+    text: "Check Guides before starting an offer so you avoid common mistakes and finish faster.",
+  },
+  {
+    number: 6,
+    title: "Check Rates Before You Start",
+    text: "Use the Sites page to compare rates so you always pick the highest paying site.",
+  },
+  {
+    number: 7,
     title: "Use a Dedicated Email",
     text: "Create a separate email for GPT sites to keep your inbox organized and avoid missing important reward notifications.",
   },
   {
-    number: 6,
+    number: 8,
     title: "Avoid VPNs",
     text: "Most sites will ban accounts using VPNs. Always complete offers from your real location to avoid losing your earnings.",
   },
   {
-    number: 7,
+    number: 9,
     title: "Screenshot Everything",
     text: "Always take screenshots of completed offers. This helps when submitting support tickets for missing credits.",
   },
   {
-    number: 8,
+    number: 10,
     title: "Focus on One Offer at a Time",
     text: "Complete one offer fully before starting another. This helps avoid confusion and ensures you get credited properly.",
+  },
+  {
+    number: 11,
+    title: "Check Offers Quickly",
+    text: "If you want to check for offers, use this site:",
+    link: {
+      label: "gpthub.gg/offers",
+      href: "https://gpthub.gg/offers",
+    },
   },
 ];
 
@@ -88,7 +107,19 @@ export default function Tips() {
                 </span>
                 <div>
                   <h3 className="text-sm font-bold text-foreground mb-1">{tip.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{tip.text}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {tip.text}
+                    {tip.link && (
+                      <a
+                        href={tip.link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline font-medium ml-1"
+                      >
+                        {tip.link.label}
+                      </a>
+                    )}
+                  </p>
                 </div>
               </div>
             </motion.div>
