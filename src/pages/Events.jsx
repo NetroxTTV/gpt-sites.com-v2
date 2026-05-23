@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { getAliasTokens } from "@/lib/siteAliases";
 
 const events = [
   {
@@ -32,6 +33,19 @@ const events = [
       "Compete by completing Torox offers during the event window.",
     ],
     bannerUrl: "https://www.coinpayu.com/static/images/cooperate/pc.svg",
+  },
+  {
+    title: "MyChips +50% Boost",
+    siteName: "MyChips",
+    siteUrl: "/Offerwalls",
+    dateRange: "1 week only",
+    endDate: "2026-05-30",
+    highlight: "Get +50% extra $$ on all MyChips offers, completed during this event.",
+    details: [
+      "Find the boosted offers directly on the MyChips Offerwall.",
+      "Boost applies to any MyChips offer completed during the event.",
+      "Start earning more today with the limited-time payout increase.",
+    ],
   },
   {
     title: "GemsLoot RevU $400 Tournament",
@@ -109,7 +123,7 @@ function EventCard({ event, index, isCompact }) {
           <img
             src={event.bannerUrl}
             alt={`${event.title} banner`}
-            className="w-full h-auto object-contain"
+            className="w-full h-28 sm:h-32 object-contain"
             loading="lazy"
           />
         </div>
@@ -137,9 +151,10 @@ export default function Events() {
   const filteredEvents = useMemo(() => {
     const query = search.trim().toLowerCase();
     if (!query) return events;
-    return events.filter((event) =>
-      [event.siteName, event.title].some((value) => String(value).toLowerCase().includes(query))
-    );
+    return events.filter((event) => {
+      const searchTokens = getAliasTokens([event.siteName, event.title]);
+      return searchTokens.some((value) => value.includes(query));
+    });
   }, [search]);
 
   const mainEvents = filteredEvents.slice(0, 2);

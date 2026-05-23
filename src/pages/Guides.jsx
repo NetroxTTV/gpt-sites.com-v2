@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
+import { getAliasTokens } from "@/lib/siteAliases";
 
 const UiButton = /** @type {any} */ (Button);
 const UiInput = /** @type {any} */ (Input);
@@ -107,6 +108,7 @@ function getSearchScore(guide, query) {
   const platform = guide.platform.toLowerCase();
   const genre = guide.genre.toLowerCase();
   const offerwalls = splitOfferwalls(guide.offerwall).join(" ").toLowerCase();
+  const siteTokens = getAliasTokens((guide.sites || []).map((site) => site.name)).join(" ");
 
   let score = 0;
 
@@ -132,6 +134,10 @@ function getSearchScore(guide, query) {
 
   if (offerwalls.includes(query)) {
     score += 35;
+  }
+
+  if (siteTokens.includes(query)) {
+    score += 45;
   }
 
   return score;
@@ -223,6 +229,7 @@ export default function Guides() {
         return true;
       }
 
+      const siteTokens = getAliasTokens((guide.sites || []).map((site) => site.name));
       const searchableText = [
         guide.title,
         guide.category,
@@ -230,6 +237,7 @@ export default function Guides() {
         guide.genre,
         guide.offerwall,
         guide.difficulty,
+        ...siteTokens,
       ]
         .join(" ")
         .toLowerCase();

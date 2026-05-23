@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Link, useSearchParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { getAliasTokens } from "@/lib/siteAliases";
 
 const offerwallLabels = {
   adgate: "AdGate", gemiad: "GemiAd", adscend: "AdScend", adtowall: "AdToWall",
@@ -94,9 +95,9 @@ export default function Sites() {
   };
 
   const filtered = allSites.filter(site => {
-    const matchesSearch =
-      site.name.toLowerCase().includes(search.toLowerCase()) ||
-      (site.description && site.description.toLowerCase().includes(search.toLowerCase()));
+    const query = search.trim().toLowerCase();
+    const searchTokens = getAliasTokens([site.name, site.description]);
+    const matchesSearch = !query || searchTokens.some((value) => value.includes(query));
     const badgeFilter = badgeMap[activeBadge];
     const matchesBadge = !badgeFilter || site.badge === badgeFilter;
     const matchesOfferwalls = selectedOfferwalls.length === 0 ||
