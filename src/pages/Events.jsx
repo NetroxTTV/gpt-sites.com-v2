@@ -36,13 +36,13 @@ const events = [
   },
   {
     title: "MyChips +50% Boost",
-    siteName: "MyChips",
-    siteUrl: "/Offerwalls",
+    siteName: "GemsLoot",
+    siteUrl: "https://gemsloot.com/?aff=netrox",
     dateRange: "1 week only",
     endDate: "2026-05-30",
-    highlight: "Get +50% extra $$ on all MyChips offers, completed during this event.",
+    highlight: "Get +50% extra $$ on all MyChips offers on GemsLoot during this event.",
     details: [
-      "Find the boosted offers directly on the MyChips Offerwall.",
+      "Find the boosted offers directly on the MyChips Offerwall in GemsLoot.",
       "Boost applies to any MyChips offer completed during the event.",
       "Start earning more today with the limited-time payout increase.",
     ],

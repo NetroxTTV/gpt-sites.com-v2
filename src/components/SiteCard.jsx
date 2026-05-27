@@ -27,14 +27,15 @@ export default function SiteCard({ site, index, showRate = false, showBadges = t
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: Math.min(index * 0.03, 0.3) }}
+      className="min-w-0"
     >
       <a
         href={site.visit_url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group block h-full"
+        className="group block h-full w-full min-w-0"
       >
-        <div className="relative h-full rounded-xl bg-card border border-border/40 p-5 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5">
+        <div className="relative h-full min-w-0 rounded-xl bg-card border border-border/40 p-5 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5">
           {/* Badges row */}
           {showBadges && (
             <div className="flex items-center gap-2 mb-3 min-h-[24px]">

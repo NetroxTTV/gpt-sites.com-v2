@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AnimatePresence, motion } from "framer-motion";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -101,8 +102,11 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden p-2 text-muted-foreground hover:text-primary"
+            className="md:hidden p-3 -mr-1 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
             onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -110,39 +114,48 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {mobileOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 px-4 pb-4 sakura-border-sheen">
-          {navLinks.map((link) => (
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            id="mobile-nav"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.18, ease: "easeOut" }}
+            className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 px-4 pb-4 sakura-border-sheen"
+          >
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="block px-3 py-3 text-sm font-medium text-muted-foreground hover:text-primary border-b border-border/30"
+                onClick={(e) => { handleFaqClick(e, link); setMobileOpen(false); }}
+              >
+                {link.label}
+              </a>
+            ))}
             <a
-              key={link.label}
-              href={link.href}
-              className="block px-3 py-3 text-sm font-medium text-muted-foreground hover:text-primary border-b border-border/30"
-              onClick={(e) => { handleFaqClick(e, link); setMobileOpen(false); }}
+              href="https://discord.gg/gptfr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block mt-3"
             >
-              {link.label}
+              <Button variant="outline" size="sm" className="w-full gap-2 border-primary/30 text-primary">
+                Discord
+              </Button>
             </a>
-          ))}
-          <a
-            href="https://discord.gg/gptfr"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block mt-3"
-          >
-            <Button variant="outline" size="sm" className="w-full gap-2 border-primary/30 text-primary">
-              Discord
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={toggleTheme}
+              className="w-full mt-2 gap-2 border-primary/30 text-primary"
+            >
+              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {theme === "dark" ? "Light Mode" : "Dark Mode"}
             </Button>
-          </a>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={toggleTheme}
-            className="w-full mt-2 gap-2 border-primary/30 text-primary"
-          >
-            {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-            {theme === "dark" ? "Light Mode" : "Dark Mode"}
-          </Button>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
