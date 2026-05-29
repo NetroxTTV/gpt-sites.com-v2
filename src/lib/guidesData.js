@@ -1444,5 +1444,83 @@ export const guides = [
       { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
       { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
+  },
+  {
+    slug: "doomsday-last-survivors",
+    title: "Doomsday: Last Survivors",
+    logo: "https://play-lh.googleusercontent.com/c-tjU8jhF6Jbm0T1UGVNIkc21IMcjLsdDy9iKU0zLvlMvUJC9EC79mgVTiRrv0J5AKM0AQ3tqsGu9y0XR5UTR-I",
+    banner: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2439510/capsule_616x353.jpg?t=1779859590",
+    category: "Game",
+    platform: "Android / iOS",
+    genre: "Strategy / Survival",
+    offerwall: "WaxRewards / AdGate",
+    difficulty: "TBD",
+    timeInvestment: "TBD",
+    totalReward: "$80 - $210",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "list", items: ["Category: Game", "Offer: Doomsday: Last Survivors", "Offerwall: WaxRewards / AdGate", "Platform: Android / iOS", "Total Reward: $80 - $210"] },
+        ]
+      },
+      {
+        title: "Notes",
+        content: [
+          { type: "text", text: "Full guide details coming soon." },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
+    slug: "junes-journey-wicked-mystery",
+    title: "June's Journey: Wicked Mystery",
+    logo: "https://m.media-amazon.com/images/I/81rlBcnmkSL.png",
+    banner: "https://i.ytimg.com/vi/4tC3wT1DHxE/maxresdefault.jpg",
+    category: "Game",
+    platform: "Android / iOS",
+    genre: "Hidden Object / Mystery",
+    offerwall: "PrimeEarn / Ayet / Torox",
+    difficulty: "TBD",
+    timeInvestment: "TBD",
+    totalReward: "$230 - $450",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "list", items: ["Category: Game", "Offer: June's Journey: Wicked Mystery", "Offerwall: PrimeEarn / Ayet / Torox", "Platform: Android / iOS", "Total Reward: $230 - $450"] },
+        ]
+      },
+      {
+        title: "Solutions",
+        content: [
+          { type: "link", text: "Scene solutions and walkthroughs", url: "https://thatsleuthlife.com/scenes" },
+        ]
+      },
+      {
+        title: "Notes",
+        content: [
+          { type: "text", text: "Full guide details coming soon." },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
   }
 ];
