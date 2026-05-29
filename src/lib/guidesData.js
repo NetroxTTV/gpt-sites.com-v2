@@ -1256,7 +1256,7 @@ export const guides = [
         content: [
           { type: "text", text: "Many RAID offers require opening Sacred Shards." },
           { type: "subtitle", text: "Main Sacred sources" },
-          { type: "list", items: ["Sacred pack purchase", "Completing Hard Campaign", "Completing Brutal Campaign", "Level 37 pack offers (~$26)", "Special $50 pack after Day 7", "Mission rewards"] },
+          { type: "list", items: ["1x Shard : Sacred pack purchase", "1x Shard : Completing Hard Campaign", "1x Shard : Completing Brutal Campaign", "3x Shard : Level 37 pack offers (~$26)", "1x Shard : Special $50 pack after Day 7", "1x Shard : Mission rewards"] },
         ]
       },
       {
@@ -1324,6 +1324,114 @@ export const guides = [
         title: "Profit Summary",
         content: [
           { type: "list", items: ["Possible Reward: $300-600+", "Recommended Spending: $50-120", "Estimated Net Profit: $200-500+", "One of the highest ROI long-term game offers available"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
+    slug: "zombie-waves",
+    title: "Zombie Waves",
+    logo: "https://play-lh.googleusercontent.com/RBS57n8UMbzGOezcYN1QTuE39rjV01haLomxwN5I3qIukvRaHTvq1OCRgjITvUHO7CiF=w240-h480-rw",
+    banner: "https://i.ytimg.com/vi/cRPTh_bphtM/maxresdefault.jpg",
+    category: "Game",
+    platform: "Android / iOS",
+    genre: "Action / Shooter",
+    offerwall: "Torox",
+    difficulty: "TBD",
+    timeInvestment: "TBD",
+    totalReward: "$300 - $450",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "list", items: ["Category: Game", "Offer: Zombie Waves", "Offerwall: Torox", "Platform: Android / iOS", "Total Reward: $300 - $450"] },
+        ]
+      },
+      {
+        title: "Notes",
+        content: [
+          { type: "text", text: "Full guide details coming soon." },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
+    slug: "star-hunter-infinite-lagrange",
+    title: "Star Hunter - Infinite Lagrange",
+    logo: "https://play-lh.googleusercontent.com/CHWgxB25rFSHICD2Yh4xjEiiOw0Sd3XWaaYtufmoD81CgsoQLdGx_j29zvgpzlgBZASQ-OskfU-lN6CXa7vMixw",
+    banner: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1755920/493ac60ff4f758fb8940850f9b93d6fabda665ae/capsule_616x353.jpg?t=1773654407",
+    category: "Game",
+    platform: "Android",
+    genre: "Strategy / Space",
+    offerwall: "Torox",
+    difficulty: "TBD",
+    timeInvestment: "TBD",
+    totalReward: "$100 - $200",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "list", items: ["Category: Game", "Offer: Star Hunter - Infinite Lagrange", "Offerwall: Torox", "Platform: Android", "Total Reward: $100 - $200"] },
+        ]
+      },
+      {
+        title: "Notes",
+        content: [
+          { type: "text", text: "Full guide details coming soon." },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
+    slug: "guns-of-glory-lost-island",
+    title: "Guns of Glory: Lost Island",
+    logo: "https://play-lh.googleusercontent.com/xlQDAS-A6ytk8Y-R7aOWh8E-KO-LTdJvJ1fCMMke1Zi1h5d4XAznUd0K29pnA0MvTw",
+    banner: "https://play-lh.googleusercontent.com/R8jKyL-I7PyvaFKIFXZFr9iB0AXjamu3AOVf0xE9tsU7M9oB6ApRx13kFtv-54ekZF4=w526-h296-rw",
+    category: "Game",
+    platform: "Android / iOS",
+    genre: "Strategy / Builder",
+    offerwall: "Torox / AdscendMedia / Ayet",
+    difficulty: "TBD",
+    timeInvestment: "TBD",
+    totalReward: "$300 - $700",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "list", items: ["Category: Game", "Offer: Guns of Glory: Lost Island", "Offerwall: Torox / AdscendMedia / Ayet", "Platform: Android / iOS", "Total Reward: $300 - $700"] },
+        ]
+      },
+      {
+        title: "Notes",
+        content: [
+          { type: "text", text: "Full guide details coming soon." },
         ]
       },
     ],
