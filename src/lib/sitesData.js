@@ -14,7 +14,7 @@ export const featuredSites = [
   },
   {
     name: "CoinPayU",
-    tagline: "80-85% Rates — High bonuses and reliable payouts",
+    tagline: "80-85% Rates - High Bonuses/Leaderboards and instant payouts",
     logo_url: new URL("../imgs/Sites/coinpayu.gif", import.meta.url).href,
     visit_url: "https://www.coinpayu.com/?r=Netrox",
     rank: 2,
@@ -25,7 +25,7 @@ export const featuredSites = [
   },
   {
     name: "GemsLoot",
-    tagline: "Receive up to four free cases!",
+    tagline: "Exclusive Offers - Instant Cashouts - 65-95% Rates",
     logo_url: new URL("../imgs/Sites/gemsloot.jpg", import.meta.url).href,
     visit_url: "https://gemsloot.com/?aff=netrox",
     bonus_tag: "Roobet +20%",
@@ -37,7 +37,7 @@ export const featuredSites = [
   },
   {
     name: "CashInStyle",
-    tagline: "$2 bonus after earning $10",
+    tagline: "$2 bonus after earning $10 - 90% rates on all offerwalls",
     logo_url: new URL("../imgs/Sites/cis.svg", import.meta.url).href,
     visit_url: "https://cashinstyle.com/?ref=NETROX",
     rank: 4,
@@ -48,7 +48,7 @@ export const featuredSites = [
   },
   {
     name: "Earnopolis",
-    tagline: "95% Rates — Fast cashouts & exclusive offers",
+    tagline: "85% Rates - Fast cashouts & exclusive offers",
     logo_url: new URL("../imgs/Sites/earnopolis.webp", import.meta.url).href,
     visit_url: "https://earnopolis.com/r/?r=netrox",
     rank: 5,
