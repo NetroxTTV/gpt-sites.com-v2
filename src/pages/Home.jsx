@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
+import { Hero } from "@/components/ui/animated-hero";
 import SitesSection from "@/components/SitesSection";
 import FeaturedSiteCard from "@/components/FeaturedSiteCard";
 import FaqSection from "@/components/FaqSection";
@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background font-inter">
       <Navbar />
-      <HeroSection />
+      <Hero />
       <section id="quick-picks" className="py-14 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">

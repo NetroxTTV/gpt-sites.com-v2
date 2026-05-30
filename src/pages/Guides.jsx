@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { getAliasTokens } from "@/lib/siteAliases";
+import { usePagination } from "@/components/hooks/use-pagination";
+import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink } from "@/components/ui/pagination";
 
 const UiButton = /** @type {any} */ (Button);
 const UiInput = /** @type {any} */ (Input);
@@ -149,7 +151,7 @@ export default function Guides() {
   const [selectedDifficulty, setSelectedDifficulty] = useState("All");
   const [selectedOfferwalls, setSelectedOfferwalls] = useState(/** @type {string[]} */ ([]));
   const [sortBy, setSortBy] = useState("best-match");
-  const [visibleCount, setVisibleCount] = useState(GUIDE_BATCH_SIZE);
+  const [currentPage, setCurrentPage] = useState(1);
   const [openDropdown, setOpenDropdown] = useState(
     /** @type {"category" | "difficulty" | "offerwall" | "sort" | null} */ (null)
   );
@@ -283,8 +285,13 @@ export default function Guides() {
     });
   }, [normalizedQuery, selectedCategory, selectedDifficulty, selectedOfferwalls, sortBy]);
 
-  const visibleGuides = filteredGuides.slice(0, visibleCount);
-  const hasMoreGuides = visibleCount < filteredGuides.length;
+  const totalPages = Math.max(1, Math.ceil(filteredGuides.length / GUIDE_BATCH_SIZE));
+  const visibleGuides = filteredGuides.slice((currentPage - 1) * GUIDE_BATCH_SIZE, currentPage * GUIDE_BATCH_SIZE);
+  const { pages, showLeftEllipsis, showRightEllipsis } = usePagination({
+    currentPage,
+    totalPages,
+    paginationItemsToDisplay: 5,
+  });
 
   const activeFilterCount = [
     Boolean(normalizedQuery),
@@ -299,7 +306,7 @@ export default function Guides() {
     setSelectedDifficulty("All");
     setSelectedOfferwalls([]);
     setSortBy("best-match");
-    setVisibleCount(GUIDE_BATCH_SIZE);
+    setCurrentPage(1);
     setOpenDropdown(null);
   };
 
@@ -308,7 +315,7 @@ export default function Guides() {
     /** @type {string} */ value
   ) => {
     setter(value);
-    setVisibleCount(GUIDE_BATCH_SIZE);
+    setCurrentPage(1);
     setOpenDropdown(null);
   };
 
@@ -316,7 +323,7 @@ export default function Guides() {
     setSelectedOfferwalls((prev) =>
       prev.includes(offerwall) ? prev.filter((value) => value !== offerwall) : [...prev, offerwall]
     );
-    setVisibleCount(GUIDE_BATCH_SIZE);
+    setCurrentPage(1);
   };
 
   const getDropdownButtonClass = (/** @type {boolean} */ isActive) =>
@@ -392,7 +399,7 @@ export default function Guides() {
                 value={query}
                 onChange={(/** @type {{ target: { value: string } }} */ event) => {
                   setQuery(event.target.value);
-                  setVisibleCount(GUIDE_BATCH_SIZE);
+                  setCurrentPage(1);
                 }}
                 placeholder="Search guides by title, platform, category, offerwall..."
                 className="pl-9 pr-10 bg-background/80 border-border/60"
@@ -402,7 +409,7 @@ export default function Guides() {
                   type="button"
                   onClick={() => {
                     setQuery("");
-                    setVisibleCount(GUIDE_BATCH_SIZE);
+                    setCurrentPage(1);
                   }}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
                   aria-label="Clear search"
@@ -496,7 +503,7 @@ export default function Guides() {
                       className="w-full text-left px-4 py-2 text-sm text-muted-foreground hover:bg-secondary/50 hover:text-foreground transition-colors"
                       onClick={() => {
                         setSelectedOfferwalls([]);
-                        setVisibleCount(GUIDE_BATCH_SIZE);
+                        setCurrentPage(1);
                       }}
                     >
                       Clear all
@@ -577,7 +584,7 @@ export default function Guides() {
                       type="button"
                       onClick={() => {
                         setSelectedCategory(category);
-                        setVisibleCount(GUIDE_BATCH_SIZE);
+                        setCurrentPage(1);
                       }}
                       className={cn(
                         "px-3 py-1.5 rounded-full border text-xs font-semibold whitespace-nowrap transition-all",
@@ -705,12 +712,67 @@ export default function Guides() {
               </motion.div>
             ))}
 
-            {hasMoreGuides && (
-              <div className="pt-2 text-center">
-                <UiButton onClick={() => setVisibleCount((prev) => prev + GUIDE_BATCH_SIZE)} variant="outline" size="lg">
-                  Load {Math.min(GUIDE_BATCH_SIZE, filteredGuides.length - visibleCount)} More Guides
-                </UiButton>
-              </div>
+            {totalPages > 1 && (
+              <Pagination className="pt-2">
+                <PaginationContent>
+                  <PaginationItem>
+                    <UiButton
+                      variant="outline"
+                      size="icon"
+                      className="h-9 w-9"
+                      onClick={() => { setCurrentPage((prev) => Math.max(prev - 1, 1)); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                      disabled={currentPage === 1}
+                    >
+                      ←
+                    </UiButton>
+                  </PaginationItem>
+
+                  {showLeftEllipsis && (
+                    <>
+                      <PaginationItem>
+                        <PaginationLink onClick={() => { setCurrentPage(1); window.scrollTo({ top: 0, behavior: "smooth" }); }}>1</PaginationLink>
+                      </PaginationItem>
+                      <PaginationItem>
+                        <PaginationEllipsis />
+                      </PaginationItem>
+                    </>
+                  )}
+
+                  {pages.map((page) => (
+                    <PaginationItem key={page}>
+                      <PaginationLink
+                        onClick={() => { setCurrentPage(page); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                        isActive={currentPage === page}
+                      >
+                        {page}
+                      </PaginationLink>
+                    </PaginationItem>
+                  ))}
+
+                  {showRightEllipsis && (
+                    <>
+                      <PaginationItem>
+                        <PaginationEllipsis />
+                      </PaginationItem>
+                      <PaginationItem>
+                        <PaginationLink onClick={() => { setCurrentPage(totalPages); window.scrollTo({ top: 0, behavior: "smooth" }); }}>{totalPages}</PaginationLink>
+                      </PaginationItem>
+                    </>
+                  )}
+
+                  <PaginationItem>
+                    <UiButton
+                      variant="outline"
+                      size="icon"
+                      className="h-9 w-9"
+                      onClick={() => { setCurrentPage((prev) => Math.min(prev + 1, totalPages)); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                      disabled={currentPage === totalPages}
+                    >
+                      →
+                    </UiButton>
+                  </PaginationItem>
+                </PaginationContent>
+              </Pagination>
             )}
 
             <div className="rounded-2xl border border-border/50 bg-card/60 px-5 py-4">
