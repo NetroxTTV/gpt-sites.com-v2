@@ -2,113 +2,123 @@ import React, { useEffect, useState } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
-
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Sites", href: "/Sites" },
-  { label: "Events", href: "/Events" },
-  { label: "Guides", href: "/Guides" },
-  { label: "Tips", href: "/Tips" },
-  { label: "FAQ", href: "/#faq" },
-];
+import { NavHeader } from "@/components/ui/nav-header";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
-    const resolvedTheme = storedTheme === "dark" || storedTheme === "light"
-      ? storedTheme
-      : "dark";
-
+    const resolvedTheme =
+      storedTheme === "dark" || storedTheme === "light" ? storedTheme : "dark";
     document.documentElement.classList.toggle("dark", resolvedTheme === "dark");
     document.documentElement.style.colorScheme = resolvedTheme;
     setTheme(resolvedTheme);
   }, []);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const toggleTheme = () => {
-    const nextTheme = theme === "dark" ? "light" : "dark";
-    setTheme(nextTheme);
-    localStorage.setItem("theme", nextTheme);
-    document.documentElement.classList.toggle("dark", nextTheme === "dark");
-    document.documentElement.style.colorScheme = nextTheme;
+    const next = theme === "dark" ? "light" : "dark";
+    setTheme(next);
+    localStorage.setItem("theme", next);
+    document.documentElement.classList.toggle("dark", next === "dark");
+    document.documentElement.style.colorScheme = next;
   };
 
-  const handleFaqClick = (e, link) => {
-    if (link.label === "FAQ") {
-      e.preventDefault();
-      const el = document.getElementById("faq");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      } else {
-        window.location.href = "/Home#faq";
-        setTimeout(() => {
-          const faqEl = document.getElementById("faq");
-          if (faqEl) faqEl.scrollIntoView({ behavior: "smooth", block: "start" });
-        }, 500);
-      }
+  const handleFaqClick = (e) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    const el = document.getElementById("faq");
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      window.location.href = "/#faq";
     }
   };
 
+  const navLinks = [
+    { label: "Home", href: "/" },
+    { label: "Sites", href: "/Sites" },
+    { label: "Events", href: "/Events" },
+    { label: "Guides", href: "/Guides" },
+    { label: "Tips", href: "/Tips" },
+    { label: "FAQ", href: "/#faq", onClick: handleFaqClick },
+  ];
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/60 backdrop-blur-xl sakura-glass sakura-border-sheen">
+    <nav
+      className={[
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled
+          ? "border-b border-white/[0.06] bg-[rgba(3,7,14,0.82)] backdrop-blur-2xl shadow-[0_1px_0_rgba(255,255,255,0.04),0_4px_24px_rgba(0,0,0,0.4)]"
+          : "border-b border-transparent bg-[rgba(3,7,14,0.55)] backdrop-blur-xl",
+      ].join(" ")}
+    >
+      {/* Bottom glow line */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
-          <a href="/Home" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-foreground tracking-tight">
-              GPT<span className="text-primary">Sites</span>
+
+          {/* Logo */}
+          <a href="/" className="flex items-center gap-2.5 group cursor-pointer">
+            <div className="w-9 h-9 rounded-lg bg-primary/15 flex items-center justify-center group-hover:bg-primary/25 group-hover:shadow-[0_0_14px_hsl(var(--primary)/0.35)] transition-all duration-200">
+              <img
+                src={new URL("../icon.png", import.meta.url).href}
+                alt="GPTSites"
+                className="w-5 h-5"
+              />
+            </div>
+            <span className="text-[1.1rem] font-bold tracking-tight">
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">GPT</span>
+              <span className="text-foreground">Sites</span>
             </span>
           </a>
 
-          {/* Desktop nav — absolutely centered so it stays in the middle regardless of logo/button widths */}
+          {/* Desktop nav — absolutely centered */}
           <div className="hidden md:flex absolute left-1/2 -translate-x-1/2">
-            <div className="flex items-center gap-6 text-sm font-medium text-muted-foreground">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={(e) => handleFaqClick(e, link)}
-                  className="transition-colors hover:text-primary"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
+            <NavHeader />
           </div>
 
-          <div className="hidden md:flex items-center gap-3">
-            <a
-              href="https://discord.gg/gptfr"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="outline" size="sm" className="gap-2 border-primary/30 text-primary hover:bg-primary/10 hover:text-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          {/* Right actions */}
+          <div className="hidden md:flex items-center gap-2">
+            <a href="https://discord.gg/gptfr" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="outline"
+                size="sm"
+                className="gap-2 cursor-pointer border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/10 hover:text-indigo-300 hover:border-indigo-400/50 hover:shadow-[0_0_18px_rgba(99,102,241,0.3)] transition-all duration-300"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286z" />
                 </svg>
                 Discord
               </Button>
             </a>
+
             <Button
               variant="outline"
               size="icon"
               onClick={toggleTheme}
               aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-              title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-              className="border-primary/30 text-primary hover:bg-primary/10 hover:text-primary"
+              className="cursor-pointer w-8 h-8 border-white/[0.1] text-muted-foreground hover:text-foreground hover:bg-white/[0.06] hover:border-white/20 transition-all duration-200"
             >
-              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              {theme === "dark" ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
             </Button>
           </div>
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden p-3 -mr-1 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+            className="md:hidden cursor-pointer p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-white/[0.06] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
-            aria-controls="mobile-nav"
           >
             {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -119,42 +129,48 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            id="mobile-nav"
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.18, ease: "easeOut" }}
-            className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 px-4 pb-4 sakura-border-sheen"
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.15, ease: "easeOut" }}
+            className="md:hidden bg-[rgba(3,7,14,0.96)] backdrop-blur-2xl border-t border-white/[0.06] px-4 pb-5 pt-2"
           >
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="block px-3 py-3 text-sm font-medium text-muted-foreground hover:text-primary border-b border-border/30"
-                onClick={(e) => { handleFaqClick(e, link); setMobileOpen(false); }}
-              >
-                {link.label}
+            <div className="space-y-0.5">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={link.onClick ?? (() => setMobileOpen(false))}
+                  className="flex items-center px-3 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-white/[0.05] rounded-lg cursor-pointer transition-colors duration-150"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+
+            <div className="mt-4 pt-4 border-t border-white/[0.06] flex flex-col gap-2">
+              <a href="https://discord.gg/gptfr" target="_blank" rel="noopener noreferrer">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full gap-2 cursor-pointer border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/10"
+                >
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286z" />
+                  </svg>
+                  Join Discord
+                </Button>
               </a>
-            ))}
-            <a
-              href="https://discord.gg/gptfr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block mt-3"
-            >
-              <Button variant="outline" size="sm" className="w-full gap-2 border-primary/30 text-primary">
-                Discord
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={toggleTheme}
+                className="w-full gap-2 cursor-pointer border-white/[0.1] text-muted-foreground hover:text-foreground"
+              >
+                {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                {theme === "dark" ? "Light Mode" : "Dark Mode"}
               </Button>
-            </a>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={toggleTheme}
-              className="w-full mt-2 gap-2 border-primary/30 text-primary"
-            >
-              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-              {theme === "dark" ? "Light Mode" : "Dark Mode"}
-            </Button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
