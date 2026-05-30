@@ -54,25 +54,27 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/60 backdrop-blur-xl sakura-glass sakura-border-sheen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="relative flex items-center justify-between h-16">
           <a href="/Home" className="flex items-center gap-2">
             <span className="text-xl font-bold text-foreground tracking-tight">
               GPT<span className="text-primary">Sites</span>
             </span>
           </a>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleFaqClick(e, link)}
-                className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-lg hover:bg-primary/10"
-              >
-                {link.label}
-              </a>
-            ))}
+          {/* Desktop nav — absolutely centered so it stays in the middle regardless of logo/button widths */}
+          <div className="hidden md:flex absolute left-1/2 -translate-x-1/2">
+            <div className="flex items-center gap-6 text-sm font-medium text-muted-foreground">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleFaqClick(e, link)}
+                  className="transition-colors hover:text-primary"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
           </div>
 
           <div className="hidden md:flex items-center gap-3">
