@@ -1,6 +1,6 @@
 import React from "react";
 import { ExternalLink, Star, Smartphone, Flame, Zap, Crown } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { getCasinoBonusTagClassName } from "@/lib/bonusTagStyles";
 
 const topBadgeClassName = "bg-gradient-to-r from-sky-400/25 via-cyan-300/25 to-blue-300/25 text-sky-700 border-sky-300/60 shadow-[0_0_14px_rgba(56,189,248,0.24)] animate-pulse";
@@ -12,6 +12,7 @@ const badgeConfig = {
 };
 
 export default function SiteCard({ site, index, showRate = false, showBadges = true }) {
+  const reduce = useReducedMotion();
   const topRankMatch = /^top(\d+)$/i.exec(site.badge || "");
   const casinoBonusTagClassName = getCasinoBonusTagClassName(site.bonus_tag);
   const badge = topRankMatch
@@ -23,10 +24,10 @@ export default function SiteCard({ site, index, showRate = false, showBadges = t
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={reduce ? false : { opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: Math.min(index * 0.03, 0.3) }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.42, delay: Math.min(index * 0.03, 0.3), ease: [0.22, 1, 0.36, 1] }}
       className="min-w-0"
     >
       <a

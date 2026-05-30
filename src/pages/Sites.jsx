@@ -58,6 +58,13 @@ export default function Sites() {
     return ranked.slice(0, 3);
   }, []);
 
+  const badgeCounts = useMemo(() => ({
+    "All": allSites.length,
+    "New": allSites.filter(s => s.badge === "new").length,
+    "Popular": allSites.filter(s => s.badge === "popular").length,
+    "Mobile App": allSites.filter(s => s.badge === "mobile_app").length,
+  }), []);
+
   useEffect(() => {
     const nextParams = new URLSearchParams(searchParams);
     const badgeValue = badgeMap[activeBadge];
@@ -113,7 +120,7 @@ export default function Sites() {
   return (
     <div className="min-h-screen bg-background font-inter">
       <Navbar />
-      <div className="pt-16 pb-20 px-4 sm:px-6">
+      <div className="pt-24 pb-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <Link to="/">
             <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground hover:text-foreground mb-8">
@@ -126,7 +133,13 @@ export default function Sites() {
             <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-2">
               <span className="bg-gradient-to-r from-primary via-sky-500 to-accent bg-clip-text text-transparent">All GPT Sites</span>
             </h1>
-            <p className="text-muted-foreground">{allSites.length} sites — find the best one for you this spring</p>
+            <p className="text-muted-foreground">
+              <span className="font-semibold text-foreground">{displayedSites.length}</span>
+              {" "}of {allSites.length} sites
+              {(search || selectedOfferwalls.length > 0 || activeBadge !== "All") && (
+                <span className="text-primary"> · filtered</span>
+              )}
+            </p>
           </motion.div>
 
           <div className="mb-8 rounded-2xl border border-border/55 bg-card/70 backdrop-blur-sm p-4 sm:p-5 shadow-[0_12px_28px_rgba(59,130,246,0.14)]">
@@ -146,8 +159,8 @@ export default function Sites() {
             </div>
           </div>
 
-          {/* Filters row */}
-          <div className="relative z-40 flex flex-col sm:flex-row gap-3 mb-4 flex-wrap items-start rounded-2xl border border-border/55 bg-card/65 backdrop-blur-sm p-3 sm:p-4 shadow-[0_12px_28px_rgba(59,130,246,0.12)]">
+          {/* Filters row — sticky below navbar */}
+          <div className="sticky top-16 z-30 flex flex-col sm:flex-row gap-3 mb-4 flex-wrap items-start rounded-2xl border border-border/55 bg-card/80 backdrop-blur-xl p-3 sm:p-4 shadow-[0_12px_28px_rgba(59,130,246,0.12)]">
             {/* Search */}
             <div className="relative min-w-[200px] max-w-sm w-full sm:w-auto">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -202,7 +215,7 @@ export default function Sites() {
               )}
             </div>
 
-            {/* Badge filters */}
+            {/* Badge filters with counts */}
             <div className="flex items-center gap-2 flex-wrap">
               {badgeFilters.map(f => (
                 <button
@@ -215,6 +228,9 @@ export default function Sites() {
                   }`}
                 >
                   {f}
+                  <span className={`ml-1.5 text-xs ${activeBadge === f ? "opacity-75" : "opacity-50"}`}>
+                    ({badgeCounts[f]})
+                  </span>
                 </button>
               ))}
             </div>

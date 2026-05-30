@@ -156,6 +156,7 @@ export default function Guides() {
     /** @type {"category" | "difficulty" | "offerwall" | "sort" | null} */ (null)
   );
 
+
   useEffect(() => {
     const handler = (/** @type {{ target: EventTarget | null }} */ event) => {
       if (!(event.target instanceof Element)) {
@@ -337,7 +338,7 @@ export default function Guides() {
   return (
     <div className="min-h-screen bg-background font-inter">
       <Navbar />
-      <div className="pt-16 pb-20 px-4 sm:px-6">
+      <div className="pt-24 pb-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/25 mb-4">
@@ -391,7 +392,7 @@ export default function Guides() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05 }}
-            className="mb-8 rounded-2xl border border-border/55 bg-card/65 backdrop-blur p-4 sm:p-5 shadow-[0_14px_34px_rgba(59,130,246,0.14)] sm:sticky sm:top-8 sm:z-10"
+            className="mb-8 rounded-2xl border border-border/55 bg-card/80 backdrop-blur-xl p-4 sm:p-5 shadow-[0_14px_34px_rgba(59,130,246,0.14)] sticky top-[76px] z-30"
           >
             <div className="relative mb-4">
               <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />
@@ -655,8 +656,9 @@ export default function Guides() {
               <motion.div
                 key={guide.slug}
                 initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.24, delay: index * 0.03 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.45, delay: index * 0.04, ease: [0.22, 1, 0.36, 1] }}
               >
                 <Link to={`/Guides/${guide.slug}`} className="group block">
                   <article className="grid grid-cols-1 sm:grid-cols-[220px_1fr] gap-0 rounded-2xl bg-card border border-border/40 overflow-hidden hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">

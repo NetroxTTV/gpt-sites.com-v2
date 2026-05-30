@@ -1,0 +1,70 @@
+export const events = [
+  {
+    title: "Earnopolis +30% on Torox",
+    siteName: "Earnopolis",
+    siteUrl: "https://earnopolis.com/r/?r=netrox",
+    dateRange: "May 15 – Jun 30",
+    startDate: "2026-05-15",
+    endDate: "2026-06-30",
+    highlight: "Torox payouts run at 110% on Earnopolis during this window.",
+    details: [
+      "Boost applies to any Torox offer completed on Earnopolis.",
+      "Highest effective Torox rate available by a wide margin.",
+      "Plan large offers here to maximize ROI.",
+    ],
+  },
+  {
+    title: "RewardJoy Torox Tournament",
+    siteName: "RewardJoy",
+    siteUrl: "https://www.coinpayu.com/?r=Netrox",
+    dateRange: "May 15 – May 30",
+    startDate: "2026-05-15",
+    endDate: "2026-05-30",
+    highlight: "RewardJoy is running a $1,000 Torox tournament with boosted competition payouts.",
+    details: [
+      "RewardJoy is the new name for CoinPayu.",
+      "Tournament prize pool: $1,000.",
+      "Compete by completing Torox offers during the event window.",
+    ],
+    bannerUrl: "https://www.coinpayu.com/static/images/cooperate/pc.svg",
+  },
+  {
+    title: "MyChips +50% Boost",
+    siteName: "GemsLoot",
+    siteUrl: "https://gemsloot.com/?aff=netrox",
+    dateRange: "1 week only",
+    startDate: "2026-05-23",
+    endDate: "2026-05-30",
+    highlight: "Get +50% extra on all MyChips offers on GemsLoot during this event.",
+    details: [
+      "Find the boosted offers directly on the MyChips Offerwall in GemsLoot.",
+      "Boost applies to any MyChips offer completed during the event.",
+      "Start earning more today with the limited-time payout increase.",
+    ],
+  },
+  {
+    title: "GemsLoot RevU $400 Tournament",
+    siteName: "GemsLoot",
+    siteUrl: "https://gemsloot.com/?aff=netrox",
+    dateRange: "Ending soon",
+    startDate: "2026-05-22",
+    endDate: "2026-06-01",
+    highlight: "GemsLoot is running a $400 RevU tournament for top performers.",
+    details: [
+      "Prize pool: $400.",
+      "Complete RevU offers on GemsLoot to compete.",
+    ],
+  },
+];
+
+export const getDaysLeft = (endDate) => {
+  if (!endDate) return null;
+  const end = new Date(`${endDate}T23:59:59`);
+  const diff = end.getTime() - Date.now();
+  if (Number.isNaN(diff) || diff < 0) return null;
+  return Math.ceil(diff / (1000 * 60 * 60 * 24));
+};
+
+export const activeEventCount = events.filter(
+  (e) => getDaysLeft(e.endDate) !== null
+).length;

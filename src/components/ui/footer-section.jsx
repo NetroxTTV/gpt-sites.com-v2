@@ -23,14 +23,6 @@ const footerLinks = [
         ],
     },
     {
-        label: 'Legal',
-        links: [
-            { title: 'Affiliate Disclosure', href: '#' },
-            { title: 'Privacy Policy', href: '#' },
-            { title: 'Terms of Service', href: '#' },
-        ],
-    },
-    {
         label: 'Community',
         links: [
             { title: 'Discord', href: 'https://discord.gg/gptfr', icon: MessageCircleIcon },
@@ -41,57 +33,55 @@ const footerLinks = [
 
 export function FooterSection() {
     return (
-        <footer className="relative w-full border-t px-6 py-12 lg:py-16">
-            <div className="max-w-6xl mx-auto">
+        <footer className="relative w-full border-t px-4 py-8 sm:px-6 sm:py-10 lg:py-16">
+            <div className="max-w-5xl mx-auto xl:translate-x-10">
                 {/* Top glow line */}
                 <div className="bg-foreground/10 absolute top-0 left-1/2 h-px w-1/3 -translate-x-1/2 rounded-full blur-sm" />
 
-                <div className="grid w-full gap-10 xl:grid-cols-3 xl:gap-8">
+                <div className="grid w-full gap-6 text-center justify-items-center sm:gap-10 sm:grid-cols-2 sm:text-left sm:justify-items-start xl:grid-cols-4 xl:gap-24">
                     {/* Brand column */}
                     <AnimatedContainer className="space-y-4">
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center justify-center gap-2 sm:justify-start">
                             <span className="text-xl font-bold text-foreground">
                                 GPT<span className="text-primary">Sites</span>
                             </span>
                         </div>
-                        <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
+                        <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mx-auto sm:mx-0">
                             Your #1 resource for finding the best Get Paid To sites, guides, and tips to maximize your earnings.
                         </p>
                         <p className="text-xs text-muted-foreground/60">
                             © {new Date().getFullYear()} GPT Sites. All rights reserved.
                         </p>
-                        <p className="text-xs text-muted-foreground/50 max-w-xs">
+                        <p className="hidden sm:block text-xs text-muted-foreground/50 max-w-sm mx-auto sm:mx-0">
                             Some links are affiliate links. Registering via these links supports the project at no extra cost to you.
                         </p>
                     </AnimatedContainer>
 
                     {/* Link columns */}
-                    <div className="mt-4 grid grid-cols-2 gap-8 md:grid-cols-4 xl:col-span-2 xl:mt-0">
-                        {footerLinks.map((section, index) => (
-                            <AnimatedContainer key={section.label} delay={0.1 + index * 0.1}>
-                                <div className="mb-6 md:mb-0">
-                                    <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground mb-4">
-                                        {section.label}
-                                    </h3>
-                                    <ul className="text-muted-foreground space-y-2.5 text-sm">
-                                        {section.links.map((link) => (
-                                            <li key={link.title}>
-                                                <a
-                                                    href={link.href}
-                                                    target={link.href.startsWith('http') ? '_blank' : undefined}
-                                                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                                    className="hover:text-foreground inline-flex items-center gap-1.5 transition-colors duration-200"
-                                                >
-                                                    {link.icon && <link.icon className="size-3.5 shrink-0" />}
-                                                    {link.title}
-                                                </a>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </AnimatedContainer>
-                        ))}
-                    </div>
+                    {footerLinks.map((section, index) => (
+                        <AnimatedContainer key={section.label} delay={0.1 + index * 0.1}>
+                            <div className="mb-6 md:mb-0">
+                                <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground mb-4">
+                                    {section.label}
+                                </h3>
+                                <ul className="text-muted-foreground space-y-2.5 text-sm">
+                                    {section.links.map((link) => (
+                                        <li key={link.title}>
+                                            <a
+                                                href={link.href}
+                                                target={link.href.startsWith('http') ? '_blank' : undefined}
+                                                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                                                className="hover:text-foreground inline-flex items-center gap-1.5 transition-colors duration-200"
+                                            >
+                                                {link.icon && <link.icon className="size-3.5 shrink-0" />}
+                                                {link.title}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </AnimatedContainer>
+                    ))}
                 </div>
             </div>
         </footer>
