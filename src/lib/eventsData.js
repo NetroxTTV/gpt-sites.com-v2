@@ -14,21 +14,6 @@ export const events = [
     ],
   },
   {
-    title: "RewardJoy Torox Tournament",
-    siteName: "RewardJoy",
-    siteUrl: "https://www.coinpayu.com/?r=Netrox",
-    dateRange: "May 15 – May 30",
-    startDate: "2026-05-15",
-    endDate: "2026-05-30",
-    highlight: "RewardJoy is running a $1,000 Torox tournament with boosted competition payouts.",
-    details: [
-      "RewardJoy is the new name for CoinPayu.",
-      "Tournament prize pool: $1,000.",
-      "Compete by completing Torox offers during the event window.",
-    ],
-    bannerUrl: "https://www.coinpayu.com/static/images/cooperate/pc.svg",
-  },
-  {
     title: "MyChips +50% Boost",
     siteName: "GemsLoot",
     siteUrl: "https://gemsloot.com/?aff=netrox",

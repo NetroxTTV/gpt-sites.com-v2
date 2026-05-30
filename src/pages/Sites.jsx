@@ -159,8 +159,8 @@ export default function Sites() {
             </div>
           </div>
 
-          {/* Filters row — sticky below navbar */}
-          <div className="sticky top-16 z-30 flex flex-col sm:flex-row gap-3 mb-4 flex-wrap items-start rounded-2xl border border-border/55 bg-card/80 backdrop-blur-xl p-3 sm:p-4 shadow-[0_12px_28px_rgba(59,130,246,0.12)]">
+          {/* Filters row */}
+          <div className="flex flex-col sm:flex-row gap-3 mb-4 flex-wrap items-start rounded-2xl border border-border/55 bg-card/80 backdrop-blur-xl p-3 sm:p-4 shadow-[0_12px_28px_rgba(59,130,246,0.12)]">
             {/* Search */}
             <div className="relative min-w-[200px] max-w-sm w-full sm:w-auto">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />

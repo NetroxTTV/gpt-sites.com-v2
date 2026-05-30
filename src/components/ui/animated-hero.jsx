@@ -41,16 +41,16 @@ function Hero() {
 
       <div className="relative z-10 w-full">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex gap-8 pt-16 pb-20 lg:pt-16 lg:pb-32 items-center justify-center flex-col text-center">
+          <div className="flex gap-7 py-10 lg:pt-32 items-center justify-center flex-col text-center">
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/30 shadow-sm shadow-primary/10">
-                <Sparkles className="w-5 h-5 text-primary" />
-                <span className="text-base font-medium text-primary">Your #1 GPT Resource</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 shadow-sm shadow-primary/10">
+                <Sparkles className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium text-primary">Your #1 GPT Resource</span>
               </div>
             </motion.div>
 
@@ -60,7 +60,7 @@ function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="flex gap-3 flex-col"
             >
-              <h1 className="text-6xl md:text-8xl max-w-4xl tracking-tighter text-center font-extrabold leading-tight">
+              <h1 className="text-[3.375rem] md:text-[5.4rem] max-w-4xl tracking-tighter text-center font-extrabold leading-tight">
                 <span className="text-foreground">Earn more,</span>
                 <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-5 md:pt-2">
                   &nbsp;
@@ -82,12 +82,12 @@ function Hero() {
                 </span>
               </h1>
 
-              <p className="text-xl md:text-2xl leading-relaxed tracking-tight text-muted-foreground max-w-3xl text-center mx-auto">
+              <p className="text-lg md:text-[1.35rem] leading-relaxed tracking-tight text-muted-foreground max-w-3xl text-center mx-auto">
                 Discover the best GPT Sites, tips and guides to maximize your earnings.
                 Complete surveys, watch videos, and do tasks to earn real cash, crypto and gift cards.
               </p>
 
-              <p className="text-base text-muted-foreground/70">
+              <p className="text-sm text-muted-foreground/70">
                 Check out our{" "}
                 <Link to="/Guides" className="text-primary hover:underline font-medium">
                   Guides
@@ -109,9 +109,9 @@ function Hero() {
               <Link to="/Sites">
                 <Button
                   size="lg"
-                  className="gap-2 rounded-xl px-10 py-7 text-lg font-semibold shadow-lg shadow-primary/20"
+                  className="gap-2 rounded-xl px-9 py-6 text-base font-semibold shadow-lg shadow-primary/20"
                 >
-                  Browse Sites <MoveRight className="w-5 h-5" />
+                  Browse Sites <MoveRight className="w-4 h-4" />
                 </Button>
               </Link>
               <button
@@ -123,18 +123,18 @@ function Hero() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="gap-2 rounded-xl px-10 py-7 text-lg font-semibold border-border/50 hover:bg-secondary/50"
+                  className="gap-2 rounded-xl px-9 py-6 text-base font-semibold border-border/50 hover:bg-secondary/50"
                 >
-                  Quick Picks <ArrowDown className="w-5 h-5" />
+                  Quick Picks <ArrowDown className="w-4 h-4" />
                 </Button>
               </button>
               <a href="https://discord.gg/gptfr" target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="gap-2 rounded-xl px-10 py-7 text-lg font-semibold border-border/50 hover:bg-secondary/50"
+                  className="gap-2 rounded-xl px-9 py-6 text-base font-semibold border-border/50 hover:bg-secondary/50"
                 >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" className="text-muted-foreground">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="text-muted-foreground">
                     <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286z" />
                   </svg>
                   Join Discord

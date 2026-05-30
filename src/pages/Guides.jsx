@@ -389,10 +389,10 @@ export default function Guides() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ delay: 0.05 }}
-            className="mb-8 rounded-2xl border border-border/55 bg-card/80 backdrop-blur-xl p-4 sm:p-5 shadow-[0_14px_34px_rgba(59,130,246,0.14)] sticky top-[76px] z-30"
+            className="mb-8 rounded-2xl border border-border/55 bg-card/80 backdrop-blur-xl p-4 sm:p-5 shadow-[0_14px_34px_rgba(59,130,246,0.14)]"
           >
             <div className="relative mb-4">
               <Search className="w-4 h-4 text-muted-foreground absolute left-3 top-1/2 -translate-y-1/2" />

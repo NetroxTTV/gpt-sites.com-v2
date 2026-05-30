@@ -156,7 +156,13 @@ export default function Events() {
 
     const active = matched
       .filter((e) => getDaysLeft(e.endDate) !== null)
-      .sort((a, b) => (getDaysLeft(a.endDate) ?? 999) - (getDaysLeft(b.endDate) ?? 999));
+      .sort((a, b) => {
+        const aIsEarnopolis = a.siteName === "Earnopolis";
+        const bIsEarnopolis = b.siteName === "Earnopolis";
+        if (aIsEarnopolis && !bIsEarnopolis) return -1;
+        if (!aIsEarnopolis && bIsEarnopolis) return 1;
+        return (getDaysLeft(a.endDate) ?? 999) - (getDaysLeft(b.endDate) ?? 999);
+      });
 
     const expired = matched.filter((e) => getDaysLeft(e.endDate) === null);
 
@@ -223,7 +229,7 @@ export default function Events() {
           </motion.div>
 
           {/* Search */}
-          <div className="mb-8">
+          <div className="mb-8 rounded-2xl border border-border/55 bg-card/80 backdrop-blur-xl p-3 sm:p-4 shadow-[0_12px_28px_rgba(59,130,246,0.12)]">
             <label className="block text-sm font-semibold text-foreground mb-2" htmlFor="events-search">
               Search by site or event name
             </label>
@@ -233,7 +239,7 @@ export default function Events() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Type a site or event name..."
-              className="w-full rounded-xl border border-border/55 bg-card/70 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary/50 focus:outline-none transition-colors"
+              className="w-full rounded-xl border border-border/55 bg-background/70 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary/50 focus:outline-none transition-colors"
             />
           </div>
 

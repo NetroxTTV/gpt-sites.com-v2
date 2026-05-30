@@ -33,7 +33,7 @@ const footerLinks = [
 
 export function FooterSection() {
     return (
-        <footer className="relative w-full border-t px-4 py-8 sm:px-6 sm:py-10 lg:py-16">
+        <footer className="relative w-full border-t px-4 py-8 sm:px-6 sm:py-10 lg:pt-24 lg:pb-16">
             <div className="max-w-5xl mx-auto xl:translate-x-10">
                 {/* Top glow line */}
                 <div className="bg-foreground/10 absolute top-0 left-1/2 h-px w-1/3 -translate-x-1/2 rounded-full blur-sm" />
@@ -57,21 +57,21 @@ export function FooterSection() {
                         </p>
                     </AnimatedContainer>
 
-                    {/* Link columns */}
+                    {/* Link columns — links flow several per line to stay compact */}
                     {footerLinks.map((section, index) => (
                         <AnimatedContainer key={section.label} delay={0.1 + index * 0.1}>
-                            <div className="mb-6 md:mb-0">
-                                <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground mb-4">
+                            <div className="mb-4 md:mb-0">
+                                <h3 className="text-xs font-semibold uppercase tracking-wider text-foreground mb-3">
                                     {section.label}
                                 </h3>
-                                <ul className="text-muted-foreground space-y-2.5 text-sm">
+                                <ul className="text-muted-foreground flex flex-wrap justify-center gap-x-3 gap-y-2 text-sm sm:justify-start">
                                     {section.links.map((link) => (
                                         <li key={link.title}>
                                             <a
                                                 href={link.href}
                                                 target={link.href.startsWith('http') ? '_blank' : undefined}
                                                 rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                                                className="hover:text-foreground inline-flex items-center gap-1.5 transition-colors duration-200"
+                                                className="hover:text-foreground hover:border-foreground/30 inline-flex items-center gap-1.5 rounded-full border border-border/50 bg-card/40 px-3 py-1 transition-colors duration-200"
                                             >
                                                 {link.icon && <link.icon className="size-3.5 shrink-0" />}
                                                 {link.title}

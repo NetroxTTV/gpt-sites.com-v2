@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { BookOpen, Flame, Globe, HelpCircle, Home, Lightbulb, Menu, Moon, Sun, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
@@ -63,17 +64,30 @@ export default function Navbar() {
     { label: "FAQ", href: "/#faq", onClick: handleFaqClick },
   ];
 
+  const isLight = theme === "light";
+
   return (
     <nav
       className={[
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-white/[0.06] bg-[rgba(3,7,14,0.82)] backdrop-blur-2xl shadow-[0_1px_0_rgba(255,255,255,0.04),0_4px_24px_rgba(0,0,0,0.4)]"
-          : "border-b border-transparent bg-[rgba(3,7,14,0.55)] backdrop-blur-xl",
+          ? isLight
+            ? "border-b border-sky-200/60 bg-[rgba(255,255,255,0.92)] backdrop-blur-2xl shadow-[0_1px_0_rgba(148,163,184,0.35),0_10px_30px_rgba(59,130,246,0.12)]"
+            : "border-b border-white/[0.06] bg-[rgba(3,7,14,0.82)] backdrop-blur-2xl shadow-[0_1px_0_rgba(255,255,255,0.04),0_4px_24px_rgba(0,0,0,0.4)]"
+          : isLight
+            ? "border-b border-transparent bg-[rgba(255,255,255,0.78)] backdrop-blur-xl"
+            : "border-b border-transparent bg-[rgba(3,7,14,0.55)] backdrop-blur-xl",
       ].join(" ")}
     >
       {/* Bottom glow line */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent pointer-events-none" />
+      <div
+        className={[
+          "absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-px pointer-events-none",
+          isLight
+            ? "bg-gradient-to-r from-transparent via-sky-400/50 to-transparent"
+            : "bg-gradient-to-r from-transparent via-primary/40 to-transparent",
+        ].join(" ")}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
@@ -126,7 +140,10 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden cursor-pointer p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-white/[0.06] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+            className={[
+              "md:hidden cursor-pointer p-2 rounded-lg text-muted-foreground hover:text-foreground transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40",
+              isLight ? "hover:bg-sky-100/70" : "hover:bg-white/[0.06]",
+            ].join(" ")}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -136,8 +153,10 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile drawer */}
-      <AnimatePresence>
+      {/* Mobile drawer — portaled to body so the navbar's backdrop-filter
+          doesn't trap its fixed positioning (which left it under the page) */}
+      {createPortal(
+        <AnimatePresence>
         {mobileOpen && (
           <>
             {/* Backdrop */}
@@ -147,7 +166,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-40 bg-black/70 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-[55] bg-black/70 backdrop-blur-sm md:hidden"
               onClick={() => setMobileOpen(false)}
             />
 
@@ -158,13 +177,22 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 380, damping: 38 }}
-              className="fixed right-0 top-0 bottom-0 z-50 w-[280px] flex flex-col bg-[rgba(3,7,14,0.98)] border-l border-white/[0.08] md:hidden overflow-y-auto"
+              className={[
+                "fixed right-0 top-0 bottom-0 z-[60] w-[280px] flex flex-col md:hidden overflow-y-auto",
+                isLight
+                  ? "bg-[rgba(248,250,252,0.98)] border-l border-sky-200/70"
+                  : "bg-[rgba(3,7,14,0.98)] border-l border-white/[0.08]",
+              ].join(" ")}
             >
               {/* Drawer header */}
               <div className="flex items-center justify-between px-5 h-16 border-b border-white/[0.06] flex-shrink-0">
                 <a href="/Home" onClick={() => setMobileOpen(false)} className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-md bg-primary/15 border border-primary/25 flex items-center justify-center">
-                    <Zap className="w-3 h-3 text-primary" />
+                    <img
+                      src={new URL("../icon.png", import.meta.url).href}
+                      alt="GPTSites"
+                      className="w-3.5 h-3.5"
+                    />
                   </div>
                   <span className="text-base font-bold tracking-tight">
                     <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">GPT</span>
@@ -245,7 +273,9 @@ export default function Navbar() {
             </motion.div>
           </>
         )}
-      </AnimatePresence>
+        </AnimatePresence>,
+        document.body
+      )}
     </nav>
   );
 }
