@@ -33,7 +33,7 @@ const footerLinks = [
 
 export function FooterSection() {
     return (
-        <footer className="relative w-full border-t px-4 py-8 sm:px-6 sm:py-10 lg:pt-24 lg:pb-16">
+        <footer className="relative w-full border-t px-4 py-8 sm:px-6 sm:py-10 lg:py-16">
             <div className="max-w-5xl mx-auto xl:translate-x-10">
                 {/* Top glow line */}
                 <div className="bg-foreground/10 absolute top-0 left-1/2 h-px w-1/3 -translate-x-1/2 rounded-full blur-sm" />
