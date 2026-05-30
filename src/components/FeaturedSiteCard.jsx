@@ -1,7 +1,7 @@
 import React from "react";
 import { ExternalLink, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { getCasinoBonusTagClassName } from "@/lib/bonusTagStyles";
 
 const rankColors = {
@@ -21,13 +21,14 @@ const rankBgGlow = {
 export default function FeaturedSiteCard({ site, index }) {
   const rank = site.rank || index + 1;
   const casinoBonusTagClassName = getCasinoBonusTagClassName(site.bonus_tag);
+  const reduce = useReducedMotion();
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={reduce ? false : { opacity: 0, y: 22 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.52, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
     >
       <a
         href={site.visit_url}

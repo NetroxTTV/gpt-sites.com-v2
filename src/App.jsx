@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
 import { BrowserRouter as Router, Route, Routes, useLocation, matchPath } from 'react-router-dom';
+import { AnimatePresence, motion } from "framer-motion";
 import PageNotFound from './lib/PageNotFound';
 import { Navigate } from 'react-router-dom';
 import Home from './pages/Home';
@@ -98,29 +99,50 @@ function RedirectOrNotFound() {
   return <PageNotFound />;
 }
 
-function App() {
+function PageWrapper({ children }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.22, ease: "easeOut" }}
+    >
+      {children}
+    </motion.div>
+  );
+}
 
+function AnimatedRoutes() {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Navigate to="/Home" replace />} />
+        <Route path="/Home" element={<PageWrapper><Home /></PageWrapper>} />
+        <Route path="/Guides" element={<PageWrapper><Guides /></PageWrapper>} />
+        <Route path="/Tips" element={<PageWrapper><Tips /></PageWrapper>} />
+        <Route path="/Guides/:slug" element={<PageWrapper><GuideDetail /></PageWrapper>} />
+        <Route path="/Sites" element={<PageWrapper><Sites /></PageWrapper>} />
+        <Route path="/Events" element={<PageWrapper><Events /></PageWrapper>} />
+        <Route path="/Offers" element={<Navigate to="/Events" replace />} />
+        <Route path="/redirect=:slug" element={<RedirectPage />} />
+        <Route path="/redirect" element={<RedirectPage />} />
+        <Route path="*" element={<PageWrapper><RedirectOrNotFound /></PageWrapper>} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
+function App() {
   return (
     <QueryClientProvider client={queryClientInstance}>
       <Router>
         <RouteMeta />
-        <Routes>
-          <Route path="/" element={<Navigate to="/Home" replace />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Guides" element={<Guides />} />
-          <Route path="/Tips" element={<Tips />} />
-          <Route path="/Guides/:slug" element={<GuideDetail />} />
-          <Route path="/Sites" element={<Sites />} />
-          <Route path="/Events" element={<Events />} />
-          <Route path="/Offers" element={<Navigate to="/Events" replace />} />
-          <Route path="/redirect=:slug" element={<RedirectPage />} />
-          <Route path="/redirect" element={<RedirectPage />} />
-          <Route path="*" element={<RedirectOrNotFound />} />
-        </Routes>
+        <AnimatedRoutes />
       </Router>
       <Toaster />
     </QueryClientProvider>
-  )
+  );
 }
 
 export default App

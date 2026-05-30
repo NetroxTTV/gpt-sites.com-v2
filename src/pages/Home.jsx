@@ -8,6 +8,7 @@ import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
 import { featuredSites } from "@/lib/sitesData";
 import { Button } from "@/components/ui/button";
+import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/reveal";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
       <Hero />
       <section id="quick-picks" className="py-14 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+          <Reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
             <div>
               <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-3">
                 Quick Picks
@@ -36,7 +37,7 @@ export default function Home() {
                 </Button>
               </a>
             </div>
-          </div>
+          </Reveal>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {featuredSites.slice(0, 3).map((site, index) => (
@@ -44,7 +45,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
+          <StaggerContainer className="mt-10 grid gap-4 md:grid-cols-3">
             {[
               {
                 title: "1. Pick a site",
@@ -65,17 +66,19 @@ export default function Home() {
                 to: "/Events",
               },
             ].map((step) => (
-              <div key={step.title} className="rounded-2xl border border-border/50 bg-card/70 p-5 shadow-[0_10px_26px_rgba(59,130,246,0.12)]">
-                <h3 className="text-base font-bold text-foreground mb-2">{step.title}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{step.text}</p>
-                <Link to={step.to}>
-                  <Button size="sm" className="rounded-lg">
-                    {step.cta}
-                  </Button>
-                </Link>
-              </div>
+              <StaggerItem key={step.title}>
+                <div className="rounded-2xl border border-border/50 bg-card/70 p-5 shadow-[0_10px_26px_rgba(59,130,246,0.12)]">
+                  <h3 className="text-base font-bold text-foreground mb-2">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">{step.text}</p>
+                  <Link to={step.to}>
+                    <Button size="sm" className="rounded-lg">
+                      {step.cta}
+                    </Button>
+                  </Link>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
       <SitesSection />

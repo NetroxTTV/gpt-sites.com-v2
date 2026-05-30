@@ -1,7 +1,7 @@
 import React from "react";
 import { ExternalLink, Check, Info, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { getCasinoBonusTagClassName } from "@/lib/bonusTagStyles";
 
 const rankColors = {
@@ -23,13 +23,14 @@ const rewardIcons = {
 export default function FeaturedSiteRow({ site, index }) {
   const rank = site.rank || index + 1;
   const casinoBonusTagClassName = getCasinoBonusTagClassName(site.bonus_tag);
+  const reduce = useReducedMotion();
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={reduce ? false : { opacity: 0, y: 22 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.08 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.52, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="relative rounded-2xl bg-card border border-border/50 hover:border-primary/40 transition-all duration-300 overflow-hidden group">
         {/* Subtle glow on hover */}
