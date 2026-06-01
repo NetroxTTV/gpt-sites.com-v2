@@ -7,7 +7,7 @@ import { NavHeader } from "@/components/ui/nav-header";
 import { useLocation } from "react-router-dom";
 
 const mobileNavLinks = [
-  { label: "Home", href: "/Home", icon: Home },
+  { label: "Home", href: "/", icon: Home },
   { label: "Sites", href: "/Sites", icon: Globe },
   { label: "Events", href: "/Events", icon: Flame },
   { label: "Guides", href: "/Guides", icon: BookOpen },
@@ -186,7 +186,7 @@ export default function Navbar() {
             >
               {/* Drawer header */}
               <div className="flex items-center justify-between px-5 h-16 border-b border-white/[0.06] flex-shrink-0">
-                <a href="/Home" onClick={() => setMobileOpen(false)} className="flex items-center gap-2">
+                <a href="/" onClick={() => setMobileOpen(false)} className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-md bg-primary/15 border border-primary/25 flex items-center justify-center">
                     <img
                       src={new URL("../icon.png", import.meta.url).href}
@@ -211,7 +211,7 @@ export default function Navbar() {
               {/* Nav links */}
               <nav className="flex-1 px-3 py-4 space-y-1">
                 {mobileNavLinks.map((link) => {
-                  const isActive = link.href === "/Home"
+                  const isActive = link.href === "/"
                     ? location.pathname === "/" || location.pathname === "/Home"
                     : location.pathname === link.href;
                   const Icon = link.icon;

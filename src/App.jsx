@@ -15,6 +15,10 @@ import Events from './pages/Events';
 import RedirectPage from './pages/Redirect';
 
 const routeMeta = {
+  "/": {
+    title: "GPT Sites | Home",
+    description: "Discover trusted GPT sites, compare rates, and find beginner-friendly ways to earn with offers, surveys, and rewards.",
+  },
   "/Home": {
     title: "GPT Sites | Home",
     description: "Discover trusted GPT sites, compare rates, and find beginner-friendly ways to earn with offers, surveys, and rewards.",
@@ -42,7 +46,7 @@ const routeMeta = {
 };
 
 function RouteMeta() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   const upsertMetaTag = (selector, attributes, content) => {
     let tag = document.head.querySelector(selector);
@@ -86,6 +90,21 @@ function RouteMeta() {
     upsertMetaTag('meta[name="twitter:description"]', { name: "twitter:description" }, description);
   }, [pathname]);
 
+  useEffect(() => {
+    if (!hash) return;
+
+    const targetId = hash.replace(/^#/, "");
+    const scrollToTarget = () => {
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    };
+
+    const timeoutId = window.setTimeout(scrollToTarget, 60);
+    return () => window.clearTimeout(timeoutId);
+  }, [hash, pathname]);
+
   return null;
 }
 
@@ -117,7 +136,7 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Navigate to="/Home" replace />} />
+        <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
         <Route path="/Home" element={<PageWrapper><Home /></PageWrapper>} />
         <Route path="/Guides" element={<PageWrapper><Guides /></PageWrapper>} />
         <Route path="/Tips" element={<PageWrapper><Tips /></PageWrapper>} />
