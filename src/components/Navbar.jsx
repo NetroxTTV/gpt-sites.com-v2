@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { BookOpen, Flame, Globe, HelpCircle, Home, Lightbulb, Menu, Moon, Sun, X, Zap } from "lucide-react";
+import { BookOpen, Flame, Globe, HelpCircle, Home, Lightbulb, Menu, Moon, Radio, Sun, X, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { NavHeader } from "@/components/ui/nav-header";
@@ -10,6 +10,7 @@ const mobileNavLinks = [
   { label: "Home", href: "/", icon: Home },
   { label: "Sites", href: "/Sites", icon: Globe },
   { label: "Events", href: "/Events", icon: Flame },
+  { label: "Live Feed", href: "/LiveFeed", icon: Radio },
   { label: "Guides", href: "/Guides", icon: BookOpen },
   { label: "Tips", href: "/Tips", icon: Lightbulb },
   { label: "FAQ", href: "/#faq", icon: HelpCircle, isFaq: true },
@@ -59,6 +60,7 @@ export default function Navbar() {
     { label: "Home", href: "/" },
     { label: "Sites", href: "/Sites" },
     { label: "Events", href: "/Events" },
+    { label: "Live Feed", href: "/LiveFeed" },
     { label: "Guides", href: "/Guides" },
     { label: "Tips", href: "/Tips" },
     { label: "FAQ", href: "/#faq", onClick: handleFaqClick },

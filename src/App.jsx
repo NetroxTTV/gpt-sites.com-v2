@@ -12,6 +12,7 @@ import Tips from './pages/Tips.jsx';
 import GuideDetail from './pages/GuideDetail';
 import Sites from './pages/Sites';
 import Events from './pages/Events';
+import LiveFeed from './pages/LiveFeed';
 import RedirectPage from './pages/Redirect';
 
 const routeMeta = {
@@ -38,6 +39,10 @@ const routeMeta = {
   "/Events": {
     title: "GPT Sites | Events",
     description: "Track offerwall boosts, tournaments, and seasonal promos across top GPT sites so you can earn at peak rates.",
+  },
+  "/LiveFeed": {
+    title: "GPT Sites | Live Feed",
+    description: "Watch CashInStyle's live activity ticker for recent offer credits, survey completions, and withdrawals in real time.",
   },
   "/Offers": {
     title: "GPT Sites | Offers",
@@ -143,6 +148,7 @@ function AnimatedRoutes() {
         <Route path="/Guides/:slug" element={<PageWrapper><GuideDetail /></PageWrapper>} />
         <Route path="/Sites" element={<PageWrapper><Sites /></PageWrapper>} />
         <Route path="/Events" element={<PageWrapper><Events /></PageWrapper>} />
+        <Route path="/LiveFeed" element={<PageWrapper><LiveFeed /></PageWrapper>} />
         <Route path="/Offers" element={<Navigate to="/Events" replace />} />
         <Route path="/redirect=:slug" element={<RedirectPage />} />
         <Route path="/redirect" element={<RedirectPage />} />
