@@ -8,17 +8,6 @@ const host = "0.0.0.0";
 const distDir = path.resolve(__dirname, "dist");
 const indexPath = path.join(distDir, "index.html");
 
-const WALL_CONFIG = {
-  adtowall: {
-    apiKey: process.env.ADTOWALL_API_KEY || "ZGCBWVMR7aVzBv2E58UJw",
-    candidateUrls: [
-      process.env.ADTOWALL_RUNNABLE_OFFERS_URL,
-      "https://api.eflow.team/v1/affiliates/offersrunnable",
-      "https://api-eu.eflow.team/v1/affiliates/offersrunnable",
-    ].filter(Boolean),
-  },
-};
-
 const pick = (obj, keys, fallback = undefined) => {
   for (const key of keys) {
     if (obj && obj[key] !== undefined && obj[key] !== null) return obj[key];
