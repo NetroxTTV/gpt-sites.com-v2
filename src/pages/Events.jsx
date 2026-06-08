@@ -10,9 +10,22 @@ import { events, getDaysLeft } from "@/lib/eventsData";
 
 const getTimeProgress = (startDate, endDate) => {
   if (!startDate || !endDate) return null;
-  const start = new Date(`${startDate}T00:00:00`).getTime();
+  const startDateObj = new Date(`${startDate}T00:00:00`);
   const end = new Date(`${endDate}T23:59:59`).getTime();
   const now = Date.now();
+
+  // If the event starts today, treat the start time as "now" so the progress
+  // begins at 0% (100% remaining) when the event is posted the same day.
+  let start = startDateObj.getTime();
+  const today = new Date();
+  if (
+    startDateObj.getFullYear() === today.getFullYear() &&
+    startDateObj.getMonth() === today.getMonth() &&
+    startDateObj.getDate() === today.getDate()
+  ) {
+    start = now;
+  }
+
   const total = end - start;
   if (total <= 0) return 100;
   return Math.max(0, Math.min(100, ((now - start) / total) * 100));
@@ -38,7 +51,21 @@ function EventCard({ event, index, isCompact }) {
   const reduce = useReducedMotion();
   const daysLeft = getDaysLeft(event.endDate);
   const progress = getTimeProgress(event.startDate, event.endDate);
-  const urgency = getUrgency(daysLeft);
+  let urgency = getUrgency(daysLeft);
+
+  // If the event starts today, treat it as freshly active so the UI shows
+  // the `Active` state (100% remaining) rather than "Last chance".
+  if (event.startDate) {
+    const startDateObj = new Date(`${event.startDate}T00:00:00`);
+    const today = new Date();
+    if (
+      startDateObj.getFullYear() === today.getFullYear() &&
+      startDateObj.getMonth() === today.getMonth() &&
+      startDateObj.getDate() === today.getDate()
+    ) {
+      urgency = { label: "Active", color: "text-emerald-400", bar: "bg-emerald-500", badge: "bg-emerald-500/15 text-emerald-400 border-emerald-500/25" };
+    }
+  }
   const countdown = daysLeft !== null && daysLeft <= 30 ? formatCountdown(daysLeft) : null;
   const timeRemaining = progress !== null ? 100 - progress : null;
 
