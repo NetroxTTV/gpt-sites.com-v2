@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /redirect
+Disallow: /redirect=
+
+Sitemap: https://gpt-sites.com/sitemap.xml

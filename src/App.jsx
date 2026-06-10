@@ -65,6 +65,16 @@ function RouteMeta() {
     tag.setAttribute("content", content);
   };
 
+  const upsertLinkTag = (rel, href) => {
+    let tag = document.head.querySelector(`link[rel="${rel}"]`);
+    if (!tag) {
+      tag = document.createElement("link");
+      tag.setAttribute("rel", rel);
+      document.head.appendChild(tag);
+    }
+    tag.setAttribute("href", href);
+  };
+
   useEffect(() => {
     let title = "GPT Sites";
     let description = "Find top GPT sites, guides, and events to earn smarter.";
@@ -83,16 +93,22 @@ function RouteMeta() {
     document.title = title;
 
     const pageUrl = `${window.location.origin}${pathname}`;
+    const imageUrl = `${window.location.origin}/icon.png`;
 
     upsertMetaTag('meta[name="description"]', { name: "description" }, description);
+    upsertMetaTag('meta[property="og:site_name"]', { property: "og:site_name" }, "GPT Sites");
     upsertMetaTag('meta[property="og:title"]', { property: "og:title" }, title);
     upsertMetaTag('meta[property="og:description"]', { property: "og:description" }, description);
     upsertMetaTag('meta[property="og:type"]', { property: "og:type" }, "website");
     upsertMetaTag('meta[property="og:url"]', { property: "og:url" }, pageUrl);
+    upsertMetaTag('meta[property="og:image"]', { property: "og:image" }, imageUrl);
 
-    upsertMetaTag('meta[name="twitter:card"]', { name: "twitter:card" }, "summary");
+    upsertMetaTag('meta[name="twitter:card"]', { name: "twitter:card" }, "summary_large_image");
     upsertMetaTag('meta[name="twitter:title"]', { name: "twitter:title" }, title);
     upsertMetaTag('meta[name="twitter:description"]', { name: "twitter:description" }, description);
+    upsertMetaTag('meta[name="twitter:image"]', { name: "twitter:image" }, imageUrl);
+
+    upsertLinkTag("canonical", pageUrl);
   }, [pathname]);
 
   useEffect(() => {

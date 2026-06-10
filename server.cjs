@@ -398,6 +398,94 @@ if (!fs.existsSync(indexPath)) {
   console.warn("dist/index.html was not found. Run 'npm run build' before 'npm start'.");
 }
 
+// --- SEO: inject per-route meta into raw HTML ---------------------------------
+// Crawlers and social scrapers (Facebook, Discord, Twitter, WhatsApp, etc.) do
+// not run our client JS, so the client-side <RouteMeta> never executes for them.
+// We rewrite the title/description/og/canonical tags server-side per request so
+// the raw HTML they receive already carries the correct, route-specific meta.
+const SITE_URL = "https://gpt-sites.com";
+const DEFAULT_META = {
+  title: "GPT Sites",
+  description: "Find top GPT sites, guides, and offers to earn smarter.",
+};
+// Keep in sync with routeMeta in src/App.jsx
+const ROUTE_META = {
+  "/": { title: "GPT Sites | Home", description: "Discover trusted GPT sites, compare rates, and find beginner-friendly ways to earn with offers, surveys, and rewards." },
+  "/Home": { title: "GPT Sites | Home", description: "Discover trusted GPT sites, compare rates, and find beginner-friendly ways to earn with offers, surveys, and rewards." },
+  "/Guides": { title: "GPT Sites | Guides", description: "Read practical GPT and offerwall guides with strategies, step-by-step tips, and payout-focused walkthroughs." },
+  "/Tips": { title: "GPT Sites | Tips", description: "Learn smart earning tips to maximize rewards, avoid common mistakes, and improve completion rates on GPT sites." },
+  "/Sites": { title: "GPT Sites | Sites", description: "Browse and filter GPT websites by offerwalls, popularity, and payout rates to find the best site for your goals." },
+  "/Events": { title: "GPT Sites | Events", description: "Track offerwall boosts, tournaments, and seasonal promos across top GPT sites so you can earn at peak rates." },
+  "/LiveFeed": { title: "GPT Sites | Live Feed", description: "Watch CashInStyle's live activity ticker for recent offer credits, survey completions, and withdrawals in real time." },
+  "/Offers": { title: "GPT Sites | Offers", description: "Explore current offer opportunities and redirect to the latest events and boosts across top GPT sites." },
+};
+
+let GUIDES_META = {};
+try {
+  GUIDES_META = JSON.parse(fs.readFileSync(path.join(distDir, "guides-meta.json"), "utf8"));
+} catch {
+  GUIDES_META = {};
+}
+
+const escapeHtml = (value) =>
+  String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+
+const metaForPath = (pathname) => {
+  const guideMatch = /^\/Guides\/([^/]+)\/?$/.exec(pathname);
+  if (guideMatch && GUIDES_META[guideMatch[1]]) return GUIDES_META[guideMatch[1]];
+  return ROUTE_META[pathname] || DEFAULT_META;
+};
+
+let indexTemplate = null;
+const readIndexTemplate = () => {
+  if (indexTemplate == null) {
+    try {
+      indexTemplate = fs.readFileSync(indexPath, "utf8");
+    } catch {
+      indexTemplate = "";
+    }
+  }
+  return indexTemplate;
+};
+
+const renderIndexHtml = (pathname) => {
+  let html = readIndexTemplate();
+  if (!html) return html;
+
+  const { title, description } = metaForPath(pathname);
+  const t = escapeHtml(title);
+  const d = escapeHtml(description);
+  const u = escapeHtml(SITE_URL + pathname);
+
+  html = html.replace(/<title>[^<]*<\/title>/i, `<title>${t}</title>`);
+
+  const setMetaContent = (attrName, key, value) => {
+    const tagRe = new RegExp(`<meta\\b[^>]*\\b${attrName}="${key}"[^>]*>`, "i");
+    const match = html.match(tagRe);
+    if (!match) return;
+    let tag = match[0];
+    tag = /content="[^"]*"/i.test(tag)
+      ? tag.replace(/content="[^"]*"/i, `content="${value}"`)
+      : tag.replace(/\s*\/?>$/, ` content="${value}" />`);
+    html = html.replace(match[0], tag);
+  };
+
+  setMetaContent("name", "description", d);
+  setMetaContent("property", "og:title", t);
+  setMetaContent("property", "og:description", d);
+  setMetaContent("property", "og:url", u);
+  setMetaContent("name", "twitter:title", t);
+  setMetaContent("name", "twitter:description", d);
+
+  html = html.replace(/(<link\b[^>]*\brel="canonical"[^>]*\bhref=")[^"]*(")/i, `$1${u}$2`);
+
+  return html;
+};
+
 app.get("/healthz", (_req, res) => {
   res.status(200).send("ok");
 });
@@ -426,8 +514,14 @@ app.use(
   })
 );
 
-app.get("/{*splat}", (_req, res) => {
-  res.sendFile(indexPath);
+app.get("/{*splat}", (req, res) => {
+  const html = renderIndexHtml(req.path);
+  if (!html) {
+    res.sendFile(indexPath);
+    return;
+  }
+  res.setHeader("Content-Type", "text/html; charset=utf-8");
+  res.send(html);
 });
 
 app.listen(port, host, () => {
