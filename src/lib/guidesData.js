@@ -1613,11 +1613,7 @@ export const guides = [
     sites: [
       { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
       { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+      { name: "Fastask", url: "https://fastask.net/?ref=296", desc: "100% Rates on WaxRewards" },
     ],
   }
 ];
