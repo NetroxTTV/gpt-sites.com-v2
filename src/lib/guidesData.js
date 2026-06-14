@@ -1522,5 +1522,102 @@ export const guides = [
       { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
       { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
+  },
+  {
+    slug: "lovable",
+    title: "Lovable : Easy $60–85 AI Offer Guide",
+    logo: "https://lovable.dev/img/logo/lovable-icon-bg-dark.png",
+    banner: "https://lovable.dev/img/logo/lovable-logo-bg-dark.png",
+    category: "AI / Subscription",
+    platform: "PC / Mobile",
+    genre: "AI / Subscription",
+    offerwall: "Torox / WaxRewards",
+    difficulty: "Very Easy",
+    timeInvestment: "~5 minutes",
+    totalReward: "$60–85",
+    moneyInvestment: "$25",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "callout", text: "Lovable is one of the easiest subscription offers available. The entire process takes less than 5 minutes and requires only a single subscription purchase and one AI prompt." },
+        ]
+      },
+      {
+        title: "How the Offer Works",
+        content: [
+          { type: "steps", items: ["Open Lovable through the offerwall link.", "Create a new account.", "Upgrade to the Pro plan.", "Pay for the $25/month subscription.", "Generate an AI project.", "Wait for the offer to credit."] },
+        ]
+      },
+      {
+        title: "Step 1: Create Account",
+        content: [
+          { type: "list", items: ["Open the offer from your offerwall.", "Sign up for a new Lovable account."] },
+          { type: "warning", text: "Always register through the tracking link." },
+          { type: "image", src: new URL("../imgs/guides/Lovable/1.png", import.meta.url).href, alt: "Lovable account creation" },
+        ]
+      },
+      {
+        title: "Step 2: Upgrade to Pro",
+        content: [
+          { type: "text", text: "Once logged in:" },
+          { type: "list", items: ["Click \"Upgrade to Pro\" in the bottom-left corner."] },
+          { type: "image", src: new URL("../imgs/guides/Lovable/2.png", import.meta.url).href, alt: "Upgrade to Pro button" },
+          { type: "list", items: ["Select the Pro plan.", "Click \"Upgrade\" under the $25/month plan."] },
+          { type: "image", src: new URL("../imgs/guides/Lovable/3.png", import.meta.url).href, alt: "Pro plan selection" },
+        ]
+      },
+      {
+        title: "Step 3: Complete Payment",
+        content: [
+          { type: "list", items: ["Use a valid credit card.", "Complete the subscription purchase.", "Wait for the subscription to activate."] },
+        ]
+      },
+      {
+        title: "Step 4: Generate a Project",
+        content: [
+          { type: "text", text: "After subscribing:" },
+          { type: "steps", items: ["Open the AI prompt page.", "Enter any prompt (example: \"Create a cat website\").", "Let the AI generate the project."] },
+          { type: "image", src: new URL("../imgs/guides/Lovable/4.png", import.meta.url).href, alt: "Generate an AI project" },
+          { type: "tip", text: "This step is important and helps ensure proper tracking." },
+        ]
+      },
+      {
+        title: "Crediting Time",
+        content: [
+          { type: "list", items: ["Usually credits within 1–2 hours.", "Sometimes faster depending on the offerwall.", "Do not cancel your subscription before receiving credit."] },
+        ]
+      },
+      {
+        title: "Important Notes",
+        content: [
+          { type: "list", items: ["New users only.", "Use a valid payment method."] },
+          { type: "subtitle", text: "Keep screenshots of:" },
+          { type: "list", items: ["Subscription confirmation", "Payment confirmation", "Generated project"] },
+        ]
+      },
+      {
+        title: "Quick Recap",
+        content: [
+          { type: "steps", items: ["Sign up through the offerwall.", "Upgrade to the $25/month Pro plan.", "Pay with a valid card.", "Generate any AI project.", "Wait 1–2 hours.", "Get credited."] },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          { type: "list", items: ["Cost: $25", "Reward: $60–85", "Net Profit: ~$35–60"] },
+          { type: "callout", text: "One of the easiest and fastest AI subscription offers available." },
+        ]
+      },
+    ],
+    sites: [
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
   }
 ];
