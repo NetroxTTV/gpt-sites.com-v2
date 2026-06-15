@@ -6,6 +6,7 @@ import SitesSection from "@/components/SitesSection";
 import FeaturedSiteCard from "@/components/FeaturedSiteCard";
 import FaqSection from "@/components/FaqSection";
 import Footer from "@/components/Footer";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { featuredSites } from "@/lib/sitesData";
 import { Button } from "@/components/ui/button";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/reveal";
@@ -85,6 +86,7 @@ export default function Home() {
       <SitesSection />
       <FaqSection />
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

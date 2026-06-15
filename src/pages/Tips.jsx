@@ -2,9 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/reveal";
 
 const tips = [
@@ -76,13 +75,6 @@ export default function Tips() {
     <div className="min-h-screen bg-background font-inter">
       <Navbar />
       <div className="pt-24 pb-20 px-4 sm:px-6 max-w-4xl mx-auto">
-        <a href="/">
-          <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground hover:text-foreground mb-8">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Home
-          </Button>
-        </a>
-
         <Reveal className="mb-10 rounded-2xl border border-border/50 bg-card/65 backdrop-blur-sm p-5 sm:p-6 shadow-[0_14px_34px_rgba(59,130,246,0.12)]">
           <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/25 mb-4">
             Pro Tips
