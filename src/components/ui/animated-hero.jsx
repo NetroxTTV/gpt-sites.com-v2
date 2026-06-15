@@ -41,7 +41,7 @@ function Hero() {
 
       <div className="relative z-10 w-full">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex gap-5 sm:gap-7 py-6 sm:py-10 lg:pt-32 items-center justify-center flex-col text-center">
+          <div className="flex gap-5 sm:gap-7 py-6 sm:py-10 lg:pt-20 items-center justify-center flex-col text-center">
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
