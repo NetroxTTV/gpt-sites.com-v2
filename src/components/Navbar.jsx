@@ -4,6 +4,7 @@ import { BookOpen, Flame, Globe, HelpCircle, Home, Lightbulb, Menu, Moon, Radio,
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { NavHeader } from "@/components/ui/nav-header";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { useLocation } from "react-router-dom";
 
 const mobileNavLinks = [
@@ -129,15 +130,7 @@ export default function Navbar() {
               </Button>
             </a>
 
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={toggleTheme}
-              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-              className="cursor-pointer w-8 h-8 border-white/[0.1] text-muted-foreground hover:text-foreground hover:bg-white/[0.06] hover:border-white/20 transition-all duration-200"
-            >
-              {theme === "dark" ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
-            </Button>
+            <ThemeToggle isDark={theme === "dark"} onToggle={toggleTheme} />
           </div>
 
           {/* Mobile toggle */}
