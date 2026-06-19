@@ -1,5 +1,19 @@
 export const events = [
   {
+    title: "Gain.gg Torox $1500 Tournament",
+    siteName: "Gain.gg",
+    siteUrl: "https://gain.gg/r/netrox",
+    dateRange: "Ends in 11 days",
+    startDate: "2026-06-19",
+    endDate: "2026-06-30",
+    highlight: "Gain.gg is running a $1500 Torox tournament for top performers.",
+    details: [
+      "Prize pool: $1500.",
+      "Complete Torox offers on Gain.gg to climb the leaderboard.",
+      "Stats count from the moment you join — join early to maximize ranking.",
+    ],
+  },
+  {
     title: "Earnopolis +30% on Torox",
     siteName: "Earnopolis",
     siteUrl: "https://earnopolis.com/r/?r=netrox",
