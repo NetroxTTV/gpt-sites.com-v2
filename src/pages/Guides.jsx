@@ -588,7 +588,7 @@ export default function Guides() {
                         setCurrentPage(1);
                       }}
                       className={cn(
-                        "px-3 py-1.5 rounded-full border text-xs font-semibold whitespace-nowrap transition-all",
+                        "px-2.5 py-0.5 rounded-full border text-[11px] font-semibold whitespace-nowrap transition-all",
                         isActive
                           ? "bg-primary text-primary-foreground border-primary"
                           : "bg-card/60 text-muted-foreground border-border/60 hover:text-foreground hover:border-primary/40"

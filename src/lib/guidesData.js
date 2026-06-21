@@ -1615,5 +1615,210 @@ export const guides = [
       { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
       { name: "Fastask", url: "https://fastask.net/?ref=296", desc: "100% Rates on WaxRewards" },
     ],
+  },
+  {
+    slug: "arknights-endfield",
+    title: "Arknights: Endfield : Easy $5–6.1 Offer Guide (PC)",
+    logo: new URL("../imgs/guides/arknight/banner.jpg", import.meta.url).href,
+    banner: new URL("../imgs/guides/arknight/banner.jpg", import.meta.url).href,
+    category: "Game",
+    platform: "PC",
+    genre: "Strategy / RPG",
+    offerwall: "Offerwalls vary by region",
+    difficulty: "Easy",
+    timeInvestment: "About 5–10 minutes",
+    totalReward: "$5–6.10",
+    moneyInvestment: "$0.99",
+    sections: [
+      {
+        title: "Why You Should Play",
+        content: [
+          { type: "list", items: ["Extremely fast to complete", "Very small required purchase", "Credits reliably", "No gameplay grind", "Good filler offer between bigger tasks"] },
+        ]
+      },
+      {
+        title: "How the Offer Works",
+        content: [
+          { type: "steps", items: ["Download and install the game on PC.", "Register an account.", "Complete an in-game purchase of $0.99 or more."] },
+        ]
+      },
+      {
+        title: "Step-by-Step Guide",
+        content: [
+          { type: "steps", items: ["Open the offer from the offerwall.", "Download Arknights: Endfield on PC.", "Launch the game and register an account.", "Once in-game, open the shop.", "Purchase the cheapest item available (at least $0.99).", "Wait for the offer to credit."] },
+        ]
+      },
+      {
+        title: "Crediting Time",
+        content: [
+          { type: "list", items: ["Credits usually appear within minutes.", "In some cases, it may take up to a few hours.", "If not credited after 24 hours, contact support with proof."] },
+        ]
+      },
+      {
+        title: "Important Notes",
+        content: [
+          { type: "warning", text: "This offer is for new users only. Do not refund the purchase before the offer credits." },
+          { type: "list", items: ["Make sure to install and play on PC (not mobile).", "Do not refund the purchase before the offer credits.", "Take screenshots of the purchase confirmation."] },
+        ]
+      },
+      {
+        title: "After Crediting",
+        content: [
+          { type: "text", text: "Once credited, you are done. No additional gameplay or progression is required." },
+        ]
+      },
+      {
+        title: "Common Mistakes to Avoid",
+        content: [
+          { type: "list", items: ["Installing the game on the wrong platform", "Skipping account registration", "Buying less than $0.99", "Refunding the purchase too early"] },
+        ]
+      },
+      {
+        title: "Quick Recap",
+        content: [
+          { type: "steps", items: ["Install the game on PC.", "Register an account.", "Buy an in-game item for $0.99 or more.", "Get credited.", "Keep the reward as profit."] },
+        ]
+      },
+      {
+        title: "Final Thoughts",
+        content: [
+          { type: "callout", text: "Arknights: Endfield is a perfect quick offer: minimal effort, very fast completion, almost guaranteed credit, and ideal for stacking small profits." },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          { type: "list", items: ["Investment: $0.99", "Offer reward: $5–6.10", "Net profit: ~$4–5+"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "Gain.gg", url: "https://gain.gg/r/netrox", desc: "70-80% Rates | Instant Cashouts" },
+      { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
+    slug: "deblock",
+    title: "Deblock : Easy $30 Bank Offer Guide",
+    logo: "https://pbs.twimg.com/profile_images/2033914211403808768/iugoSwWS_400x400.jpg",
+    banner: "https://cdn.sanity.io/images/0k2k2bbv/production/10576d6ada545253c2d71bdcd4887583f11b4812-1200x675.jpg",
+    category: "Finance / Banking",
+    platform: "Android / iOS",
+    genre: "Bank Account",
+    offerwall: "AdscendMedia",
+    difficulty: "Easy",
+    timeInvestment: "About 10-15 minutes",
+    totalReward: "$30",
+    moneyInvestment: "€10 (recoverable)",
+    sections: [
+      {
+        title: "How the Offer Works",
+        content: [
+          { type: "text", text: "You must complete two steps:" },
+          { type: "steps", items: ["Complete full identity verification (KYC).", "Activate your account by completing ONE of the activation methods below."] },
+          { type: "subtitle", text: "Activation Methods (choose ONE)" },
+          { type: "list", items: ["Order and activate a card", "Make a SEPA transfer of at least €10", "Buy, sell, or swap at least €10 worth of crypto"] },
+          { type: "tip", text: "You only need to do ONE of these activation methods." },
+        ]
+      },
+      {
+        title: "KYC Information",
+        content: [
+          { type: "list", items: ["KYC usually verifies in less than one hour.", "You will need a valid ID and a selfie.", "Use real and accurate information."] },
+        ]
+      },
+      {
+        title: "Deposit and Fees",
+        content: [
+          { type: "list", items: ["No fees on deposits.", "No fees for transfers to other accounts.", "You can send your €10 back to your bank after the offer credits."] },
+        ]
+      },
+      {
+        title: "Crediting Time",
+        content: [
+          { type: "list", items: ["Credits after KYC is approved and activation action is completed.", "Usually tracks within a short time after finishing the required step."] },
+        ]
+      },
+      {
+        title: "Important Notes",
+        content: [
+          { type: "warning", text: "New users only. Do not close your account before the reward credits." },
+          { type: "list", items: ["New users only.", "Do not close your account before the reward credits.", "Keep proof of KYC approval and your activation transaction."] },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          { type: "list", items: ["Required action: €10 transaction (recoverable)", "Offer reward: 30,375 coins", "Net profit: Full reward since your €10 remains yours"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
+    slug: "betclic",
+    title: "Betclic : Quick Offer Guide (Android / iOS)",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4pe6fgiKTwchq2T6oN9KNtna4cGgCUBTJJ4QToPAWkw&s",
+    banner: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIRAYZvN7oVnHGTI6MWiWRvcJsdWRYs2vO-L4zRlH6Spb778DqwMv3Xz5-&s=10",
+    category: "Betting",
+    platform: "Android / iOS",
+    genre: "Sports Betting",
+    offerwall: "Torox / Lootably / RevU / AyeT",
+    difficulty: "Easy",
+    timeInvestment: "About 5 minutes",
+    totalReward: "$10-20",
+    moneyInvestment: "€10",
+    sections: [
+      {
+        title: "How the Offer Works",
+        content: [
+          { type: "callout", text: "A very fast betting offer that only requires registration, a deposit, and placing one bet." },
+          { type: "steps", items: ["Register a new account on Betclic.", "Deposit €10.", "Place at least one bet using your deposited balance."] },
+        ]
+      },
+      {
+        title: "Crediting Time",
+        content: [
+          { type: "list", items: ["Credits instantly after placing the bet in most cases."] },
+        ]
+      },
+      {
+        title: "Important Notes",
+        content: [
+          { type: "list", items: ["New users only.", "Do not withdraw before the offer credits.", "Use real personal details when registering.", "Make sure your bet is fully placed and confirmed."] },
+        ]
+      },
+      {
+        title: "Quick Recap",
+        content: [
+          { type: "steps", items: ["Sign up.", "Deposit €10.", "Place a bet.", "Get credited."] },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          { type: "list", items: ["Deposit: €10", "Offer reward: Depends on offerwall", "Net profit: Offer reward minus small betting loss"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
+      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
   }
 ];
