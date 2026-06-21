@@ -122,6 +122,21 @@ function RenderContent({ item }) {
         </div>
       );
     }
+    case "video": {
+      const id = (item.src || "").match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/)?.[1];
+      if (!id) return null;
+      return (
+        <div className="my-4 rounded-xl overflow-hidden border border-border/30 aspect-video">
+          <iframe
+            src={`https://www.youtube.com/embed/${id}`}
+            title={item.title || "Video guide"}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full"
+          />
+        </div>
+      );
+    }
     case "link":
       return (
         <a href={item.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-3 rounded-xl bg-card border border-border/40 hover:border-primary/30 text-sm text-primary font-medium transition-colors my-2">

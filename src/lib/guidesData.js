@@ -921,7 +921,7 @@ export const guides = [
     offerwall: "PixyLabs",
     difficulty: "Easy (with spending)",
     timeInvestment: "~4 hours",
-    totalReward: "~$150",
+    totalReward: "$300-$500",
     moneyInvestment: "~$20",
     sections: [
       {
@@ -1121,7 +1121,7 @@ export const guides = [
     offerwall: "Torox / AdGem / Adscend / AdGateMedia",
     difficulty: "Easy",
     timeInvestment: "About 5-10 minutes",
-    totalReward: "$40-$90",
+    totalReward: "$60-$120",
     moneyInvestment: "$10+",
     sections: [
       {
@@ -1818,6 +1818,72 @@ export const guides = [
       { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
       { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
       { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
+    slug: "puzzles-and-chaos",
+    title: "Puzzles & Chaos : High Payout Offer Guide ($200-400)",
+    logo: "https://play-lh.googleusercontent.com/FuuH9hfYKAc-lNwR2yEJDJdAd6jrDsTyJVUqYAmlvgM1s2aPqXTSqMVER__nk-ghL-aWWMkQnpNHDT0_P05lzg",
+    banner: "https://play-lh.googleusercontent.com/kLDMQlMEgz9GXeM4LVVKcsYtQW130Ub_CbAZzHt2W9uJEuiVRts2voc8XwLBRWU0JA=w1080",
+    category: "Game",
+    platform: "Android / iOS",
+    genre: "Puzzle / Strategy",
+    offerwall: "TYR / Torox / AdGate / Ayet",
+    difficulty: "Medium",
+    timeInvestment: "Several days of progression",
+    totalReward: "$200-400",
+    moneyInvestment: "$0 (free-to-play)",
+    sections: [
+      {
+        title: "Video Guide",
+        content: [
+          { type: "video", src: "https://youtu.be/k_uu8X9_tq4", title: "Puzzles & Chaos Offer Guide" },
+        ]
+      },
+      {
+        title: "Why You Should Play",
+        content: [
+          { type: "list", items: ["High payout offer ($200-400)", "Available across multiple offerwalls", "Steady progression you can do casually"] },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "Gain.gg", url: "https://gain.gg/r/netrox", desc: "70-80% Rates | Instant Cashouts" },
+      { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
+  },
+  {
+    slug: "mu-dark-epoch",
+    title: "MU: Dark Epoch : High Payout Offer Guide ($400-650)",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrwZfPVxxCpks5wd2JyUtXKwjBR2zLqC3-2Io9WBcY52wXT7LNcZt2Wp77&s=10",
+    banner: "https://cdn.ayet.io/header_image/68122dd72ecdc.webp",
+    category: "Game",
+    platform: "Android / iOS",
+    genre: "MMORPG",
+    offerwall: "Torox / Ayet / TYR / PrimeEarn",
+    difficulty: "Medium",
+    timeInvestment: "Several days of progression",
+    totalReward: "$400-650",
+    moneyInvestment: "$0 (free-to-play)",
+    sections: [
+      {
+        title: "Video Guide",
+        content: [
+          { type: "video", src: "https://youtu.be/1JJpU3Awxts", title: "MU: Dark Epoch Offer Guide" },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "Gain.gg", url: "https://gain.gg/r/netrox", desc: "70-80% Rates | Instant Cashouts" },
+      { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
       { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
   }
