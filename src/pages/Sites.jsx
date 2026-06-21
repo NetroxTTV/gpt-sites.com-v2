@@ -13,7 +13,7 @@ import { getAliasTokens } from "@/lib/siteAliases";
 const offerwallLabels = {
   adgate: "AdGate", gemiad: "GemiAd", adscend: "AdScend", adtowall: "AdToWall",
   ayetstudios: "AyeT Studios", bitlabs: "BitLabs",
-  hangmyads: "HangMyAds", lootably: "Lootably", mmwall: "MMWall",
+  hangmyads: "HangMyAds", inbrain: "InBrain", lootably: "Lootably", mmwall: "MMWall",
   monlix: "Monlix", myChips: "myChips", notik: "Notik",
   pixylabs: "PixyLabs", primeearn: "PrimeEarn", revu: "Revu", timewall: "TimeWall",
   torox: "Torox", waxrewards: "WaxRewards",
