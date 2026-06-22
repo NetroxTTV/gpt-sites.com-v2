@@ -1886,5 +1886,87 @@ export const guides = [
       { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
       { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
+  },
+  {
+    slug: "realprize-casino",
+    title: "RealPrize Casino : Quick $30–45 iOS Offer Guide",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmhmt82cEYHXaQrMKUDU1KN-3EAqmYrp89zFURDRJER9TH9zQ9upgq5rY&s=10",
+    banner: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKtWDJ9VRxfhPlCcRkd9x8_o52oDz8MrCsNJYluEmcgQjdogv6dKssdWmU&s=10",
+    category: "Casino",
+    platform: "iOS",
+    genre: "Casino",
+    offerwall: "Torox",
+    difficulty: "Very Easy",
+    timeInvestment: "~5 minutes",
+    totalReward: "$30–45",
+    moneyInvestment: "$10",
+    sections: [
+      {
+        title: "How the Offer Works",
+        content: [
+          { type: "callout", text: "RealPrize Casino is a very simple casino offer available on iOS. The requirements are straightforward and the offer usually credits within a few minutes after completing the purchase." },
+          { type: "steps", items: ["Install RealPrize Casino.", "Create a new account.", "Verify your phone number.", "Purchase the required pack.", "Get credited."] },
+        ]
+      },
+      {
+        title: "Steps 1-3 : Register, Verify & Open the Store",
+        content: [
+          {
+            type: "imageText",
+            src: new URL("../imgs/guides/realprize_casino/image1.png", import.meta.url).href,
+            alt: "RealPrize in-game store",
+            content: [
+              { type: "subtitle", text: "Step 1 : Install & Register" },
+              { type: "list", items: ["Install the app through the offerwall link.", "Create a new account using valid information.", "Complete account registration."] },
+              { type: "subtitle", text: "Step 2 : Verify Your Phone Number" },
+              { type: "list", items: ["Complete SMS verification.", "Make sure the verification is successful before proceeding."] },
+              { type: "subtitle", text: "Step 3 : Open the Store" },
+              { type: "list", items: ["Navigate to the in-game store.", "Locate the required offer pack shown in the offer instructions/screenshot."] },
+              { type: "tip", text: "You can access the shop via 2 buttons - both are highlighted with red squares on the image." },
+            ],
+          },
+        ]
+      },
+      {
+        title: "Steps 4-5 : Purchase & Wait for Credit",
+        content: [
+          {
+            type: "imageText",
+            src: new URL("../imgs/guides/realprize_casino/image2.png", import.meta.url).href,
+            alt: "Purchasing the $10 pack",
+            content: [
+              { type: "subtitle", text: "Step 4 : Purchase the $10 Pack" },
+              { type: "list", items: ["Purchase the required $10 pack.", "Wait for the transaction to complete successfully."] },
+              { type: "tip", text: "Keep a screenshot of the purchase confirmation in case support is needed." },
+              { type: "subtitle", text: "Step 5 : Waiting for the Offer to Credit" },
+              { type: "list", items: ["You should have 155k+ GC on the app.", "Usually credits within a few minutes.", "In some cases, it may take slightly longer depending on tracking."] },
+            ],
+          },
+        ]
+      },
+      {
+        title: "Important Notes",
+        content: [
+          { type: "list", items: ["iOS only.", "New users only.", "Use valid registration details.", "Verify your phone number before purchasing."] },
+          { type: "subtitle", text: "Keep screenshots of" },
+          { type: "list", items: ["Registration", "Phone verification", "Purchase confirmation"] },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          { type: "list", items: ["Cost: $10", "Reward: $30–45", "Net Profit: ~$20–35"] },
+          { type: "callout", text: "Very easy offer with fast crediting and minimal requirements." },
+        ]
+      },
+    ],
+    sites: [
+      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
+      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
+      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
+      { name: "Gain.gg", url: "https://gain.gg/r/netrox", desc: "70-80% Rates | Instant Cashouts" },
+      { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
+      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
+    ],
   }
 ];

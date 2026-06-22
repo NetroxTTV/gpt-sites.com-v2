@@ -122,6 +122,21 @@ function RenderContent({ item }) {
         </div>
       );
     }
+    case "imageText": {
+      const imageLeft = item.imagePosition === "left";
+      return (
+        <div className={`my-4 flex flex-col gap-5 sm:items-start ${imageLeft ? "sm:flex-row-reverse" : "sm:flex-row"}`}>
+          <div className="flex-1 min-w-0 [&>h4:first-child]:mt-0">
+            {item.content.map((c, i) => (
+              <RenderContent key={i} item={c} />
+            ))}
+          </div>
+          <div className="rounded-xl overflow-hidden border border-border/30 bg-secondary/10 w-full sm:w-2/5 sm:max-w-[260px] flex-shrink-0">
+            <img src={item.src} alt={item.alt} className="w-full h-auto object-contain bg-secondary/20" />
+          </div>
+        </div>
+      );
+    }
     case "video": {
       const id = (item.src || "").match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/)?.[1];
       if (!id) return null;
