@@ -122,7 +122,7 @@ export const allSites = [
   { name: "Ysense", description: "Good Offers when boosts ONLY", logo_url: new URL("../imgs/Sites/ysense.png", import.meta.url).href, visit_url: "https://www.ysense.com/?rb=139348631", rating: 4, rates: 50, offerwalls: ["adgate", "gemiad"] },
   { name: "SwagBucks", description: "Good Offers when boosts ONLY", logo_url: new URL("../imgs/Sites/swagbucks.png", import.meta.url).href, visit_url: "https://www.swagbucks.com/p/register?rb=195191067&rp=1", rating: 4, rates: 50, offerwalls: ["adgate", "revu"] },
   { name: "KashRewards", description: "65% Rates", logo_url: new URL("../imgs/Sites/kashrewards.ico", import.meta.url).href, visit_url: "https://kashrewards.com/?a=383", rating: 4, rates: 65, offerwalls: ["lootably", "monlix", "ayetstudios", "notik", "adtowall", "timewall"] },
-  { name: "Timebucks", description: "10+ Years of Activity | Fast Payouts", logo_url: new URL("../imgs/Sites/timebucks.png", import.meta.url).href, visit_url: "https://timebucks.com/?refID=225428688", rating: 5, rates: 90, offerwalls: ["adgate", "adtowall", "torox", "lootably", "myChips", "ayetstudios", "adscend", "revu", "pixylabs"] },
+  { name: "Timebucks", description: "10+ Years of Activity | Fast Payouts", logo_url: new URL("../imgs/Sites/timebucks.png", import.meta.url).href, visit_url: "https://timebucks.com/?refID=225040674", rating: 5, rates: 90, offerwalls: ["adgate", "adtowall", "torox", "lootably", "myChips", "ayetstudios", "adscend", "revu", "pixylabs"] },
   { name: "NitroLoot", description: "Earn Rewards", logo_url: new URL("../imgs/Sites/nitroloot.png", import.meta.url).href, visit_url: "https://nitroloot.com/r/a5zzpc7weh", rating: 4, rates: 50, offerwalls: ["adgate", "adtowall", "torox", "lootably", "myChips", "ayetstudios", "adscend", "revu"] },
   { name: "ZemCrypto", description: "Crypto Rewards", logo_url: new URL("../imgs/Sites/zemcrypto.png", import.meta.url).href, visit_url: "https://zemcrypto.com/?a=3781", rating: 4, rates: 60, offerwalls: ["adgate", "adtowall", "torox", "lootably", "myChips", "ayetstudios", "adscend", "revu"] },
   { name: "JumpTask", description: "Earn by Completing Tasks", logo_url: new URL("../imgs/Sites/jumptask.webp", import.meta.url).href, visit_url: "https://www.jumptask.io/r/vulykapahymy", rating: 4, rates: 50, offerwalls: ["adgate", "adtowall", "torox", "lootably", "myChips", "ayetstudios", "adscend", "revu"] },
@@ -137,5 +137,68 @@ export const allSites = [
 ];
 
 export const otherSites = allSites;
+
+// Maps the offerwall names used in guides to the lowercase keys stored on each site.
+/** @type {Record<string, string>} */
+const OFFERWALL_KEY_BY_ALIAS = {
+  primeearn: "primeearn",
+  primeopinion: "primeearn",
+  revu: "revu",
+  torox: "torox",
+  adscend: "adscend",
+  adscendmedia: "adscend",
+  ayetstudios: "ayetstudios",
+  ayet: "ayetstudios",
+  monlix: "monlix",
+  waxrewards: "waxrewards",
+  lootably: "lootably",
+  pixylabs: "pixylabs",
+  adtowall: "adtowall",
+  adgate: "adgate",
+  adgatemedia: "adgate",
+  mychips: "myChips",
+  notik: "notik",
+  bitlabs: "bitlabs",
+  gemiad: "gemiad",
+  hangmyads: "hangmyads",
+  inbrain: "inbrain",
+  mmwall: "mmwall",
+  timewall: "timewall",
+};
+
+function normalizeOfferwallToken(/** @type {string} */ token) {
+  return token.toLowerCase().replace(/[^a-z]/g, "");
+}
+
+/**
+ * Returns the highest-rated sites that carry the given offerwall(s).
+ * `offerwallText` is the guide's offerwall string (e.g. "Torox / AyetStudios").
+ * Falls back to the overall top-rated sites when no offerwall can be matched.
+ */
+export function getSitesForOfferwall(offerwallText = "", limit = 6) {
+  const keys = new Set();
+  offerwallText
+    .split(/[/|,]/)
+    .map(normalizeOfferwallToken)
+    .filter(Boolean)
+    .forEach((normalized) => {
+      const key = OFFERWALL_KEY_BY_ALIAS[normalized];
+      if (key) keys.add(key);
+    });
+
+  const pool = keys.size
+    ? allSites.filter((site) => site.offerwalls?.some((ow) => keys.has(ow)))
+    : allSites;
+
+  return [...pool]
+    .sort(
+      (a, b) =>
+        (b.rates ?? 0) - (a.rates ?? 0) ||
+        (b.rating ?? 0) - (a.rating ?? 0) ||
+        a.name.localeCompare(b.name)
+    )
+    .slice(0, limit)
+    .map((site) => ({ name: site.name, url: site.visit_url, desc: site.description }));
+}
 
 

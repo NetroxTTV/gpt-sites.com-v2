@@ -1,4 +1,6 @@
-export const guides = [
+import { getSitesForOfferwall } from "./sitesData";
+
+const rawGuides = [
   {
     slug: "animal-and-coins",
     title: "Animal and Coins",
@@ -73,15 +75,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
-    ],
   },
   {
     slug: "chime",
@@ -128,15 +121,6 @@ export const guides = [
           { type: "list", items: ["New Chime users only", "Use real and accurate personal information", "Do not close your account before the offer credits", "Keep proof of your direct deposit in case support is needed"] },
         ]
       },
-    ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
   },
   {
@@ -228,13 +212,6 @@ export const guides = [
           { type: "list", items: ["Do not do cashback-step purchases on web shop if they do not credit", "Do not skip daily purchases/events during key windows", "Do not leave ports and exploration unfinished for multiple days", "Always screenshot milestones and purchases in case support is needed"] },
         ]
       },
-    ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashout" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "GameHag", url: "https://gamehag.com/r/netrox", desc: "80% Rates" },
     ],
   },
   {
@@ -335,13 +312,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashout" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "GameHag", url: "https://gamehag.com/r/netrox", desc: "80% Rates" },
-    ],
   },
   {
     slug: "sunshine-island",
@@ -413,12 +383,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-    ],
   },
   {
     slug: "gemini-exchange",
@@ -465,15 +429,6 @@ export const guides = [
           { type: "list", items: ["Using fake information (always use real, verifiable details)", "Skipping KYC - it's required", "Purchasing less than the required amount", "Opening support tickets too early (wait 24 hours first)", "Immediate withdrawals - wait for transactions to settle"] },
         ]
       },
-    ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
   },
   {
@@ -550,15 +505,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
-    ],
   },
   {
     slug: "genshin-impact",
@@ -612,13 +558,6 @@ export const guides = [
           { type: "list", items: ["Time: ~20-30 minutes", "Cost: Free", "Reward: ~$9", "Difficulty: Very Easy", "Great quick PC offer with guaranteed completion"] },
         ]
       },
-    ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | AyetStudios availability may vary by region" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "Gain.gg", url: "https://gain.gg/r/netrox", desc: "70-80% Rates | Instant Cashouts" },
-      { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
   },
   {
@@ -692,15 +631,6 @@ export const guides = [
           { type: "text", text: "Special Thanks to Spectre (Discord: fallen_spectre | Reddit: u/Fallen_Spectre87) for the spreadsheet!" },
         ]
       },
-    ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Gain.gg", url: "https://gain.gg/r/netrox", desc: "70-80% Rates | Instant Cashouts" },
-      { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
   },
   {
@@ -826,15 +756,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
-    ],
   },
   {
     slug: "helium-lyca-mobile-plans",
@@ -902,13 +823,6 @@ export const guides = [
           { type: "list", items: ["Cost: $5", "Reward: $20", "Net Profit: ~$15"] },
         ]
       },
-    ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "Pawns", url: "https://pawns.app/?r=19345226", desc: "85% Rates | PrimeEarn + BitLabs" },
-      { name: "Cash Center", url: "https://cash-center.fun/ref/45d492d1", desc: "75% Rates | Timewall + Notik" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
   },
   {
@@ -1007,15 +921,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Pawns", url: "https://pawns.app/?r=19345226", desc: "85% Rates | PrimeEarn + BitLabs" },
-      { name: "Cash Center", url: "https://cash-center.fun/ref/45d492d1", desc: "75% Rates | Timewall + Notik" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
-    ],
   },
   {
     slug: "playid-funid-offer-guide",
@@ -1101,14 +1006,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
-    ],
   },
   {
     slug: "fanduel-sportsbook",
@@ -1168,14 +1065,6 @@ export const guides = [
           { type: "list", items: ["Deposit: $10+", "Offer reward: Depends on offerwall", "Net profit: Offer reward minus betting loss"] },
         ]
       },
-    ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
   },
   {
@@ -1327,15 +1216,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
-    ],
   },
   {
     slug: "zombie-waves",
@@ -1362,15 +1242,6 @@ export const guides = [
           { type: "text", text: "Full guide details coming soon." },
         ]
       },
-    ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
   },
   {
@@ -1399,15 +1270,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
-    ],
   },
   {
     slug: "guns-of-glory-lost-island",
@@ -1435,15 +1297,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
-    ],
   },
   {
     slug: "doomsday-last-survivors",
@@ -1470,15 +1323,6 @@ export const guides = [
           { type: "text", text: "Full guide details coming soon." },
         ]
       },
-    ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
   },
   {
@@ -1512,15 +1356,6 @@ export const guides = [
           { type: "text", text: "Full guide details coming soon." },
         ]
       },
-    ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Earnopolis", url: "https://earnopolis.com/r/?r=netrox", desc: "95% Rates" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
   },
   {
@@ -1610,11 +1445,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "Fastask", url: "https://fastask.net/?ref=296", desc: "100% Rates on WaxRewards" },
-    ],
   },
   {
     slug: "arknights-endfield",
@@ -1692,14 +1522,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "Gain.gg", url: "https://gain.gg/r/netrox", desc: "70-80% Rates | Instant Cashouts" },
-      { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
-    ],
   },
   {
     slug: "deblock",
@@ -1757,14 +1579,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
-    ],
   },
   {
     slug: "betclic",
@@ -1812,14 +1626,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "CoinPayU", url: "https://www.coinpayu.com/?r=Netrox", desc: "80-85% Rates | High Bonuses" },
-      { name: "Chequity", url: "https://chequity.io/r/128BDC40", desc: "80% Rates | Simple UI" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
-    ],
   },
   {
     slug: "puzzles-and-chaos",
@@ -1848,14 +1654,6 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "Gain.gg", url: "https://gain.gg/r/netrox", desc: "70-80% Rates | Instant Cashouts" },
-      { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
-    ],
   },
   {
     slug: "mu-dark-epoch",
@@ -1877,14 +1675,6 @@ export const guides = [
           { type: "video", src: "https://youtu.be/1JJpU3Awxts", title: "MU: Dark Epoch Offer Guide" },
         ]
       },
-    ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "Gain.gg", url: "https://gain.gg/r/netrox", desc: "70-80% Rates | Instant Cashouts" },
-      { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
     ],
   },
   {
@@ -1960,13 +1750,12 @@ export const guides = [
         ]
       },
     ],
-    sites: [
-      { name: "Earnlab", url: "https://earnlab.com/r/netrox", desc: "80-90% Rates | Highest Paying" },
-      { name: "CashinStyle", url: "https://cashinstyle.com/?ref=NETROX", desc: "90% Rates | Top Offerwalls" },
-      { name: "GemsLoot", url: "https://gemsloot.com/?aff=netrox", desc: "65-95% Rates | Instant Cashouts" },
-      { name: "Gain.gg", url: "https://gain.gg/r/netrox", desc: "70-80% Rates | Instant Cashouts" },
-      { name: "FreeCash", url: "https://freecash.com/r/netroxx", desc: "70-75% Rates | Instant Cashouts" },
-      { name: "Freeward", url: "https://freeward.net/ref/lom3w", desc: "70-80% Rates" },
-    ],
   }
 ];
+
+// Attach the recommended sites for each guide automatically, picking the
+// highest-rated sites that carry the guide's offerwall (see sitesData.js).
+export const guides = rawGuides.map((guide) => ({
+  ...guide,
+  sites: getSitesForOfferwall(guide.offerwall),
+}));
