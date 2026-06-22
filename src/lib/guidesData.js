@@ -1,4 +1,4 @@
-import { getSitesForOfferwall } from "./sitesData";
+import { getSitesForOfferwall } from "./sitesData.js";
 
 const rawGuides = [
   {
