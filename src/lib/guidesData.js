@@ -374,20 +374,20 @@ export const guides = [
       {
         title: "Best XP Strategy Early Game",
         content: [
-          { type: "list", items: ["Spam produce wheat — most time-efficient crop for XP and gold", "Before going to bed: Start long-duration crops and builds", "Make sure you have at least 1 of every production building"] },
+          { type: "list", items: ["Spam produce wheat - most time-efficient crop for XP and gold", "Before going to bed: Start long-duration crops and builds", "Make sure you have at least 1 of every production building"] },
         ]
       },
       {
         title: "Fast XP Method (VERY IMPORTANT)",
         content: [
           { type: "callout", text: "To reach level 23 quickly (needed for Town Hall level 3): Destroy and rebuild a house on Tropical Island." },
-          { type: "list", items: ["Each rebuild gives 100 XP", "Takes 100 seconds — extremely efficient", "Use gems to speed this up if available"] },
+          { type: "list", items: ["Each rebuild gives 100 XP", "Takes 100 seconds - extremely efficient", "Use gems to speed this up if available"] },
           { type: "subtitle", text: "Best Gem Value" },
           { type: "list", items: ["Piggy bank offer", "Limited-time deals on the side menu"] },
         ]
       },
       {
-        title: "Tropical Island — When Unlocked",
+        title: "Tropical Island - When Unlocked",
         content: [
           { type: "list", items: ["Immediately start farming Feathers and Coffee beans", "Coffee beans are the wheat equivalent on Tropical Island", "Still produce a variety of items for tasks"] },
         ]
@@ -395,8 +395,8 @@ export const guides = [
       {
         title: "Fishing & Guilds",
         content: [
-          { type: "list", items: ["Once unlocked, always fish — gives XP and points to buy materials/crops", "Tap slightly in front of the fish's direction to instantly grab its attention"] },
-          { type: "tip", text: "Join a high-level active guild — use coupons to help their deliveries and gain more XP than helping yourself." },
+          { type: "list", items: ["Once unlocked, always fish - gives XP and points to buy materials/crops", "Tap slightly in front of the fish's direction to instantly grab its attention"] },
+          { type: "tip", text: "Join a high-level active guild - use coupons to help their deliveries and gain more XP than helping yourself." },
         ]
       },
       {
@@ -409,7 +409,7 @@ export const guides = [
       {
         title: "Free Resources",
         content: [
-          { type: "list", items: ["Tap the dog to watch ads for free resources", "Claim free gift from their website", "Use the offerwall tab in-game shop — 'Lotsa Slots' offer recommended for free gems"] },
+          { type: "list", items: ["Tap the dog to watch ads for free resources", "Claim free gift from their website", "Use the offerwall tab in-game shop - 'Lotsa Slots' offer recommended for free gems"] },
         ]
       },
     ],
@@ -441,8 +441,8 @@ export const guides = [
       {
         title: "Important Notes",
         content: [
-          { type: "warning", text: "KYC is Mandatory — KYC verification is required to receive your offerwall earnings. Usually completes within minutes." },
-          { type: "list", items: ["Use real information to avoid account locks", "Keep screenshots of each step as proof", "Don't rush withdrawals — let transactions fully settle"] },
+          { type: "warning", text: "KYC is Mandatory - KYC verification is required to receive your offerwall earnings. Usually completes within minutes." },
+          { type: "list", items: ["Use real information to avoid account locks", "Keep screenshots of each step as proof", "Don't rush withdrawals - let transactions fully settle"] },
         ]
       },
       {
@@ -453,7 +453,7 @@ export const guides = [
         ]
       },
       {
-        title: "After Crediting – Profit Strategy",
+        title: "After Crediting - Profit Strategy",
         content: [
           { type: "steps", items: ["Sell your crypto back to your currency", "Withdraw funds to bank, card, or crypto wallet", "Keep the offerwall reward as pure profit!"] },
           { type: "callout", text: "Example: Invest $10, earn $30 reward → Sell crypto, withdraw $10 → Net profit: $20!" },
@@ -462,7 +462,7 @@ export const guides = [
       {
         title: "Common Mistakes to Avoid",
         content: [
-          { type: "list", items: ["Using fake information (always use real, verifiable details)", "Skipping KYC — it's required", "Purchasing less than the required amount", "Opening support tickets too early (wait 24 hours first)", "Immediate withdrawals — wait for transactions to settle"] },
+          { type: "list", items: ["Using fake information (always use real, verifiable details)", "Skipping KYC - it's required", "Purchasing less than the required amount", "Opening support tickets too early (wait 24 hours first)", "Immediate withdrawals - wait for transactions to settle"] },
         ]
       },
     ],
@@ -630,8 +630,8 @@ export const guides = [
     genre: "Restaurant Idle",
     offerwall: "PrimeEarn",
     difficulty: "Easy / Advanced",
-    timeInvestment: "50–90 hours",
-    totalReward: "$200–500",
+    timeInvestment: "50-90 hours",
+    totalReward: "$200-500",
     sections: [
       {
         title: "Offer Overview",
@@ -654,7 +654,7 @@ export const guides = [
         content: [
           { type: "list", items: ["Equip the highest rarity items (Epic > Rare > Common)", "Upgrade gear using duplicates to boost its multiplier", "Focus on profit % bonuses early game", "Don't donate strong gear unless you have better replacements"] },
           { type: "subtitle", text: "Meta Build Priorities" },
-          { type: "list", items: ["1st: Profit % items — boosts overall city coin gains", "2nd: Speed & Walk Speed — improves completion speed", "3rd: Situational bonuses (like food value boosts)"] },
+          { type: "list", items: ["1st: Profit % items - boosts overall city coin gains", "2nd: Speed & Walk Speed - improves completion speed", "3rd: Situational bonuses (like food value boosts)"] },
           { type: "tip", text: "Check the spreadsheet at the end of the guide for the best builds for your city!" },
         ]
       },
@@ -668,7 +668,7 @@ export const guides = [
         title: "Clubs",
         content: [
           { type: "callout", text: "Clubs unlock at City 7 and provide significant progression bonuses. Join an active club!" },
-          { type: "list", items: ["Donate duplicate or low-tier gear to gain Club XP", "Higher club level = better milestone rewards", "Avoid inactive clubs — progress will be much slower"] },
+          { type: "list", items: ["Donate duplicate or low-tier gear to gain Club XP", "Higher club level = better milestone rewards", "Avoid inactive clubs - progress will be much slower"] },
           { type: "tip", text: "Join the unofficial Eatventure Discord to find a good active club: discord.gg/eatventure" },
         ]
       },
@@ -681,7 +681,7 @@ export const guides = [
       {
         title: "Fast Completion Tips",
         content: [
-          { type: "list", items: ["Buy the permanent 2x boost — huge speed improvement", "Reach City 7 to unlock clubs and boost city completions", "Optional: ~$15 starter pack speeds early progression significantly"] },
+          { type: "list", items: ["Buy the permanent 2x boost - huge speed improvement", "Reach City 7 to unlock clubs and boost city completions", "Optional: ~$15 starter pack speeds early progression significantly"] },
         ]
       },
       {
@@ -1525,7 +1525,7 @@ export const guides = [
   },
   {
     slug: "lovable",
-    title: "Lovable : Easy $60–85 AI Offer Guide",
+    title: "Lovable : Easy $60-85 AI Offer Guide",
     logo: "https://lovable.dev/img/logo/lovable-icon-bg-dark.png",
     banner: "https://lovable.dev/img/logo/lovable-logo-bg-dark.png",
     category: "AI / Subscription",
@@ -1534,7 +1534,7 @@ export const guides = [
     offerwall: "Torox / WaxRewards",
     difficulty: "Very Easy",
     timeInvestment: "~5 minutes",
-    totalReward: "$60–85",
+    totalReward: "$60-85",
     moneyInvestment: "$25",
     sections: [
       {
@@ -1585,7 +1585,7 @@ export const guides = [
       {
         title: "Crediting Time",
         content: [
-          { type: "list", items: ["Usually credits within 1–2 hours.", "Sometimes faster depending on the offerwall.", "Do not cancel your subscription before receiving credit."] },
+          { type: "list", items: ["Usually credits within 1-2 hours.", "Sometimes faster depending on the offerwall.", "Do not cancel your subscription before receiving credit."] },
         ]
       },
       {
@@ -1599,13 +1599,13 @@ export const guides = [
       {
         title: "Quick Recap",
         content: [
-          { type: "steps", items: ["Sign up through the offerwall.", "Upgrade to the $25/month Pro plan.", "Pay with a valid card.", "Generate any AI project.", "Wait 1–2 hours.", "Get credited."] },
+          { type: "steps", items: ["Sign up through the offerwall.", "Upgrade to the $25/month Pro plan.", "Pay with a valid card.", "Generate any AI project.", "Wait 1-2 hours.", "Get credited."] },
         ]
       },
       {
         title: "Profit Summary",
         content: [
-          { type: "list", items: ["Cost: $25", "Reward: $60–85", "Net Profit: ~$35–60"] },
+          { type: "list", items: ["Cost: $25", "Reward: $60-85", "Net Profit: ~$35-60"] },
           { type: "callout", text: "One of the easiest and fastest AI subscription offers available." },
         ]
       },
@@ -1618,7 +1618,7 @@ export const guides = [
   },
   {
     slug: "arknights-endfield",
-    title: "Arknights: Endfield : Easy $5–6.1 Offer Guide (PC)",
+    title: "Arknights: Endfield : Easy $5-6.1 Offer Guide (PC)",
     logo: new URL("../imgs/guides/arknight/banner.jpg", import.meta.url).href,
     banner: new URL("../imgs/guides/arknight/banner.jpg", import.meta.url).href,
     category: "Game",
@@ -1626,8 +1626,8 @@ export const guides = [
     genre: "Strategy / RPG",
     offerwall: "Offerwalls vary by region",
     difficulty: "Easy",
-    timeInvestment: "About 5–10 minutes",
-    totalReward: "$5–6.10",
+    timeInvestment: "About 5-10 minutes",
+    totalReward: "$5-6.10",
     moneyInvestment: "$0.99",
     sections: [
       {
@@ -1688,7 +1688,7 @@ export const guides = [
       {
         title: "Profit Summary",
         content: [
-          { type: "list", items: ["Investment: $0.99", "Offer reward: $5–6.10", "Net profit: ~$4–5+"] },
+          { type: "list", items: ["Investment: $0.99", "Offer reward: $5-6.10", "Net profit: ~$4-5+"] },
         ]
       },
     ],
@@ -1889,7 +1889,7 @@ export const guides = [
   },
   {
     slug: "realprize-casino",
-    title: "RealPrize Casino : Quick $30–45 iOS Offer Guide",
+    title: "RealPrize Casino : Quick $30-45 iOS Offer Guide",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmhmt82cEYHXaQrMKUDU1KN-3EAqmYrp89zFURDRJER9TH9zQ9upgq5rY&s=10",
     banner: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKtWDJ9VRxfhPlCcRkd9x8_o52oDz8MrCsNJYluEmcgQjdogv6dKssdWmU&s=10",
     category: "Betting / Casino",
@@ -1898,7 +1898,7 @@ export const guides = [
     offerwall: "Torox",
     difficulty: "Very Easy",
     timeInvestment: "~5 minutes",
-    totalReward: "$30–45",
+    totalReward: "$30-45",
     moneyInvestment: "$10",
     sections: [
       {
@@ -1955,7 +1955,7 @@ export const guides = [
       {
         title: "Profit Summary",
         content: [
-          { type: "list", items: ["Cost: $10", "Reward: $30–45", "Net Profit: ~$20–35"] },
+          { type: "list", items: ["Cost: $10", "Reward: $30-45", "Net Profit: ~$20-35"] },
           { type: "callout", text: "Very easy offer with fast crediting and minimal requirements." },
         ]
       },
