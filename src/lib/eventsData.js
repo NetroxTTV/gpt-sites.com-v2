@@ -1,5 +1,19 @@
 export const events = [
   {
+    title: "GemsLoot RevU $400 Tourney + 25% Bonus",
+    siteName: "GemsLoot",
+    siteUrl: "https://gemsloot.com/?aff=netrox",
+    dateRange: "Jul 16 – Jul 31",
+    startDate: "2026-07-16",
+    endDate: "2026-07-31",
+    highlight: "RevU $400 Tourney is live on GemsLoot, plus enjoy a 25% bonus on all offers until July 31st.",
+    details: [
+      "RevU tournament prize pool: $400.",
+      "Get a 25% bonus on all offers on GemsLoot through July 31st.",
+      "Tap in now while both promos are active.",
+    ],
+  },
+  {
     title: "CashInStyle x AdscendMedia $100 Contest – Complete Offers & Win!",
     siteName: "AdscendMedia",
     siteUrl: "https://adscendmedia.com/r/netrox",
@@ -112,6 +126,9 @@ export const events = [
   },
 ];
 
+/**
+ * @param {string | null | undefined} endDate
+ */
 export const getDaysLeft = (endDate) => {
   if (!endDate) return null;
   const end = new Date(`${endDate}T23:59:59`);
