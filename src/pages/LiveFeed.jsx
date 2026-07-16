@@ -2,14 +2,27 @@ import React, { useEffect, useMemo, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion, useReducedMotion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { usePagination } from "@/components/hooks/use-pagination";
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink } from "@/components/ui/pagination";
 import { allOfferwalls, allSites } from "@/lib/sitesData";
 import { AlertCircle, Clock3, Globe2, RefreshCw, Store, Wallet } from "lucide-react";
 
-const FEED_URL = "https://cashinstyle.com/api/activity-ticker.json";
+const FEEDS = [
+  {
+    key: "cashinstyle",
+    name: "CashInStyle",
+    url: "https://cashinstyle.com/api/activity-ticker.json",
+    fallbackHref: "https://cashinstyle.com/?ref=NETROX",
+  },
+  {
+    key: "sharkearnings",
+    name: "SharkEarnings",
+    url: "https://sharkearnings.com/api/activity.json?limit=100",
+    fallbackHref: "https://sharkearnings.com/r/netrox",
+  },
+];
+
 const REFRESH_MS = 30000;
 const HOURS_WINDOW = 12;
 const OFFERS_PER_PAGE = 25;
@@ -17,11 +30,6 @@ const CIS_LOGO = new URL("../imgs/Sites/cis.svg", import.meta.url).href;
 
 const countryNames = new Intl.DisplayNames(["en"], { type: "region" });
 const relativeTime = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
-
-const sourceOptions = [
-  { value: "all", label: "All sources" },
-  { value: "cashinstyle", label: "CashInStyle", logo: CIS_LOGO },
-];
 
 const rewardOptions = [
   { value: "all", label: "All rewards" },
@@ -39,6 +47,30 @@ const wallOptions = ["all", ...allOfferwalls].map((wall) => ({
 
 const sourceCatalog = new Map(
   allSites.map((site) => [site.name.toLowerCase(), { name: site.name, href: site.visit_url, logo: site.logo_url }])
+);
+
+const sourceOptions = [
+  { value: "all", label: "All sources" },
+  ...FEEDS.map((feed) => {
+    const site = sourceCatalog.get(feed.key) || {};
+
+    return {
+      value: feed.key,
+      label: feed.name,
+      logo: site.logo,
+    };
+  }),
+];
+
+const sourceFallbacks = new Map(
+  FEEDS.map((feed) => [
+    feed.key,
+    {
+      name: feed.name,
+      href: feed.fallbackHref,
+      logo: feed.key === "cashinstyle" ? CIS_LOGO : "https://www.google.com/s2/favicons?domain=sharkearnings.com&sz=128",
+    },
+  ])
 );
 
 const formatMoney = (value) => {
@@ -78,6 +110,75 @@ const withinTwelveHours = (dateValue) => {
   const date = new Date(dateValue);
   if (Number.isNaN(date.getTime())) return false;
   return Date.now() - date.getTime() <= HOURS_WINDOW * 60 * 60 * 1000;
+};
+
+const parseFeedPayload = (payload) => {
+  const text = payload.trim();
+  if (!text) return [];
+
+  const candidates = text.startsWith("[") ? [text] : [text, `[${text.replace(/,\s*$/, "")}]`];
+
+  for (const candidate of candidates) {
+    try {
+      const parsed = JSON.parse(candidate);
+      if (Array.isArray(parsed)) return parsed;
+      if (Array.isArray(parsed?.events)) return parsed.events;
+      if (Array.isArray(parsed?.data)) return parsed.data;
+      return parsed ? [parsed] : [];
+    } catch {
+      continue;
+    }
+  }
+
+  return [];
+};
+
+const normalizeFeedItem = (sourceKey, item) => {
+  if (!item) return null;
+
+  if (sourceKey === "sharkearnings") {
+    if (item.is_private) return null;
+
+    return {
+      source: sourceKey,
+      date: item.created_at,
+      value: item.amount,
+      merchant: item.partner,
+      description: `${item.partner || "SharkEarnings"} offer completion`,
+      panelist: {
+        username: item.username,
+        country: item.country,
+      },
+    };
+  }
+
+  return {
+    ...item,
+    source: sourceKey,
+    date: item.date,
+    value: item.value,
+    merchant: item.merchant,
+    description: item.description || "Recent offer completion",
+    panelist: item.panelist || {},
+  };
+};
+
+const fetchFeedItems = async (feed, signal) => {
+  const response = await fetch(feed.url, {
+    signal,
+    headers: {
+      Accept: "application/json",
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Feed request failed with ${response.status}`);
+  }
+
+  const payload = await response.text();
+  return parseFeedPayload(payload)
+    .map((item) => normalizeFeedItem(feed.key, item))
+    .filter((item) => item && withinTwelveHours(item.date));
 };
 
 const getRewardBand = (value) => {
@@ -138,7 +239,8 @@ function OfferRow({ item, index }) {
   const countryLabel = countryCode ? countryNames.of(countryCode) ?? countryCode : "Global";
   const username = item?.panelist?.username || "CashInStyle panelist";
   const wall = item?.merchant || "Unknown wall";
-  const source = sourceCatalog.get("cashinstyle") ?? {
+  const sourceKey = item?.source || "cashinstyle";
+  const source = sourceCatalog.get(sourceKey) ?? sourceFallbacks.get(sourceKey) ?? {
     name: "CashInStyle",
     href: "https://cashinstyle.com/?ref=NETROX",
     logo: CIS_LOGO,
@@ -244,27 +346,12 @@ export default function LiveFeed() {
       setError("");
 
       try {
-        const response = await fetch(FEED_URL, {
-          signal: controller.signal,
-          headers: {
-            Accept: "application/json",
-          },
-        });
-
-        if (!response.ok) {
-          throw new Error(`Feed request failed with ${response.status}`);
-        }
-
-        const data = await response.json();
+        const settledFeeds = await Promise.allSettled(FEEDS.map((feed) => fetchFeedItems(feed, controller.signal)));
         if (cancelled) return;
 
-        const list = Array.isArray(data)
-          ? data
-              .filter((item) => item?.operation !== "debit" && item?.identifier !== "withdrawal")
-              .filter((item) => !item?.is_survey)
-              .filter((item) => withinTwelveHours(item?.date))
-              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-          : [];
+        const list = settledFeeds
+          .flatMap((result) => (result.status === "fulfilled" ? result.value : []))
+          .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
         setItems(list);
         setStatus("ready");
@@ -293,7 +380,7 @@ export default function LiveFeed() {
       const wall = (item?.merchant || "").toLowerCase();
       const description = (item?.description || "").toLowerCase();
       const username = (item?.panelist?.username || "").toLowerCase();
-      const sourceName = "cashinstyle";
+      const sourceName = (item?.source || "cashinstyle").toLowerCase();
       const rewardBand = getRewardBand(item?.value);
 
       const sourceMatch = sourceFilter === "all" || sourceFilter === sourceName;
@@ -544,7 +631,7 @@ export default function LiveFeed() {
           )}
 
           <div className="mx-auto mt-6 max-w-4xl rounded-2xl border border-border/60 bg-card/40 px-4 py-3 text-xs text-muted-foreground">
-            Source note: this page currently streams CashInStyle activity, but the row layout, filters, and source badge are set up so more sites can be added without changing the UI.
+            Source note: this page now combines CashInStyle and SharkEarnings activity, and the row layout, filters, and source badge are set up so more sites can be added without changing the UI.
           </div>
         </div>
       </main>
