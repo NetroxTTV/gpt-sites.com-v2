@@ -1,5 +1,33 @@
 export const events = [
   {
+    title: "CashInStyle x AdscendMedia $100 Contest – Complete Offers & Win!",
+    siteName: "AdscendMedia",
+    siteUrl: "https://adscendmedia.com/r/netrox",
+    dateRange: "Jul 15 – Jul 31",
+    startDate: "2026-07-15",
+    endDate: "2026-07-31",
+    highlight: "Join the CashInStyle x AdscendMedia $100 prize contest and climb the leaderboard by completing offers.",
+    details: [
+      "Prize pool: $100.",
+      "Complete AdscendMedia offers to earn leaderboard points.",
+      "Event runs from July 15th through July 31st - join early to maximize your ranking.",
+    ],
+  },
+  {
+    title: "$100 myChips Tournament",
+    siteName: "SharkEarnings",
+    siteUrl: "https://sharkearnings.com/r/netrox",
+    dateRange: "Ending soon",
+    startDate: "2026-07-11",
+    endDate: "2026-07-18",
+    highlight: "Compete in the $100 myChips Tournament and climb the leaderboard for your chance to win.",
+    details: [
+      "Prize pool: $100.",
+      "Complete myChips offers to earn leaderboard points.",
+      "Navigate to the Prizes tab to join and track your progress.",
+    ],
+  },
+  {
     title: "Gain.gg Torox $1500 Tournament",
     siteName: "Gain.gg",
     siteUrl: "https://gain.gg/r/netrox",
