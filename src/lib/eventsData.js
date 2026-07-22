@@ -1,5 +1,18 @@
 export const events = [
   {
+    title: "$67.50 WaxRewards Leaderboard",
+    siteName: "RBXFast",
+    siteUrl: "https://rbxfast.com/r/netrox",
+    dateRange: "Ends in 10d 16h",
+    startDate: "2026-07-22",
+    endDate: "2026-08-02",
+    highlight: "Win $67.50 in a WaxRewards leaderboard on RBXFast - climb the rankings now.",
+    details: [
+      "Prize pool: $67.50.",
+      "Do WaxRewards offers on RBXFast to climb the leaderboard.",
+    ],
+  },
+  {
     title: "GemsLoot RevU $400 Tourney + 25% Bonus",
     siteName: "GemsLoot",
     siteUrl: "https://gemsloot.com/?aff=netrox",
