@@ -1,5 +1,19 @@
 export const events = [
   {
+    title: "250$ RevU Tournament",
+    siteName: "PrizeBear",
+    siteUrl: "https://prizebear.com/r/netrox",
+    dateRange: "Ends in 13d",
+    startDate: "2026-07-25",
+    endDate: "2026-08-07",
+    highlight: "PrizeBear is running a 250$ RevU Tournament with 13 days left to compete.",
+    details: [
+      "Prize pool: $250.",
+      "Complete RevU offers on PrizeBear to climb the tournament leaderboard.",
+      "13 days remaining - join now to maximize your ranking.",
+    ],
+  },
+  {
     title: "$67.50 WaxRewards Leaderboard",
     siteName: "RBXFast",
     siteUrl: "https://rbxfast.com/r/netrox",
