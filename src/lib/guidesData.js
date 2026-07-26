@@ -1682,7 +1682,7 @@ const rawGuides = [
     title: "SpinMacho / PlayJonny / SavaSpin / Roulettino : Easy $57-75 Casino Offer Guide",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvy12rqiOwlxqeQsz6cBobZVxTk4z-fqq3JwIGmL8TKg&s=10",
     banner: "https://tag-pictures.tribuna.com/image/7b79c417-6e1c-4b44-ae9e-75c5240d3d04?quality=80&width=1920",
-    category: "Casino",
+    category: "Betting / Casino",
     platform: "Browser / Mobile",
     genre: "Online Casino",
     offerwall: "Adtowall / Lootably",
