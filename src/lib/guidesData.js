@@ -1678,6 +1678,80 @@ const rawGuides = [
     ],
   },
   {
+    slug: "spinmacho-playjonny-savaspin-roulettino",
+    title: "SpinMacho / PlayJonny / SavaSpin / Roulettino : Easy $57-75 Casino Offer Guide",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvy12rqiOwlxqeQsz6cBobZVxTk4z-fqq3JwIGmL8TKg&s=10",
+    banner: "https://tag-pictures.tribuna.com/image/7b79c417-6e1c-4b44-ae9e-75c5240d3d04?quality=80&width=1920",
+    category: "Casino",
+    platform: "Browser / Mobile",
+    genre: "Online Casino",
+    offerwall: "Adtowall / Lootably",
+    difficulty: "Easy",
+    timeInvestment: "About 10 minutes active",
+    totalReward: "$57-$75",
+    moneyInvestment: "€50-70",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "callout", text: "This guide covers the SpinMacho, PlayJonny, SavaSpin, and Roulettino casino offers available through Adtowall and Lootably. The process is simple: deposit, wager, and wait for the offerwall reward." },
+          { type: "list", items: ["Category: Casino", "Offer: SpinMacho / PlayJonny / SavaSpin / Roulettino", "Platform: Adtowall / Lootably", "Genre: Online Casino", "Total Reward: $57-75", "Difficulty Level: Easy", "Time Investment: About 10 minutes active", "Initial Investment: €50-70", "Free to Play?: No", "Cashback on Purchases: Yes"] },
+        ]
+      },
+      {
+        title: "What Is This Mission About",
+        content: [
+          { type: "list", items: ["These platforms are real-money online casinos available in many regions.", "Register as a new user.", "Make a deposit.", "Wager the deposited money.", "Wait for the offer to credit."] },
+        ]
+      },
+      {
+        title: "How the Offer Works",
+        content: [
+          { type: "steps", items: ["Sign up on one of the listed casino platforms as a new user.", "Verify your email and basic account details if required.", "Deposit the amount required by the offer, usually between €50 and €70.", "Wager the full deposit amount according to the casino's rules.", "Wait for the offerwall reward to credit."] },
+          { type: "image", src: new URL("../imgs/guides/4casinos/1.png", import.meta.url).href, alt: "SpinMacho offer overview" },
+        ]
+      },
+      {
+        title: "Best Games to Minimize Risk",
+        content: [
+          { type: "list", items: ["Limbo at 1.01x", "Aviator at very low multipliers (1.01x to 1.10x)", "Low volatility slots", "Avoid bonuses, high volatility slots, bonus buys, and high multiplier bets"] },
+          { type: "tip", text: "Low-risk play helps you keep a larger portion of your balance after wagering." },
+          { type: "image", src: new URL("../imgs/guides/4casinos/2.png", import.meta.url).href, alt: "Low-risk casino play examples" },
+        ]
+      },
+      {
+        title: "KYC and Withdrawals",
+        content: [
+          { type: "list", items: ["KYC usually takes about 5 minutes.", "Requires ID verification.", "May require proof of address in some cases.", "Withdrawal processing can take up to 48 hours.", "Use the same payment method you used to deposit when possible."] },
+        ]
+      },
+      {
+        title: "Crediting Time",
+        content: [
+          { type: "list", items: ["Typical credit time: within a month.", "Most credits happen at the beginning of a new month.", "Keep screenshots of deposit and wagering history as proof.", "Do not open a support ticket until the normal credit window has passed."] },
+        ]
+      },
+      {
+        title: "Common Mistakes to Avoid",
+        content: [
+          { type: "list", items: ["Using high-risk games", "Not completing full wagering requirements", "Withdrawing before wagering is finished", "Using someone else's identity", "Ignoring KYC requirements", "Expecting instant credit"] },
+        ]
+      },
+      {
+        title: "Quick Recap",
+        content: [
+          { type: "steps", items: ["Register as a new user.", "Deposit €50-70.", "Play low-risk games to wager the deposit.", "Complete KYC to withdraw remaining balance.", "Wait for the offer to credit.", "Keep the reward as profit."] },
+        ]
+      },
+      {
+        title: "Final Thoughts",
+        content: [
+          { type: "callout", text: "These casino offers are fast to complete, predictable with the right wagering strategy, and pay well if you stay disciplined with low-risk play." },
+        ]
+      },
+    ],
+  },
+  {
     slug: "realprize-casino",
     title: "RealPrize Casino : Quick $30-45 iOS Offer Guide",
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmhmt82cEYHXaQrMKUDU1KN-3EAqmYrp89zFURDRJER9TH9zQ9upgq5rY&s=10",
