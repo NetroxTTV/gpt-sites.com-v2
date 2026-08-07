@@ -9,7 +9,7 @@ export default defineConfig({
   logLevel: 'error', // Suppress warnings, only show errors
   server: {
     host: '0.0.0.0',
-    port: 5173,
+    port: 5175,
     proxy: {
       '/api': {
         target: devProxyTarget,
@@ -24,7 +24,7 @@ export default defineConfig({
   },
   preview: {
     host: '0.0.0.0',
-    port: 5173,
+    port: 5175,
     allowedHosts: ['gpt-sites.com'],
   },
   plugins: [

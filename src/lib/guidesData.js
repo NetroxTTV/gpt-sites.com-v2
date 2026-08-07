@@ -1824,6 +1824,71 @@ const rawGuides = [
         ]
       },
     ],
+  },
+  {
+    slug: "king-of-avalon-cashbacks",
+    title: "King of Avalon Cashbacks Guide",
+    logo: "https://play-lh.googleusercontent.com/aJGym34S8jF33-lk7GhQ9CejCDeMTgZbskjeIoAE_R4l6mfsPwMEI7D_5OAyRPkHgkBTkOREMNeYu9z5i64pl4c",
+    banner: "https://mmohaven.com/wp-content/uploads/2023/03/king_of_avalon_frost_and_flame-1000x500.jpg",
+    category: "Game",
+    platform: "iOS / Android",
+    genre: "Strategy",
+    offerwall: "PayKoa",
+    difficulty: "Medium",
+    timeInvestment: "5-10 days",
+    totalReward: "$80",
+    moneyInvestment: "$80 (for cashbacks)",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "callout", text: "King of Avalon offers multiple cashback tiers through the PayKoa platform. Complete the cashback purchases to earn rewards." },
+          { type: "list", items: ["Category: Game", "Offer: King of Avalon Cashbacks", "Platform: iOS / Android", "Genre: Strategy", "Total Reward: $80", "Difficulty: Medium", "Time Investment: 5-10 days", "Money Investment: $80 (for cashbacks)"] },
+        ]
+      },
+      {
+        title: "Getting Started",
+        content: [
+          { type: "steps", items: ["Download King of Avalon on iOS or Android", "Complete the initial tutorial", "Reach Stronghold level 5"] },
+          { type: "tip", text: "The early levels progress quickly. Focus on main story progression and stronghold upgrades." },
+        ]
+      },
+      {
+        title: "Cashback Strategy",
+        content: [
+          { type: "subtitle", text: "Access PayKoa" },
+          { type: "steps", items: ["Open https://paykoa.com/", "Use a USA VPN if you are not located in the United States", "Log in with your UID"] },
+          { type: "subtitle", text: "Cashback Order (Important)" },
+          { type: "callout", text: "Complete cashbacks in this specific order to maximize savings:" },
+          { type: "list", items: ["Start with the $50 cashback - You get 20% OFF your first purchase, so you only pay $40!", "Then do the $20 cashback", "Finally do the $10 cashback"] },
+          { type: "image", src: new URL("../imgs/guides/koa/koa_cashbacks.png", import.meta.url).href, alt: "King of Avalon cashbacks guide" },
+        ]
+      },
+      {
+        title: "Using Your Diamonds",
+        content: [
+          { type: "list", items: ["Diamonds can only be used after reaching Stronghold level 10", "Use them to purchase packs, speedups, and resources", "Prioritize purchases that help you progress faster"] },
+        ]
+      },
+      {
+        title: "Crediting Time",
+        content: [
+          { type: "list", items: ["Cashbacks typically credit within a few hours to a few days", "Keep screenshots of all purchases as proof", "Contact support if credit is delayed beyond the normal window"] },
+        ]
+      },
+      {
+        title: "Important Notes",
+        content: [
+          { type: "list", items: ["Must be a new player", "Use accurate payment information", "Do not close the game before purchases are processed", "VPN usage is allowed for non-US players"] },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          { type: "list", items: ["Total Cashback Value: $80", "With 20% discount on first $50: You pay $70 total", "Net Profit: $10 (or full $80 if following exact cashback order)", "One of the best monetization offers for King of Avalon"] },
+        ]
+      },
+    ],
   }
 ];
 
