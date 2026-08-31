@@ -1,5 +1,33 @@
 export const events = [
   {
+    title: "$1,500 RevU Contest – 40 Winners",
+    siteName: "CashInStyle",
+    siteUrl: "https://cashinstyle.com/?ref=NETROX",
+    dateRange: "Ends in 19d 6h",
+    startDate: "2026-08-29",
+    endDate: "2026-09-19",
+    highlight: "The RevU Contest Is Back! Complete eligible RevU offers including some of our highest-paying opportunities and compete for your share of the $1,500 prize pool!",
+    details: [
+      "Prize pool: $1,500.",
+      "40 winners will split the prize pool.",
+      "Complete eligible RevU offers, including top-paying opportunities, to earn leaderboard points.",
+    ],
+  },
+  {
+    title: "BitLabs Earning Rush - 200€+ CashPrize",
+    siteName: "EarnX",
+    siteUrl: "https://earnx.gg/r/netrox",
+    dateRange: "Ends in 18d 10h",
+    startDate: "2026-08-31",
+    endDate: "2026-09-18",
+    highlight: "Get ready for the BitLabs Tournament - compete against other earners and see how high you can climb. Every offer gets you closer to the top.",
+    details: [
+      "Prize pool: €200+.",
+      "Compete in the BitLabs leaderboard on EarnX.",
+      "Every BitLabs offer helps you climb toward the top ranks.",
+    ],
+  },
+  {
     title: "EarnX Torox Boost +20% (1 Month)",
     siteName: "EarnX",
     siteUrl: "https://earnx.gg/r/netrox",
