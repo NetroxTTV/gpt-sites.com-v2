@@ -94,9 +94,6 @@ function EventCard({ event, index, isCompact }) {
         </div>
 
         <div className="flex items-center gap-2 flex-wrap sm:justify-end flex-shrink-0">
-          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/25">
-            {event.dateRange}
-          </span>
           {countdown && urgency && (
             <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border ${urgency.badge}`}>
               <Clock className="w-3 h-3" />
@@ -165,7 +162,7 @@ function ExpiredEventCard({ event }) {
         <CheckCircle className="w-3.5 h-3.5 text-muted-foreground flex-shrink-0" />
         <h3 className="text-sm font-semibold text-muted-foreground truncate">{event.title}</h3>
       </div>
-      <p className="text-xs text-muted-foreground/70 ml-5">{event.siteName} · {event.dateRange}</p>
+      <p className="text-xs text-muted-foreground/70 ml-5">{event.siteName}</p>
     </div>
   );
 }

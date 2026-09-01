@@ -10,6 +10,7 @@ import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import MobileStickyCta from "@/components/MobileStickyCta";
 import { Button } from "@/components/ui/button";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/ui/reveal";
+import { ArrowDown } from "lucide-react";
 
 export default function Home() {
   return (
@@ -17,8 +18,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <TrustBar />
+      
+      <div id="how-it-works"></div>
 
-      <section id="how-it-works" className="py-14 px-4 sm:px-6">
+      <section className="py-24 px-6 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <Reveal className="mb-6">
             <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-3">
@@ -79,7 +82,22 @@ export default function Home() {
             </Reveal>
           </div>
         </div>
+        <div className="mt-8 flex justify-center">
+          <Button
+            type="button"
+            size="lg"
+            variant="outline"
+            onClick={() =>
+              document.getElementById("featured-sites")?.scrollIntoView({ behavior: "smooth", block: "start" })
+            }
+            className="w-full gap-2 rounded-xl px-9 py-5 sm:py-6 text-base font-semibold border-border/60 bg-card/60 hover:bg-secondary hover:border-primary/40 hover:text-foreground sm:w-auto"
+          >
+            Featured Sites <ArrowDown className="w-4 h-4" />
+          </Button>
+        </div>
       </section>
+      
+      <div id="featured-sites" />
       <SitesSection />
       <FaqSection />
       <Footer />

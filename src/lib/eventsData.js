@@ -28,7 +28,7 @@ export const events = [
     ],
   },
   {
-    title: "EarnX Torox Boost +20% (1 Month)",
+    title: "EarnX Torox Boost +20%",
     siteName: "EarnX",
     siteUrl: "https://earnx.gg/r/netrox",
     dateRange: "1 month",

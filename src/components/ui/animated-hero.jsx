@@ -25,7 +25,7 @@ function Hero() {
   }, [titleNumber, titles]);
 
   return (
-    <section id="home" className="relative min-h-[78vh] md:min-h-[88vh] flex items-start md:items-center justify-center overflow-hidden pt-16 md:pt-14">
+    <section id="home" className="relative min-h-[78vh] md:min-h-[82vh] flex items-start md:items-center justify-center overflow-hidden pt-16 md:pt-14">
       {/* Mouse-reactive glowing waves */}
       <WavesBackground className="opacity-70 dark:opacity-90" />
 
