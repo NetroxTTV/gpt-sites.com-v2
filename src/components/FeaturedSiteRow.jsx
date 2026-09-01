@@ -90,7 +90,7 @@ export default function FeaturedSiteRow({ site, index }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
               {site.features?.map((f) => (
                 <div key={f} className="flex items-center gap-2 text-sm text-foreground/80">
-                  <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                  <Check className="w-4 h-4 text-success flex-shrink-0" />
                   {f}
                 </div>
               ))}

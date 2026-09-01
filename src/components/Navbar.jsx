@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { NavHeader } from "@/components/ui/nav-header";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const mobileNavLinks = [
   { label: "Home", href: "/", icon: Home },
@@ -117,6 +117,15 @@ export default function Navbar() {
 
           {/* Right actions */}
           <div className="hidden md:flex items-center gap-2">
+            <Link to="/Sites">
+              <Button
+                size="sm"
+                className="gap-2 cursor-pointer rounded-lg font-semibold shadow-md shadow-primary/20 hover:shadow-primary/30"
+              >
+                Browse Sites
+              </Button>
+            </Link>
+
             <a href="https://discord.gg/gptfr" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"

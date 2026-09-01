@@ -69,7 +69,7 @@ export default function FeaturedSiteCard({ site, index }) {
               </span>
             )}
 
-            <Button size="sm" className="w-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 rounded-xl gap-2 font-semibold">
+            <Button size="sm" className="w-full bg-gradient-to-r from-primary to-accent text-primary-foreground hover:shadow-lg hover:shadow-primary/30 hover:brightness-110 transition-all duration-300 rounded-xl gap-2 font-semibold">
               Visit Site
               <ExternalLink className="w-3.5 h-3.5" />
             </Button>

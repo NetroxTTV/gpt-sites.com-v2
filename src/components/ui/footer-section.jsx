@@ -52,7 +52,7 @@ export function FooterSection() {
                         <p className="text-xs text-muted-foreground/60">
                             © {new Date().getFullYear()} GPT Sites. All rights reserved.
                         </p>
-                        <p className="hidden sm:block text-xs text-muted-foreground/50 max-w-sm mx-auto sm:mx-0">
+                        <p className="text-xs text-muted-foreground/50 max-w-sm mx-auto sm:mx-0">
                             Some links are affiliate links. Registering via these links supports the project at no extra cost to you.
                         </p>
                     </AnimatedContainer>

@@ -78,7 +78,7 @@ export default function SiteCard({ site, index, showRate = false, showBadges = t
           {/* Rating + Visit */}
           <div className="flex items-center justify-between">
             {showRate && site.rates ? (
-              <span className="text-sm font-bold text-primary">{site.rates}%</span>
+              <span className="text-sm font-extrabold text-success">{site.rates}%</span>
             ) : (
               <div className="flex items-center gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (

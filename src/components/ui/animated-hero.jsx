@@ -45,7 +45,7 @@ function Hero() {
 
       <div className="relative z-10 w-full">
         <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex gap-5 sm:gap-7 py-6 sm:py-10 lg:pt-20 items-center justify-center flex-col text-center">
+          <div className="flex gap-5 sm:gap-7 pt-4 sm:pt-7 pb-6 sm:pb-10 items-center justify-center flex-col text-center">
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -122,7 +122,7 @@ function Hero() {
                 type="button"
                 className="w-full sm:w-auto"
                 onClick={() =>
-                  document.getElementById("quick-picks")?.scrollIntoView({ behavior: "smooth", block: "start" })
+                  document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth", block: "start" })
                 }
               >
                 <Button
@@ -130,7 +130,7 @@ function Hero() {
                   variant="outline"
                   className="w-full gap-2 rounded-xl px-9 py-5 sm:py-6 text-base font-semibold border-border/60 bg-card/60 hover:bg-secondary hover:border-primary/40 hover:text-foreground"
                 >
-                  Quick Picks <ArrowDown className="w-4 h-4" />
+                  How It Works <ArrowDown className="w-4 h-4" />
                 </Button>
               </button>
               <a href="https://discord.gg/gptfr" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
@@ -145,25 +145,6 @@ function Hero() {
                   Join Discord
                 </Button>
               </a>
-            </motion.div>
-
-            {/* Sponsored banner */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.35 }}
-              className="mt-6"
-            >
-              <a href="https://rewardflow.me/?ref=NETROX" target="_blank" rel="noopener noreferrer" className="block">
-                <div className="relative rounded-2xl overflow-hidden border border-border/40 hover:border-primary/35 transition-all duration-300 max-w-xl mx-auto group shadow-[0_8px_28px_rgba(59,130,246,0.12)]">
-                  <img
-                    src={new URL("../../imgs/Sites/rewardflow_banner.png", import.meta.url).href}
-                    alt="RewardFlow - Get Paid To Play Games"
-                    className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
-                  />
-                </div>
-              </a>
-              <p className="text-sm text-muted-foreground/50 mt-3">Sponsored</p>
             </motion.div>
 
           </div>
