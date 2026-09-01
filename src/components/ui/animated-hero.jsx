@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, MoveRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WavesBackground } from "@/components/ui/waves-background";
+import { HeroLogoDrift } from "@/components/HeroLogoDrift";
 import { Link } from "react-router-dom";
 
 function Hero() {
@@ -27,6 +28,9 @@ function Hero() {
     <section id="home" className="relative min-h-[78vh] md:min-h-[88vh] flex items-start md:items-center justify-center overflow-hidden pt-16 md:pt-14">
       {/* Mouse-reactive glowing waves */}
       <WavesBackground className="opacity-70 dark:opacity-90" />
+
+      {/* Small site logos fading in/out */}
+      <HeroLogoDrift />
 
       {/* Gradient orbs */}
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
