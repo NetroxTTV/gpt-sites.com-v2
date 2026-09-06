@@ -14,6 +14,11 @@ const isSupported = (code) => Boolean(code && TRANSLATIONS[code]);
 const detectInitial = () => {
   const saved = storage.get(STORAGE_KEY);
   if (isSupported(saved)) return saved;
+  // Set server-side from Cloudflare's CF-IPCountry header (see server.cjs) -
+  // more reliable than browser locale for visitors whose OS/browser language
+  // doesn't match where they actually are.
+  const geo = typeof window !== "undefined" ? window.__GEO_LANG__ : undefined;
+  if (isSupported(geo)) return geo;
   const browser = (typeof navigator !== "undefined" ? navigator.language || "" : "").slice(0, 2).toLowerCase();
   return isSupported(browser) ? browser : DEFAULT_LANG;
 };

@@ -421,6 +421,21 @@ const ROUTE_META = {
   "/Offers": { title: "GPT Sites | Offers", description: "Explore current offer opportunities and redirect to the latest events and boosts across top GPT sites." },
 };
 
+// Cloudflare (proxying gpt-sites.com) sets CF-IPCountry on every request for
+// free - no external API, no extra request. We only special-case countries
+// where French/Spanish/German is unambiguously the primary language; every
+// other country (including multilingual ones like Belgium/Switzerland) falls
+// through to the client's browser-language detection as before.
+const COUNTRY_TO_LANG = {
+  fr: ["FR", "CI", "SN", "ML", "BF", "NE", "TG", "CD", "CG", "GA", "MG", "HT", "MC", "GN", "BJ", "RE", "GP", "MQ", "GF", "PF", "NC"],
+  es: ["ES", "MX", "AR", "CO", "PE", "VE", "CL", "EC", "GT", "CU", "BO", "DO", "HN", "PY", "SV", "NI", "CR", "PA", "UY", "GQ"],
+  de: ["DE", "AT", "LI"],
+};
+const LANG_BY_COUNTRY = Object.fromEntries(
+  Object.entries(COUNTRY_TO_LANG).flatMap(([lang, countries]) => countries.map((c) => [c, lang]))
+);
+const langForCountry = (countryCode) => LANG_BY_COUNTRY[String(countryCode || "").toUpperCase()] || null;
+
 let GUIDES_META = {};
 try {
   GUIDES_META = JSON.parse(fs.readFileSync(path.join(distDir, "guides-meta.json"), "utf8"));
@@ -453,9 +468,12 @@ const readIndexTemplate = () => {
   return indexTemplate;
 };
 
-const renderIndexHtml = (pathname) => {
+const renderIndexHtml = (pathname, countryCode) => {
   let html = readIndexTemplate();
   if (!html) return html;
+
+  const geoLang = langForCountry(countryCode);
+  html = html.replace("<!--GEO_LANG-->", geoLang ? `<script>window.__GEO_LANG__="${geoLang}";</script>` : "");
 
   const { title, description } = metaForPath(pathname);
   const t = escapeHtml(title);
@@ -558,7 +576,7 @@ app.use(
 );
 
 app.get("/{*splat}", (req, res) => {
-  const html = renderIndexHtml(req.path);
+  const html = renderIndexHtml(req.path, req.headers["cf-ipcountry"]);
   if (!html) {
     res.sendFile(indexPath);
     return;
