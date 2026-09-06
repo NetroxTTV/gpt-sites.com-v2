@@ -11,6 +11,17 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 5175,
     proxy: {
+      // Live feed sources hit the external APIs directly in dev (no server.cjs needed).
+      '/api/feed/cashinstyle': {
+        target: 'https://cashinstyle.com',
+        changeOrigin: true,
+        rewrite: () => '/api/activity-ticker.json',
+      },
+      '/api/feed/sharkearnings': {
+        target: 'https://sharkearnings.com',
+        changeOrigin: true,
+        rewrite: () => '/api/activity.json',
+      },
       '/api': {
         target: devProxyTarget,
         changeOrigin: true,

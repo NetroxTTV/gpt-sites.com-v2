@@ -21,6 +21,7 @@ const STATIC_ROUTES = [
   ["/Tips", "weekly", "0.7"],
   ["/Events", "daily", "0.8"],
   ["/LiveFeed", "hourly", "0.6"],
+  ["/Faq", "weekly", "0.6"],
 ];
 
 const today = new Date().toISOString().slice(0, 10);

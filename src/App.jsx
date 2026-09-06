@@ -2,10 +2,13 @@ import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
-import { BrowserRouter as Router, Route, Routes, useLocation, matchPath } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation, matchPath, Navigate } from 'react-router-dom';
 import { AnimatePresence, motion } from "framer-motion";
-import PageNotFound from './lib/PageNotFound';
-import { Navigate } from 'react-router-dom';
+import { ThemeProvider } from '@/context/ThemeContext';
+import { LanguageProvider } from '@/i18n/LanguageContext';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import { ScrollToTop, BackToTop } from '@/components/layout/ScrollToTop';
 import Home from './pages/Home';
 import Guides from './pages/Guides';
 import Tips from './pages/Tips.jsx';
@@ -13,6 +16,8 @@ import GuideDetail from './pages/GuideDetail';
 import Sites from './pages/Sites';
 import Events from './pages/Events';
 import LiveFeed from './pages/LiveFeed';
+import Faq from './pages/Faq';
+import NotFound from './pages/NotFound';
 import RedirectPage from './pages/Redirect';
 
 const routeMeta = {
@@ -43,6 +48,10 @@ const routeMeta = {
   "/LiveFeed": {
     title: "GPT Sites | Live Feed",
     description: "Watch CashInStyle's live activity ticker for recent offer credits, survey completions, and withdrawals in real time.",
+  },
+  "/Faq": {
+    title: "GPT Sites | FAQ",
+    description: "Get answers about GPT sites, offerwall tracking, payout speeds, safety, and how to earn more from offers and surveys.",
   },
   "/Offers": {
     title: "GPT Sites | Offers",
@@ -136,7 +145,7 @@ function RedirectOrNotFound() {
     return <RedirectPage />;
   }
 
-  return <PageNotFound />;
+  return <NotFound />;
 }
 
 function PageWrapper({ children }) {
@@ -165,6 +174,7 @@ function AnimatedRoutes() {
         <Route path="/Sites" element={<PageWrapper><Sites /></PageWrapper>} />
         <Route path="/Events" element={<PageWrapper><Events /></PageWrapper>} />
         <Route path="/LiveFeed" element={<PageWrapper><LiveFeed /></PageWrapper>} />
+        <Route path="/Faq" element={<PageWrapper><Faq /></PageWrapper>} />
         <Route path="/Offers" element={<Navigate to="/Events" replace />} />
         <Route path="/redirect=:slug" element={<RedirectPage />} />
         <Route path="/redirect" element={<RedirectPage />} />
@@ -177,10 +187,22 @@ function AnimatedRoutes() {
 function App() {
   return (
     <QueryClientProvider client={queryClientInstance}>
-      <Router>
-        <RouteMeta />
-        <AnimatedRoutes />
-      </Router>
+      <ThemeProvider>
+        <LanguageProvider>
+          <Router>
+            <RouteMeta />
+            <ScrollToTop />
+            <div className="flex min-h-screen flex-col">
+              <Navbar />
+              <div className="flex-1">
+                <AnimatedRoutes />
+              </div>
+              <Footer />
+              <BackToTop />
+            </div>
+          </Router>
+        </LanguageProvider>
+      </ThemeProvider>
       <Toaster />
     </QueryClientProvider>
   );

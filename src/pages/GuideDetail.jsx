@@ -1,278 +1,125 @@
-import React, { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { guides } from "@/lib/guidesData";
+import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ExternalLink, AlertTriangle, Lightbulb } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Clock, ExternalLink, Gamepad2, Info, Layers, ListOrdered, Smartphone, Wallet, Coins } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { useLang } from "@/i18n/LanguageContext";
+import { SiteLogo, RateMeter } from "@/components/shared/Primitives";
+import { DiscordButton } from "@/components/layout/Navbar";
+import GuideContent, { sectionId } from "@/components/guides/GuideContent";
+import { getGuideBySlug } from "@/data/content";
+import { getSiteByName } from "@/data/mock";
+import { difficultyClass, difficultyKey } from "@/lib/format";
+import { cn } from "@/lib/utils";
+import NotFound from "./NotFound";
 
-function renderTextWithLinks(text) {
-  if (typeof text !== "string" || !text) return text;
+const MetaChip = ({ icon: Icon, label, value }) => (
+  <div className="card-surface flex items-center gap-3 p-4">
+    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-soft text-brand-ink"><Icon className="h-4 w-4" /></span>
+    <div className="min-w-0">
+      <p className="text-[11px] uppercase tracking-wider text-muted-foreground">{label}</p>
+      <p className="truncate text-sm font-semibold" title={value}>{value}</p>
+    </div>
+  </div>
+);
 
-  const urlRegex = /(https?:\/\/[^\s]+)/g;
-  const exactUrlRegex = /^https?:\/\/[^\s]+$/;
-  const parts = text.split(urlRegex);
-
-  return parts.map((part, index) => {
-    if (!exactUrlRegex.test(part)) {
-      return <React.Fragment key={`text-${index}`}>{part}</React.Fragment>;
-    }
-
-    const cleanedUrl = part.replace(/[),.!?]+$/, "");
-    const trailing = part.slice(cleanedUrl.length);
-
-    return (
-      <React.Fragment key={`link-${index}`}>
-        <a
-          href={cleanedUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary underline underline-offset-2 hover:text-primary/80"
-        >
-          {cleanedUrl}
-        </a>
-        {trailing}
-      </React.Fragment>
-    );
-  });
-}
-
-function RenderContent({ item }) {
-  switch (item.type) {
-    case "text":
-      return <p className="text-muted-foreground leading-relaxed">{renderTextWithLinks(item.text)}</p>;
-    case "subtitle":
-      return <h4 className="text-sm font-bold text-foreground mt-4 mb-2">{item.text}</h4>;
-    case "list":
-      return (
-        <ul className="space-y-1.5 my-2">
-          {item.items.map((it, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-              <span className="text-primary flex-shrink-0">•</span>
-              <span>{renderTextWithLinks(it)}</span>
-            </li>
-          ))}
-        </ul>
-      );
-    case "steps":
-      return (
-        <ol className="my-3 space-y-3">
-          {item.items.map((it, i) => {
-            const isLast = i === item.items.length - 1;
-            return (
-              <li key={i} className="relative pl-12">
-                {!isLast && (
-                  <span
-                    aria-hidden="true"
-                    className="absolute left-[0.9rem] top-8 bottom-[-0.9rem] w-px bg-gradient-to-b from-primary/50 to-border/60"
-                  />
-                )}
-                <span className="absolute left-0 top-1 w-8 h-8 rounded-full border border-primary/30 bg-primary/15 text-primary text-xs font-bold flex items-center justify-center shadow-sm">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary/10 via-card to-card px-4 py-3 shadow-sm">
-                  <p className="text-[11px] uppercase tracking-wide text-primary/80 font-semibold mb-1">Step {i + 1}</p>
-                  <p className="text-sm leading-relaxed text-foreground">{renderTextWithLinks(it)}</p>
-                </div>
-              </li>
-            );
-          })}
-        </ol>
-      );
-    case "callout":
-      return (
-        <div className="flex gap-3 p-4 rounded-xl bg-primary/10 border border-primary/20 my-3">
-          <Lightbulb className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-          <p className="text-sm text-foreground">{renderTextWithLinks(item.text)}</p>
-        </div>
-      );
-    case "warning":
-      return (
-        <div className="flex gap-3 p-4 rounded-xl bg-destructive/10 border border-destructive/20 my-3">
-          <AlertTriangle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-          <p className="text-sm text-foreground">{renderTextWithLinks(item.text)}</p>
-        </div>
-      );
-    case "tip":
-      return (
-        <div className="flex gap-3 p-3 rounded-xl bg-accent/10 border border-accent/20 my-3">
-          <span className="text-accent text-sm font-semibold flex-shrink-0">Pro Tip:</span>
-          <p className="text-sm text-muted-foreground">{renderTextWithLinks(item.text)}</p>
-        </div>
-      );
-    case "image":
-      return (
-        <div className="my-4 rounded-xl overflow-hidden border border-border/30">
-          <img src={item.src} alt={item.alt} className="w-full h-auto max-h-72 object-contain bg-secondary/20" />
-        </div>
-      );
-    case "imageRow": {
-      const isSingle = item.items.length === 1;
-      return (
-        <div className={`my-4 grid grid-cols-1 gap-4 ${isSingle ? "place-items-center" : "sm:grid-cols-2"}`}>
-          {item.items.map((image, index) => (
-            <div
-              key={index}
-              className={`rounded-xl overflow-hidden border border-border/30 bg-secondary/10 ${isSingle ? "w-full max-w-2xl" : ""}`}
-            >
-              <img src={image.src} alt={image.alt} className="w-full h-auto max-h-72 object-contain bg-secondary/20" />
-            </div>
-          ))}
-        </div>
-      );
-    }
-    case "imageText": {
-      const imageLeft = item.imagePosition === "left";
-      return (
-        <div className={`my-4 flex flex-col gap-5 sm:items-start ${imageLeft ? "sm:flex-row-reverse" : "sm:flex-row"}`}>
-          <div className="flex-1 min-w-0 [&>h4:first-child]:mt-0">
-            {item.content.map((c, i) => (
-              <RenderContent key={i} item={c} />
-            ))}
-          </div>
-          <div className="rounded-xl overflow-hidden border border-border/30 bg-secondary/10 w-full sm:w-2/5 sm:max-w-[260px] flex-shrink-0">
-            <img src={item.src} alt={item.alt} className="w-full h-auto object-contain bg-secondary/20" />
-          </div>
-        </div>
-      );
-    }
-    case "video": {
-      const id = (item.src || "").match(/(?:youtu\.be\/|v=|embed\/)([\w-]{11})/)?.[1];
-      if (!id) return null;
-      return (
-        <div className="my-4 rounded-xl overflow-hidden border border-border/30 aspect-video">
-          <iframe
-            src={`https://www.youtube.com/embed/${id}`}
-            title={item.title || "Video guide"}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="w-full h-full"
-          />
-        </div>
-      );
-    }
-    case "link":
-      return (
-        <a href={item.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-3 rounded-xl bg-card border border-border/40 hover:border-primary/30 text-sm text-primary font-medium transition-colors my-2">
-          {item.text}
-          <ExternalLink className="w-3.5 h-3.5 ml-auto" />
-        </a>
-      );
-    default:
-      return null;
-  }
-}
-
-export default function GuideDetail() {
-  useEffect(() => { window.scrollTo(0, 0); }, []);
+const GuideDetail = () => {
   const { slug } = useParams();
-  const guide = guides.find(g => g.slug === slug);
+  const { t } = useLang();
+  const guide = getGuideBySlug(slug);
+  if (!guide) return <NotFound title={t("guides.notFound")} />;
 
-  if (!guide) {
-    return (
-      <div className="min-h-screen bg-background">
-        <Navbar />
-        <div className="pt-24 pb-20 px-4 text-center">
-          <p className="text-muted-foreground">Guide not found.</p>
-          <Link to="/Guides"><Button variant="ghost" className="mt-4">Back to Guides</Button></Link>
-        </div>
-        <Footer />
-      </div>
-    );
-  }
+  const dKey = difficultyKey(guide.difficulty);
+  const sites = (guide.sites || []).map((s) => ({ ...s, site: getSiteByName(s.name) }));
+  const cover = guide.banner || guide.logo;
 
   return (
-    <div className="min-h-screen bg-background font-inter">
-      <Navbar />
-
-      {/* Banner */}
-      <div className="relative h-48 sm:h-64 overflow-hidden">
-        <img src={guide.banner} alt={guide.title} className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-      </div>
-
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-20 -mt-8 relative">
-        <Link to="/Guides">
-          <Button variant="ghost" size="sm" className="gap-2 text-muted-foreground hover:text-foreground mb-6">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Guides
-          </Button>
-        </Link>
-
-        {/* Header */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
-          <span className="px-2 py-1 rounded-md text-xs font-semibold bg-primary/10 text-primary border border-primary/20 mb-3 inline-block">{guide.category}</span>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-6">{guide.title}</h1>
-
-          {/* Meta grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-            {[
-              { label: "Platform", value: guide.platform },
-              { label: "Offerwall", value: guide.offerwall },
-              { label: "Difficulty", value: guide.difficulty },
-              { label: "Time", value: guide.timeInvestment },
-              { label: "Reward", value: guide.totalReward },
-              { label: "Genre", value: guide.genre },
-            ].map(m => (
-              <div key={m.label} className="bg-card border border-border/40 rounded-xl p-3">
-                <p className="text-xs text-muted-foreground mb-1">{m.label}</p>
-                <p className="text-sm font-semibold text-foreground">{m.value}</p>
+    <main data-testid="guide-detail-page">
+      {/* Header */}
+      <section className="relative overflow-hidden border-b border-border">
+        <div className="absolute inset-0">
+          {cover ? <img src={cover} alt="" className="h-full w-full scale-105 object-cover opacity-25 blur-md" /> : <div className="h-full w-full grid-bg" />}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/85 to-background" />
+        </div>
+        <div className="container-x relative pb-12 pt-10 md:pb-16 md:pt-14">
+          <Link to="/Guides" className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground" data-testid="guide-back">
+            <ArrowLeft className="h-4 w-4" /> {t("guides.back")}
+          </Link>
+          <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-end">
+            {cover && <img src={cover} alt={guide.title} className="h-44 w-full rounded-2xl border border-border object-cover shadow-2xl shadow-black/30 md:h-48 md:w-80" />}
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap gap-2">
+                <span className="rounded-full border border-border bg-surface px-2.5 py-0.5 text-[11px] font-semibold">{guide.category}</span>
+                {guide.offerwalls.map((w) => <span key={w} className="rounded-full bg-brand px-2.5 py-0.5 text-[11px] font-semibold text-brand-fg">{w}</span>)}
+                <span className={cn("rounded-full border px-2.5 py-0.5 text-[11px] font-semibold", difficultyClass(guide.difficulty))}>{dKey ? t(`common.${dKey}`) : guide.difficulty}</span>
               </div>
-            ))}
+              <h1 className="mt-4 font-display text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl md:leading-[1.05]">{guide.title}</h1>
+              {guide.summary && <p className="mt-3 max-w-2xl text-lg text-muted-foreground">{guide.summary}</p>}
+            </div>
           </div>
-        </motion.div>
+        </div>
+      </section>
 
-        {/* Sections */}
-        <div className="space-y-6">
-          {guide.sections.map((section, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-card border border-border/40 rounded-2xl p-6"
-            >
-              <h3 className="text-lg font-bold text-foreground mb-4 pb-3 border-b border-border/30">{section.title}</h3>
-              <div className="space-y-2">
-                {section.content.map((item, j) => (
-                  <RenderContent key={j} item={item} />
-                ))}
-              </div>
-            </motion.div>
-          ))}
+      <section className="container-x py-10 md:py-14">
+        <div className={cn("grid gap-3 sm:grid-cols-2", guide.money ? "lg:grid-cols-5" : "lg:grid-cols-4")} data-testid="guide-meta">
+          <MetaChip icon={Wallet} label={t("guides.payout")} value={guide.payout} />
+          <MetaChip icon={Clock} label={t("guides.duration")} value={guide.duration} />
+          <MetaChip icon={Smartphone} label={t("guides.platform")} value={guide.platform} />
+          <MetaChip icon={Gamepad2} label={t("guides.genre")} value={guide.genre} />
+          {guide.money && <MetaChip icon={Coins} label={t("guides.money")} value={guide.money} />}
         </div>
 
-        {/* Where to find */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-6 bg-card border border-primary/20 rounded-2xl p-6"
-        >
-          <h3 className="text-lg font-bold text-foreground mb-2">Where to Find This Offer</h3>
-          <p className="text-sm text-muted-foreground mb-4">Available on <span className="text-primary font-semibold">{guide.offerwall}</span> offerwall on the following GPT sites:</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {guide.sites.map(site => (
-              <a
-                key={site.name}
-                href={site.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between p-3 rounded-xl bg-secondary/30 hover:bg-primary/10 border border-border/30 hover:border-primary/30 transition-all group"
-              >
-                <div>
-                  <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">{site.name}</p>
-                  <p className="text-xs text-muted-foreground">{site.desc}</p>
-                </div>
-                <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary flex-shrink-0" />
-              </a>
-            ))}
+        <div className="mt-12 grid gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-8">
+            <GuideContent sections={guide.sections} />
+            <p className="mt-10 flex items-start gap-2 text-xs leading-relaxed text-muted-foreground"><Info className="mt-0.5 h-3.5 w-3.5 shrink-0" />{t("guides.disclaimer")}</p>
           </div>
-          <p className="text-xs text-muted-foreground/70 mt-4">Check multiple sites to compare reward amounts — higher rate sites typically offer better payouts!</p>
-        </motion.div>
-      </div>
-      <Footer />
-    </div>
+
+          <aside className="lg:col-span-4">
+            <div className="sticky top-24 space-y-5">
+              {guide.sections?.length > 2 && (
+                <nav className="card-surface hidden p-5 lg:block" data-testid="guide-toc" aria-label="Sections">
+                  <p className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-muted-foreground"><ListOrdered className="h-3.5 w-3.5" /> {t("guides.contents")}</p>
+                  <ol className="mt-3 space-y-1">
+                    {guide.sections.map((s, i) => (
+                      <li key={sectionId(s.title, i)}>
+                        <a href={`#${sectionId(s.title, i)}`} className="flex gap-2.5 rounded-lg px-2 py-1.5 text-sm text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground">
+                          <span className="font-mono text-xs text-brand-ink">{String(i + 1).padStart(2, "0")}</span>
+                          <span className="line-clamp-1">{s.title}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ol>
+                </nav>
+              )}
+
+              <div className="card-surface p-6" data-testid="guide-best-sites">
+                <h3 className="inline-flex items-center gap-2 font-display text-lg font-bold"><Layers className="h-5 w-5 text-brand-ink" /> {t("guides.bestSites")}</h3>
+                <p className="mt-1 text-xs text-muted-foreground">{t("guides.bestSitesSub")} {guide.offerwall}.</p>
+                <ul className="mt-5 space-y-3">
+                  {sites.map((s) => (
+                    <li key={s.name}>
+                      <a href={s.url} target="_blank" rel="noreferrer nofollow" className="group flex items-center gap-3 rounded-xl border border-border bg-background p-3 transition-colors hover:border-brand/50">
+                        <SiteLogo src={s.site?.logo} name={s.name} size={40} rounded="rounded-lg" />
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate text-sm font-semibold">{s.name}</p>
+                          {s.site?.rates ? <RateMeter rates={s.site.rates} compact /> : <p className="truncate text-xs text-muted-foreground">{s.desc}</p>}
+                        </div>
+                        <ArrowUpRight className="h-4 w-4 text-brand-ink transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+                <Button asChild variant="outline" className="mt-5 w-full gap-2 font-semibold">
+                  <Link to="/Sites">{t("featured.more")} <ExternalLink className="h-4 w-4" /></Link>
+                </Button>
+                <div className="mt-3"><DiscordButton className="w-full" label={t("hero.ctaDiscord")} /></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
   );
-}
+};
+
+export default GuideDetail;

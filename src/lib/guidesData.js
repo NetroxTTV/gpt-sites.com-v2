@@ -1836,7 +1836,7 @@ const rawGuides = [
     offerwall: "PayKoa",
     difficulty: "Medium",
     timeInvestment: "5-10 days",
-    totalReward: "$80",
+    totalReward: "$800",
     moneyInvestment: "$80 (for cashbacks)",
     sections: [
       {

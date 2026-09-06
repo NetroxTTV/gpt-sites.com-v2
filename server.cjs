@@ -417,6 +417,7 @@ const ROUTE_META = {
   "/Sites": { title: "GPT Sites | Sites", description: "Browse and filter GPT websites by offerwalls, popularity, and payout rates to find the best site for your goals." },
   "/Events": { title: "GPT Sites | Events", description: "Track offerwall boosts, tournaments, and seasonal promos across top GPT sites so you can earn at peak rates." },
   "/LiveFeed": { title: "GPT Sites | Live Feed", description: "Watch CashInStyle's live activity ticker for recent offer credits, survey completions, and withdrawals in real time." },
+  "/Faq": { title: "GPT Sites | FAQ", description: "Get answers about GPT sites, offerwall tracking, payout speeds, safety, and how to earn more from offers and surveys." },
   "/Offers": { title: "GPT Sites | Offers", description: "Explore current offer opportunities and redirect to the latest events and boosts across top GPT sites." },
 };
 
@@ -488,6 +489,48 @@ const renderIndexHtml = (pathname) => {
 
 app.get("/healthz", (_req, res) => {
   res.status(200).send("ok");
+});
+
+// Live activity feeds. CashInStyle sends no CORS headers, so the browser can't
+// call it directly - both sources are proxied here with a short cache.
+const FEED_UPSTREAMS = {
+  cashinstyle: "https://cashinstyle.com/api/activity-ticker.json",
+  sharkearnings: "https://sharkearnings.com/api/activity.json",
+};
+const FEED_CACHE_TTL_MS = 30_000;
+const feedCache = new Map(); // source -> { at, status, body }
+
+app.get("/api/feed/:source", async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Cache-Control", "public, max-age=30");
+
+  const source = String(req.params.source || "").toLowerCase();
+  const upstream = FEED_UPSTREAMS[source];
+  if (!upstream) {
+    res.status(400).json({ error: `Unknown feed source '${source}'` });
+    return;
+  }
+
+  const cached = feedCache.get(source);
+  if (cached && Date.now() - cached.at < FEED_CACHE_TTL_MS) {
+    res.status(cached.status).json(cached.body);
+    return;
+  }
+
+  try {
+    const response = await fetch(upstream, { headers: { Accept: "application/json" } });
+    const body = await response.json();
+    if (response.ok) {
+      feedCache.set(source, { at: Date.now(), status: response.status, body });
+    }
+    res.status(response.status).json(body);
+  } catch {
+    if (cached) {
+      res.status(cached.status).json(cached.body);
+      return;
+    }
+    res.status(502).json({ error: `Feed source '${source}' unreachable` });
+  }
 });
 
 app.get("/api/offers/:wall", async (req, res) => {
