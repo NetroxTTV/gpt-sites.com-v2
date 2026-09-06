@@ -94,7 +94,9 @@ const GuideDetail = () => {
 
               <div className="card-surface p-6" data-testid="guide-best-sites">
                 <h3 className="inline-flex items-center gap-2 font-display text-lg font-bold"><Layers className="h-5 w-5 text-brand-ink" /> {t("guides.bestSites")}</h3>
-                <p className="mt-1 text-xs text-muted-foreground">{t("guides.bestSitesSub")} {guide.offerwall}.</p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {sites.length === 1 ? `${t("guides.exclusiveTo")} ${sites[0].name}.` : `${t("guides.bestSitesSub")} ${guide.offerwall}.`}
+                </p>
                 <ul className="mt-5 space-y-3">
                   {sites.map((s) => (
                     <li key={s.name}>

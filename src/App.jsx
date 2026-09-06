@@ -9,6 +9,7 @@ import { LanguageProvider } from '@/i18n/LanguageContext';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { ScrollToTop, BackToTop } from '@/components/layout/ScrollToTop';
+import BottomNavBar from '@/components/layout/BottomNavBar';
 import Home from './pages/Home';
 import Guides from './pages/Guides';
 import Tips from './pages/Tips.jsx';
@@ -198,7 +199,9 @@ function App() {
                 <AnimatedRoutes />
               </div>
               <Footer />
+              <div className="pb-20 lg:hidden" aria-hidden="true" />
               <BackToTop />
+              <BottomNavBar />
             </div>
           </Router>
         </LanguageProvider>

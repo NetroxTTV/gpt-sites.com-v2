@@ -189,7 +189,16 @@ export function getSitesForOfferwall(offerwallText = "", limit = 6) {
       if (key) keys.add(key);
     });
 
-  const pool = keys.size
+  // A guide can be exclusive to one site rather than a shared offerwall network
+  // (e.g. "GemsLoot"). When the offerwall text matches a site name directly,
+  // only that site belongs in "best sites for this offer".
+  const exclusiveSite = keys.size
+    ? null
+    : allSites.find((site) => normalizeOfferwallToken(site.name) === normalizeOfferwallToken(offerwallText));
+
+  const pool = exclusiveSite
+    ? [exclusiveSite]
+    : keys.size
     ? allSites.filter((site) => site.offerwalls?.some((ow) => keys.has(ow)))
     : allSites;
 

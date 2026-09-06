@@ -1889,6 +1889,72 @@ const rawGuides = [
         ]
       },
     ],
+  },
+  {
+    slug: "emergent-ai",
+    title: "Emergent AI: Easy $40 Subscription Offer Guide",
+    logo: new URL("../imgs/guides/emergent/logo.jpeg", import.meta.url).href,
+    banner: new URL("../imgs/guides/emergent/banner.webp", import.meta.url).href,
+    category: "AI / Subscription",
+    platform: "PC",
+    genre: "AI / Subscription",
+    offerwall: "GemsLoot",
+    difficulty: "Very Easy",
+    timeInvestment: "~5 minutes",
+    totalReward: "$40",
+    moneyInvestment: "$20",
+    sections: [
+      {
+        title: "How the Offer Works",
+        content: [
+          { type: "callout", text: "This offer is exclusive to GemsLoot and cannot be found on other sites. It only requires a single $20 subscription purchase on Emergent." },
+          { type: "steps", items: ["Open Emergent through the GemsLoot offer link.", "Create a new account.", "Subscribe to the $20 plan.", "Wait for the offer to credit."] },
+        ]
+      },
+      {
+        title: "Step 1: Create Account",
+        content: [
+          { type: "list", items: ["Open the offer from GemsLoot.", "Sign up for a new Emergent account."] },
+          { type: "warning", text: "Always register through the tracking link, otherwise the offer will not track." },
+        ]
+      },
+      {
+        title: "Step 2: Subscribe",
+        content: [
+          { type: "text", text: "Once logged in:" },
+          { type: "list", items: ["Open the pricing / upgrade page.", "Select the $20/month subscription plan.", "Complete the payment with a valid card."] },
+          { type: "image", src: new URL("../imgs/guides/emergent/emergent_sub.png", import.meta.url).href, alt: "Emergent $20 subscription plan" },
+          { type: "tip", text: "Make sure the $20 plan is selected before confirming payment - higher tiers are not required." },
+        ]
+      },
+      {
+        title: "Crediting Time",
+        content: [
+          { type: "list", items: ["Usually credits within a few hours.", "Sometimes faster depending on GemsLoot's tracking.", "Do not cancel your subscription before receiving credit."] },
+        ]
+      },
+      {
+        title: "Important Notes",
+        content: [
+          { type: "list", items: ["New users only.", "Use a valid payment method.", "Only available through GemsLoot - not on other GPT sites."] },
+          { type: "subtitle", text: "Keep screenshots of:" },
+          { type: "list", items: ["Subscription confirmation", "Payment confirmation"] },
+        ]
+      },
+      {
+        title: "Quick Recap",
+        content: [
+          { type: "steps", items: ["Open the offer through GemsLoot.", "Sign up for a new Emergent account.", "Subscribe to the $20/month plan.", "Wait a few hours.", "Get credited $40."] },
+        ]
+      },
+      {
+        title: "Profit Summary",
+        content: [
+          { type: "list", items: ["Cost: $20", "Reward: $40", "Net Profit: ~$20"] },
+          { type: "callout", text: "A quick, low-effort AI subscription offer - exclusive to GemsLoot." },
+        ]
+      },
+    ],
   }
 ];
 
