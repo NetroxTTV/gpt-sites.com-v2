@@ -18,9 +18,9 @@ const RotatingWord = ({ words }) => {
     return () => clearInterval(id);
   }, [words.length]);
   return (
-    <span className="relative inline-block align-baseline text-cyan">
+    <span className="relative inline-block align-baseline text-brand-ink">
       <span key={words[i]} className="word-in inline-block">{words[i]}</span>
-      <span className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full bg-cyan opacity-50 md:-bottom-2 md:h-1" />
+      <span className="absolute -bottom-1 left-0 h-[3px] w-full rounded-full bg-brand-ink opacity-50 md:-bottom-2 md:h-1" />
     </span>
   );
 };
@@ -54,11 +54,43 @@ const LiveTicker = () => {
   );
 };
 
+const BoostCard = () => {
+  const { t } = useLang();
+  const boosts = useMemo(() => {
+    const list = EVENTS.filter((e) => e.type === "boost");
+    return list.length ? list : EVENTS;
+  }, []);
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    if (boosts.length < 2) return undefined;
+    const id = setInterval(() => setI((v) => (v + 1) % boosts.length), 5000);
+    return () => clearInterval(id);
+  }, [boosts.length]);
+
+  const boost = boosts[i];
+  if (!boost) return null;
+  const boostSite = getSiteById(boost.siteId);
+  return (
+    <div className="float-slower glass absolute -bottom-7 -left-3 z-20 hidden w-[260px] rounded-2xl p-4 shadow-2xl shadow-black/30 sm:block lg:-left-10" data-testid="hero-boost-card">
+      <div key={boost.id} className="word-in flex items-center gap-3">
+        <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-amber-soft text-amber"><Zap className="h-4 w-4" /></span>
+        <div className="min-w-0">
+          <p className="text-[11px] font-bold uppercase tracking-wider text-amber">{t("hero.boostActive")}</p>
+          <p className="truncate text-sm font-semibold" title={boost.title}>{boost.title}</p>
+        </div>
+      </div>
+      <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
+        <span className="font-mono">{boost.daysLeft} {t("hero.daysLeft")}</span>
+        <span>{boostSite?.name}</span>
+      </div>
+      <div className="mt-1.5 h-1 overflow-hidden rounded-full bg-secondary"><div className="h-full rounded-full bg-amber transition-[width] duration-500" style={{ width: `${boost.remaining}%` }} /></div>
+    </div>
+  );
+};
+
 const EarningsPanel = () => {
   const { t } = useLang();
   const top = useMemo(() => SITES.filter((s) => s.tag === "top").sort((a, b) => a.rank - b.rank).slice(0, 5), []);
-  const boost = EVENTS.find((e) => e.type === "boost") || EVENTS[0];
-  const boostSite = boost ? getSiteById(boost.siteId) : null;
   return (
     <div className="relative mx-auto w-full max-w-[440px] lg:ml-auto">
       <LiveTicker />
@@ -93,22 +125,7 @@ const EarningsPanel = () => {
           ))}
         </ol>
       </div>
-      {boost && (
-        <div className="float-slower glass absolute -bottom-7 -left-3 z-20 hidden w-[260px] rounded-2xl p-4 shadow-2xl shadow-black/30 sm:block lg:-left-10" data-testid="hero-boost-card">
-          <div className="flex items-center gap-3">
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-amber-soft text-amber"><Zap className="h-4 w-4" /></span>
-            <div className="min-w-0">
-              <p className="text-[11px] font-bold uppercase tracking-wider text-amber">{t("hero.boostActive")}</p>
-              <p className="truncate text-sm font-semibold" title={boost.title}>{boost.title}</p>
-            </div>
-          </div>
-          <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
-            <span className="font-mono">{boost.daysLeft} {t("hero.daysLeft")}</span>
-            <span>{boostSite?.name}</span>
-          </div>
-          <div className="mt-1.5 h-1 overflow-hidden rounded-full bg-secondary"><div className="h-full rounded-full bg-amber" style={{ width: `${boost.remaining}%` }} /></div>
-        </div>
-      )}
+      <BoostCard />
     </div>
   );
 };

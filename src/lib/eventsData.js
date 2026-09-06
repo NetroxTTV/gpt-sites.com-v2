@@ -195,6 +195,20 @@ export const events = [
     ],
   },
   {
+    title: "Earnlab AdToWall +20% Boost",
+    siteName: "Earnlab",
+    siteUrl: "https://earnlab.com/r/netrox",
+    dateRange: "Sep 1 - Sep 7",
+    startDate: "2026-09-01",
+    endDate: "2026-09-07",
+    highlight: "Earnlab's +20% AdToWall bonus is ticking away - there's still time to cash in before the boost ends.",
+    details: [
+      "Boost: +20% on all AdToWall offers.",
+      "Promo window: September 1 to September 7.",
+      "Once the week is up, so is the boost - get your offers in while you can.",
+    ],
+  },
+  {
     title: "GemsLoot BitLabs $300 Tournament",
     siteName: "GemsLoot",
     siteUrl: "https://gemsloot.com/?aff=netrox",
@@ -220,6 +234,20 @@ export const events = [
       "Find the boosted offers directly on the MyChips Offerwall in GemsLoot.",
       "Boost applies to any MyChips offer completed during the event.",
       "Start earning more today with the limited-time payout increase.",
+    ],
+  },
+  {
+    title: "MyChips +50% Boost",
+    siteName: "GemsLoot",
+    siteUrl: "https://gemsloot.com/?aff=netrox",
+    dateRange: "1 week only",
+    startDate: "2026-09-06",
+    endDate: "2026-09-13",
+    highlight: "GemsLoot's MyChips +50% bonus is back - complete any MyChips offer during this week and the 50% extra credits automatically, no extra steps required.",
+    details: [
+      "Bonus: +50% on all MyChips offers.",
+      "Applies automatically - just complete any MyChips offer as usual.",
+      "Live for one week only.",
     ],
   },
   {

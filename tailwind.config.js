@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["Syne", "DM Sans", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["Sora", "DM Sans", "ui-sans-serif", "system-ui", "sans-serif"],
         sans: ["DM Sans", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
         mono: ["JetBrains Mono", "Menlo", "Monaco", "Consolas", "Courier New", "monospace"],
       },
