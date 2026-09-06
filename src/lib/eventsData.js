@@ -251,6 +251,20 @@ export const events = [
     ],
   },
   {
+    title: "ToroX Earning Rush",
+    siteName: "GemsLoot",
+    siteUrl: "https://gemsloot.com/?aff=netrox",
+    dateRange: "Ends in 9d 20h",
+    startDate: "2026-09-02",
+    endDate: "2026-09-16",
+    highlight: "Get ready to grind with the ToroX Tournament - a challenge to see who can earn the most. With boosted rates live, now's the perfect time to grind harder, climb higher for a winning spot, and take home the rewards.",
+    details: [
+      "Prize pool: $150 for 1st place, scaling down to $10 for 11th (11 ranked spots total).",
+      "Both pending and completed Torox offers count toward your leaderboard total.",
+      "Boosted Torox rates are live for the whole event - grind now to climb higher.",
+    ],
+  },
+  {
     title: "GemsLoot RevU $400 Tournament",
     siteName: "GemsLoot",
     siteUrl: "https://gemsloot.com/?aff=netrox",
