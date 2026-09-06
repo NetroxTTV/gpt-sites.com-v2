@@ -1901,7 +1901,7 @@ const rawGuides = [
     offerwall: "GemsLoot",
     difficulty: "Very Easy",
     timeInvestment: "~5 minutes",
-    totalReward: "$40",
+    totalReward: "$70-40",
     moneyInvestment: "$20",
     sections: [
       {
