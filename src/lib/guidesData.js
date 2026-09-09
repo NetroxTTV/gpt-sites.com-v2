@@ -1226,20 +1226,74 @@ const rawGuides = [
     platform: "Android / iOS",
     genre: "Action / Shooter",
     offerwall: "Torox",
-    difficulty: "TBD",
-    timeInvestment: "TBD",
+    difficulty: "Medium",
+    timeInvestment: "7-30+ days",
     totalReward: "$300 - $450",
     sections: [
       {
-        title: "Offer Overview",
+        title: "Before You Start",
         content: [
+          { type: "callout", text: "Most offerwalls place rewards at levels 15, 30, 50, 60, 80, and 100. Level 80 or 100 may be difficult or unavailable depending on the offerwall." },
+          { type: "text", text: "Zombie Waves is time-consuming and some progression is random. This guide gives you a practical route through the game rather than a guaranteed level-by-level solution." },
           { type: "list", items: ["Category: Game", "Offer: Zombie Waves", "Offerwall: Torox", "Platform: Android / iOS", "Total Reward: $300 - $450"] },
         ]
       },
       {
-        title: "Notes",
+        title: "The Start",
         content: [
-          { type: "text", text: "Full guide details coming soon." },
+          { type: "list", items: ["The goal is to complete levels. To pass a level, survive its duration; after level 5, each level lasts 12 minutes.", "When you unlock the Sniper, use and upgrade it until you get an S-tier weapon.", "For your first 7 days, aim to reach around level 25."] },
+          { type: "subtitle", text: "Redeem these promo codes" },
+          { type: "callout", text: "SJFKTBXD, dyzb888, dyzb666, Dyzbzs, Zwgood, Zwfun, Sjfktap, Sjfkgzh, Vip666, Vip777, Vip888, Vip999" },
+          { type: "imageText", src: new URL("../imgs/guides/zombie/daily_trial.jpeg", import.meta.url).href, alt: "Zombie Waves Daily Trial", content: [
+            { type: "subtitle", text: "Daily Trial and Temporal Stages" },
+            { type: "list", items: ["Complete the Challenge Stage in Daily Trial for a large power boost.", "Complete the Temporal Stages whenever they are available.", "The Temporal Stage shop is a strong source of useful loot, so check it regularly."] },
+          ] },
+        ]
+      },
+      {
+        title: "Purchases",
+        content: [
+          { type: "warning", text: "If your offer does not include cashback, or the cashback is not worthwhile, do not continue the offer." },
+          { type: "imageText", src: new URL("../imgs/guides/zombie/passes.jpg", import.meta.url).href, alt: "Zombie Waves monthly passes", content: [
+            { type: "subtitle", text: "$5 and $10 cashback" },
+            { type: "list", items: ["Buy the Normal Monthly Pass to unlock 2x speed, reducing a 12-minute level to 6 minutes.", "Buy the Advanced Monthly Pass to remove ads. It is especially valuable because it speeds up the entire run and removes interruptions."] },
+            { type: "subtitle", text: "Daily cashback" },
+            { type: "list", items: ["Only buy the $1 daily pack in Events. This provides strong loot and helps you complete levels without unnecessary spending."] },
+            { type: "subtitle", text: "$20 or $50 cashback" },
+            { type: "list", items: ["Buy an event pack that gives Red or S-tier loot."] },
+          ] },
+        ]
+      },
+      {
+        title: "Events",
+        content: [
+          { type: "text", text: "Events usually appear after the fifth to seventh day of the server. They provide large amounts of loot and should become your main focus." },
+          { type: "list", items: ["Some events let you spend diamonds to play and earn rewards. If you are already far into a good event, spending a large amount of diamonds can be worthwhile.", "Prioritize events that give direct power, strong equipment, or useful upgrade materials."] },
+          { type: "warning", text: "Be careful: some events are poor value. Wheel-style events are usually not worth doing. Skip them rather than wasting diamonds." },
+          { type: "imageText", src: new URL("../imgs/guides/zombie/good_event.jpg", import.meta.url).href, alt: "Zombie Waves event rewards", content: [
+            { type: "subtitle", text: "Choosing a good event" },
+            { type: "list", items: ["Read the reward track before spending diamonds.", "Prefer guaranteed milestone rewards over random wheel spins.", "Use event purchases only when the reward improves your power or gives S-tier equipment."] },
+          ] },
+        ]
+      },
+      {
+        title: "Level Roadmap",
+        content: [
+          { type: "list", items: ["Levels 1-10: Progress is easy.", "Levels 11-20: Progress slows down and you will need to grind for power.", "Levels 20-30: Expect a similar pace; keep upgrading consistently.", "Levels 30-50: Events appear and your power should increase quickly.", "Levels 50-60: A smaller slowdown, but this range is possible in about three days with good activity.", "Levels 60-80: The required power climbs sharply. Level 80 is possible, but requires substantial time and good event rewards.", "Level 100: Good luck. Treat it as a stretch goal unless your offerwall and spending plan make it worthwhile."] },
+        ]
+      },
+      {
+        title: "Tips and Power Progression",
+        content: [
+          { type: "subtitle", text: "Cheese difficult levels" },
+          { type: "text", text: "During the final minute of a level, use Time Freeze, Mechanical Zombie, and Helicopter, then run away from the mobs and bosses. This can let you clear levels below the recommended power; a 3.5M account can sometimes pass a 5M requirement with this approach." },
+          { type: "subtitle", text: "Match weapons and characters" },
+          { type: "list", items: ["Use weapons with buffs that match your character.", "Events can unlock S-tier characters with special boosts and S-tier weapons, so check event rewards carefully."] },
+          { type: "subtitle", text: "Build S-tier equipment" },
+          { type: "list", items: ["Aim for S-tier equipment in every slot.", "To upgrade a 3-star S-tier chestplate to Legendary S-tier, you need another 3-star S-tier chestplate as material.", "Do not consume duplicate S-tier equipment until you have checked the upgrade requirements."] },
+          { type: "subtitle", text: "Keep the account active" },
+          { type: "list", items: ["Upgrade your base regularly.", "Place flowers to unlock a shop.", "Complete Arena and every permanent event available.", "Spend your daily resources before reset and keep checking event shops."] },
+          { type: "tip", text: "If you can choose an S-tier weapon from a box, pick Stargazer." },
         ]
       },
     ],
@@ -1280,20 +1334,69 @@ const rawGuides = [
     platform: "Android / iOS",
     genre: "Strategy / Builder",
     offerwall: "Torox / AdscendMedia / Ayet",
-    difficulty: "TBD",
-    timeInvestment: "TBD",
-    totalReward: "$300 - $700",
+    difficulty: "Easy",
+    timeInvestment: "10-12 days",
+    totalReward: "$270+",
     sections: [
       {
-        title: "Offer Overview",
+        title: "Goals and Rewards",
         content: [
-          { type: "list", items: ["Category: Game", "Offer: Guns of Glory: Lost Island", "Offerwall: Torox / AdscendMedia / Ayet", "Platform: Android / iOS", "Total Reward: $300 - $700"] },
+          { type: "callout", text: "This is a short FunPlus city-builder offer that can be completed in around 10-12 days. It is very similar to Stormshot." },
+          { type: "list", items: ["Reach Castle Level 8: $0.59", "Reach Castle Level 15: $2.17", "Reach Castle Level 20: $3.96", "Reach Castle Level 25: $8.91", "Reach Castle Level 28: $14.85", "Reach Castle Level 30: $44.55", "Reach Castle Level 35: $148.50", "Purchase any $9.99 pack: $13.36", "Purchase any $19.99 pack: $27.72"] },
         ]
       },
       {
-        title: "Notes",
+        title: "Getting Started",
         content: [
-          { type: "text", text: "Full guide details coming soon." },
+          { type: "text", text: "Play normally for the first few days. Complete daily quests, participate in events, and keep your buildings progressing." },
+          { type: "list", items: ["Level your castle once each day.", "Keep construction, research, and troop training running.", "Do not spend all your resources or speedups early; they become much more valuable later.", "Train troops even though they are not the main source of power."] },
+          { type: "tip", text: "You do not need to play constantly. Staying active and upgrading your castle daily is usually enough while you build up resources and speedups." },
+        ]
+      },
+      {
+        title: "Events and Resources",
+        content: [
+          { type: "text", text: "There are many events, but the most valuable ones are the Achievement Event, New Realm Expeditions, and Development Manual. They provide a large amount of resources and progression power." },
+          { type: "subtitle", text: "Treant Invasion" },
+          { type: "list", items: ["Use Treant Scrolls and participate in the Treant Invasion event.", "This is your main source of food and wood because the event gives an unusually large amount of resources.", "Check your in-game mail regularly. The game does not reliably remind you, and important rewards can be waiting there."] },
+        ]
+      },
+      {
+        title: "Gameplay Strategy",
+        content: [
+          { type: "list", items: ["If you are aiming for Castle 35, grind slowly and save resources for the later upgrades.", "If you are stopping at Castle 30, steady daily upgrades are enough for most of the run.", "The Achievement Event gives six pieces of gear and can provide a huge power increase, reportedly up to around 378M power.", "Save your speedups. You receive a large number of them throughout the game, so do not burn them on early, low-value upgrades."] },
+          { type: "subtitle", text: "Development" },
+          { type: "text", text: "Grind your Lord level to unlock Development. Its building bonus reduces construction time by 20% for 30 minutes for buildings started during that window, reducing the speedups you need." },
+          { type: "imageText", src: new URL("../imgs/guides/gog/castle_upgrade.jpg", import.meta.url).href, alt: "Castle upgrade screen", content: [
+            { type: "subtitle", text: "Save for castle upgrades" },
+            { type: "text", text: "Keep resources and speedups ready before starting a castle upgrade. The later levels are where your saved supplies and event rewards make the biggest difference." },
+          ] },
+        ]
+      },
+      {
+        title: "Purchases and Louis Le Vau",
+        content: [
+          { type: "warning", text: "The cashback purchases are the fastest route through this offer, but only buy them when the cashback makes the cost worthwhile for you." },
+          { type: "imageText", src: new URL("../imgs/guides/gog/diamond_shop.webp", import.meta.url).href, alt: "Guns of Glory diamond shop", content: [
+            { type: "subtitle", text: "Cashback purchases" },
+            { type: "list", items: ["Buy the 1,000 diamonds pack for £9.99/$9.99 to trigger the $13.36 cashback step.", "Buy the 2,000 diamonds pack for £19.99/$19.99 to trigger the $27.72 cashback step.", "These diamond purchases are more efficient than buying random items because you can use the diamonds on the packs that matter."] },
+          ] },
+          { type: "imageText", src: new URL("../imgs/guides/gog/louis_pack.png", import.meta.url).href, alt: "Louis Le Vau packs", content: [
+            { type: "subtitle", text: "Louis Le Vau is essential" },
+            { type: "text", text: "Louis Le Vau is the key character for completing the offer. Once unlocked, he can instantly complete building upgrades for free up to a certain level. His packs increase the level limit." },
+            { type: "list", items: ["Star Level 1 - $0.99: instantly completes buildings through level 15.", "Star Level 2 - $1.99: instantly completes buildings through level 20.", "Star Level 3 - $4.99: instantly completes buildings through level 25.", "Star Level 4 - $48.99: instantly completes buildings through level 30."] },
+          ] },
+          { type: "callout", text: "Louis Le Vau packs usually appear after 3-5 days. If the popup does not appear, open the character list, select Louis Le Vau, choose View Specific Packs, and buy them there." },
+        ]
+      },
+      {
+        title: "Finishing the Offer",
+        content: [
+          { type: "list", items: ["Upgrade Louis Le Vau to at least Star Level 3 for the best balance of cost and progress.", "Star Level 4 can make Castle 30 faster, but its price is much higher. Only consider it when the cashback and remaining rewards justify it.", "If you saved resources, reaching Castle 28 should be straightforward, though it requires more grinding.", "Buy VIP packs containing large amounts of resources to help reach Castle 30.", "Prioritize VIP chests with construction speedups because they are the most helpful for the final push."] },
+          { type: "subtitle", text: "Tracking notes" },
+          { type: "list", items: ["Castle Levels 8, 15, 20, and 25 tracked and credited instantly in testing.", "Castle Levels 28 and 30 took a few hours to credit.", "Tracking can be inconsistent, so screenshot each completed milestone and purchase."] },
+          { type: "video", src: "https://www.youtube.com/watch?v=EZ6jJfn4BFQ", title: "JohnTK video about the Guns of Glory offer" },
+          { type: "tip", text: "With daily activity, saved resources, Louis Le Vau, and the recommended purchases, Castle Level 30 is achievable in about 10-12 days." },
         ]
       },
     ],

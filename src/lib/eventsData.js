@@ -1,5 +1,19 @@
 export const events = [
   {
+    title: "EarnLab Torox +100% Boost",
+    siteName: "Earnlab",
+    siteUrl: "https://earnlab.com/r/netrox",
+    dateRange: "Sep 8 - Sep 11",
+    startDate: "2026-09-08",
+    endDate: "2026-09-11",
+    highlight: "EarnLab is offering a +100% boost on Torox offers from September 8 to September 11.",
+    details: [
+      "Boost: +100% on Torox offers.",
+      "Promo dates: September 8 to September 11.",
+      "Complete your Torox offers on EarnLab while the boost is active.",
+    ],
+  },
+  {
     title: "$1,500 RevU Contest - 40 Winners",
     siteName: "CashInStyle",
     siteUrl: "https://cashinstyle.com/?ref=NETROX",
