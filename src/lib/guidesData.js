@@ -1346,6 +1346,20 @@ const rawGuides = [
         ]
       },
       {
+        title: "Louis Le Vau: The Key to This Offer",
+        content: [
+          { type: "callout", text: "Louis Le Vau is the most important character in this offer. He can instantly complete building upgrades for free, which is what makes Castle Level 30 achievable in around 10-12 days." },
+          { type: "text", text: "You get Louis Le Vau for free after playing for a few days. When you unlock him, use his ability immediately to complete buildings without waiting. His star level determines how high those free instant upgrades can go." },
+          { type: "imageText", src: new URL("../imgs/guides/gog/louis.jpeg", import.meta.url).href, alt: "Louis Le Vau character", content: [
+            { type: "subtitle", text: "Unlock him as early as possible" },
+            { type: "list", items: ["Louis Le Vau usually becomes available after 3-5 days.", "If you do not see his pack popup, open the character list, select Louis Le Vau, choose View Specific Packs, and check the available packs.", "Plan your resources and diamonds around upgrading him because he saves far more time than ordinary speedups."] },
+          ] },
+          { type: "subtitle", text: "His star-level limits" },
+          { type: "list", items: ["Star Level 1 - $0.99: instantly completes buildings through level 15.", "Star Level 2 - $1.99: instantly completes buildings through level 20.", "Star Level 3 - $4.99: instantly completes buildings through level 25.", "Star Level 4 - $48.99: instantly completes buildings through level 30."] },
+          { type: "tip", text: "Upgrade Louis Le Vau to at least Star Level 3 for the best balance of cost and progress. Star Level 4 is much more expensive, so only buy it if the remaining cashback and Castle rewards justify it." },
+        ]
+      },
+      {
         title: "Getting Started",
         content: [
           { type: "text", text: "Play normally for the first few days. Complete daily quests, participate in events, and keep your buildings progressing." },
@@ -1374,7 +1388,7 @@ const rawGuides = [
         ]
       },
       {
-        title: "Purchases and Louis Le Vau",
+        title: "Purchases",
         content: [
           { type: "warning", text: "The cashback purchases are the fastest route through this offer, but only buy them when the cashback makes the cost worthwhile for you." },
           { type: "imageText", src: new URL("../imgs/guides/gog/diamond_shop.webp", import.meta.url).href, alt: "Guns of Glory diamond shop", content: [
@@ -1382,11 +1396,9 @@ const rawGuides = [
             { type: "list", items: ["Buy the 1,000 diamonds pack for £9.99/$9.99 to trigger the $13.36 cashback step.", "Buy the 2,000 diamonds pack for £19.99/$19.99 to trigger the $27.72 cashback step.", "These diamond purchases are more efficient than buying random items because you can use the diamonds on the packs that matter."] },
           ] },
           { type: "imageText", src: new URL("../imgs/guides/gog/louis_pack.png", import.meta.url).href, alt: "Louis Le Vau packs", content: [
-            { type: "subtitle", text: "Louis Le Vau is essential" },
-            { type: "text", text: "Louis Le Vau is the key character for completing the offer. Once unlocked, he can instantly complete building upgrades for free up to a certain level. His packs increase the level limit." },
-            { type: "list", items: ["Star Level 1 - $0.99: instantly completes buildings through level 15.", "Star Level 2 - $1.99: instantly completes buildings through level 20.", "Star Level 3 - $4.99: instantly completes buildings through level 25.", "Star Level 4 - $48.99: instantly completes buildings through level 30."] },
+            { type: "subtitle", text: "Use diamonds on Louis Le Vau packs" },
+            { type: "text", text: "After unlocking Louis Le Vau, use the diamonds from the cashback purchases to buy his packs. They are more valuable for this offer than spending diamonds on random items because they raise the free building-upgrade limit." },
           ] },
-          { type: "callout", text: "Louis Le Vau packs usually appear after 3-5 days. If the popup does not appear, open the character list, select Louis Le Vau, choose View Specific Packs, and buy them there." },
         ]
       },
       {
