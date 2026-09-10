@@ -2028,6 +2028,13 @@ const rawGuides = [
         ]
       },
       {
+        title: "Besitos Turbo Tasks",
+        content: [
+          { type: "warning", text: "On Besitos, Turbo Tasks require an in-app purchase in addition to reaching the stated milestone." },
+          { type: "list", items: ["Example requirement: Finish Tokyo and make at least one in-app purchase", "The required purchase is $10 and you just need to do it once (for all the tasks!).", "Make the purchase through the tracked Bingo Blitz offer before completing the Turbo Task"] },
+        ]
+      },
+      {
         title: "Getting Started",
         content: [
           { type: "steps", items: ["Play normally until you reach Athens", "Subscribe to Bingo Blitz while the first month is free", "Cancel the subscription before the free month ends if you do not want to continue paying"] },
