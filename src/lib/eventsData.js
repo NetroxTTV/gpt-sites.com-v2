@@ -1,5 +1,19 @@
 export const events = [
   {
+    title: "LootHQ Leaderboard - $100 Prize",
+    siteName: "RBXFast",
+    siteUrl: "https://rbxfast.com/r/netrox",
+    dateRange: "Ends in 21 days",
+    startDate: "2026-09-10",
+    endDate: "2026-10-01",
+    highlight: "RBXFast is running a LootHQ leaderboard with a $100 prize - 21 days left to climb the rankings.",
+    details: [
+      "Prize pool: $100.",
+      "Complete LootHQ offers on RBXFast to earn leaderboard points.",
+      "Ends in 21 days - start now to maximize your ranking.",
+    ],
+  },
+  {
     title: "EarnLab Torox +100% Boost",
     siteName: "Earnlab",
     siteUrl: "https://earnlab.com/r/netrox",
