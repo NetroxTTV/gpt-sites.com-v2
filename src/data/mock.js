@@ -27,7 +27,7 @@ const tagFromBadge = (site) => {
 
 export const OFFERWALL_LABELS = {
   adgate: "AdGate", adscend: "Adscend Media", adtowall: "AdToWall", ayetstudios: "Ayet Studios", bitlabs: "BitLabs",
-  gemiad: "Gemia", hangmyads: "Hang My Ads", inbrain: "inBrain", lootably: "Lootably", mmwall: "MM Wall", monlix: "Monlix",
+  gemiad: "GemiAd", besitos: "Besitos", hangmyads: "Hang My Ads", inbrain: "inBrain", lootably: "Lootably", mmwall: "MM Wall", monlix: "Monlix",
   myChips: "myChips", notik: "Notik", primeearn: "Prime Earn", pixylabs: "PixyLabs", revu: "RevU", timewall: "Timewall",
   torox: "Torox", waxrewards: "WaxRewards",
 };

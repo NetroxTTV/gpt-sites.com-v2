@@ -60,9 +60,9 @@ export const featuredSites = [
 ];
 
 export const allOfferwalls = [
-  "adgate", "adscend", "adtowall", "ayetstudios", "bitlabs", "gemiad",
+  "adgate", "adscend", "adtowall", "ayetstudios", "besitos", "bitlabs", "gemiad",
   "hangmyads", "inbrain", "lootably", "mmwall", "monlix", "myChips",
-  "notik", "primeearn", "pixylabs", "revu", "timewall", "torox", "waxrewards", "besitos",
+  "notik", "primeearn", "pixylabs", "revu", "timewall", "torox", "waxrewards",
 ];
 
 export const allSites = [
