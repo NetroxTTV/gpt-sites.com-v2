@@ -1225,7 +1225,7 @@ const rawGuides = [
     category: "Game",
     platform: "Android / iOS",
     genre: "Action / Shooter",
-    offerwall: "Torox",
+    offerwall: "Torox / Prime Earn",
     difficulty: "Medium",
     timeInvestment: "7-30+ days",
     totalReward: "$300 - $450",
@@ -1289,6 +1289,8 @@ const rawGuides = [
           { type: "text", text: "During the final minute of a level, use Time Freeze, Mechanical Zombie, and Helicopter, then run away from the mobs and bosses. This can let you clear levels below the recommended power; a 3.5M account can sometimes pass a 5M requirement with this approach." },
           { type: "subtitle", text: "Match weapons and characters" },
           { type: "list", items: ["Use weapons with buffs that match your character.", "Events can unlock S-tier characters with special boosts and S-tier weapons, so check event rewards carefully."] },
+          { type: "subtitle", text: "Black Tide Invasion" },
+          { type: "list", items: ["Hunt monster around your base in order to get maps, those maps will get you really good loot.","Don't forget to also do the Doomsday Express (once a day) for even more loot."] },
           { type: "subtitle", text: "Build S-tier equipment" },
           { type: "list", items: ["Aim for S-tier equipment in every slot.", "To upgrade a 3-star S-tier chestplate to Legendary S-tier, you need another 3-star S-tier chestplate as material.", "Do not consume duplicate S-tier equipment until you have checked the upgrade requirements."] },
           { type: "subtitle", text: "Keep the account active" },
@@ -1449,8 +1451,8 @@ const rawGuides = [
     platform: "Android / iOS",
     genre: "Hidden Object / Mystery",
     offerwall: "PrimeEarn / Ayet / Torox",
-    difficulty: "TBD",
-    timeInvestment: "TBD",
+    difficulty: "Hard",
+    timeInvestment: "10 days or more depending on your pace",
     totalReward: "$230 - $450",
     sections: [
       {
@@ -2001,6 +2003,66 @@ const rawGuides = [
         title: "Profit Summary",
         content: [
           { type: "list", items: ["Total Cashback Value: $80", "With 20% discount on first $50: You pay $70 total", "Net Profit: $10 (or full $80 if following exact cashback order)", "One of the best monetization offers for King of Avalon"] },
+        ]
+      },
+    ],
+  },
+  {
+    slug: "bingo-blitz",
+    title: "Bingo Blitz",
+    logo: "https://store-images.s-microsoft.com/image/apps.38987.13510798887911126.6336c2c8-f707-4001-b64f-d1d9788593a8.53823d43-b4df-4473-aead-d4a345693ace",
+    banner: "https://m.media-amazon.com/images/I/A1+Nrrd8aTL.jpg",
+    category: "Game",
+    platform: "iOS / Android",
+    genre: "Bingo / Casual",
+    offerwall: "Exclusive Offers / Prime Earn / Torox / Besitos",
+    difficulty: "Easy",
+    timeInvestment: "Up to 15 days",
+    totalReward: "$200 - $600",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "callout", text: "Bingo Blitz is an easy game offer that can usually be completed within 15 days, depending on the available milestone and your daily activity." },
+          { type: "list", items: ["Expected payout: $200-$600", "Difficulty: Easy", "Time investment: Up to 15 days", "Available through Exclusive Offers, Prime Earn, Torox, and Besitos"] },
+        ]
+      },
+      {
+        title: "Getting Started",
+        content: [
+          { type: "steps", items: ["Play normally until you reach Athens", "Subscribe to Bingo Blitz while the first month is free", "Cancel the subscription before the free month ends if you do not want to continue paying"] },
+          { type: "tip", text: "The free first month is useful for this offer, but remember to cancel it before renewal." },
+        ]
+      },
+      {
+        title: "Completing Islands",
+        content: [
+          { type: "text", text: "After Athens, the core loop repeats as you complete more islands." },
+          { type: "list", items: ["Collect the pictures required for each island, usually between 4 and 12", "Some islands require a golden picture, which cannot be traded", "Use the in-game chat to ask for or trade regular pictures when you are missing one", "Always take the Super when starting a bingo game"] },
+          { type: "image", src: new URL("../imgs/guides/bingo/super.png", import.meta.url).href, alt: "Bingo Blitz Super" },
+          { type: "image", src: new URL("../imgs/guides/bingo/album.png", import.meta.url).href, alt: "Bingo Blitz picture album" },
+        ]
+      },
+      {
+        title: "Events and Credit Management",
+        content: [
+          { type: "callout", text: "Play every event shown in the game. Events provide a large amount of credits and are one of the main reasons this offer stays easy." },
+          { type: "list", items: ["Avoid overspending credits early in the game", "Save enough credits to finish picture collections and complete islands", "Use event rewards before spending your regular credit balance", "If you have excess event items, only use an autoclicker where it is allowed by the game's and offerwall's rules"] },
+          { type: "image", src: new URL("../imgs/guides/bingo/event.png", import.meta.url).href, alt: "Bingo Blitz event rewards" },
+        ]
+      },
+      {
+        title: "Bingo Gameplay",
+        content: [
+          { type: "list", items: ["Do not overclick numbers during a game", "Every three numbers gives you a power-up", "Power-ups have a cooldown of roughly 10-15 seconds after use", "Picture rewards appear when you complete a bingo and one corner shows a number such as New 2"] },
+          { type: "tip", text: "Manage credits carefully and keep the cycle going: play bingo, collect pictures, complete the island, then use events to refill your credits." },
+          { type: "image", src: new URL("../imgs/guides/bingo/game.png", import.meta.url).href, alt: "Bingo Blitz gameplay" },
+        ]
+      },
+      {
+        title: "Daily Routine",
+        content: [
+          { type: "steps", items: ["Open Bingo Blitz and claim available rewards", "Play the active events for credits and items", "Start bingo games with Super selected", "Use chat to fill missing picture collections", "Complete the current island and repeat the loop"] },
         ]
       },
     ],
