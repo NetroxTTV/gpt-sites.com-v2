@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, Youtube } from "lucide-react";
+import { ExternalLink, Mail, Youtube } from "lucide-react";
 import { useLang } from "@/i18n/LanguageContext";
 import { Logo, NAV_LINKS } from "./Navbar";
 import { DISCORD_URL, STATS, OFFERWALLS } from "@/data/mock";
@@ -40,14 +40,14 @@ const Footer = () => {
                 <li><Link to="/Faq" className="text-sm text-foreground/80 transition-colors hover:text-brand-ink">FAQ</Link></li>
                 <li><Link to="/Sites" className="text-sm text-foreground/80 transition-colors hover:text-brand-ink">{t("footer.offerwalls")}</Link></li>
                 <li><Link to="/Guides" className="text-sm text-foreground/80 transition-colors hover:text-brand-ink">{t("nav.guides")}</Link></li>
-                <li><a href={DISCORD_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-sm text-foreground/80 transition-colors hover:text-brand-ink">{t("footer.contact")} <ExternalLink className="h-3 w-3" /></a></li>
+                <li><Link to="/Contact" className="text-sm text-foreground/80 transition-colors hover:text-brand-ink">{t("footer.contact")}</Link></li>
               </ul>
             </div>
             <div className="col-span-2 sm:col-span-1">
               <h4 className="font-display text-xs font-bold uppercase tracking-[0.18em] text-muted-foreground">{t("footer.community")}</h4>
               <ul className="mt-4 space-y-2.5">
                 <li><a href={DISCORD_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm text-foreground/80 transition-colors hover:text-brand-ink">Discord <ExternalLink className="h-3 w-3" /></a></li>
-                <li><a href={STATS.youtube} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm text-foreground/80 transition-colors hover:text-brand-ink"><Youtube className="h-3.5 w-3.5" /> YouTube</a></li>
+                <li><a href="mailto:admin@gpt-sites.com" className="inline-flex items-center gap-1.5 text-sm text-foreground/80 transition-colors hover:text-brand-ink"><Mail className="h-3.5 w-3.5" /> admin@gpt-sites.com</a></li>
               </ul>
             </div>
           </div>
