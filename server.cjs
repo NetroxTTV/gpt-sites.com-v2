@@ -475,7 +475,7 @@ const renderIndexHtml = (pathname, countryCode) => {
   const geoLang = langForCountry(countryCode);
   html = html.replace("<!--GEO_LANG-->", geoLang ? `<script>window.__GEO_LANG__="${geoLang}";</script>` : "");
 
-  const { title, description } = metaForPath(pathname);
+  const { title, description, image } = metaForPath(pathname);
   const t = escapeHtml(title);
   const d = escapeHtml(description);
   const u = escapeHtml(SITE_URL + pathname);
@@ -499,6 +499,11 @@ const renderIndexHtml = (pathname, countryCode) => {
   setMetaContent("property", "og:url", u);
   setMetaContent("name", "twitter:title", t);
   setMetaContent("name", "twitter:description", d);
+  if (image) {
+    const i = escapeHtml(image);
+    setMetaContent("property", "og:image", i);
+    setMetaContent("name", "twitter:image", i);
+  }
 
   html = html.replace(/(<link\b[^>]*\brel="canonical"[^>]*\bhref=")[^"]*(")/i, `$1${u}$2`);
 

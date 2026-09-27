@@ -80,6 +80,12 @@ const en = {
     all: "All", start: "Getting started", payments: "Payments", offers: "Offers & credits", safety: "Safety", noResults: "No question matches your search.",
     stillTitle: "Still have a question?", stillSub: "The community answers in minutes on Discord.", join: "Ask on Discord",
   },
+  contact: {
+    label: "Contact", title: "Get in touch", subtitle: "Have a question, a partnership idea, or found an issue? Reach out on Discord or by email.",
+    discordTitle: "Discord", discordText: "Fastest way to reach us. Join the server and message", discordCta: "Join Discord",
+    emailTitle: "Email", emailText: "For business inquiries, guide submissions or anything else.", emailCta: "Send an email",
+    copy: "Copy", copied: "Copied!",
+  },
   common: { visitWebsite: "Visit website", viewAll: "View all", new: "New", popular: "Popular", mobileApp: "Mobile app", casino: "Casino", featured: "Featured", live: "Live", ended: "Ended", easy: "Easy", medium: "Medium", hard: "Hard", top: "Top", learnMore: "Learn more", backHome: "Back to home", backToTop: "Back to top", prevPage: "Previous page", nextPage: "Next page", pageWord: "Page" },
   notFound: { title: "Page not found", text: "The page you requested does not exist. Head back home to keep browsing sites, guides and events.", home: "Go home" },
 };
@@ -153,6 +159,12 @@ const fr = {
     label: "FAQ", title: "Questions fréquentes", subtitle: "Tout ce qu'il faut savoir avant de commencer à gagner.", search: "Rechercher une question…",
     all: "Toutes", start: "Démarrer", payments: "Paiements", offers: "Offres & crédits", safety: "Sécurité", noResults: "Aucune question ne correspond à votre recherche.",
     stillTitle: "Encore une question ?", stillSub: "La communauté répond en quelques minutes sur Discord.", join: "Demander sur Discord",
+  },
+  contact: {
+    label: "Contact", title: "Nous contacter", subtitle: "Une question, une idée de partenariat, ou un problème à signaler ? Écrivez-nous sur Discord ou par e-mail.",
+    discordTitle: "Discord", discordText: "Le moyen le plus rapide de nous joindre. Rejoignez le serveur et envoyez un message à", discordCta: "Rejoindre le Discord",
+    emailTitle: "E-mail", emailText: "Pour les demandes pro, les soumissions de guides ou toute autre question.", emailCta: "Envoyer un e-mail",
+    copy: "Copier", copied: "Copié !",
   },
   common: { visitWebsite: "Visiter le site", viewAll: "Tout voir", new: "Nouveau", popular: "Populaire", mobileApp: "Appli mobile", casino: "Casino", featured: "Recommandé", live: "En direct", ended: "Terminé", easy: "Facile", medium: "Moyen", hard: "Difficile", top: "Top", learnMore: "En savoir plus", backHome: "Retour à l'accueil", backToTop: "Haut de page", prevPage: "Page précédente", nextPage: "Page suivante", pageWord: "Page" },
   notFound: { title: "Page introuvable", text: "La page demandée n'existe pas. Retournez à l'accueil pour continuer à parcourir les sites, guides et événements.", home: "Retour à l'accueil" },
@@ -228,6 +240,12 @@ const es = {
     all: "Todas", start: "Empezar", payments: "Pagos", offers: "Ofertas y créditos", safety: "Seguridad", noResults: "Ninguna pregunta coincide.",
     stillTitle: "¿Aún tienes dudas?", stillSub: "La comunidad responde en minutos en Discord.", join: "Preguntar en Discord",
   },
+  contact: {
+    label: "Contacto", title: "Ponte en contacto", subtitle: "¿Tienes una pregunta, una idea de colaboración o encontraste un problema? Escríbenos en Discord o por correo.",
+    discordTitle: "Discord", discordText: "La forma más rápida de contactarnos. Únete al servidor y escribe a", discordCta: "Unirse a Discord",
+    emailTitle: "Correo", emailText: "Para consultas comerciales, envío de guías o cualquier otra cosa.", emailCta: "Enviar un correo",
+    copy: "Copiar", copied: "¡Copiado!",
+  },
   common: { visitWebsite: "Visitar sitio", viewAll: "Ver todo", new: "Nuevo", popular: "Popular", mobileApp: "App móvil", casino: "Casino", featured: "Destacado", live: "En vivo", ended: "Terminado", easy: "Fácil", medium: "Medio", hard: "Difícil", top: "Top", learnMore: "Saber más", backHome: "Volver al inicio", backToTop: "Subir", prevPage: "Página anterior", nextPage: "Página siguiente", pageWord: "Página" },
   notFound: { title: "Página no encontrada", text: "La página no existe. Vuelve al inicio para seguir explorando sitios, guías y eventos.", home: "Ir al inicio" },
 };
@@ -301,6 +319,12 @@ const de = {
     label: "FAQ", title: "Häufige Fragen", subtitle: "Alles, was du wissen musst, bevor du loslegst.", search: "Frage suchen…",
     all: "Alle", start: "Erste Schritte", payments: "Zahlungen", offers: "Angebote & Gutschriften", safety: "Sicherheit", noResults: "Keine Frage passt zur Suche.",
     stillTitle: "Noch Fragen?", stillSub: "Die Community antwortet in Minuten auf Discord.", join: "Auf Discord fragen",
+  },
+  contact: {
+    label: "Kontakt", title: "Kontaktiere uns", subtitle: "Eine Frage, eine Partnerschaftsidee oder ein Problem gefunden? Schreib uns auf Discord oder per E-Mail.",
+    discordTitle: "Discord", discordText: "Der schnellste Weg, uns zu erreichen. Tritt dem Server bei und schreibe an", discordCta: "Discord beitreten",
+    emailTitle: "E-Mail", emailText: "Für geschäftliche Anfragen, Guide-Einreichungen oder alles andere.", emailCta: "E-Mail senden",
+    copy: "Kopieren", copied: "Kopiert!",
   },
   common: { visitWebsite: "Website besuchen", viewAll: "Alle ansehen", new: "Neu", popular: "Beliebt", mobileApp: "Mobile App", casino: "Casino", featured: "Empfohlen", live: "Live", ended: "Beendet", easy: "Leicht", medium: "Mittel", hard: "Schwer", top: "Top", learnMore: "Mehr erfahren", backHome: "Zur Startseite", backToTop: "Nach oben", prevPage: "Vorherige Seite", nextPage: "Nächste Seite", pageWord: "Seite" },
   notFound: { title: "Seite nicht gefunden", text: "Diese Seite existiert nicht. Zurück zur Startseite, um Seiten, Guides und Events zu entdecken.", home: "Zur Startseite" },

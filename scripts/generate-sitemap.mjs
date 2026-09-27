@@ -63,6 +63,7 @@ for (const g of guides) {
   guidesMeta[g.slug] = {
     title: `${g.title} Guide | GPT Sites`,
     description: `${g.title} step-by-step earning guide${bits ? ` — ${bits}.` : "."} Setup, milestones, and tips to complete offers efficiently.`.slice(0, 300),
+    image: g.banner || g.logo || null,
   };
 }
 const metaPath = resolve(publicDir, "guides-meta.json");

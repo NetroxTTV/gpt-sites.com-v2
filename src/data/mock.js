@@ -102,6 +102,8 @@ export const getFeaturedSites = () =>
     });
 
 export const DISCORD_URL = "https://discord.gg/gptfr";
+export const DISCORD_USERNAME = "netrox";
+export const CONTACT_EMAIL = "admin@gpt-sites.com";
 
 export const STATS = {
   sites: SITES.length,

@@ -18,6 +18,7 @@ import Sites from './pages/Sites';
 import Events from './pages/Events';
 import LiveFeed from './pages/LiveFeed';
 import Faq from './pages/Faq';
+import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import RedirectPage from './pages/Redirect';
 
@@ -57,6 +58,10 @@ const routeMeta = {
   "/Offers": {
     title: "GPT Sites | Offers",
     description: "Explore current offer opportunities and redirect to the latest events and boosts across top GPT sites.",
+  },
+  "/Contact": {
+    title: "GPT Sites | Contact",
+    description: "Get in touch with GPT Sites on Discord or by email for questions, partnerships, or guide submissions.",
   },
 };
 
@@ -176,6 +181,7 @@ function AnimatedRoutes() {
         <Route path="/Events" element={<PageWrapper><Events /></PageWrapper>} />
         <Route path="/LiveFeed" element={<PageWrapper><LiveFeed /></PageWrapper>} />
         <Route path="/Faq" element={<PageWrapper><Faq /></PageWrapper>} />
+        <Route path="/Contact" element={<PageWrapper><Contact /></PageWrapper>} />
         <Route path="/Offers" element={<Navigate to="/Events" replace />} />
         <Route path="/redirect=:slug" element={<RedirectPage />} />
         <Route path="/redirect" element={<RedirectPage />} />
