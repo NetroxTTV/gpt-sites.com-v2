@@ -2139,6 +2139,68 @@ const rawGuides = [
         ]
       },
     ],
+  },
+  {
+    slug: "lonestar-casino",
+    title: "LoneStar Casino Guide: $110-$140",
+    logo: "https://sweepskings.com/wp-content/uploads/2025/03/lonestar-casino-logo.jpg",
+    banner: "https://img.americancasinoguide.com/400x210/casino/lonestar-casino.jpg",
+    category: "Betting / Casino",
+    platform: "Browser / Mobile",
+    genre: "Online Casino",
+    offerwall: "LoneStar Casino",
+    difficulty: "Easy",
+    timeInvestment: "A few hours for the spins",
+    totalReward: "$110-$140",
+    moneyInvestment: "$10",
+    sections: [
+      {
+        title: "Offer Overview",
+        content: [
+          { type: "callout", text: "Complete the LoneStar Casino purchase and wagering requirements to earn approximately $110-$140." },
+          { type: "list", items: ["Reward: $110-$140", "Initial purchase: $10", "Purchase crediting time: within 5 minutes", "Spin task crediting time: a few hours"] },
+        ]
+      },
+      {
+        title: "Eligibility and Requirements",
+        content: [
+          { type: "list", items: ["No KYC required", "A USA phone number is required", "Use a valid credit card", "Complete the offer as a new eligible user if required by the offerwall"] },
+        ]
+      },
+      {
+        title: "Purchase Requirement",
+        content: [
+          {
+            type: "imageText",
+            src: new URL("../imgs/guides/lonestar/image1.png", import.meta.url).href,
+            alt: "LoneStar Casino 50,000 GC purchase pack",
+            content: [
+              { type: "steps", items: ["Open LoneStar Casino through the tracked offer link.", "Purchase the 50,000 GC pack for $10.00.", "Keep the purchase confirmation for your records.", "The purchase task should pay within 5 minutes."] },
+            ],
+          },
+        ]
+      },
+      {
+        title: "Spin Requirements",
+        content: [
+          {
+            type: "imageText",
+            src: new URL("../imgs/guides/lonestar/image2.png", import.meta.url).href,
+            alt: "LoneStar Casino slots and games",
+            content: [
+              { type: "steps", items: ["Complete 40 bets of at least $0.25 on 3 different slots.", "Complete 300 additional bets; these bets can be as low as $0.05.", "You can use any slots available in the casino.", "Wait a few hours for the spin tasks to credit."] },
+              { type: "tip", text: "Track the number of bets and the three slots you use so each requirement is completed clearly." },
+            ],
+          },
+        ]
+      },
+      {
+        title: "Quick Recap",
+        content: [
+          { type: "list", items: ["Buy the 50,000 GC pack for $10.00.", "Place 40 bets of $0.25 or more on each of 3 slots.", "Place 300 additional bets at $0.05 or more.", "Wait for the purchase and spin tasks to credit."] },
+        ]
+      },
+    ],
   }
 ];
 
